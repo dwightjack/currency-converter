@@ -39,6 +39,14 @@
     <output
       name="result"
       id="result"
-      for="currency-from currency-to input-amount">{$convertedAmount}</output>
+      for="currency-from currency-to input-amount">
+      {#await $convertedAmount}
+        ...converting
+      {:then number}
+        {number}
+      {:catch error}
+        conversion error! ({error})
+      {/await}
+    </output>
   </div>
 </main>

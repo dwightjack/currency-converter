@@ -1,4 +1,5 @@
 import { writable, derived } from 'svelte/store';
+import { fetchCurrency } from './db';
 
 export const inputAmount = writable(0);
 
@@ -9,16 +10,18 @@ export const currency = writable({
 
 export const exchangeRate = derived(
   currency,
-  ($currency) => {
-    return 0.00803082;
+  async ($currency) => {
+    let { rates = {} } = await fetchCurrency($currency.input);
+    return rates[$currency.output] || 0;
   },
   0
 );
 
 export const convertedAmount = derived(
   [inputAmount, exchangeRate, currency],
-  ([$inputAmount, $exchangeRate, $currency]) => {
-    const converted = Number.parseFloat($inputAmount) * $exchangeRate;
+  async ([$inputAmount, $exchangeRate, $currency]) => {
+    const converted =
+      (Number.parseFloat($inputAmount) || 0) * (await $exchangeRate);
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: $currency.output,
