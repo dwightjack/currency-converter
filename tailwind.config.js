@@ -9,4 +9,10 @@ module.exports = {
     css: ['./public/**/*.css'],
     enabled: production, // disable purge in dev
   },
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+      ringWidth: ['focus-visible'],
+    },
+  },
 };

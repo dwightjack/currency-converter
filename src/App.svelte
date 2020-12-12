@@ -25,8 +25,8 @@
 </style>
 
 <Tailwind />
-<main class="container mx-auto px-4">
-  <form class="l-container gap-4">
+<main class="container lg:max-w-3xl lg:pt-10 pt-4 pb-4 mx-auto px-4">
+  <form class="l-container gap-4" on:submit|preventDefault={() => {}}>
     <div class="min-w-0">
       <CurrencyBox
         label="Source Currency"
@@ -38,7 +38,7 @@
           inputmode="numeric"
           id="from-amount"
           name="from-amount"
-          class="px-2 py-1 w-full rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+          class="px-2 py-1 w-full rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-600"
           bind:value={$inputAmount} />
       </CurrencyBox>
     </div>
@@ -64,7 +64,7 @@
       </CurrencyBox>
     </div>
     <div class="items-center col-start-2 row-start-1 flex justify-center">
-      <SwitchButton onClick={invertCurrency} />
+      <SwitchButton onClick={invertCurrency} class="text-2xl" />
     </div>
   </form>
 </main>
