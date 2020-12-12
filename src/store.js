@@ -25,7 +25,11 @@ export const convertedAmount = derived(
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: $currency.output,
-    }).format(converted);
+    })
+      .formatToParts(converted)
+      .filter(({ type }) => type !== 'currency')
+      .map(({ value }) => value)
+      .join('');
   },
   0
 );
