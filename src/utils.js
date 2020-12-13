@@ -1,3 +1,4 @@
+import ky from 'ky';
 export async function fetchRates(base) {
   if (fetchRates.$$store.has(base)) {
     return fetchRates.$$store.get(base);

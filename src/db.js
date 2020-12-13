@@ -1,13 +1,10 @@
 import { openDB } from 'idb';
-import ky from 'ky';
-import { fetchRates } from './utils'
+import { fetchRates } from './utils';
 
 /** @type ReturnType<openDB> */
 let dbPromise;
 
 const ONE_DAY = 1000 * 60 * 60 * 24;
-
-const 
 
 function open() {
   if (!dbPromise) {
