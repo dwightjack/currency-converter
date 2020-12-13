@@ -1,10 +1,13 @@
 import { openDB } from 'idb';
 import ky from 'ky';
+import { fetchRates } from './utils'
 
 /** @type ReturnType<openDB> */
 let dbPromise;
 
 const ONE_DAY = 1000 * 60 * 60 * 24;
+
+const 
 
 function open() {
   if (!dbPromise) {
@@ -56,9 +59,7 @@ export async function fetchCurrency(currencyCode) {
   }
 
   try {
-    const { rates } = await ky
-      .get(`https://api.exchangeratesapi.io/latest?base=${currencyCode}`)
-      .json();
+    const rates = await fetchRates(currencyCode);
 
     // store the data in the db
     return await setCurrency(currencyCode, rates);
