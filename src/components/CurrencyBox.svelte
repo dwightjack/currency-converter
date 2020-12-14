@@ -1,5 +1,5 @@
 <script>
-  import { getCurrencySymbol } from '../store';
+  import { getCurrencySymbol } from '../stores/currency';
   export let label = '';
   export let id = '';
   export let current = '';

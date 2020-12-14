@@ -1,0 +1,49 @@
+<script>
+  import { onMount, afterUpdate } from 'svelte';
+  import ControlButton from './ControlButton.svelte';
+  import Calculator from './Calculator.svelte';
+  export let visible = false;
+  /**
+   * @type HTMLDialogElement
+   */
+  let dialogElement;
+
+  function toggleDialog() {
+    if (!dialogElement) {
+      return;
+    }
+    if (visible === true) {
+      !dialogElement.open && dialogElement.showModal();
+      return;
+    }
+    dialogElement.close();
+  }
+
+  function close() {
+    dialogElement && dialogElement.close();
+  }
+
+  onMount(toggleDialog);
+  afterUpdate(toggleDialog);
+</script>
+
+<style>
+  .c-calculator-dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+</style>
+
+<dialog
+  class="c-calculator-dialog  border-2 border-blue-200 overflow-hidden p-0 shadow-md md:rounded"
+  on:close
+  bind:this={dialogElement}>
+  <header class="text-right p-1 ">
+    <ControlButton
+      label="Close"
+      icon="close"
+      on:click={close}
+      class="text-2xl col-start-3" />
+  </header>
+  <Calculator />
+</dialog>

@@ -1,13 +1,15 @@
 <script>
   import Tailwind from './Tailwind.svelte';
   import CurrencyBox from './components/CurrencyBox.svelte';
-  import SwitchButton from './components/SwitchButton.svelte';
+  import ControlButton from './components/ControlButton.svelte';
+  import CalculatorDialog from './components/CalculatorDialog.svelte';
   import {
     currency,
     invertCurrency,
     inputAmount,
     convertedAmount,
-  } from './store';
+  } from './stores/currency';
+  import { calculatorOpen, toggleCalculator } from './stores/ui';
 </script>
 
 <style>
@@ -40,6 +42,11 @@
           name="from-amount"
           class="px-2 py-1 w-full rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-600"
           bind:value={$inputAmount} />
+        <ControlButton
+          on:click={toggleCalculator}
+          icon="calculator"
+          label="Calculate"
+          class="text-2xl self-center" />
       </CurrencyBox>
     </div>
     <div class="min-w-0 md:col-start-3 order-last">
@@ -64,7 +71,14 @@
       </CurrencyBox>
     </div>
     <div class="items-center col-start-2 row-start-1 flex justify-center">
-      <SwitchButton onClick={invertCurrency} class="text-2xl" />
+      <ControlButton
+        on:click={invertCurrency}
+        icon="switch"
+        label="Switch"
+        class="text-2xl" />
     </div>
   </form>
+  <CalculatorDialog
+    visible={$calculatorOpen}
+    on:close={() => toggleCalculator(false)} />
 </main>
