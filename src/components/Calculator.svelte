@@ -1,23 +1,59 @@
 <script>
   import CalcButton from './CalcButton.svelte';
 
-  let input = '';
+  let input = '0';
+  let dirty = false;
+  let stack = [['plus', 0]];
+
+  const operations = {
+    divide: (src, num) => src / num,
+    times: (src, num) => src * num,
+    minus: (src, num) => src - num,
+    plus: (src, num) => src + num,
+  };
 
   function onInput(v) {
+    if (dirty === true) {
+      input = '';
+      dirty = false;
+    }
     if (v === '.' && input.includes('.')) {
       return;
     }
-    if (v === 0 && /^0+$/.test(input)) {
-      return;
-    }
-    if (input === '0' && v !== '.') {
-      input = '';
-    }
-    input += String(v);
+    input = (input + String(v)).replace(/^0*(?=\d)/, '');
   }
 
   function reset() {
-    input = '';
+    input = '0';
+    stack = [['plus', 0]];
+    dirty = false;
+  }
+
+  function add(op) {
+    if (dirty) {
+      return;
+    }
+    stack[stack.length - 1][1] = parseInt(input);
+    stack = [...stack, [op]];
+    calc();
+  }
+
+  function eq() {
+    if (dirty) {
+      return;
+    }
+    stack[stack.length - 1][1] = parseInt(input);
+    calc();
+  }
+
+  function calc() {
+    dirty = true;
+    input = stack.reduce((num, [op, v]) => {
+      if (!v) {
+        return num;
+      }
+      return operations[op](num, v);
+    }, 0);
   }
 </script>
 
@@ -28,8 +64,8 @@
     grid-template-rows: repeat(6, 4rem);
     grid-template-areas:
       'output output output output'
-      'reset reset div mult'
-      'b7 b8 b9 min'
+      'reset reset divide times'
+      'b7 b8 b9 minus'
       'b4 b5 b6 plus'
       'b1 b2 b3 eq'
       'b0 b0 dot eq';
@@ -48,9 +84,9 @@
     </CalcButton>
   {/each}
   <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
-  <CalcButton area="div">&divide;</CalcButton>
-  <CalcButton area="mult">&times;</CalcButton>
-  <CalcButton area="min">-</CalcButton>
-  <CalcButton area="plus">+</CalcButton>
-  <CalcButton area="eq">=</CalcButton>
+  <CalcButton area="divide">&divide;</CalcButton>
+  <CalcButton area="times">&times;</CalcButton>
+  <CalcButton area="minus">-</CalcButton>
+  <CalcButton area="plus" on:click={() => add('plus')}>+</CalcButton>
+  <CalcButton area="eq" on:click={eq}>=</CalcButton>
 </div>
