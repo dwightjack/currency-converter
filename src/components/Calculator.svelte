@@ -65,8 +65,8 @@
 <style>
   .c-calculator {
     display: grid;
-    grid-template-columns: repeat(4, minmax(25%, 4rem));
-    grid-template-rows: repeat(6, 4rem);
+    grid-template-columns: repeat(4, minmax(calc(25% - 1px), 4rem));
+    grid-template-rows: repeat(6, minmax(calc((100% - 6px) / 6), 4rem));
     grid-template-areas:
       'output output output output'
       'reset reset divide times'
@@ -75,10 +75,12 @@
       'b1 b2 b3 eq'
       'b0 b0 dot eq';
     gap: 1px;
+    min-height: 0;
+    min-width: 0;
   }
 </style>
 
-<div class="py-1 px-3 c-calculator">
+<div class="c-calculator">
   <output
     class="col-start-1 col-span-4 text-3xl text-right p-2 overflow-ellipsis overflow-hidden"><span
       class="align-middle">{input}</span></output>

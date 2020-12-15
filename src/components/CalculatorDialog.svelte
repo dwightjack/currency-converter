@@ -35,15 +35,17 @@
 </style>
 
 <dialog
-  class="c-calculator-dialog  border-2 border-blue-200 overflow-hidden p-0 shadow-md md:rounded"
+  class={`${visible ? 'flex flex-col ' : ''}c-calculator-dialog border-2 border-blue-200 overflow-hidden p-0 shadow-md md:rounded`}
   on:close
   bind:this={dialogElement}>
-  <header class="text-right p-1 ">
+  <header class="text-right p-1">
     <ControlButton
       label="Close"
       icon="close"
       on:click={close}
       class="text-2xl col-start-3" />
   </header>
-  <Calculator />
+  <div class="pt-1 p-3 flex flex-grow min-h-0">
+    <Calculator />
+  </div>
 </dialog>
