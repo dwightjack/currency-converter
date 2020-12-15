@@ -2,20 +2,21 @@
   import CalcButton from './CalcButton.svelte';
 
   let input = '0';
-  let dirty = false;
-  let stack = [['plus', 0]];
+  let initial = null;
+  let lastKeyType = '';
+  let action = null;
 
   const operations = {
-    divide: (src, num) => src / num,
+    divide: (src, num) => (num === 0 ? src : src / num),
     times: (src, num) => src * num,
     minus: (src, num) => src - num,
     plus: (src, num) => src + num,
   };
 
   function onInput(v) {
-    if (dirty === true) {
+    if (lastKeyType !== '') {
       input = '';
-      dirty = false;
+      lastKeyType = '';
     }
     if (v === '.' && input.includes('.')) {
       return;
@@ -25,35 +26,39 @@
 
   function reset() {
     input = '0';
-    stack = [['plus', 0]];
-    dirty = false;
+    initial = null;
+    lastKeyType = '';
+    action = null;
   }
 
-  function add(op) {
-    if (dirty) {
+  function update() {
+    if (initial === null || !action) {
+      initial = parseFloat(input);
       return;
     }
-    stack[stack.length - 1][1] = parseInt(input);
-    stack = [...stack, [op]];
-    calc();
+    initial = action(initial, parseFloat(input));
+    input = String(initial);
   }
 
   function eq() {
-    if (dirty) {
+    if (lastKeyType) {
       return;
     }
-    stack[stack.length - 1][1] = parseInt(input);
-    calc();
+    lastKeyType = 'eq';
+    update();
+    action = null;
   }
 
-  function calc() {
-    dirty = true;
-    input = stack.reduce((num, [op, v]) => {
-      if (!v) {
-        return num;
+  const opHandlers = {};
+  for (const [key, fn] of Object.entries(operations)) {
+    opHandlers[key] = () => {
+      if (lastKeyType === 'operator') {
+        return;
       }
-      return operations[op](num, v);
-    }, 0);
+      lastKeyType = 'operator';
+      update();
+      action = fn;
+    };
   }
 </script>
 
@@ -84,9 +89,9 @@
     </CalcButton>
   {/each}
   <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
-  <CalcButton area="divide">&divide;</CalcButton>
-  <CalcButton area="times">&times;</CalcButton>
-  <CalcButton area="minus">-</CalcButton>
-  <CalcButton area="plus" on:click={() => add('plus')}>+</CalcButton>
+  <CalcButton area="divide" on:click={opHandlers.divide}>&divide;</CalcButton>
+  <CalcButton area="times" on:click={opHandlers.times}>&times;</CalcButton>
+  <CalcButton area="minus" on:click={opHandlers.minus}>-</CalcButton>
+  <CalcButton area="plus" on:click={opHandlers.plus}>+</CalcButton>
   <CalcButton area="eq" on:click={eq}>=</CalcButton>
 </div>
