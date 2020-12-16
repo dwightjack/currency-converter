@@ -93,6 +93,7 @@
   }
   .c-calculator__output > * {
     direction: ltr;
+    unicode-bidi: embed;
   }
 </style>
 
