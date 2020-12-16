@@ -1,5 +1,12 @@
 <script>
   export let area = '';
+  export let theme = 'light';
+
+  const themes = {
+    light: 'bg-white text-blue-900 active:bg-blue-100 ',
+    negative: 'bg-blue-700 text-white active:bg-blue-800',
+    neutral: 'bg-blue-50 text-blue-800 active:bg-blue-100',
+  };
 </script>
 
 <style>
@@ -12,4 +19,4 @@
   on:click
   type="button"
   style={`--btn-area: ${area}`}
-  class="flex bg-white items-center justify-center ring-1 ring-blue-200 text-2xl text-blue-900 focus:outline-none focus-visible:ring-blue-400 active:bg-blue-100"><slot /></button>
+  class={`${themes[theme]} ring-blue-100 focus-visible:ring-blue-400 flex items-center justify-center ring-1 text-2xl focus:outline-none`}><slot /></button>

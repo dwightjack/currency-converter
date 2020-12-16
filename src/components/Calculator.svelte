@@ -107,16 +107,24 @@
       on:click={submit}
       label="Submit" />
   </div>
-  <CalcButton area="reset" on:click={reset}>AC</CalcButton>
+  <CalcButton theme="neutral" area="reset" on:click={reset}>AC</CalcButton>
   {#each Array(10) as _, i}
     <CalcButton on:click={() => onInput(9 - i)} area={'b' + (9 - i)}>
       {9 - i}
     </CalcButton>
   {/each}
   <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
-  <CalcButton area="divide" on:click={opHandlers.divide}>&divide;</CalcButton>
-  <CalcButton area="times" on:click={opHandlers.times}>&times;</CalcButton>
-  <CalcButton area="minus" on:click={opHandlers.minus}>-</CalcButton>
-  <CalcButton area="plus" on:click={opHandlers.plus}>+</CalcButton>
-  <CalcButton area="eq" on:click={eq}>=</CalcButton>
+  <CalcButton theme="neutral" area="divide" on:click={opHandlers.divide}>
+    &divide;
+  </CalcButton>
+  <CalcButton theme="neutral" area="times" on:click={opHandlers.times}>
+    &times;
+  </CalcButton>
+  <CalcButton theme="neutral" area="minus" on:click={opHandlers.minus}>
+    -
+  </CalcButton>
+  <CalcButton theme="neutral" area="plus" on:click={opHandlers.plus}>
+    +
+  </CalcButton>
+  <CalcButton area="eq" on:click={eq} theme="negative">=</CalcButton>
 </div>
