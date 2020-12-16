@@ -1,5 +1,8 @@
 <script>
   import CalcButton from './CalcButton.svelte';
+  import ControlButton from './ControlButton.svelte';
+
+  export let onSubmit = () => {};
 
   let input = '0';
   let initial = null;
@@ -49,6 +52,10 @@
     action = null;
   }
 
+  function submit() {
+    onSubmit(parseFloat(input));
+  }
+
   const opHandlers = {};
   for (const [key, fn] of Object.entries(operations)) {
     opHandlers[key] = () => {
@@ -75,15 +82,31 @@
       'b1 b2 b3 eq'
       'b0 b0 dot eq';
     gap: 1px;
-    min-height: 0;
-    min-width: 0;
+  }
+
+  .c-calculator__top {
+    grid-area: output;
+  }
+
+  .c-calculator__output {
+    direction: rtl;
+  }
+  .c-calculator__output > * {
+    direction: ltr;
   }
 </style>
 
-<div class="c-calculator">
-  <output
-    class="col-start-1 col-span-4 text-3xl text-right p-2 overflow-ellipsis overflow-hidden"><span
-      class="align-middle">{input}</span></output>
+<div class="c-calculator min-h-0 min-w-0">
+  <div class="c-calculator__top flex items-center">
+    <output
+      class="c-calculator__output text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"><span>{input}</span></output>
+    <ControlButton
+      class="text-2xl p-2 ml-1"
+      theme="green"
+      icon="check"
+      on:click={submit}
+      label="Submit" />
+  </div>
   <CalcButton area="reset" on:click={reset}>AC</CalcButton>
   {#each Array(10) as _, i}
     <CalcButton on:click={() => onInput(9 - i)} area={'b' + (9 - i)}>

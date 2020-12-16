@@ -2,6 +2,7 @@
   import CalculatorIcon from '../icons/calculator.svelte';
   import SwitchIcon from '../icons/switch.svelte';
   import CloseIcon from '../icons/close.svelte';
+  import CheckIcon from '../icons/check.svelte';
   export let name = '';
 </script>
 
@@ -19,6 +20,8 @@
     <CalculatorIcon />
   {:else if name === 'close'}
     <CloseIcon />
+  {:else if name === 'check'}
+    <CheckIcon />
   {:else}
     <!-- icon not found -->
   {/if}

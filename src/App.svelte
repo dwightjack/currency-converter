@@ -2,7 +2,9 @@
   import Tailwind from './Tailwind.svelte';
   import CurrencyBox from './components/CurrencyBox.svelte';
   import ControlButton from './components/ControlButton.svelte';
-  import CalculatorDialog from './components/CalculatorDialog.svelte';
+  import ModalDialog from './components/ModalDialog.svelte';
+  import Calculator from './components/Calculator.svelte';
+
   import {
     currency,
     invertCurrency,
@@ -10,6 +12,11 @@
     convertedAmount,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
+
+  function submitCalcValue(input) {
+    inputAmount.set(input);
+    toggleCalculator(false);
+  }
 </script>
 
 <style>
@@ -78,7 +85,9 @@
         class="text-2xl" />
     </div>
   </form>
-  <CalculatorDialog
+  <ModalDialog
     visible={$calculatorOpen}
-    on:close={() => toggleCalculator(false)} />
+    on:close={() => toggleCalculator(false)}>
+    <Calculator onSubmit={submitCalcValue} />
+  </ModalDialog>
 </main>
