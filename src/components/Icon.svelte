@@ -13,7 +13,8 @@
   fill="none"
   viewBox="0 0 24 24"
   stroke="currentColor"
-  style="width: 1em; height: 1em">
+  style="width: 1em; height: 1em"
+>
   {#if name === 'switch'}
     <SwitchIcon />
   {:else if name === 'calculator'}

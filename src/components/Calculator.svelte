@@ -69,6 +69,42 @@
   }
 </script>
 
+<div class="c-calculator min-h-0 min-w-0">
+  <div class="c-calculator__top flex items-center">
+    <output
+      class="c-calculator__output text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"
+      ><span>{input}</span></output
+    >
+    <ControlButton
+      class="text-2xl p-2 ml-1"
+      theme="green"
+      icon="check"
+      on:click={submit}
+      label="Submit"
+    />
+  </div>
+  <CalcButton theme="neutral" area="reset" on:click={reset}>AC</CalcButton>
+  {#each Array(10) as _, i}
+    <CalcButton on:click={() => onInput(9 - i)} area={'b' + (9 - i)}>
+      {9 - i}
+    </CalcButton>
+  {/each}
+  <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
+  <CalcButton theme="neutral" area="divide" on:click={opHandlers.divide}>
+    &divide;
+  </CalcButton>
+  <CalcButton theme="neutral" area="times" on:click={opHandlers.times}>
+    &times;
+  </CalcButton>
+  <CalcButton theme="neutral" area="minus" on:click={opHandlers.minus}>
+    -
+  </CalcButton>
+  <CalcButton theme="neutral" area="plus" on:click={opHandlers.plus}>
+    +
+  </CalcButton>
+  <CalcButton area="eq" on:click={eq} theme="negative">=</CalcButton>
+</div>
+
 <style>
   .c-calculator {
     display: grid;
@@ -96,36 +132,3 @@
     unicode-bidi: embed;
   }
 </style>
-
-<div class="c-calculator min-h-0 min-w-0">
-  <div class="c-calculator__top flex items-center">
-    <output
-      class="c-calculator__output text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"><span>{input}</span></output>
-    <ControlButton
-      class="text-2xl p-2 ml-1"
-      theme="green"
-      icon="check"
-      on:click={submit}
-      label="Submit" />
-  </div>
-  <CalcButton theme="neutral" area="reset" on:click={reset}>AC</CalcButton>
-  {#each Array(10) as _, i}
-    <CalcButton on:click={() => onInput(9 - i)} area={'b' + (9 - i)}>
-      {9 - i}
-    </CalcButton>
-  {/each}
-  <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
-  <CalcButton theme="neutral" area="divide" on:click={opHandlers.divide}>
-    &divide;
-  </CalcButton>
-  <CalcButton theme="neutral" area="times" on:click={opHandlers.times}>
-    &times;
-  </CalcButton>
-  <CalcButton theme="neutral" area="minus" on:click={opHandlers.minus}>
-    -
-  </CalcButton>
-  <CalcButton theme="neutral" area="plus" on:click={opHandlers.plus}>
-    +
-  </CalcButton>
-  <CalcButton area="eq" on:click={eq} theme="negative">=</CalcButton>
-</div>

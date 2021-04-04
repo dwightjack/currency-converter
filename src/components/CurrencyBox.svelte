@@ -10,10 +10,12 @@
 </script>
 
 <fieldset
-  class="p-0 border-2 border-blue-200 text-xl rounded-md min-w-0 text-gray-800">
+  class="p-0 border-2 border-blue-200 text-xl rounded-md min-w-0 text-gray-800"
+>
   <legend class="sr-only">{label}</legend>
   <div
-    class="bg-blue-100 p-2 flex gap-2 items-center border-blue-200 border-b-2">
+    class="bg-blue-100 p-2 flex gap-2 items-center border-blue-200 border-b-2"
+  >
     <label for={id + '-select'} class="sr-only">Currency</label>
     <img src={currencyFlag} alt="" class="w-6" loading="lazy" />
     <select
@@ -21,7 +23,8 @@
       id={id + '-select'}
       disabled
       style={currencyFlag}
-      class="appearance-none w-full text-blue-900 font-bold bg-transparent border-0">
+      class="appearance-none w-full text-blue-900 font-bold bg-transparent border-0"
+    >
       {#each currencies as currency}
         <option selected={current === currency || undefined} value={currency}>
           {currency}

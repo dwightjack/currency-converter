@@ -13,7 +13,8 @@
 <button
   class={`${themes[theme]} p-1 rounded-md border-none focus:outline-none focus-visible:ring-1 ${$$props.class}`}
   type="button"
-  on:click>
+  on:click
+>
   <Icon name={icon} />
   <span class="sr-only">{label}</span>
 </button>

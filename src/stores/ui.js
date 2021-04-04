@@ -4,6 +4,6 @@ export const calculatorOpen = writable(false);
 
 export function toggleCalculator(toggle) {
   calculatorOpen.update(
-    (opened) => (opened = typeof toggle === 'boolean' ? toggle : !opened)
+    (opened) => (opened = typeof toggle === 'boolean' ? toggle : !opened),
   );
 }

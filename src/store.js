@@ -14,7 +14,7 @@ export const exchangeRate = derived(
     let { rates = {} } = await fetchCurrency($currency.input);
     return rates[$currency.output] || 0;
   },
-  0
+  0,
 );
 
 export const convertedAmount = derived(
@@ -31,7 +31,7 @@ export const convertedAmount = derived(
       .map(({ value }) => value)
       .join('');
   },
-  0
+  0,
 );
 
 export function invertCurrency() {

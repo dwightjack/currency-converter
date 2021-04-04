@@ -1,5 +1,18 @@
 {
   "tailwindCSS.includeLanguages": {
     "svelte": "html"
+  },
+  "[js]": {
+    "editor.formatOnSave": false
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.validate": false,
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
 }
