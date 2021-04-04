@@ -2,10 +2,10 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run lint && rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --host 0.0.0.0",
-    "lint": "eslint --fix && "
+    "lint": "eslint --fix && prettier -w src"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "18.0.0",
