@@ -1,13 +1,23 @@
 import ky from 'ky';
-
-export async function fetchRates(base: string): Promise<Record<string, number>> {
-  return ky
+import type { Rates } from './types';
+export async function fetchRates(base: string): Promise<Rates> {
+  const { rates, success } = await ky
     .get(`https://api.exchangerate.host/latest?base=${base}`)
-    .json()
-    .then(({ rates, success }) => {
-      if (success === true) {
-        return rates;
-      }
-      throw new Error('Unable to retrieve rates.');
-    });
+    .json();
+
+  if (!success) {
+    throw new Error('Unable to retrieve rates.');
+  }
+  return rates;
+}
+
+export async function fetchSymbols() {
+  const { symbols, success } = await ky
+    .get('https://api.exchangerate.host/symbols')
+    .json();
+
+  if (!success) {
+    throw new Error('Unable to retrieve currencies.');
+  }
+  return Object.keys(symbols);
 }

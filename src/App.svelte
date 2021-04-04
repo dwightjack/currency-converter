@@ -9,6 +9,7 @@
     invertCurrency,
     inputAmount,
     convertedAmount,
+    currencyList,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
 
@@ -25,7 +26,7 @@
         label="Source Currency"
         id="from"
         current={$currency.input}
-        currencies={[$currency.input]}
+        currencies={$currencyList}
       >
         <input
           type="text"
@@ -48,7 +49,7 @@
         label="Output Currency"
         id="to"
         current={$currency.output}
-        currencies={[$currency.output]}
+        currencies={$currencyList}
       >
         <output
           name="to-amount"
