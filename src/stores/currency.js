@@ -1,5 +1,5 @@
-import { writable, derived } from 'svelte/store';
-import { fetchCurrency } from '../db';
+import { writable, derived, readable } from 'svelte/store';
+import { fetchCurrency, fetchCurrencyList } from '../db';
 
 export const inputAmount = writable(0);
 
@@ -16,6 +16,13 @@ export const exchangeRate = derived(
   },
   0,
 );
+
+export const currencyList = readable(['JPY', 'EUR'], async (set) => {
+  const { symbols } = await fetchCurrencyList();
+  set(symbols);
+
+  return () => {};
+});
 
 export const convertedAmount = derived(
   [inputAmount, exchangeRate, currency],

@@ -21,7 +21,6 @@
     <select
       name={id + '-select'}
       id={id + '-select'}
-      disabled
       style={currencyFlag}
       class="appearance-none w-full text-blue-900 font-bold bg-transparent border-0"
     >
