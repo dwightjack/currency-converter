@@ -41,6 +41,13 @@ export function invertCurrency() {
   }));
 }
 
+export function setCurrency(key, value) {
+  currency.update((val) => ({
+    ...val,
+    [key]: value,
+  }));
+}
+
 export function getCurrencySymbol(currency) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',

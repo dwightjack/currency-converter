@@ -10,6 +10,7 @@
     inputAmount,
     convertedAmount,
     currencyList,
+    setCurrency,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
 
@@ -25,6 +26,7 @@
       <CurrencyBox
         label="Source Currency"
         id="from"
+        on:currencyChange={({ detail }) => setCurrency('input', detail)}
         current={$currency.input}
         currencies={$currencyList}
       >
@@ -49,6 +51,7 @@
         label="Output Currency"
         id="to"
         current={$currency.output}
+        on:currencyChange={({ detail }) => setCurrency('output', detail)}
         currencies={$currencyList}
       >
         <output

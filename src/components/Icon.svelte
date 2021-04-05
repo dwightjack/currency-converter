@@ -1,8 +1,10 @@
 <script lang="ts">
+  // Icons from https://heroicons.com/
   import CalculatorIcon from '../icons/calculator.svelte';
   import SwitchIcon from '../icons/switch.svelte';
   import CloseIcon from '../icons/close.svelte';
   import CheckIcon from '../icons/check.svelte';
+  import ChevronDown from '../icons/chevron-down.svelte';
   export let name = '';
 </script>
 
@@ -14,6 +16,7 @@
   viewBox="0 0 24 24"
   stroke="currentColor"
   style="width: 1em; height: 1em"
+  {...$$restProps}
 >
   {#if name === 'switch'}
     <SwitchIcon />
@@ -23,6 +26,8 @@
     <CloseIcon />
   {:else if name === 'check'}
     <CheckIcon />
+  {:else if name === 'chevron-down'}
+    <ChevronDown />
   {:else}
     <!-- icon not found -->
   {/if}
