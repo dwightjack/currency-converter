@@ -37,7 +37,7 @@
       name={id + '-select'}
       on:change={onChange}
       id={id + '-select'}
-      class="appearance-none px-8 col-span-full row-start-1 w-full text-blue-900 font-bold bg-transparent border-0"
+      class="focus:outline-black appearance-none px-8 col-span-full row-start-1 w-full text-blue-900 font-bold bg-transparent border-0"
     >
       {#each currencies as currency}
         <option selected={current === currency || undefined} value={currency}>

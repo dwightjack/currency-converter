@@ -3,6 +3,7 @@ module.exports = {
   purge: {
     content: [
       './src/**/*.svelte',
+      './index.html',
       // may also want to include base index.html
     ],
     options: {
