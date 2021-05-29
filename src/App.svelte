@@ -14,7 +14,15 @@
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
 
-  function submitCalcValue(input) {
+  function onInputFocus(e: Event) {
+    const select = (e.target as HTMLInputElement).select;
+    if (!(typeof select === 'function')) {
+      return;
+    }
+    select.call(e.target);
+  }
+
+  function submitCalcValue(input: number) {
     inputAmount.set(input);
     toggleCalculator(false);
   }
@@ -37,6 +45,7 @@
           name="from-amount"
           class="px-2 py-1 w-full rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-600"
           bind:value={$inputAmount}
+          on:focus={onInputFocus}
         />
         <ControlButton
           on:click={() => toggleCalculator(true)}

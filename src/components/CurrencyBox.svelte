@@ -2,6 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import { getCurrencySymbol } from '../stores/currency';
   import Icon from './Icon.svelte';
+  import Flag from './Flag.svelte';
 
   export let label = '';
   export let id = '';
@@ -9,12 +10,11 @@
   export let currencies = [];
 
   $: inputSymbol = current && getCurrencySymbol(current);
-  $: currencyFlag = current && `/flags/${current.toLowerCase()}.png`;
 
   const dispatch = createEventDispatcher();
 
-  function onChange(e) {
-    dispatch('currencyChange', e.target.value);
+  function onChange(e: Event) {
+    dispatch('currencyChange', (e.target as HTMLSelectElement).value);
   }
 </script>
 
@@ -26,12 +26,7 @@
     class="bg-blue-100 p-2 grid currency-box__head items-center border-blue-200 border-b-2 bg-left bg-no-repeat"
   >
     <label for={id + '-select'} class="sr-only">Currency</label>
-    <img
-      src={currencyFlag}
-      alt=""
-      class="w-6 row-start-1 col-start-1 pointer-events-none"
-      loading="lazy"
-    />
+    <Flag currency={current} class="row-start-1 col-start-1" />
     <!-- svelte-ignore a11y-no-onchange -->
     <select
       name={id + '-select'}
