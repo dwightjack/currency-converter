@@ -1,11 +1,9 @@
-<script>
+<script lang="ts">
   import { onMount, afterUpdate } from 'svelte';
   import ControlButton from './ControlButton.svelte';
   export let visible = false;
-  /**
-   * @type HTMLDialogElement
-   */
-  let dialogElement;
+
+  let dialogElement: HTMLDialogElement;
 
   function toggleDialog() {
     if (!dialogElement) {

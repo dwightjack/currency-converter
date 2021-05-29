@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let space = 0;
   export let alignX = `stretch`;
 </script>

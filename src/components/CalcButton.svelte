@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let area = '';
   export let theme = 'light';
 

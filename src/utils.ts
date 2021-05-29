@@ -1,5 +1,6 @@
 import ky from 'ky';
-export async function fetchRates(base) {
+
+export async function fetchRates(base: string): Promise<Record<string, number>> {
   return ky
     .get(`https://api.exchangerate.host/latest?base=${base}`)
     .json()

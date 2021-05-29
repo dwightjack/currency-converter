@@ -1,5 +1,4 @@
-<script>
-  import Tailwind from './Tailwind.svelte';
+<script lang="ts">
   import CurrencyBox from './components/CurrencyBox.svelte';
   import ControlButton from './components/ControlButton.svelte';
   import ModalDialog from './components/ModalDialog.svelte';
@@ -19,7 +18,6 @@
   }
 </script>
 
-<Tailwind />
 <main class="container lg:max-w-3xl lg:pt-10 pt-4 pb-4 mx-auto px-4">
   <form class="l-container gap-4" on:submit|preventDefault={() => {}}>
     <div class="min-w-0">
@@ -38,7 +36,7 @@
           bind:value={$inputAmount}
         />
         <ControlButton
-          on:click={toggleCalculator}
+          on:click={() => toggleCalculator(true)}
           icon="calculator"
           label="Calculate"
           class="text-2xl self-center"

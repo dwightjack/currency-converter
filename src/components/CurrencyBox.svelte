@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { getCurrencySymbol } from '../stores/currency';
   export let label = '';
   export let id = '';

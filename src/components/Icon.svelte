@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import CalculatorIcon from '../icons/calculator.svelte';
   import SwitchIcon from '../icons/switch.svelte';
   import CloseIcon from '../icons/close.svelte';

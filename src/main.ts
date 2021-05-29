@@ -1,13 +1,11 @@
 import App from './App.svelte';
+import './index.css';
 
-const app = new App({
+new App({
   target: document.body,
-  props: {
-    name: 'world',
-  },
 });
 
-if (!__DEV__) {
+if (import.meta.env.DEV) {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js');
   }

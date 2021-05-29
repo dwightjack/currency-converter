@@ -1,22 +1,24 @@
-<script>
+<script lang="ts">
   import CalcButton from './CalcButton.svelte';
   import ControlButton from './ControlButton.svelte';
 
-  export let onSubmit = () => {};
+  type Action = (src: number, num: number) => number;
+
+  export let onSubmit = (_n: number) => {};
 
   let input = '0';
-  let initial = null;
+  let initial: number = null;
   let lastKeyType = '';
-  let action = null;
+  let action: Action = null;
 
-  const operations = {
+  const operations: Record<'divide' | 'times' | 'minus' | 'plus', Action> = {
     divide: (src, num) => (num === 0 ? src : src / num),
     times: (src, num) => src * num,
     minus: (src, num) => src - num,
     plus: (src, num) => src + num,
   };
 
-  function onInput(v) {
+  function onInput(v: unknown) {
     if (lastKeyType !== '') {
       input = '';
       lastKeyType = '';
@@ -56,7 +58,7 @@
     onSubmit(parseFloat(input));
   }
 
-  const opHandlers = {};
+  const opHandlers = {} as Record<keyof typeof operations, () => void>;
   for (const [key, fn] of Object.entries(operations)) {
     opHandlers[key] = () => {
       if (lastKeyType === 'operator') {

@@ -10,18 +10,19 @@ export const currency = writable({
 
 export const exchangeRate = derived(
   currency,
-  async ($currency) => {
-    let { rates = {} } = await fetchCurrency($currency.input);
-    return rates[$currency.output] || 0;
+  ($currency, set) => {
+    fetchCurrency($currency.input).then(({ rates = {}}) => {
+      set(rates[$currency.output] || 0);
+    });
   },
   0,
 );
 
 export const convertedAmount = derived(
   [inputAmount, exchangeRate, currency],
-  async ([$inputAmount, $exchangeRate, $currency]) => {
+  ([$inputAmount, $exchangeRate, $currency]) => {
     const converted =
-      (Number.parseFloat($inputAmount) || 0) * (await $exchangeRate);
+      ($inputAmount || 0) * ($exchangeRate);
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: $currency.output,
@@ -31,7 +32,7 @@ export const convertedAmount = derived(
       .map(({ value }) => value)
       .join('');
   },
-  0,
+  '0',
 );
 
 export function invertCurrency() {
@@ -41,7 +42,7 @@ export function invertCurrency() {
   }));
 }
 
-export function getCurrencySymbol(currency) {
+export function getCurrencySymbol(currency: string) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
