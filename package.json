@@ -16,7 +16,7 @@
     "postcss": "8.3.0",
     "prettier": "2.3.0",
     "prettier-plugin-svelte": "2.3.0",
-    "svelte": "3.38.2",
+    "svelte": "3.38.3",
     "svelte-preprocess": "4.7.3",
     "tailwindcss": "2.1.2",
     "typescript": "4.3.2",
