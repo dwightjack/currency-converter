@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "idb-keyval": "5.0.6",
-    "ky": "0.28.3",
+    "ky": "0.28.5",
     "sirv-cli": "1.0.12"
   },
   "prettier": {
