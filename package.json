@@ -23,7 +23,7 @@
     "vite": "2.5.10"
   },
   "dependencies": {
-    "idb-keyval": "5.1.5",
+    "idb-keyval": "6.0.2",
     "ky": "0.28.5",
     "sirv-cli": "1.0.14"
   },
