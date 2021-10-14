@@ -8,7 +8,7 @@
     "lint": "eslint --fix && prettier -w src"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "1.0.0-next.26",
+    "@sveltejs/vite-plugin-svelte": "1.0.0-next.28",
     "autoprefixer": "10.3.7",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
@@ -16,15 +16,15 @@
     "postcss": "8.3.9",
     "prettier": "2.4.1",
     "prettier-plugin-svelte": "2.4.0",
-    "svelte": "3.43.1",
+    "svelte": "3.43.2",
     "svelte-preprocess": "4.9.8",
-    "tailwindcss": "2.2.16",
-    "typescript": "4.4.3",
-    "vite": "2.6.5"
+    "tailwindcss": "2.2.17",
+    "typescript": "4.4.4",
+    "vite": "2.6.7"
   },
   "dependencies": {
     "idb-keyval": "6.0.2",
-    "ky": "0.28.5",
+    "ky": "0.28.6",
     "sirv-cli": "1.0.14"
   },
   "prettier": {
