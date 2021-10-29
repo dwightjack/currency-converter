@@ -7,6 +7,10 @@
     "serve": "vite preview",
     "lint": "eslint --fix && prettier -w src"
   },
+  "engines": {
+    "node": "16.13.0",
+    "npm": ">=7"
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.0.0-next.30",
     "eslint": "8.1.0",
