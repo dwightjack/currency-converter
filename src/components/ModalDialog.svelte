@@ -3,7 +3,7 @@
   import ControlButton from './ControlButton.svelte';
   export let visible = false;
 
-  let dialogElement: HTMLDialogElement;
+  let dialogElement: any;
 
   function toggleDialog() {
     if (!dialogElement) {
@@ -26,8 +26,8 @@
 
 <dialog
   class={`${
-    visible ? 'flex flex-col ' : ''
-  }c-modal-dialog border-2 border-blue-200 overflow-hidden p-0 shadow-md md:rounded`}
+    visible ? 'flex flex-col' : ''
+  } max-w-100vw max-h-100vh border-2 border-blue-200 overflow-hidden p-0 shadow-md md:rounded`}
   on:close
   bind:this={dialogElement}
 >
@@ -43,10 +43,3 @@
     <slot />
   </div>
 </dialog>
-
-<style>
-  .c-modal-dialog {
-    max-width: 100vw;
-    max-height: 100vh;
-  }
-</style>

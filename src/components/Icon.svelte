@@ -15,7 +15,7 @@
   fill="none"
   viewBox="0 0 24 24"
   stroke="currentColor"
-  style="width: 1em; height: 1em"
+  class="w-1em h-1em"
   {...$$restProps}
 >
   {#if name === 'switch'}

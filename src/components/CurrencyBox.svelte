@@ -23,7 +23,7 @@
 >
   <legend class="sr-only">{label}</legend>
   <div
-    class="bg-blue-100 p-2 grid currency-box__head items-center border-blue-200 border-b-2 bg-left bg-no-repeat"
+    class="bg-blue-100 p-2 grid grid-cols-[auto,1fr,auto] grid-rows-[auto] items-center border-blue-200 border-b-2 bg-left bg-no-repeat"
   >
     <label for={id + '-select'} class="sr-only">Currency</label>
     <Flag currency={current} class="row-start-1 col-start-1" />
@@ -54,10 +54,3 @@
     <slot />
   </div>
 </fieldset>
-
-<style>
-  .currency-box__head {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto;
-  }
-</style>

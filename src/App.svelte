@@ -28,8 +28,11 @@
   }
 </script>
 
-<main class="container lg:max-w-3xl lg:pt-10 pt-4 pb-4 mx-auto px-4">
-  <form class="l-container gap-4" on:submit|preventDefault={() => {}}>
+<main class="container pt-4 pb-4 mx-auto px-4 lg:(max-w-3xl pt-10) ">
+  <form
+    class="flex flex-col gap-4 sm:(grid grid-cols-[1fr,auto,1fr])"
+    on:submit|preventDefault={() => {}}
+  >
     <div class="min-w-0">
       <CurrencyBox
         label="Source Currency"
@@ -43,7 +46,7 @@
           inputmode="numeric"
           id="from-amount"
           name="from-amount"
-          class="px-2 py-1 w-full rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-600"
+          class="px-2 py-1 w-full rounded-md border border-gray-300 focus:(outline-none ring-1 ring-blue-600)"
           bind:value={$inputAmount}
           on:focus={onInputFocus}
         />
@@ -95,17 +98,3 @@
     <Calculator onSubmit={submitCalcValue} />
   </ModalDialog>
 </main>
-
-<style>
-  .l-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media (min-width: 640px) {
-    .l-container {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-    }
-  }
-</style>

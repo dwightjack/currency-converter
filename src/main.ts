@@ -1,5 +1,5 @@
 import App from './App.svelte';
-import './index.css';
+import 'virtual:windi.css';
 
 new App({
   target: document.body,
