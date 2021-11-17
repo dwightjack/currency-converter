@@ -13,21 +13,21 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.0.0-next.30",
-    "eslint": "8.1.0",
+    "eslint": "8.2.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "prettier": "2.4.1",
-    "prettier-plugin-svelte": "2.4.0",
-    "svelte": "3.44.0",
+    "prettier-plugin-svelte": "2.5.0",
+    "svelte": "3.44.1",
     "svelte-preprocess": "4.9.8",
-    "typescript": "4.4.4",
-    "vite": "2.6.13",
-    "vite-plugin-windicss": "1.4.12",
-    "windicss": "3.2.0"
+    "typescript": "4.5.2",
+    "vite": "2.6.14",
+    "vite-plugin-windicss": "1.5.1",
+    "windicss": "3.2.1"
   },
   "dependencies": {
     "idb-keyval": "6.0.3",
-    "ky": "0.28.6"
+    "ky": "0.28.7"
   },
   "prettier": {
     "trailingComma": "all",
