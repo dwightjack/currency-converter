@@ -8,11 +8,11 @@
     "lint": "eslint --fix && prettier -w src"
   },
   "engines": {
-    "node": "16.14.1",
+    "node": "16.14.2",
     "npm": ">=7"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "1.0.0-next.39",
+    "@sveltejs/vite-plugin-svelte": "1.0.0-next.40",
     "eslint": "8.11.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
