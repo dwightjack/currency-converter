@@ -8,7 +8,7 @@
     "lint": "eslint --fix && prettier -w src"
   },
   "engines": {
-    "node": "16.14.2",
+    "node": "16.15.0",
     "npm": ">=7"
   },
   "devDependencies": {
