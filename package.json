@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "idb-keyval": "6.2.0",
-    "ky": "0.30.0"
+    "ky": "0.31.0"
   },
   "prettier": {
     "trailingComma": "all",
