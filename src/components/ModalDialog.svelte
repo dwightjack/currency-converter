@@ -3,7 +3,7 @@
   import ControlButton from './ControlButton.svelte';
   export let visible = false;
 
-  let dialogElement: any;
+  let dialogElement: HTMLDialogElement | undefined;
 
   function toggleDialog() {
     if (!dialogElement) {

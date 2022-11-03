@@ -27,7 +27,6 @@
   >
     <label for={id + '-select'} class="sr-only">Currency</label>
     <Flag currency={current} class="row-start-1 col-start-1" />
-    <!-- svelte-ignore a11y-no-onchange -->
     <select
       name={id + '-select'}
       on:change={onChange}

@@ -4,7 +4,7 @@
 
   type Action = (src: number, num: number) => number;
 
-  export let onSubmit = (_n: number) => {};
+  export let onSubmit = (_n: number) => undefined;
 
   let input = '0';
   let initial: number = null;
@@ -129,6 +129,7 @@
   .c-calculator__output {
     direction: rtl;
   }
+
   .c-calculator__output > * {
     direction: ltr;
     unicode-bidi: embed;

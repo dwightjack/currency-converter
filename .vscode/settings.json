@@ -1,18 +1,21 @@
 {
-  "tailwindCSS.includeLanguages": {
-    "svelte": "html"
+  "editor.quickSuggestions": {
+    "strings": true
   },
   "[js]": {
     "editor.formatOnSave": false
   },
-  "[svelte]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[ts]": {
+    "editor.formatOnSave": false
   },
+  "eslint.validate": ["javascript", "svelte", "typescript"],
+  "stylelint.validate": ["css", "postcss", "svelte"],
   "css.validate": false,
   "[css]": {
     "editor.formatOnSave": false
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   }
 }

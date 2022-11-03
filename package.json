@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint --fix && prettier -w src"
+    "lint": "eslint --ext .js,.ts,.svelte ."
   },
   "engines": {
     "node": "16.18.1",
@@ -13,15 +13,25 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.1.0",
+    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/parser": "5.42.0",
     "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-svelte": "2.12.0",
+    "lefthook": "1.1.4",
+    "postcss-html": "1.5.0",
     "prettier": "2.7.1",
     "prettier-plugin-svelte": "2.8.0",
+    "stylelint": "14.14.0",
+    "stylelint-config-html": "1.1.0",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-standard": "29.0.0",
     "svelte": "3.52.0",
     "svelte-preprocess": "4.10.7",
     "typescript": "4.8.4",
     "vite": "3.2.2",
+    "vite-plugin-pwa": "0.13.1",
     "vite-plugin-windicss": "1.8.8",
     "windicss": "3.5.6"
   },
