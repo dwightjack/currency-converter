@@ -23,11 +23,10 @@
 >
   <legend class="sr-only">{label}</legend>
   <div
-    class="bg-blue-100 p-2 grid grid-cols-[auto,1fr,auto] grid-rows-[auto] items-center border-blue-200 border-b-2 bg-left bg-no-repeat"
+    class="bg-blue-100 p-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-blue-200 border-b-2 bg-left bg-no-repeat"
   >
     <label for={id + '-select'} class="sr-only">Currency</label>
     <Flag currency={current} class="row-start-1 col-start-1" />
-    <!-- svelte-ignore a11y-no-onchange -->
     <select
       name={id + '-select'}
       on:change={onChange}

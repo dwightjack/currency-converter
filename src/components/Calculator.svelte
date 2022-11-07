@@ -4,7 +4,7 @@
 
   type Action = (src: number, num: number) => number;
 
-  export let onSubmit = (_n: number) => {};
+  export let onSubmit = (_n: number) => undefined;
 
   let input = '0';
   let initial: number = null;
@@ -72,10 +72,10 @@
 </script>
 
 <div class="c-calculator min-h-0 min-w-0">
-  <div class="c-calculator__top flex items-center">
+  <div class="grid-area-[output] flex items-center">
     <output
-      class="c-calculator__output text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"
-      ><span>{input}</span></output
+      class="text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"
+      dir="rtl"><span dir="ltr">{input}</span></output
     >
     <ControlButton
       class="text-2xl p-2 ml-1"
@@ -122,15 +122,7 @@
     gap: 1px;
   }
 
-  .c-calculator__top {
-    grid-area: output;
-  }
-
-  .c-calculator__output {
-    direction: rtl;
-  }
-  .c-calculator__output > * {
-    direction: ltr;
+  span[dir='ltr'] {
     unicode-bidi: embed;
   }
 </style>

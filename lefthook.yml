@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    linter:
+      glob: "*.{mjs,cjs,js,ts,svelte}"
+      run: pnpm exec eslint {staged_files}
+    styles:
+      glob: "*.{css,svelte}"
+      run: pnpm exec stylelint {staged_files}

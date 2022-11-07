@@ -20,7 +20,7 @@ export const exchangeRate = derived(
 
 export const currencyList = readable(['JPY', 'EUR'], (set) => {
   fetchCurrencyList().then(({ symbols }) => set(symbols));
-  return () => {};
+  return () => undefined;
 });
 
 export const convertedAmount = derived(
