@@ -5,21 +5,21 @@
 Install the dependencies...
 
 ```bash
-npm ci
+pnpm i
 ```
 
 ...then start Vite:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
-Navigate to [localhost:3000](http://localhost:3000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Navigate to [localhost:5173](http://localhost:5173). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
 ## Building and running in production mode
 
 To create an optimized version of the app:
 
 ```bash
-npm run build
+pnpm run build
 ```
