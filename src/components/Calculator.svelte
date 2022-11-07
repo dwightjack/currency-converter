@@ -72,7 +72,7 @@
 </script>
 
 <div class="c-calculator min-h-0 min-w-0">
-  <div class="grid-area[output] flex items-center">
+  <div class="grid-area-[output] flex items-center">
     <output
       class="text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"
       dir="rtl"><span dir="ltr">{input}</span></output
