@@ -45,6 +45,9 @@
     "trailingComma": "all",
     "arrowParens": "always",
     "semi": true,
-    "singleQuote": true
+    "singleQuote": true,
+    "plugins": [
+      "prettier-plugin-svelte"
+    ]
   }
 }
