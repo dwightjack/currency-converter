@@ -7,9 +7,10 @@
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.svelte ."
   },
+  "packageManager": "pnpm@7.14.1",
   "engines": {
     "node": "16.18.1",
-    "npm": "^8.19.2"
+    "pnpm": "^7.11.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.1.0",
