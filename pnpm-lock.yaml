@@ -5,7 +5,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.42.1
   '@typescript-eslint/parser': 5.42.1
   '@unocss/preset-wind': ^0.46.3
-  '@unocss/reset': 0.46.3
+  '@unocss/reset': 0.46.4
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
@@ -28,7 +28,7 @@ specifiers:
   vite-plugin-pwa: 0.13.3
 
 dependencies:
-  '@unocss/reset': 0.46.3
+  '@unocss/reset': 0.46.4
   idb-keyval: 6.2.0
   ky: 0.32.2
 
@@ -1779,6 +1779,11 @@ packages:
 
   /@unocss/reset/0.46.3:
     resolution: {integrity: sha512-Jb9zx3h5IPVjSAyW+cLq+/cyeTcExtRaK+Jd7Zjcw6LhgeY5uFeEAQPoFVLCX8az7BXO6FQD3cAmWvl/yogAOA==}
+    dev: true
+
+  /@unocss/reset/0.46.4:
+    resolution: {integrity: sha512-Bd5LlvJj2A0wdJIAjzXF2+SL5gVJlAItk0ZO88OR2q2UZnqAYDrjWGfZGyNQKttKPWNuTH87IC6/8FFjoIAtxA==}
+    dev: false
 
   /@unocss/scope/0.46.3:
     resolution: {integrity: sha512-oL8dC7vuy3Z76JTmrrJGMdNaojTPSwNnspaNQrGXydqLj/jwKAsLN2GeJi0FHvsnC1vicHjXhBRJ1uNQvwm/bQ==}
