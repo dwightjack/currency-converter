@@ -13,7 +13,7 @@
     "pnpm": "^7.11.0"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "1.1.0",
+    "@sveltejs/vite-plugin-svelte": "1.1.1",
     "@typescript-eslint/eslint-plugin": "5.42.1",
     "@typescript-eslint/parser": "5.42.1",
     "@unocss/preset-wind": "^0.46.3",
