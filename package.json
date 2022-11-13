@@ -37,7 +37,7 @@
     "vite-plugin-pwa": "0.13.3"
   },
   "dependencies": {
-    "@unocss/reset": "0.46.4",
+    "@unocss/reset": "0.46.5",
     "idb-keyval": "6.2.0",
     "ky": "0.32.2"
   },
