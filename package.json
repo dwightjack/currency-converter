@@ -7,15 +7,15 @@
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.svelte ."
   },
-  "packageManager": "pnpm@7.15.0",
+  "packageManager": "pnpm@7.16.0",
   "engines": {
     "node": "16.18.1",
     "pnpm": "^7.11.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.1.1",
-    "@typescript-eslint/eslint-plugin": "5.42.1",
-    "@typescript-eslint/parser": "5.42.1",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/parser": "5.43.0",
     "@unocss/preset-wind": "^0.46.3",
     "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",
