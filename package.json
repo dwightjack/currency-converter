@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.svelte ."
   },
-  "packageManager": "pnpm@7.16.0",
+  "packageManager": "pnpm@7.16.1",
   "engines": {
     "node": "16.18.1",
     "pnpm": "^7.11.0"
