@@ -12,9 +12,9 @@ specifiers:
   eslint-plugin-svelte: 2.13.0
   idb-keyval: 6.2.0
   ky: 0.32.2
-  lefthook: 1.2.1
+  lefthook: 1.2.2
   postcss-html: 1.5.0
-  prettier: 2.7.1
+  prettier: 2.8.0
   prettier-plugin-svelte: 2.8.1
   stylelint: 14.15.0
   stylelint-config-html: 1.1.0
@@ -39,12 +39,12 @@ devDependencies:
   '@unocss/preset-wind': 0.46.3
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0_eslint@8.28.0
-  eslint-plugin-prettier: 4.2.1_pgxuib4rd7wiymfktharf5ydt4
+  eslint-plugin-prettier: 4.2.1_cwlo2dingkvfydnaculr42urve
   eslint-plugin-svelte: 2.13.0_xgu65rlhscpnxffotiaicv6m5i
-  lefthook: 1.2.1
+  lefthook: 1.2.2
   postcss-html: 1.5.0
-  prettier: 2.7.1
-  prettier-plugin-svelte: 2.8.1_nryolsexf6k3znhuh4uzpugsem
+  prettier: 2.8.0
+  prettier-plugin-svelte: 2.8.1_3ndnxlh52lolrqe4kgjgbxb3xa
   stylelint: 14.15.0
   stylelint-config-html: 1.1.0_qendsqix7hqecpnpx4fjs6qry4
   stylelint-config-prettier: 9.0.4_stylelint@14.15.0
@@ -2591,7 +2591,7 @@ packages:
       eslint: 8.28.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_pgxuib4rd7wiymfktharf5ydt4:
+  /eslint-plugin-prettier/4.2.1_cwlo2dingkvfydnaculr42urve:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2604,7 +2604,7 @@ packages:
     dependencies:
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
-      prettier: 2.7.1
+      prettier: 2.8.0
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -3421,65 +3421,83 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /lefthook-darwin-arm64/1.2.1:
-    resolution: {integrity: sha512-xvDC6K4KvZBYg0W3Qp7qZOcDScLS+ffwaTb5qDWa+mfE9pziYk9tUZihGjp6g7206yN9/+/fEAtgWlAjCC9Mzw==}
+  /lefthook-darwin-arm64/1.2.2:
+    resolution: {integrity: sha512-dRC67p29yCKjI/A50tXKJwxRM1ko0mWzryc3ELHikZOwBjfJxh1MmifGGTLkXdJoaIlzLmtnsH58BMJ9SUiWDQ==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-darwin-x64/1.2.1:
-    resolution: {integrity: sha512-Z7l3V8yeH6Bj0LRnmh/bK9wEvaZli1gvCeEZlu6Pt5Hj8gTPtLPwlCOtubDR78qPD9zgZfJBrRnU//YcOZ+uxg==}
+  /lefthook-darwin-x64/1.2.2:
+    resolution: {integrity: sha512-vzEkP7ISTq99rO/awRkFIopjUOBrIYgm2qhpLV2BFU47YCq6972CUx5F4hNHpkrZG3iNbM1RnL0aHrAf8hoP4w==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-arm64/1.2.1:
-    resolution: {integrity: sha512-ez50a1WO4Aue9CFWmyQfH/NOvp+B1df4wNuo2nnD/rzgavoDHcEaKlEc3YS6K9IY3P/SaWI/xbHUQdQEuGp/pQ==}
+  /lefthook-freebsd-arm64/1.2.2:
+    resolution: {integrity: sha512-m2v7CFIt/DBfG2KpUE693xDHWyP+BNRuVzAMuWXxizwjqLDp8wOPyAWsBvsuG3lj6Al82ESzlAxov8aWMMWXDQ==}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-freebsd-x64/1.2.2:
+    resolution: {integrity: sha512-v7Eat6/fDJyuSfmdjwg2mwR+bKQxwjB8su31tTW5HhDj+JFr6A3p26VHWPrlUEHAcepGsWdpcqCEzKU7IsOblA==}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-linux-arm64/1.2.2:
+    resolution: {integrity: sha512-+FfRjzRKtW5J1Rv4EiLNRQRYwNjaaZBm4w5nThh4AMETbv3QC9pu0E+c/bIg/SqDU2Hn585XaTPqFnWamPIVNg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-x64/1.2.1:
-    resolution: {integrity: sha512-h3uLg0KLTfTs19Rrf4JHpFjFTkDLYxk+bOL4eJpNNuRAhsmOfQIXz7ze9UmQKGdeXSQ8BTzWny8eNiy9T7L79g==}
+  /lefthook-linux-x64/1.2.2:
+    resolution: {integrity: sha512-IMen7XttJUgD+Pg4tX9qeknEGCDjtFEXlf8QMQpwjI999V6ZoQ+25msdFmxtZoEGYjVJ/qmfZblK7CaOKqjeIQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-arm64/1.2.1:
-    resolution: {integrity: sha512-zm3w3gDasN2oBCClKPiLhCXcSdjo6MyL44lNbOA+C/8LkMvNR38To1sOEcm9vk0SgYCPFcY9usQP3aiLPXeUfw==}
+  /lefthook-windows-arm64/1.2.2:
+    resolution: {integrity: sha512-x/YkDCOnmXnA7pLOm7JyC9mD6KnREUh9H1Y4aVWBdRblr0xV9RHknIIUV96/91d1ny14TSVNTr6tCfDLnvsSOw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-x64/1.2.1:
-    resolution: {integrity: sha512-7CdL19qY8J83OkG3LpZPx6QC5aiq53P5ioX7BCrANQAkl7QjOOJlU/QiNkXII68al/oDNhQM5lSaIxdH0nZhWQ==}
+  /lefthook-windows-x64/1.2.2:
+    resolution: {integrity: sha512-GEBIynskF6LvYUhmQaLNoPj/LeEhRZGUlRYQQD40tGp69Cp791eU3FEJZ0Rdkru98H2bL9itM5+nxMDlMnZi+g==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook/1.2.1:
-    resolution: {integrity: sha512-yt+RkOaXR7raBSDsGYlUeiRh4b4ijh1Xx4b/TfC6KnZp6It6Nd3vLd9+/MAavgo0CCMoFS/QoBwpFKqnlk3knQ==}
+  /lefthook/1.2.2:
+    resolution: {integrity: sha512-jSMBSkwy/2DXAD73Q9Xv8XY9rMKO9KeJNE15UcH7Is7UYTV/+5d7LnFm8pCFSa4fHEDiblL00FG9YC0FKdVwtQ==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      lefthook-darwin-arm64: 1.2.1
-      lefthook-darwin-x64: 1.2.1
-      lefthook-linux-arm64: 1.2.1
-      lefthook-linux-x64: 1.2.1
-      lefthook-windows-arm64: 1.2.1
-      lefthook-windows-x64: 1.2.1
+      lefthook-darwin-arm64: 1.2.2
+      lefthook-darwin-x64: 1.2.2
+      lefthook-freebsd-arm64: 1.2.2
+      lefthook-freebsd-x64: 1.2.2
+      lefthook-linux-arm64: 1.2.2
+      lefthook-linux-x64: 1.2.2
+      lefthook-windows-arm64: 1.2.2
+      lefthook-windows-x64: 1.2.2
     dev: true
 
   /leven/3.1.0:
@@ -3960,18 +3978,18 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-svelte/2.8.1_nryolsexf6k3znhuh4uzpugsem:
+  /prettier-plugin-svelte/2.8.1_3ndnxlh52lolrqe4kgjgbxb3xa:
     resolution: {integrity: sha512-KA3K1J3/wKDnCxW7ZDRA/QL2Q67N7Xs3gOERqJ5X1qFjq1DdnN3K1R29scSKwh+kA8FF67pXbYytUpvN/i3iQw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.7.1
+      prettier: 2.8.0
       svelte: 3.53.1
     dev: true
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
