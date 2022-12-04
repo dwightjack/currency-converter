@@ -9,7 +9,7 @@ specifiers:
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
-  eslint-plugin-svelte: 2.13.1
+  eslint-plugin-svelte: 2.14.0
   idb-keyval: 6.2.0
   ky: 0.32.2
   lefthook: 1.2.3
@@ -40,7 +40,7 @@ devDependencies:
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0_eslint@8.29.0
   eslint-plugin-prettier: 4.2.1_nrhoyyjffvfyk4vtlt5destxgm
-  eslint-plugin-svelte: 2.13.1_kzv3boqmfymw5ol254gxmp75rq
+  eslint-plugin-svelte: 2.14.0_kzv3boqmfymw5ol254gxmp75rq
   lefthook: 1.2.3
   postcss-html: 1.5.0
   prettier: 2.8.0
@@ -2604,8 +2604,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-svelte/2.13.1_kzv3boqmfymw5ol254gxmp75rq:
-    resolution: {integrity: sha512-PZ0h8mm9vdVndLNoCUVujYFuWpp+AmCT5GnhjZ1q4dR3zLgQdL+V7Ce0KI1EQ8/4D6GExLMYcOd8vgGUdxxOxg==}
+  /eslint-plugin-svelte/2.14.0_kzv3boqmfymw5ol254gxmp75rq:
+    resolution: {integrity: sha512-TOlOk08vghQ97wAExxL785rrK65v7BwVbXY1UTY/TiWGpHh1Hn0IMfE4MUB+ij2Lv442GKw2873Gq4aUHqSgsA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0
@@ -4318,6 +4318,7 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: true
 
   /spdx-correct/3.1.1:
