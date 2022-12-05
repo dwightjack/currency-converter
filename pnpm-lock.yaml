@@ -12,7 +12,7 @@ specifiers:
   eslint-plugin-svelte: 2.14.0
   idb-keyval: 6.2.0
   ky: 0.32.2
-  lefthook: 1.2.3
+  lefthook: 1.2.4
   postcss-html: 1.5.0
   prettier: 2.8.0
   prettier-plugin-svelte: 2.8.1
@@ -24,7 +24,7 @@ specifiers:
   svelte-preprocess: 4.10.7
   typescript: 4.9.3
   unocss: ^0.47.0
-  vite: 3.2.4
+  vite: 3.2.5
   vite-plugin-pwa: 0.13.3
 
 dependencies:
@@ -33,7 +33,7 @@ dependencies:
   ky: 0.32.2
 
 devDependencies:
-  '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.4
+  '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.5
   '@typescript-eslint/eslint-plugin': 5.45.0_yjegg5cyoezm3fzsmuszzhetym
   '@typescript-eslint/parser': 5.45.0_s5ps7njkmjlaqajutnox5ntcla
   '@unocss/preset-wind': 0.47.1
@@ -41,7 +41,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.29.0
   eslint-plugin-prettier: 4.2.1_nrhoyyjffvfyk4vtlt5destxgm
   eslint-plugin-svelte: 2.14.0_kzv3boqmfymw5ol254gxmp75rq
-  lefthook: 1.2.3
+  lefthook: 1.2.4
   postcss-html: 1.5.0
   prettier: 2.8.0
   prettier-plugin-svelte: 2.8.1_3ndnxlh52lolrqe4kgjgbxb3xa
@@ -52,9 +52,9 @@ devDependencies:
   svelte: 3.53.1
   svelte-preprocess: 4.10.7_7dvewpees4iyn2tkw2qzal77a4
   typescript: 4.9.3
-  unocss: 0.47.1_vite@3.2.4
-  vite: 3.2.4
-  vite-plugin-pwa: 0.13.3_vite@3.2.4
+  unocss: 0.47.1_vite@3.2.5
+  vite: 3.2.5
+  vite-plugin-pwa: 0.13.3_vite@3.2.5
 
 packages:
 
@@ -1466,7 +1466,7 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.4.0_svelte@3.53.1+vite@3.2.4:
+  /@sveltejs/vite-plugin-svelte/1.4.0_svelte@3.53.1+vite@3.2.5:
     resolution: {integrity: sha512-6QupI/jemMfK+yI2pMtJcu5iO2gtgTfcBdGwMZZt+lgbFELhszbDl6Qjh000HgAV8+XUA+8EY8DusOFk8WhOIg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -1479,8 +1479,8 @@ packages:
       magic-string: 0.26.7
       svelte: 3.53.1
       svelte-hmr: 0.15.1_svelte@3.53.1
-      vite: 3.2.4
-      vitefu: 0.2.2_vite@3.2.4
+      vite: 3.2.5
+      vitefu: 0.2.2_vite@3.2.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1666,12 +1666,12 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@unocss/astro/0.47.1_vite@3.2.4:
+  /@unocss/astro/0.47.1_vite@3.2.5:
     resolution: {integrity: sha512-AKRufn0dPyES5HtF+Lng/frUYFBPud1fu7GBNXyku+ewMFma7br2dk7eHw3aqSwYrkTGt1IawitnvpMMsphTpg==}
     dependencies:
       '@unocss/core': 0.47.1
       '@unocss/reset': 0.47.1
-      '@unocss/vite': 0.47.1_vite@3.2.4
+      '@unocss/vite': 0.47.1_vite@3.2.5
     transitivePeerDependencies:
       - rollup
       - vite
@@ -1811,7 +1811,7 @@ packages:
       '@unocss/core': 0.47.1
     dev: true
 
-  /@unocss/vite/0.47.1_vite@3.2.4:
+  /@unocss/vite/0.47.1_vite@3.2.5:
     resolution: {integrity: sha512-qe8rWt5RW+fPwcH7im1R/05/4FdzsVp3dUsJMgPyHCSibWrxLkGFfivgldGdZSvxmAZlsPftHHYxFAGXbFMkZQ==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0
@@ -1824,7 +1824,7 @@ packages:
       '@unocss/scope': 0.47.1
       '@unocss/transformer-directives': 0.47.1
       magic-string: 0.26.7
-      vite: 3.2.4
+      vite: 3.2.5
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -3422,83 +3422,83 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /lefthook-darwin-arm64/1.2.3:
-    resolution: {integrity: sha512-QTPNKI6GG3O0Gq/c+zRarkEb5Dyynj9C90w7s4RZWuKQCgnGraHKsDHnT6pbkykXvD4QYdfQYf3XJlw5kgdt6g==}
+  /lefthook-darwin-arm64/1.2.4:
+    resolution: {integrity: sha512-c3pzGWT6YuStgH0BWzlOpghJSiQTDvoXbjOmlolBKbN46KSLwclbVbeSpp2vfAtuQvGP1RIo02aMYngsVjX5DA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-darwin-x64/1.2.3:
-    resolution: {integrity: sha512-rYDw9ZZ4Re6usOQJM7stGc+lQ7Nwhl5q9c2NbEtRqkUQtgm2xvJ/55e8eQmpw/AA7LsVItkRzt4Jyit9964grw==}
+  /lefthook-darwin-x64/1.2.4:
+    resolution: {integrity: sha512-7HrmSd9GR3pe2bKq0She2pvdGLjaB2KKlREDqbREfe+vWrC+WqzeV/xUncKk+8mz6BCHyPq0XfuZqsztluXN5w==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-freebsd-arm64/1.2.3:
-    resolution: {integrity: sha512-JBR7AhTBKiACQM4NdzkGxA4mHM/JZ2IiTLUJ+xrgxxxJ/NfB5oqLDWcMD1m2/7btWO1EeokptWsZELVFo8VASg==}
+  /lefthook-freebsd-arm64/1.2.4:
+    resolution: {integrity: sha512-VkUoz3xrW70XJ82y3vAz1vfZOdUCe/8z4W2h3YMIBaR/Ovrt9PwtWHtSWEM5LrTBkgi1BbIP7hZtu7HbMw/siQ==}
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-freebsd-x64/1.2.3:
-    resolution: {integrity: sha512-3FUuvZDG9EvSDqLR/D7GRIWw+mzaA6R0FvJ+SPZ0xXT0Uv7CoxOfPhiwn0VcxWHtk4pLGxBYUpVkyfv9a2un6w==}
+  /lefthook-freebsd-x64/1.2.4:
+    resolution: {integrity: sha512-e/ycIWt9WB3T/8KGy1aXY16AbVRGYXI4kw7jDp+GT5Lqile609mA9HCPubm4uPQK5PEtvYTB8R3c19LCDGqyeQ==}
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-arm64/1.2.3:
-    resolution: {integrity: sha512-0Fsts5GOgg1mS5Kl/KqtgCiA4NVnF574c9OgUaAoJkdLzZDowfyE6iySd+Pvhth85MatEClGPAXwM9NlxP1Kbg==}
+  /lefthook-linux-arm64/1.2.4:
+    resolution: {integrity: sha512-GDpfnt71Tx3+H14RcZr294of+ZTSANZ8v7dp86fATc2odZnvRCi31mGb2b0SjWGTvnsD9fnXcdvhOPsG2/+qIA==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-x64/1.2.3:
-    resolution: {integrity: sha512-KLVkJElf+DZbOuC1wr3j+uBE0d39c2UvDbNef3XiohXft9zYAhAsY3BeZyVnwD+Y6bgongha0+uyq/gSj0y3bQ==}
+  /lefthook-linux-x64/1.2.4:
+    resolution: {integrity: sha512-wNVsG0oOZVYqK5RIYZgY7aYPCoVaWkx4SGpTQiPrgiVeXRm2AgY/+U7Pv6Nim9KZppQXemNjaA83dA0DvOOufg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-arm64/1.2.3:
-    resolution: {integrity: sha512-meJPqT27NT2UKFdBR4xBzJ6vrIE/hQAKGZG96lSBwjsqwLCTjho+P7/kCHm/iVWDbqu7ECWYb721l66mGkHmbw==}
+  /lefthook-windows-arm64/1.2.4:
+    resolution: {integrity: sha512-t2xdxZQdbEYSlAaCwxJVphwmz1XQI9guGVkTfZEEbBswzNvDAUBr+w2l/ySDvA8fLrIyQI3D2czMQSslhAXqAQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-x64/1.2.3:
-    resolution: {integrity: sha512-0eVDbTUeq6Wk4PAUTm+Z9CiUybJ1zG0RTqtTt+mLqhUkYCeXbTdEX7AEZ7keQHHRwOwUUECb3A2crOWgcyJNLg==}
+  /lefthook-windows-x64/1.2.4:
+    resolution: {integrity: sha512-0K2UeSEAdMXDNHF8FSjGS/ZlAhfMDQ8lHSkBnGXF+68W7Uo62X27yDAJHKAMDjmQKh45V7NuDaVj8dq+m0mnwQ==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook/1.2.3:
-    resolution: {integrity: sha512-c66VDZuUHpPH+JULu+ZugzQZcSJLFoo8IEIIipHm+oYQJ5nUZCUdpA7jOqu0iLd2uUX6Ljo7V58sXLfiFZHVSA==}
+  /lefthook/1.2.4:
+    resolution: {integrity: sha512-DQOqqub4WmRFDsiTBye5GWy2TIsGdtJmkOrkK3zYBmUWoD7nuHodtMI4+JgrDgHCC1crB8LV/pMSaQOo2dsOHA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      lefthook-darwin-arm64: 1.2.3
-      lefthook-darwin-x64: 1.2.3
-      lefthook-freebsd-arm64: 1.2.3
-      lefthook-freebsd-x64: 1.2.3
-      lefthook-linux-arm64: 1.2.3
-      lefthook-linux-x64: 1.2.3
-      lefthook-windows-arm64: 1.2.3
-      lefthook-windows-x64: 1.2.3
+      lefthook-darwin-arm64: 1.2.4
+      lefthook-darwin-x64: 1.2.4
+      lefthook-freebsd-arm64: 1.2.4
+      lefthook-freebsd-x64: 1.2.4
+      lefthook-linux-arm64: 1.2.4
+      lefthook-linux-x64: 1.2.4
+      lefthook-windows-arm64: 1.2.4
+      lefthook-windows-x64: 1.2.4
     dev: true
 
   /leven/3.1.0:
@@ -4805,7 +4805,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss/0.47.1_vite@3.2.4:
+  /unocss/0.47.1_vite@3.2.5:
     resolution: {integrity: sha512-KnBmLg1c9dhWUdWZopOQ+AYrE2gaXunCe6Wg/s/xW/09DwhmGc0+GllA/uTOTDtUocdkGYV8pxg5C2nEVfd1CA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4814,7 +4814,7 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.47.1_vite@3.2.4
+      '@unocss/astro': 0.47.1_vite@3.2.5
       '@unocss/cli': 0.47.1
       '@unocss/core': 0.47.1
       '@unocss/preset-attributify': 0.47.1
@@ -4830,7 +4830,7 @@ packages:
       '@unocss/transformer-compile-class': 0.47.1
       '@unocss/transformer-directives': 0.47.1
       '@unocss/transformer-variant-group': 0.47.1
-      '@unocss/vite': 0.47.1_vite@3.2.4
+      '@unocss/vite': 0.47.1_vite@3.2.5
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -4874,7 +4874,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-pwa/0.13.3_vite@3.2.4:
+  /vite-plugin-pwa/0.13.3_vite@3.2.5:
     resolution: {integrity: sha512-cjWXpZ7slAY14OKz7M8XdgTIi9wjf6OD6NkhiMAc+ogxnbUrecUwLdRtfGPCPsN2ftut5gaN1jTghb11p6IQAA==}
     peerDependencies:
       vite: ^3.1.0
@@ -4884,7 +4884,7 @@ packages:
       fast-glob: 3.2.12
       pretty-bytes: 6.0.0
       rollup: 2.79.1
-      vite: 3.2.4
+      vite: 3.2.5
       workbox-build: 6.5.4
       workbox-window: 6.5.4
     transitivePeerDependencies:
@@ -4892,8 +4892,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite/3.2.4:
-    resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
+  /vite/3.2.5:
+    resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -4925,7 +4925,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitefu/0.2.2_vite@3.2.4:
+  /vitefu/0.2.2_vite@3.2.5:
     resolution: {integrity: sha512-8CKEIWPm4B4DUDN+h+hVJa9pyNi7rzc5MYmbxhs1wcMakueGFNWB5/DL30USm9qU3xUPnL4/rrLEAwwFiD1tag==}
     peerDependencies:
       vite: ^3.0.0
@@ -4933,7 +4933,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 3.2.4
+      vite: 3.2.5
     dev: true
 
   /webidl-conversions/4.0.2:
