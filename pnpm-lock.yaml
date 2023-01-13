@@ -11,7 +11,7 @@ specifiers:
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-svelte: 2.14.1
   idb-keyval: 6.2.0
-  ky: 0.33.1
+  ky: 0.33.2
   lefthook: 1.2.7
   postcss-html: 1.5.0
   prettier: 2.8.2
@@ -30,7 +30,7 @@ specifiers:
 dependencies:
   '@unocss/reset': 0.48.4
   idb-keyval: 6.2.0
-  ky: 0.33.1
+  ky: 0.33.2
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.55.1+vite@3.2.5
@@ -3433,8 +3433,8 @@ packages:
     resolution: {integrity: sha512-dLkz37Ab97HWMx9KTes3Tbi3D1ln9fCAy2zr2YVExJasDRPGRaKcoE4fycWNtnCAJfjFqe0cnY+f8KT2JePEXQ==}
     dev: true
 
-  /ky/0.33.1:
-    resolution: {integrity: sha512-zZ9OlhgM4UEunvgJBH1bBl7+a7vas1HnCLSezu2CJawc4Ka+yJculRAVKbakUece4gW7kC5Dz+UGvbXIlpDt1w==}
+  /ky/0.33.2:
+    resolution: {integrity: sha512-f6oS2rKUcPu5FzdqCDbFpmzis/JlqFZw8uIHm/jf8Kc3vtnW+VDhuashOAKyBZv8bFiZFZUMNxTC0JtahEvujA==}
     engines: {node: '>=14.16'}
     dev: false
 
