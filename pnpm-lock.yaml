@@ -5,11 +5,11 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.49.0
   '@typescript-eslint/parser': 5.49.0
   '@unocss/preset-wind': ^0.48.0
-  '@unocss/reset': 0.48.4
+  '@unocss/reset': 0.48.5
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0
   eslint-plugin-prettier: 4.2.1
-  eslint-plugin-svelte: 2.14.1
+  eslint-plugin-svelte: 2.15.0
   idb-keyval: 6.2.0
   ky: 0.33.2
   lefthook: 1.2.8
@@ -28,7 +28,7 @@ specifiers:
   vite-plugin-pwa: 0.14.1
 
 dependencies:
-  '@unocss/reset': 0.48.4
+  '@unocss/reset': 0.48.5
   idb-keyval: 6.2.0
   ky: 0.33.2
 
@@ -40,7 +40,7 @@ devDependencies:
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
-  eslint-plugin-svelte: 2.14.1_tmo5zkisvhu6htudosk5k7m6pu
+  eslint-plugin-svelte: 2.15.0_tmo5zkisvhu6htudosk5k7m6pu
   lefthook: 1.2.8
   postcss-html: 1.5.0
   prettier: 2.8.3
@@ -1797,8 +1797,8 @@ packages:
     resolution: {integrity: sha512-i7z6Rbs7fXFD3NdlVJViFltpDJUCo5xDm5y01Xaoa4mJQHr/1335Ht0JW/emAJXf170UYSwb2rUeK1J3fty9eg==}
     dev: true
 
-  /@unocss/reset/0.48.4:
-    resolution: {integrity: sha512-9WPoGwLrG5vZQzMxgd7/zJkUUmL06WYtrAiRdf5gYsCBbnpx6eq0II0TvU8PEzvseqgkhEpN19iSgnsuTZ34kA==}
+  /@unocss/reset/0.48.5:
+    resolution: {integrity: sha512-+JJT3Btj1oNX4XwKBDPRUYre3NYBNmi0PsC3tqkHN2VphJG0iZl91XNfsveLz8pVpDJPUDdLH4xsqh52WmxU1g==}
     dev: false
 
   /@unocss/scope/0.48.0:
@@ -2625,8 +2625,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-svelte/2.14.1_tmo5zkisvhu6htudosk5k7m6pu:
-    resolution: {integrity: sha512-7M4QHtbtTjLA2xore4rXBwKshPaycil5AsOwYNyvJdunEEdimrIp6otX6PGpFoAojz+qTb4MZuReaHEj1hX7Wg==}
+  /eslint-plugin-svelte/2.15.0_tmo5zkisvhu6htudosk5k7m6pu:
+    resolution: {integrity: sha512-29RfdKqEPdrT6vRK66Tn8u9UlM0Kxq/JfLtmdimMbvHfb3tXMNyYN0sW5ontQRFea7mf5qH/mr1kDMzz0vOFHw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0
@@ -2635,6 +2635,7 @@ packages:
       svelte:
         optional: true
     dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
       debug: 4.3.4
       eslint: 8.32.0
       eslint-utils: 3.0.0_eslint@8.32.0
@@ -2643,7 +2644,6 @@ packages:
       postcss: 8.4.19
       postcss-load-config: 3.1.4_postcss@8.4.19
       postcss-safe-parser: 6.0.0_postcss@8.4.19
-      sourcemap-codec: 1.4.8
       svelte: 3.55.1
       svelte-eslint-parser: 0.22.0_svelte@3.55.1
     transitivePeerDependencies:
