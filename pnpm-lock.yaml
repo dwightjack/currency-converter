@@ -21,7 +21,7 @@ specifiers:
   stylelint-config-prettier: 9.0.4
   stylelint-config-standard: 29.0.0
   svelte: 3.55.1
-  svelte-preprocess: 4.10.7
+  svelte-preprocess: 5.0.1
   typescript: 4.9.5
   unocss: ^0.49.0
   vite: 4.0.4
@@ -50,7 +50,7 @@ devDependencies:
   stylelint-config-prettier: 9.0.4_stylelint@14.16.1
   stylelint-config-standard: 29.0.0_stylelint@14.16.1
   svelte: 3.55.1
-  svelte-preprocess: 4.10.7_4x7phaipmicbaooxtnresslofa
+  svelte-preprocess: 5.0.1_4x7phaipmicbaooxtnresslofa
   typescript: 4.9.5
   unocss: 0.49.0_vite@4.0.4
   vite: 4.0.4
@@ -4327,14 +4327,14 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: true
 
-  /sorcery/0.10.0:
-    resolution: {integrity: sha512-R5ocFmKZQFfSTstfOtHjJuAwbpGyf9qjQa1egyhvXSbM7emjrtLXtGdZsDJDABC85YBfVvrOiGWKSYXPKdvP1g==}
+  /sorcery/0.11.0:
+    resolution: {integrity: sha512-J69LQ22xrQB1cIFJhPfgtLuI6BpWRiWu1Y3vSsIwK/eAScqJxd/+CJlUuHQRdX2C9NGFamq+KqNywGgaThwfHw==}
     hasBin: true
     dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
       buffer-crc32: 0.2.13
       minimist: 1.2.7
       sander: 0.5.1
-      sourcemap-codec: 1.4.8
     dev: true
 
   /source-map-js/1.0.2:
@@ -4606,21 +4606,20 @@ packages:
       svelte: 3.55.1
     dev: true
 
-  /svelte-preprocess/4.10.7_4x7phaipmicbaooxtnresslofa:
-    resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
-    engines: {node: '>= 9.11.2'}
+  /svelte-preprocess/5.0.1_4x7phaipmicbaooxtnresslofa:
+    resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
+    engines: {node: '>= 14.10.0'}
     requiresBuild: true
     peerDependencies:
       '@babel/core': ^7.10.2
       coffeescript: ^2.5.1
       less: ^3.11.3 || ^4.0.0
-      node-sass: '*'
       postcss: ^7 || ^8
       postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
       pug: ^3.0.0
       sass: ^1.26.8
       stylus: ^0.55.0
-      sugarss: ^2.0.0
+      sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
       svelte: ^3.23.0
       typescript: ^3.9.5 || ^4.0.0
     peerDependenciesMeta:
@@ -4629,8 +4628,6 @@ packages:
       coffeescript:
         optional: true
       less:
-        optional: true
-      node-sass:
         optional: true
       postcss:
         optional: true
@@ -4650,8 +4647,8 @@ packages:
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
-      magic-string: 0.25.9
-      sorcery: 0.10.0
+      magic-string: 0.27.0
+      sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 3.55.1
       typescript: 4.9.5
