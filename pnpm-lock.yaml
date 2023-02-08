@@ -25,7 +25,7 @@ specifiers:
   typescript: 4.9.5
   unocss: ^0.49.0
   vite: 4.1.1
-  vite-plugin-pwa: 0.14.2
+  vite-plugin-pwa: 0.14.3
 
 dependencies:
   '@unocss/reset': 0.49.4
@@ -54,7 +54,7 @@ devDependencies:
   typescript: 4.9.5
   unocss: 0.49.0_vite@4.1.1
   vite: 4.1.1
-  vite-plugin-pwa: 0.14.2_vite@4.1.1
+  vite-plugin-pwa: 0.14.3_vite@4.1.1
 
 packages:
 
@@ -4929,8 +4929,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-pwa/0.14.2_vite@4.1.1:
-    resolution: {integrity: sha512-3nTW1LX5i4l2qeuT0ypGyo52KtXagQoW4qdpMxHyUS/qvloa3BHLytQQfdNbU3cXTqV+cfuN99RXXKHiYDiLTA==}
+  /vite-plugin-pwa/0.14.3_vite@4.1.1:
+    resolution: {integrity: sha512-o/CEzdHXamdSV4WJ6hp1EQNe+yVvoFf9b5q1nMhOSqKxaW7BaDqAHAwnq8jt21wakDmcaipnuF3/j78AzZJ6wg==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
     dependencies:
