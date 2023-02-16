@@ -9,7 +9,7 @@
   },
   "packageManager": "pnpm@7.27.0",
   "engines": {
-    "node": "16.19.0",
+    "node": "16.19.1",
     "pnpm": "^7.11.0"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "vite-plugin-pwa": "0.14.4"
   },
   "dependencies": {
-    "@unocss/reset": "0.49.5",
+    "@unocss/reset": "0.49.6",
     "idb-keyval": "6.2.0",
     "ky": "0.33.2"
   },
