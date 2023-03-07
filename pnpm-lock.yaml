@@ -9,7 +9,7 @@ specifiers:
   eslint: 8.35.0
   eslint-config-prettier: 8.7.0
   eslint-plugin-prettier: 4.2.1
-  eslint-plugin-svelte: 2.20.0
+  eslint-plugin-svelte: 2.20.1
   idb-keyval: 6.2.0
   ky: 0.33.2
   lefthook: 1.3.3
@@ -40,7 +40,7 @@ devDependencies:
   eslint: 8.35.0
   eslint-config-prettier: 8.7.0_eslint@8.35.0
   eslint-plugin-prettier: 4.2.1_xprnzp4ul2bcpmfe73av4voica
-  eslint-plugin-svelte: 2.20.0_n4ieifq2d7jq3sqoe474cgqlim
+  eslint-plugin-svelte: 2.20.1_n4ieifq2d7jq3sqoe474cgqlim
   lefthook: 1.3.3
   postcss-html: 1.5.0
   prettier: 2.8.4
@@ -2628,8 +2628,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-svelte/2.20.0_n4ieifq2d7jq3sqoe474cgqlim:
-    resolution: {integrity: sha512-N+15K8RkTf2QMiJ55QiUF8zdvpKwJLUFi+Ol+kcLdUsB26hCzFDM3uJ41XHvEBvzwpYZEy4aLQkMk62v8GZXmA==}
+  /eslint-plugin-svelte/2.20.1_n4ieifq2d7jq3sqoe474cgqlim:
+    resolution: {integrity: sha512-THEBweVaSMIi0e07YA+mKIka3cJJLFosSAWXWJa1gyyWXzUESgJJYWIFzeMGQgdxlqjwM/7uaCunN9pcZY83+g==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0
