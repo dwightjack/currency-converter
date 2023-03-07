@@ -9,7 +9,7 @@
   },
   "packageManager": "pnpm@7.29.0",
   "engines": {
-    "node": "16.19.1",
+    "node": "18.15.0",
     "pnpm": "^7.11.0"
   },
   "devDependencies": {
