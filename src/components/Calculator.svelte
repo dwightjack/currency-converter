@@ -11,6 +11,8 @@
   let lastKeyType = '';
   let action: Action = null;
 
+  $: formattedInput = new Intl.NumberFormat().format(Number(input));
+
   const operations: Record<'divide' | 'times' | 'minus' | 'plus', Action> = {
     divide: (src, num) => (num === 0 ? src : src / num),
     times: (src, num) => src * num,
@@ -71,16 +73,16 @@
   }
 </script>
 
-<div class="c-calculator min-h-0 min-w-0">
+<div class="c-calculator min-block-0 min-inline-0">
   <div class="grid-area-[output] flex items-center">
     <output
-      class="text-3xl my-2 px-2 text-right border-r border-brand-200 flex-grow overflow-auto"
-      dir="rtl"><span dir="ltr">{input}</span></output
+      class="text-3xl m-block-2 p-inline-2 text-end border-r border-brand-200 flex-grow overflow-auto"
+      >{formattedInput}</output
     >
     <ControlButton
       class="text-2xl p-2 ml-1"
       theme="green"
-      icon="check"
+      icon="i-ion-checkmark"
       on:click={submit}
       label="Submit"
     />
@@ -120,9 +122,5 @@
       'b1 b2 b3 eq'
       'b0 b0 dot eq';
     gap: 1px;
-  }
-
-  span[dir='ltr'] {
-    unicode-bidi: embed;
   }
 </style>

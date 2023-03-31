@@ -14,10 +14,12 @@
     "pnpm": "^7.11.0"
   },
   "devDependencies": {
+    "@iconify-json/ion": "^1.1.9",
     "@sveltejs/vite-plugin-svelte": "2.0.4",
     "@typescript-eslint/eslint-plugin": "5.57.0",
     "@typescript-eslint/parser": "5.57.0",
     "@unocss/core": "0.50.6",
+    "@unocss/preset-icons": "^0.50.6",
     "@unocss/preset-wind": "^0.50.6",
     "eslint": "8.37.0",
     "eslint-config-prettier": "8.8.0",

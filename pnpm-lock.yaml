@@ -1,10 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/ion': ^1.1.9
   '@sveltejs/vite-plugin-svelte': 2.0.4
   '@typescript-eslint/eslint-plugin': 5.57.0
   '@typescript-eslint/parser': 5.57.0
   '@unocss/core': 0.50.6
+  '@unocss/preset-icons': ^0.50.6
   '@unocss/preset-wind': ^0.50.6
   '@unocss/reset': 0.50.6
   eslint: 8.37.0
@@ -34,10 +36,12 @@ dependencies:
   ky: 0.33.3
 
 devDependencies:
+  '@iconify-json/ion': 1.1.9
   '@sveltejs/vite-plugin-svelte': 2.0.4_svelte@3.58.0+vite@4.2.1
   '@typescript-eslint/eslint-plugin': 5.57.0_x4rubgibnu7ujqspfqdeho4yiu
   '@typescript-eslint/parser': 5.57.0_ip5up2nocltd47wbnuyybe5dxu
   '@unocss/core': 0.50.6
+  '@unocss/preset-icons': 0.50.6
   '@unocss/preset-wind': 0.50.6
   eslint: 8.37.0
   eslint-config-prettier: 8.8.0_eslint@8.37.0
@@ -1521,6 +1525,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/ion/1.1.9:
+    resolution: {integrity: sha512-0LCnmt2DOV9XkKEnDhfOxU2ejZfrNLErczdJ6ONQvqpXoh9yeZIsPa2YILdF6cMuxCRqxVuU8BAdpUrNy+j1ng==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types/2.0.0:

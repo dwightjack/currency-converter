@@ -9,22 +9,24 @@
     invertCurrency,
     inputAmount,
     convertedAmount,
+    convertedAmountRaw,
     currencyFullList,
     setCurrency,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
-
-  function onInputFocus(e: Event) {
-    const select = (e.target as HTMLInputElement).select;
-    if (!(typeof select === 'function')) {
-      return;
-    }
-    select.call(e.target);
-  }
+  import CurrencyInput from './components/CurrencyInput.svelte';
 
   function submitCalcValue(input: number) {
     inputAmount.set(input);
     toggleCalculator(false);
+  }
+
+  function copyToClipboard() {
+    if (!Number.isNaN($convertedAmountRaw)) {
+      navigator.clipboard.writeText(
+        Number($convertedAmount.replaceAll(',', '')).toString(),
+      );
+    }
   }
 </script>
 
@@ -41,18 +43,10 @@
         current={$currency.input}
         currencies={$currencyFullList}
       >
-        <input
-          type="text"
-          inputmode="numeric"
-          id="from-amount"
-          name="from-amount"
-          class="px-2 py-1 w-full rounded-md border border-brand-200 focus-visible:(outline-1 outline-brand-600)"
-          bind:value={$inputAmount}
-          on:focus={onInputFocus}
-        />
+        <CurrencyInput bind:value={$inputAmount} currency={$currency.input} />
         <ControlButton
           on:click={() => toggleCalculator(true)}
-          icon="calculator"
+          icon="i-ion-calculator-outline"
           label="Calculate"
           class="text-2xl self-center"
         />
@@ -75,17 +69,25 @@
           {#await $convertedAmount}
             ...converting
           {:then number}
-            {number}
+            {Number.isNaN(number) ? 'Error' : number}
           {:catch error}
             conversion error! ({error})
           {/await}
         </output>
+        {#if isSecureContext}
+          <ControlButton
+            on:click={copyToClipboard}
+            icon="i-ion-md-copy"
+            label="Copy to Clipboard"
+            class="text-2xl"
+          />
+        {/if}
       </CurrencyBox>
     </div>
     <div class="items-center col-start-2 row-start-1 flex justify-center">
       <ControlButton
         on:click={invertCurrency}
-        icon="switch"
+        icon="i-ion-swap-horizontal"
         label="Switch"
         class="text-2xl"
       />

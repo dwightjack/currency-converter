@@ -1,8 +1,8 @@
 <script lang="ts">
   export let area = '';
-  export let theme = 'light';
+  export let theme: 'light' | 'invert' | 'neutral' = 'light';
 
-  const themes = {
+  const themes: Record<typeof theme, string> = {
     light: 'bg-surface text-brand-900 active:bg-brand-100 ',
     invert: 'bg-brand-800 text-surface active:bg-brand-800',
     neutral: 'bg-brand-100 text-brand-800 active:bg-brand-100',

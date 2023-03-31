@@ -4,6 +4,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import presetWind from '@unocss/preset-wind';
+import presetIcons from '@unocss/preset-icons';
 import { extractorSvelte } from '@unocss/core';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { theme } from './config/theme';
@@ -16,7 +17,7 @@ function range(size, startAt = 0) {
 export default defineConfig({
   plugins: [
     Unocss({
-      presets: [presetWind()],
+      presets: [presetWind(), presetIcons()],
       transformers: [transformerVariantGroup()],
       extractors: [extractorSvelte],
       safelist: [

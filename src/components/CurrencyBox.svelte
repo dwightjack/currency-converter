@@ -26,13 +26,13 @@
   <div
     class="bg-brand-100 p-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-brand-200 border-b-2 bg-left bg-no-repeat"
   >
-    <label for={id + '-select'} class="sr-only">Currency</label>
+    <label for={id + '-select'} class="col-start-1 sr-only">Currency</label>
     <Flag currency={current} class="row-start-1 col-start-1" />
     <select
       name={id + '-select'}
       on:change={onChange}
       id={id + '-select'}
-      class="focus-visible:outline-brand-600 appearance-none px-8 col-span-full row-start-1 w-full text-brand-900 font-bold bg-transparent border-0"
+      class="focus-visible:outline-brand-600 truncate appearance-none px-8 col-span-full row-start-1 w-full text-brand-900 font-bold bg-transparent border-0"
     >
       {#each currencies as { code, description }}
         <option selected={current === code || undefined} value={code}>
@@ -41,7 +41,7 @@
       {/each}
     </select>
     <Icon
-      name="chevron-down"
+      name="i-ion-chevron-down"
       class="row-start-1 col-start-3 pointer-events-none"
     />
   </div>

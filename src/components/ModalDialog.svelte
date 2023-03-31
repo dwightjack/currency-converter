@@ -34,7 +34,7 @@
   <header class="text-right p-1">
     <ControlButton
       label="Close"
-      icon="close"
+      icon="i-ion-close"
       on:click={close}
       class="text-2xl col-start-3"
     />
