@@ -28,7 +28,7 @@
   }
 </script>
 
-<main class="container pt-4 pb-4 mx-auto px-4 lg:(max-w-3xl pt-10) ">
+<main class="container pt-4 pb-4 mx-auto px-4 lg:(max-w-3xl pt-10)">
   <form
     class="flex flex-col gap-4 sm:(grid grid-cols-[1fr_auto_1fr])"
     on:submit|preventDefault={() => undefined}
