@@ -27,7 +27,7 @@
 <dialog
   class={`${
     visible ? 'flex flex-col' : ''
-  } max-w-100vw max-h-100vh border-2 border-blue-200 overflow-hidden p-0 shadow-md md:rounded`}
+  } max-w-100vw max-h-100vh border-2 border-brand-200 overflow-hidden p-0 shadow-md md:rounded`}
   on:close
   bind:this={dialogElement}
 >

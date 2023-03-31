@@ -74,7 +74,7 @@
 <div class="c-calculator min-h-0 min-w-0">
   <div class="grid-area-[output] flex items-center">
     <output
-      class="text-3xl my-2 px-2 text-right border-r border-blue-200 flex-grow overflow-auto"
+      class="text-3xl my-2 px-2 text-right border-r border-brand-200 flex-grow overflow-auto"
       dir="rtl"><span dir="ltr">{input}</span></output
     >
     <ControlButton
@@ -104,7 +104,7 @@
   <CalcButton theme="neutral" area="plus" on:click={opHandlers.plus}>
     +
   </CalcButton>
-  <CalcButton area="eq" on:click={eq} theme="negative">=</CalcButton>
+  <CalcButton area="eq" on:click={eq} theme="invert">=</CalcButton>
 </div>
 
 <style>

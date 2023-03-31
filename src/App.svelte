@@ -9,7 +9,7 @@
     invertCurrency,
     inputAmount,
     convertedAmount,
-    currencyList,
+    currencyFullList,
     setCurrency,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
@@ -39,14 +39,14 @@
         id="from"
         on:currencyChange={({ detail }) => setCurrency('input', detail)}
         current={$currency.input}
-        currencies={$currencyList}
+        currencies={$currencyFullList}
       >
         <input
           type="text"
           inputmode="numeric"
           id="from-amount"
           name="from-amount"
-          class="px-2 py-1 w-full rounded-md border border-gray-300 focus:(outline-none ring-1 ring-blue-600)"
+          class="px-2 py-1 w-full rounded-md border border-brand-200 focus-visible:(outline-1 outline-brand-600)"
           bind:value={$inputAmount}
           on:focus={onInputFocus}
         />
@@ -64,7 +64,7 @@
         id="to"
         current={$currency.output}
         on:currencyChange={({ detail }) => setCurrency('output', detail)}
-        currencies={$currencyList}
+        currencies={$currencyFullList}
       >
         <output
           name="to-amount"

@@ -6,6 +6,7 @@ import Unocss from 'unocss/vite';
 import presetWind from '@unocss/preset-wind';
 import { extractorSvelte } from '@unocss/core';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
+import { theme } from './config/theme';
 
 function range(size, startAt = 0) {
   return Array.from(Array(size).keys()).map((i) => i + startAt);
@@ -26,6 +27,7 @@ export default defineConfig({
           (v) => `items-${v}`,
         ),
       ],
+      theme,
       rules: [
         [/^aspect-(\d+\/\d+)$/, ([_, ratio]) => ({ 'aspect-ratio': ratio })],
         [

@@ -1,5 +1,6 @@
 import { writable, derived, readable } from 'svelte/store';
 import { fetchCurrency, fetchCurrencyList } from '../db';
+import type { CurrencySymbol } from 'src/types';
 
 export const inputAmount = writable(0);
 
@@ -18,10 +19,16 @@ export const exchangeRate = derived(
   0,
 );
 
-export const currencyList = readable(['JPY', 'EUR'], (set) => {
+export const currencyFullList = readable<CurrencySymbol[]>([], (set) => {
   fetchCurrencyList().then(({ symbols }) => set(symbols));
   return () => undefined;
 });
+
+export const currencyList = derived(
+  currencyFullList,
+  ($list) => $list.map(({ code }) => code),
+  ['JPY', 'EUR'],
+);
 
 export const convertedAmount = derived(
   [inputAmount, exchangeRate, currency],

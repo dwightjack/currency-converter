@@ -1,9 +1,9 @@
 import ky from 'ky';
-import type { Rates } from './types';
+import type { CurrencySymbol, Rates } from './types';
 export async function fetchRates(base: string): Promise<Rates> {
   const { rates, success } = await ky
     .get(`https://api.exchangerate.host/latest?base=${base}`)
-    .json();
+    .json<{ rates: Rates; success: boolean }>();
 
   if (!success) {
     throw new Error('Unable to retrieve rates.');
@@ -14,10 +14,10 @@ export async function fetchRates(base: string): Promise<Rates> {
 export async function fetchSymbols() {
   const { symbols, success } = await ky
     .get('https://api.exchangerate.host/symbols')
-    .json();
+    .json<{ success: boolean; symbols: Record<string, CurrencySymbol> }>();
 
   if (!success) {
     throw new Error('Unable to retrieve currencies.');
   }
-  return Object.keys(symbols);
+  return Object.values(symbols);
 }
