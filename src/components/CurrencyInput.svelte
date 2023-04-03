@@ -34,7 +34,7 @@
 </script>
 
 <div
-  class="grid w-full px-2 py-1 rounded-md border border-brand-200 outline-brand-600 overflow-hidden focus-within:(outline-2 outline-solid )"
+  class="grid inline-full p-inline-2 p-block-1 rounded-md border border-brand-200 outline-brand-600 overflow-hidden focus-within:(outline-2 outline-solid )"
 >
   <input
     type="text"

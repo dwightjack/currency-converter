@@ -80,7 +80,7 @@
       >{formattedInput}</output
     >
     <ControlButton
-      class="text-2xl p-2 ml-1"
+      class="text-2xl p-block-2 p-inline-2 ms-1"
       theme="green"
       icon="i-ion-checkmark"
       on:click={submit}

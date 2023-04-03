@@ -11,7 +11,7 @@
 </script>
 
 <button
-  class={`${themes[theme]} inline-flex items-center p-1 rounded-md border-none focus-visible:outline-1 ${$$props.class}`}
+  class={`${themes[theme]} inline-flex items-center p-inline-1 p-block-1 rounded-md border-none focus-visible:outline-1 ${$$props.class}`}
   type="button"
   on:click
 >

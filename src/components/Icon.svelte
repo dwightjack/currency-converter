@@ -4,5 +4,5 @@
 
 <span
   {...$$restProps}
-  class="w-[1em] h-[1em] inline-block {name} {$$props.class ?? ''}"
+  class="inline-[1em] aspect-1/1 inline-block {name} {$$props.class ?? ''}"
 />

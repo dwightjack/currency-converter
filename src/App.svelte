@@ -30,12 +30,14 @@
   }
 </script>
 
-<main class="container pt-4 pb-4 mx-auto px-4 lg:(max-w-3xl pt-10)">
+<main
+  class="container p-block-4 p-inline-4 m-inline-auto lg:(max-inline-3xl pbs-10)"
+>
   <form
     class="flex flex-col gap-4 sm:(grid grid-cols-[1fr_auto_1fr])"
     on:submit|preventDefault={() => undefined}
   >
-    <div class="min-w-0">
+    <div class="min-inline-0">
       <CurrencyBox
         label="Source Currency"
         id="from"
@@ -52,7 +54,7 @@
         />
       </CurrencyBox>
     </div>
-    <div class="min-w-0 md:col-start-3 order-last">
+    <div class="min-inline-0 md:col-start-3 order-last">
       <CurrencyBox
         label="Output Currency"
         id="to"
@@ -64,7 +66,7 @@
           name="to-amount"
           id="to-amount"
           for="from-select to-select from-amount"
-          class="pr-1 pt-1 pb-1 w-full truncate"
+          class="pie-1 p-block-1 inline-full truncate"
         >
           {#await $convertedAmount}
             ...converting
