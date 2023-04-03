@@ -29,6 +29,12 @@ export default defineConfig({
         ),
       ],
       theme,
+      shortcuts: {
+        'outline-brand':
+          'outline-none focus-visible:outline-brand-600 @dark:focus-visible:outline-brand-dark-400',
+        'outline-brand-within':
+          'outline-none focus-within:outline-brand-600 @dark:focus-within:outline-brand-dark-400',
+      },
       rules: [
         [/^aspect-(\d+\/\d+)$/, ([_, ratio]) => ({ 'aspect-ratio': ratio })],
         [

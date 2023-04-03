@@ -34,7 +34,7 @@
 </script>
 
 <div
-  class="grid inline-full p-inline-2 p-block-1 rounded-md border border-brand-200 outline-brand-600 overflow-hidden focus-within:(outline-2 outline-solid )"
+  class="grid inline-full p-inline-2 p-block-1 rounded-md border border-brand-200 overflow-hidden outline-brand-within @dark:border-brand-dark-700"
 >
   <input
     type="text"
@@ -50,6 +50,8 @@
   <span
     aria-hidden="true"
     class="row-span-full col-span-full pointer-events-none"
-    ><span class={selected ? 'bg-brand-100' : ''}>{formattedValue}</span></span
+    ><span class={selected ? 'bg-brand-100 @dark:bg-brand-700' : ''}
+      >{formattedValue}</span
+    ></span
   >
 </div>

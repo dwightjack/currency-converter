@@ -76,7 +76,7 @@
 <div class="c-calculator min-block-0 min-inline-0">
   <div class="grid-area-[output] flex items-center">
     <output
-      class="text-3xl m-block-2 p-inline-2 text-end border-r border-brand-200 flex-grow overflow-auto"
+      class="text-3xl m-block-2 p-inline-2 text-end border-ie border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
       >{formattedInput}</output
     >
     <ControlButton
