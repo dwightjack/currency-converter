@@ -41,7 +41,6 @@ export default defineConfig({
       'outline-none focus-within:outline-brand-600 @dark:focus-within:outline-brand-dark-400',
   },
   rules: [
-    [/^aspect-(\d+\/\d+)$/, ([_, ratio]) => ({ 'aspect-ratio': ratio })],
     [
       /^bg-image-\$([a-z][a-z-]*)$/,
       ([_, varName]) => ({ 'background-image': `var(--${varName})` }),

@@ -25,6 +25,6 @@
 
 {#if flagStatus === 'success'}
   <span
-    class="aspect-48/32 bg-image-$flag bg-contain bg-no-repeat bg-center inline-block inline-6 pointer-events-none {$$props.class}"
+    class="aspect-ratio-[48/32] bg-image-$flag bg-contain bg-no-repeat bg-center inline-block inline-6 pointer-events-none {$$props.class}"
     style={currencyFlag}
   />{/if}
