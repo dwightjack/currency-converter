@@ -3,10 +3,28 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
+import { colors } from '@unocss/preset-mini';
+
+const htmlPlugin = () => {
+  return {
+    name: 'html-transform',
+    transformIndexHtml(html) {
+      const replacements = {
+        lightTheme: '#dbeafe',
+        darkTheme: colors.gray[800],
+      };
+      return html.replaceAll(
+        /\{\{([^}]+?)\}\}/g,
+        (_, match) => replacements[match],
+      );
+    },
+  };
+};
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    htmlPlugin(),
     Unocss(),
     VitePWA({
       registerType: 'autoUpdate',
