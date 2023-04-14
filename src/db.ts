@@ -1,6 +1,6 @@
 import { set, get, createStore } from 'idb-keyval';
 import { fetchRates, fetchSymbols } from './utils';
-import type { Currency } from './types';
+import type { Currency, CurrencySymbol } from './types';
 
 const store = createStore('currencyConv', 'currencies');
 
@@ -45,7 +45,7 @@ export async function fetchCurrency(
 }
 
 export async function fetchCurrencyList() {
-  const data = await getKey<{ symbols: string[] }>('symbols');
+  const data = await getKey<{ symbols: CurrencySymbol[] }>('symbols');
   // if it exists and it has been fetch earlier than one day ago
   if (data && Date.now() <= data.lastUpdate + ONE_DAY) {
     return data;

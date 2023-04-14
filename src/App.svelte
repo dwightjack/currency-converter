@@ -9,89 +9,94 @@
     invertCurrency,
     inputAmount,
     convertedAmount,
-    currencyList,
+    convertedAmountRaw,
+    currencyFullList,
     setCurrency,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
-
-  function onInputFocus(e: Event) {
-    const select = (e.target as HTMLInputElement).select;
-    if (!(typeof select === 'function')) {
-      return;
-    }
-    select.call(e.target);
-  }
+  import CurrencyInput from './components/CurrencyInput.svelte';
 
   function submitCalcValue(input: number) {
     inputAmount.set(input);
     toggleCalculator(false);
   }
+
+  function copyToClipboard() {
+    if (!Number.isNaN($convertedAmountRaw)) {
+      navigator.clipboard.writeText(
+        Number($convertedAmount.replaceAll(',', '')).toString(),
+      );
+    }
+  }
 </script>
 
-<main class="container pt-4 pb-4 mx-auto px-4 lg:(max-w-3xl pt-10)">
+<main
+  class="container p-block-4 p-inline-4 m-inline-auto lg:(max-inline-3xl pbs-10)"
+>
   <form
     class="flex flex-col gap-4 sm:(grid grid-cols-[1fr_auto_1fr])"
     on:submit|preventDefault={() => undefined}
   >
-    <div class="min-w-0">
+    <div class="min-inline-0">
       <CurrencyBox
         label="Source Currency"
         id="from"
         on:currencyChange={({ detail }) => setCurrency('input', detail)}
         current={$currency.input}
-        currencies={$currencyList}
+        currencies={$currencyFullList}
       >
-        <input
-          type="text"
-          inputmode="numeric"
-          id="from-amount"
-          name="from-amount"
-          class="px-2 py-1 w-full rounded-md border border-gray-300 focus:(outline-none ring-1 ring-blue-600)"
-          bind:value={$inputAmount}
-          on:focus={onInputFocus}
-        />
+        <CurrencyInput bind:value={$inputAmount} currency={$currency.input} />
         <ControlButton
           on:click={() => toggleCalculator(true)}
-          icon="calculator"
+          icon="i-ion-calculator-outline"
           label="Calculate"
           class="text-2xl self-center"
         />
       </CurrencyBox>
     </div>
-    <div class="min-w-0 md:col-start-3 order-last">
+    <div class="min-inline-0 md:col-start-3 order-last">
       <CurrencyBox
         label="Output Currency"
         id="to"
         current={$currency.output}
         on:currencyChange={({ detail }) => setCurrency('output', detail)}
-        currencies={$currencyList}
+        currencies={$currencyFullList}
       >
         <output
           name="to-amount"
           id="to-amount"
           for="from-select to-select from-amount"
-          class="pr-1 pt-1 pb-1 w-full truncate"
+          class="pie-1 p-block-1 inline-full truncate"
         >
           {#await $convertedAmount}
             ...converting
           {:then number}
-            {number}
+            {Number.isNaN(number) ? 'Error' : number}
           {:catch error}
             conversion error! ({error})
           {/await}
         </output>
+        {#if isSecureContext}
+          <ControlButton
+            on:click={copyToClipboard}
+            icon="i-ion-md-copy"
+            label="Copy to Clipboard"
+            class="text-2xl"
+          />
+        {/if}
       </CurrencyBox>
     </div>
     <div class="items-center col-start-2 row-start-1 flex justify-center">
       <ControlButton
         on:click={invertCurrency}
-        icon="switch"
+        icon="i-ion-swap-horizontal"
         label="Switch"
         class="text-2xl"
       />
     </div>
   </form>
   <ModalDialog
+    name="Calculator"
     visible={$calculatorOpen}
     on:close={() => toggleCalculator(false)}
   >

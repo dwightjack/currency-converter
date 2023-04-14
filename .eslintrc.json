@@ -19,6 +19,9 @@
     {
       "files": ["*.svelte"],
       "parser": "svelte-eslint-parser",
+      "env": {
+        "browser": true
+      },
       "parserOptions": {
         "parser": "@typescript-eslint/parser"
       }

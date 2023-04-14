@@ -3,11 +3,12 @@
   import { getCurrencySymbol } from '../stores/currency';
   import Icon from './Icon.svelte';
   import Flag from './Flag.svelte';
+  import type { CurrencySymbol } from 'src/types';
 
   export let label = '';
   export let id = '';
   export let current = '';
-  export let currencies = [];
+  export let currencies: CurrencySymbol[] = [];
 
   $: inputSymbol = current && getCurrencySymbol(current);
 
@@ -19,33 +20,33 @@
 </script>
 
 <fieldset
-  class="p-0 border-2 border-blue-200 text-xl rounded-md min-w-0 text-gray-800"
+  class="p-block-0 p-inline-0 border-2 border-brand-200 text-xl rounded-md min-inline-0 @dark:(border-brand-dark-700)"
 >
   <legend class="sr-only">{label}</legend>
   <div
-    class="bg-blue-100 p-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-blue-200 border-b-2 bg-left bg-no-repeat"
+    class="bg-brand-100 p-block-2 p-inline-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-brand-200 border-be-2 bg-left bg-no-repeat @dark:(border-brand-dark-700 bg-brand-dark-900)"
   >
-    <label for={id + '-select'} class="sr-only">Currency</label>
+    <label for={id + '-select'} class="col-start-1 sr-only">Currency</label>
     <Flag currency={current} class="row-start-1 col-start-1" />
     <select
       name={id + '-select'}
       on:change={onChange}
       id={id + '-select'}
-      class="focus:outline-black appearance-none px-8 col-span-full row-start-1 w-full text-blue-900 font-bold bg-transparent border-0"
+      class="truncate appearance-none p-inline-8 col-span-full row-start-1 inline-full text-brand-900 font-bold bg-transparent outline-brand border-0 @dark:(text-brand-dark-200)"
     >
-      {#each currencies as currency}
-        <option selected={current === currency || undefined} value={currency}>
-          {currency}
+      {#each currencies as { code, description }}
+        <option selected={current === code || undefined} value={code}>
+          {description}
         </option>
       {/each}
     </select>
     <Icon
-      name="chevron-down"
+      name="i-ion-chevron-down"
       class="row-start-1 col-start-3 pointer-events-none"
     />
   </div>
 
-  <div class="flex gap-x-2 items-baseline p-2">
+  <div class="flex gap-x-2 items-center p-inline-2 p-block-2">
     <label for={id + '-amount'}>
       <span class="sr-only">Amount</span>
       {inputSymbol}

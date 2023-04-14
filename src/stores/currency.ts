@@ -1,7 +1,8 @@
 import { writable, derived, readable } from 'svelte/store';
 import { fetchCurrency, fetchCurrencyList } from '../db';
+import type { CurrencySymbol } from 'src/types';
 
-export const inputAmount = writable(0);
+export const inputAmount = writable<number | string>(0);
 
 export const currency = writable({
   input: 'JPY',
@@ -18,23 +19,43 @@ export const exchangeRate = derived(
   0,
 );
 
-export const currencyList = readable(['JPY', 'EUR'], (set) => {
+export const currencyFullList = readable<CurrencySymbol[]>([], (set) => {
   fetchCurrencyList().then(({ symbols }) => set(symbols));
   return () => undefined;
 });
 
-export const convertedAmount = derived(
+export const currencyList = derived(
+  currencyFullList,
+  ($list) => $list.map(({ code }) => code),
+  ['JPY', 'EUR'],
+);
+
+export const convertedAmountRaw = derived(
   [inputAmount, exchangeRate, currency],
-  ([$inputAmount, $exchangeRate, $currency]) => {
-    const converted = ($inputAmount || 0) * $exchangeRate;
+  ([$inputAmount, $exchangeRate]) => {
+    if (typeof $inputAmount === 'string' && !/^[0-9.]*$/.test($inputAmount)) {
+      return NaN;
+    }
+    return (Number($inputAmount) || 0) * $exchangeRate;
+  },
+  0,
+);
+
+export const convertedAmount = derived(
+  [convertedAmountRaw, currency],
+  ([$convertedAmountRaw, $currency]) => {
+    if (Number.isNaN($convertedAmountRaw)) {
+      return 'Error...';
+    }
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: $currency.output,
     })
-      .formatToParts(converted)
-      .filter(({ type }) => type !== 'currency')
-      .map(({ value }) => value)
-      .join('');
+      .formatToParts($convertedAmountRaw)
+      .reduce(
+        (str, { type, value }) => str + (type !== 'currency' ? value : ''),
+        '',
+      );
   },
   '0',
 );
