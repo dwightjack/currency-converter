@@ -19,6 +19,7 @@
     "@typescript-eslint/eslint-plugin": "5.57.1",
     "@typescript-eslint/parser": "5.57.1",
     "@unocss/core": "0.50.8",
+    "@unocss/extractor-svelte": "0.51.4",
     "@unocss/preset-wind": "^0.50.6",
     "eslint": "8.38.0",
     "eslint-config-prettier": "8.8.0",
