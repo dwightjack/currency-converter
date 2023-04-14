@@ -96,6 +96,7 @@
     </div>
   </form>
   <ModalDialog
+    name="Calculator"
     visible={$calculatorOpen}
     on:close={() => toggleCalculator(false)}
   >

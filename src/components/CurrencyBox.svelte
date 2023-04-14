@@ -46,7 +46,7 @@
     />
   </div>
 
-  <div class="flex gap-x-2 items-baseline p-inline-2 p-block-2">
+  <div class="flex gap-x-2 items-center p-inline-2 p-block-2">
     <label for={id + '-amount'}>
       <span class="sr-only">Amount</span>
       {inputSymbol}

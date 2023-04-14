@@ -2,6 +2,7 @@
   import { onMount, afterUpdate } from 'svelte';
   import ControlButton from './ControlButton.svelte';
   export let visible = false;
+  export let name: string;
 
   let dialogElement: HTMLDialogElement | undefined;
 
@@ -25,6 +26,7 @@
 </script>
 
 <dialog
+  aria-label={name}
   class={`${
     visible ? 'flex flex-col' : ''
   } max-inline-100vw max-block-100vh border-2 border-brand-200 overflow-hidden p-inline-0 p-block-0 shadow-md md:rounded @dark:(bg-surface-dark shadow-md border-brand-dark-700 text-typo-dark)`}
