@@ -21,7 +21,8 @@
      * of JS in `.svelte` files.
      */
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "types": ["vite-plugin-pwa/client"]
   },
   /**
    * Use global.d.ts instead of compilerOptions.types
