@@ -19,7 +19,7 @@ specifiers:
   postcss-html: 1.5.0
   prettier: 2.8.7
   prettier-plugin-svelte: 2.10.0
-  stylelint: 15.4.0
+  stylelint: 15.5.0
   stylelint-config-html: 1.1.0
   stylelint-config-prettier: 9.0.5
   stylelint-config-standard: 31.0.0
@@ -51,10 +51,10 @@ devDependencies:
   postcss-html: 1.5.0
   prettier: 2.8.7
   prettier-plugin-svelte: 2.10.0_ur5pqdgn24bclu6l6i7qojopk4
-  stylelint: 15.4.0
-  stylelint-config-html: 1.1.0_4i3jeu7aznyfktsaj5a2mymbyu
-  stylelint-config-prettier: 9.0.5_stylelint@15.4.0
-  stylelint-config-standard: 31.0.0_stylelint@15.4.0
+  stylelint: 15.5.0
+  stylelint-config-html: 1.1.0_capku7c4whioxcflabi6vl6bxm
+  stylelint-config-prettier: 9.0.5_stylelint@15.5.0
+  stylelint-config-standard: 31.0.0_stylelint@15.5.0
   svelte: 3.58.0
   svelte-preprocess: 5.0.3_aswnnyxiuwffgztcffmr7c7eny
   typescript: 4.9.5
@@ -1258,12 +1258,12 @@ packages:
     engines: {node: ^14 || ^16 || >=18}
     dev: true
 
-  /@csstools/media-query-list-parser/2.0.1_eu5cdbcexitnvbdq5yia3g22um:
-    resolution: {integrity: sha512-X2/OuzEbjaxhzm97UJ+95GrMeT29d1Ib+Pu+paGLuRWZnWRK9sI9r3ikmKXPWGA1C4y4JEdBEFpp9jEqCvLeRA==}
+  /@csstools/media-query-list-parser/2.0.4_eu5cdbcexitnvbdq5yia3g22um:
+    resolution: {integrity: sha512-GyYot6jHgcSDZZ+tLSnrzkR7aJhF2ZW6d+CXH66mjy5WpAQhZD4HDke2OQ36SivGRWlZJpAz7TzbW6OKlEpxAA==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
-      '@csstools/css-parser-algorithms': ^2.0.0
-      '@csstools/css-tokenizer': ^2.0.0
+      '@csstools/css-parser-algorithms': ^2.1.1
+      '@csstools/css-tokenizer': ^2.1.1
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.0_5vzy4lghjvuzkedkkk4tqwjftm
       '@csstools/css-tokenizer': 2.1.0
@@ -3172,8 +3172,8 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /html-tags/3.2.0:
-    resolution: {integrity: sha512-vy7ClnArOZwCnqZgvv+ddgHgJiAFXe3Ge9ML5/mBctVJoUoYPCdxVucOywjDARn6CVoh3dRSFdPHy2sX80L0Wg==}
+  /html-tags/3.3.1:
+    resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
     dev: true
 
@@ -4537,7 +4537,7 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-html/1.1.0_4i3jeu7aznyfktsaj5a2mymbyu:
+  /stylelint-config-html/1.1.0_capku7c4whioxcflabi6vl6bxm:
     resolution: {integrity: sha512-IZv4IVESjKLumUGi+HWeb7skgO6/g4VMuAYrJdlqQFndgbj6WJAXPhaysvBiXefX79upBdQVumgYcdd17gCpjQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
@@ -4545,44 +4545,44 @@ packages:
       stylelint: '>=14.0.0'
     dependencies:
       postcss-html: 1.5.0
-      stylelint: 15.4.0
+      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-prettier/9.0.5_stylelint@15.4.0:
+  /stylelint-config-prettier/9.0.5_stylelint@15.5.0:
     resolution: {integrity: sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA==}
     engines: {node: '>= 12'}
     hasBin: true
     peerDependencies:
       stylelint: '>= 11.x < 15'
     dependencies:
-      stylelint: 15.4.0
+      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-recommended/11.0.0_stylelint@15.4.0:
+  /stylelint-config-recommended/11.0.0_stylelint@15.5.0:
     resolution: {integrity: sha512-SoGIHNI748OCZn6BxFYT83ytWoYETCINVHV3LKScVAWQQauWdvmdDqJC5YXWjpBbxg2E761Tg5aUGKLFOVhEkA==}
     peerDependencies:
       stylelint: ^15.3.0
     dependencies:
-      stylelint: 15.4.0
+      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-standard/31.0.0_stylelint@15.4.0:
+  /stylelint-config-standard/31.0.0_stylelint@15.5.0:
     resolution: {integrity: sha512-CUGAmtROCvX0YgMY2+6P9tqSkHj5z/75XxrQ8bGxvkCa1xYdGDx4poM0pa7cXc3s74/PZLJH/okxZZouRfOSGw==}
     peerDependencies:
       stylelint: ^15.3.0
     dependencies:
-      stylelint: 15.4.0
-      stylelint-config-recommended: 11.0.0_stylelint@15.4.0
+      stylelint: 15.5.0
+      stylelint-config-recommended: 11.0.0_stylelint@15.5.0
     dev: true
 
-  /stylelint/15.4.0:
-    resolution: {integrity: sha512-TlOvpG3MbcFwHmK0q2ykhmpKo7Dq892beJit0NPdpyY9b1tFah/hGhqnAz/bRm2PDhDbJLKvjzkEYYBEz7Dxcg==}
+  /stylelint/15.5.0:
+    resolution: {integrity: sha512-jyMO3R1QtE5mUS4v40+Gg+sIQBqe7CF1xPslxycDzNVkIBCUD4O+5F1vLPq16VmunUTv4qG9o2rUKLnU5KkVeQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.0_5vzy4lghjvuzkedkkk4tqwjftm
       '@csstools/css-tokenizer': 2.1.0
-      '@csstools/media-query-list-parser': 2.0.1_eu5cdbcexitnvbdq5yia3g22um
+      '@csstools/media-query-list-parser': 2.0.4_eu5cdbcexitnvbdq5yia3g22um
       '@csstools/selector-specificity': 2.2.0_laljekdltgzr3kfi7r4exvsr5a
       balanced-match: 2.0.0
       colord: 2.9.3
@@ -4596,7 +4596,7 @@ packages:
       global-modules: 2.0.0
       globby: 11.1.0
       globjoin: 0.1.4
-      html-tags: 3.2.0
+      html-tags: 3.3.1
       ignore: 5.2.4
       import-lazy: 4.0.0
       imurmurhash: 0.1.4
