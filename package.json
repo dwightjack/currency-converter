@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@unocss/reset": "0.51.12",
-    "idb-keyval": "6.2.0",
+    "idb-keyval": "6.2.1",
     "ky": "0.33.3"
   },
   "prettier": {
