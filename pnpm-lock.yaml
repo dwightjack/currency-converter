@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@unocss/reset':
-    specifier: 0.51.12
-    version: 0.51.12
+    specifier: 0.51.13
+    version: 0.51.13
   idb-keyval:
     specifier: 6.2.1
     version: 6.2.1
@@ -25,11 +25,11 @@ devDependencies:
     specifier: 5.59.5
     version: 5.59.5(eslint@8.40.0)(typescript@5.0.4)
   '@unocss/core':
-    specifier: 0.51.12
-    version: 0.51.12
+    specifier: 0.51.13
+    version: 0.51.13
   '@unocss/extractor-svelte':
-    specifier: 0.51.12
-    version: 0.51.12
+    specifier: 0.51.13
+    version: 0.51.13
   '@unocss/preset-wind':
     specifier: ^0.51.0
     version: 0.51.4
@@ -1979,8 +1979,8 @@ packages:
       unconfig: 0.3.7
     dev: true
 
-  /@unocss/core@0.51.12:
-    resolution: {integrity: sha512-H8mLy6ZKu9nGZe5jlHhLPIVwh2G3cCDSBGl5aIZJFI1qpmDC+Zb3iueBGigNpX75IzkjaGKZiK1WUWq8TShjtA==}
+  /@unocss/core@0.51.13:
+    resolution: {integrity: sha512-SclWkqY2c+p5+PiqrbQkhJNEExPdeo71/aGFye10tpBkgPJWd5xC7dhg5F8M4VPNBtuNCrvBWyqNnunMyuz/WQ==}
     dev: true
 
   /@unocss/core@0.51.4:
@@ -1993,8 +1993,8 @@ packages:
       '@unocss/core': 0.51.4
     dev: true
 
-  /@unocss/extractor-svelte@0.51.12:
-    resolution: {integrity: sha512-315rmpX4jIbPc4YOOsJX40BrvyOIr/VquO2TonTRKhGbREUyDsmX2X2QvTCXOpOp6yBolgUBP09HXAletpBp4A==}
+  /@unocss/extractor-svelte@0.51.13:
+    resolution: {integrity: sha512-gHMp2kz6EjSxDl6c/zdfhIapF/NKrbsKpnSkuMD11zWvPrxKQl4kO5lcqxuzkFNQ19P/Pd5BvBPUY89da8cRZQ==}
     dev: true
 
   /@unocss/inspector@0.51.4:
@@ -2076,8 +2076,8 @@ packages:
       '@unocss/preset-mini': 0.51.4
     dev: true
 
-  /@unocss/reset@0.51.12:
-    resolution: {integrity: sha512-VWcudNyGPGU/C+Jrfzbx8BqhFh/QENfUPkKcC8hpqxC4b5PsTJcF8zLu6KgabM0X0CzVouIvVcdZIcUCUEH77Q==}
+  /@unocss/reset@0.51.13:
+    resolution: {integrity: sha512-xwYJW6vNbHIpBtlFcW93fZxILZpWatcCc9nclSgsl0YlFUz9w4/aoV9KqwU62Y4VUteJxCZCCXa3pSiPO8h5KA==}
     dev: false
 
   /@unocss/reset@0.51.4:
