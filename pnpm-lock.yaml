@@ -17,7 +17,7 @@ devDependencies:
     version: 1.1.9
   '@sveltejs/vite-plugin-svelte':
     specifier: 2.2.0
-    version: 2.2.0(svelte@3.59.1)(vite@4.3.6)
+    version: 2.2.0(svelte@3.59.1)(vite@4.3.7)
   '@typescript-eslint/eslint-plugin':
     specifier: 5.59.6
     version: 5.59.6(@typescript-eslint/parser@5.59.6)(eslint@8.40.0)(typescript@5.0.4)
@@ -58,17 +58,17 @@ devDependencies:
     specifier: 2.10.0
     version: 2.10.0(prettier@2.8.8)(svelte@3.59.1)
   stylelint:
-    specifier: 15.6.1
-    version: 15.6.1
+    specifier: 15.6.2
+    version: 15.6.2
   stylelint-config-html:
     specifier: 1.1.0
-    version: 1.1.0(postcss-html@1.5.0)(stylelint@15.6.1)
+    version: 1.1.0(postcss-html@1.5.0)(stylelint@15.6.2)
   stylelint-config-prettier:
     specifier: 9.0.5
-    version: 9.0.5(stylelint@15.6.1)
+    version: 9.0.5(stylelint@15.6.2)
   stylelint-config-standard:
     specifier: 33.0.0
-    version: 33.0.0(stylelint@15.6.1)
+    version: 33.0.0(stylelint@15.6.2)
   svelte:
     specifier: 3.59.1
     version: 3.59.1
@@ -80,13 +80,13 @@ devDependencies:
     version: 5.0.4
   unocss:
     specifier: ^0.51.4
-    version: 0.51.4(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.6)
+    version: 0.51.4(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.7)
   vite:
-    specifier: 4.3.6
-    version: 4.3.6
+    specifier: 4.3.7
+    version: 4.3.7
   vite-plugin-pwa:
     specifier: 0.14.7
-    version: 0.14.7(vite@4.3.6)(workbox-build@6.5.4)(workbox-window@6.5.4)
+    version: 0.14.7(vite@4.3.7)(workbox-build@6.5.4)(workbox-window@6.5.4)
 
 packages:
 
@@ -1747,7 +1747,7 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /@sveltejs/vite-plugin-svelte@2.2.0(svelte@3.59.1)(vite@4.3.6):
+  /@sveltejs/vite-plugin-svelte@2.2.0(svelte@3.59.1)(vite@4.3.7):
     resolution: {integrity: sha512-KDtdva+FZrZlyug15KlbXuubntAPKcBau0K7QhAIqC5SAy0uDbjZwoexDRx0L0J2T4niEfC6FnA9GuQQJKg+Aw==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -1760,8 +1760,8 @@ packages:
       magic-string: 0.30.0
       svelte: 3.59.1
       svelte-hmr: 0.15.1(svelte@3.59.1)
-      vite: 4.3.6
-      vitefu: 0.2.4(vite@4.3.6)
+      vite: 4.3.7
+      vitefu: 0.2.4(vite@4.3.7)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1938,12 +1938,12 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@unocss/astro@0.51.4(rollup@2.79.1)(vite@4.3.6):
+  /@unocss/astro@0.51.4(rollup@2.79.1)(vite@4.3.7):
     resolution: {integrity: sha512-denp8/PHvzfN9azfTF72+ey6xpgUB4L4416FI4DfcfKPzRMo4KjIaHlTD6xuaJwBdC8UJSOIcDRXldRGPT33Ag==}
     dependencies:
       '@unocss/core': 0.51.4
       '@unocss/reset': 0.51.4
-      '@unocss/vite': 0.51.4(rollup@2.79.1)(vite@4.3.6)
+      '@unocss/vite': 0.51.4(rollup@2.79.1)(vite@4.3.7)
     transitivePeerDependencies:
       - rollup
       - vite
@@ -2119,7 +2119,7 @@ packages:
       '@unocss/core': 0.51.4
     dev: true
 
-  /@unocss/vite@0.51.4(rollup@2.79.1)(vite@4.3.6):
+  /@unocss/vite@0.51.4(rollup@2.79.1)(vite@4.3.7):
     resolution: {integrity: sha512-zrACPc6c99Phipi1totFjGzUvcucP+HZoeSTr4VDPQQk/vo7CuSmYFNMzWEw2NynWJgkv/FUdLTnK0tZj08LCA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -2134,7 +2134,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.3.6
+      vite: 4.3.7
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -4556,7 +4556,7 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-html@1.1.0(postcss-html@1.5.0)(stylelint@15.6.1):
+  /stylelint-config-html@1.1.0(postcss-html@1.5.0)(stylelint@15.6.2):
     resolution: {integrity: sha512-IZv4IVESjKLumUGi+HWeb7skgO6/g4VMuAYrJdlqQFndgbj6WJAXPhaysvBiXefX79upBdQVumgYcdd17gCpjQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
@@ -4564,38 +4564,38 @@ packages:
       stylelint: '>=14.0.0'
     dependencies:
       postcss-html: 1.5.0
-      stylelint: 15.6.1
+      stylelint: 15.6.2
     dev: true
 
-  /stylelint-config-prettier@9.0.5(stylelint@15.6.1):
+  /stylelint-config-prettier@9.0.5(stylelint@15.6.2):
     resolution: {integrity: sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA==}
     engines: {node: '>= 12'}
     hasBin: true
     peerDependencies:
       stylelint: '>= 11.x < 15'
     dependencies:
-      stylelint: 15.6.1
+      stylelint: 15.6.2
     dev: true
 
-  /stylelint-config-recommended@12.0.0(stylelint@15.6.1):
+  /stylelint-config-recommended@12.0.0(stylelint@15.6.2):
     resolution: {integrity: sha512-x6x8QNARrGO2sG6iURkzqL+Dp+4bJorPMMRNPScdvaUK8PsynriOcMW7AFDKqkWAS5wbue/u8fUT/4ynzcmqdQ==}
     peerDependencies:
       stylelint: ^15.5.0
     dependencies:
-      stylelint: 15.6.1
+      stylelint: 15.6.2
     dev: true
 
-  /stylelint-config-standard@33.0.0(stylelint@15.6.1):
+  /stylelint-config-standard@33.0.0(stylelint@15.6.2):
     resolution: {integrity: sha512-eyxnLWoXImUn77+ODIuW9qXBDNM+ALN68L3wT1lN2oNspZ7D9NVGlNHb2QCUn4xDug6VZLsh0tF8NyoYzkgTzg==}
     peerDependencies:
       stylelint: ^15.5.0
     dependencies:
-      stylelint: 15.6.1
-      stylelint-config-recommended: 12.0.0(stylelint@15.6.1)
+      stylelint: 15.6.2
+      stylelint-config-recommended: 12.0.0(stylelint@15.6.2)
     dev: true
 
-  /stylelint@15.6.1:
-    resolution: {integrity: sha512-d8icFBlVl93Elf3Z5ABQNOCe4nx69is3D/NZhDLAie1eyYnpxfeKe7pCfqzT5W4F8vxHCLSDfV8nKNJzogvV2Q==}
+  /stylelint@15.6.2:
+    resolution: {integrity: sha512-fjQWwcdUye4DU+0oIxNGwawIPC5DvG5kdObY5Sg4rc87untze3gC/5g/ikePqVjrAsBUZjwMN+pZsAYbDO6ArQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -4931,7 +4931,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.51.4(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.6):
+  /unocss@0.51.4(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.7):
     resolution: {integrity: sha512-84kRoL29Rk0AKdeS2GGZ+YduW5F0S2on3cSxA2Hh1KlI4MN8Xvxa8+f4RfFS0U5iH4yoHohvcWThRgjDhOWSeg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4940,7 +4940,7 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.51.4(rollup@2.79.1)(vite@4.3.6)
+      '@unocss/astro': 0.51.4(rollup@2.79.1)(vite@4.3.7)
       '@unocss/cli': 0.51.4(rollup@2.79.1)
       '@unocss/core': 0.51.4
       '@unocss/extractor-arbitrary-variants': 0.51.4
@@ -4959,7 +4959,7 @@ packages:
       '@unocss/transformer-compile-class': 0.51.4
       '@unocss/transformer-directives': 0.51.4
       '@unocss/transformer-variant-group': 0.51.4
-      '@unocss/vite': 0.51.4(rollup@2.79.1)(vite@4.3.6)
+      '@unocss/vite': 0.51.4(rollup@2.79.1)(vite@4.3.7)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -5004,7 +5004,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-pwa@0.14.7(vite@4.3.6)(workbox-build@6.5.4)(workbox-window@6.5.4):
+  /vite-plugin-pwa@0.14.7(vite@4.3.7)(workbox-build@6.5.4)(workbox-window@6.5.4):
     resolution: {integrity: sha512-dNJaf0fYOWncmjxv9HiSa2xrSjipjff7IkYE5oIUJ2x5HKu3cXgA8LRgzOwTc5MhwyFYRSU0xyN0Phbx3NsQYw==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
@@ -5016,15 +5016,15 @@ packages:
       fast-glob: 3.2.12
       pretty-bytes: 6.0.0
       rollup: 3.19.1
-      vite: 4.3.6
+      vite: 4.3.7
       workbox-build: 6.5.4
       workbox-window: 6.5.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.3.6:
-    resolution: {integrity: sha512-cqIyLSbA6gornMS659AXTVKF7cvSHMdKmJJwQ9DXq3lwsT1uZSdktuBRlpHQ8VnOWx0QHtjDwxPpGtyo9Fh/Qg==}
+  /vite@4.3.7:
+    resolution: {integrity: sha512-MTIFpbIm9v7Hh5b0wSBgkcWzSBz7SAa6K/cBTwS4kUiQJfQLFlZZRJRQgqunCVzhTPCk674tW+0Qaqh3Q00dBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -5055,7 +5055,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitefu@0.2.4(vite@4.3.6):
+  /vitefu@0.2.4(vite@4.3.7):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -5063,7 +5063,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.3.6
+      vite: 4.3.7
     dev: true
 
   /webidl-conversions@4.0.2:
