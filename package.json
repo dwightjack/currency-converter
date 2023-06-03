@@ -21,7 +21,7 @@
     "@unocss/core": "0.52.7",
     "@unocss/extractor-svelte": "0.52.7",
     "@unocss/preset-wind": "^0.52.0",
-    "eslint": "8.41.0",
+    "eslint": "8.42.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-svelte": "2.30.0",
@@ -38,7 +38,7 @@
     "typescript": "5.1.3",
     "unocss": "^0.52.0",
     "vite": "4.3.9",
-    "vite-plugin-pwa": "0.16.2"
+    "vite-plugin-pwa": "0.16.3"
   },
   "dependencies": {
     "@unocss/reset": "0.52.7",
