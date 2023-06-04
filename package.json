@@ -18,9 +18,9 @@
     "@sveltejs/vite-plugin-svelte": "2.4.1",
     "@typescript-eslint/eslint-plugin": "5.59.8",
     "@typescript-eslint/parser": "5.59.8",
-    "@unocss/core": "0.52.7",
-    "@unocss/extractor-svelte": "0.52.7",
-    "@unocss/preset-wind": "^0.52.0",
+    "@unocss/core": "0.53.0",
+    "@unocss/extractor-svelte": "0.53.0",
+    "@unocss/preset-wind": "^0.53.0",
     "eslint": "8.42.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "4.2.1",
@@ -36,12 +36,12 @@
     "svelte": "3.59.1",
     "svelte-preprocess": "5.0.4",
     "typescript": "5.1.3",
-    "unocss": "^0.52.0",
+    "unocss": "^0.53.0",
     "vite": "4.3.9",
     "vite-plugin-pwa": "0.16.3"
   },
   "dependencies": {
-    "@unocss/reset": "0.52.7",
+    "@unocss/reset": "0.53.0",
     "idb-keyval": "6.2.1",
     "ky": "0.33.3"
   },
