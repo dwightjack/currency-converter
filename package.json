@@ -8,7 +8,7 @@
     "lint": "eslint --ext .js,.ts,.svelte ."
   },
   "type": "module",
-  "packageManager": "pnpm@8.6.4",
+  "packageManager": "pnpm@8.6.5",
   "engines": {
     "node": "18.16.1",
     "pnpm": "^8.0.0"
@@ -18,8 +18,8 @@
     "@sveltejs/vite-plugin-svelte": "2.4.2",
     "@typescript-eslint/eslint-plugin": "5.60.0",
     "@typescript-eslint/parser": "5.60.0",
-    "@unocss/core": "0.53.3",
-    "@unocss/extractor-svelte": "0.53.3",
+    "@unocss/core": "0.53.4",
+    "@unocss/extractor-svelte": "0.53.4",
     "@unocss/preset-wind": "^0.53.0",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
@@ -41,7 +41,7 @@
     "vite-plugin-pwa": "0.16.4"
   },
   "dependencies": {
-    "@unocss/reset": "0.53.3",
+    "@unocss/reset": "0.53.4",
     "idb-keyval": "6.2.1",
     "ky": "0.33.3"
   },
