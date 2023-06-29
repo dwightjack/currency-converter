@@ -10,7 +10,7 @@
   "type": "module",
   "packageManager": "pnpm@8.6.5",
   "engines": {
-    "node": "18.16.1",
+    "node": "^18.16.1",
     "pnpm": "^8.0.0"
   },
   "devDependencies": {
@@ -33,7 +33,7 @@
     "stylelint-config-html": "1.1.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-config-standard": "33.0.0",
-    "svelte": "3.59.2",
+    "svelte": "4.0.0",
     "svelte-preprocess": "5.0.4",
     "typescript": "5.1.6",
     "unocss": "^0.53.0",
