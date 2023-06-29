@@ -35,6 +35,7 @@ export default defineConfig({
     },
   },
   shortcuts: {
+    'grid-calc': 'gap-[1px] grid-cols-calc grid-rows-calc grid-areas-calc',
     'outline-brand':
       'outline-none focus-visible:outline-brand-600 @dark:focus-visible:outline-brand-dark-400',
     'outline-brand-within':
@@ -50,5 +51,27 @@ export default defineConfig({
       ([_, varName]) => ({ 'grid-area': `var(--${varName})` }),
     ],
     [/^grid-area-\[([^\]]+)\]$/, ([_, area]) => ({ 'grid-area': area })],
+    [
+      'grid-cols-calc',
+      { 'grid-template-columns': 'repeat(4, minmax(calc(25% - 1px), 4rem))' },
+    ],
+    [
+      'grid-rows-calc',
+      {
+        'grid-template-rows': 'repeat(6, minmax(calc((100% - 6px) / 6), 4rem))',
+      },
+    ],
+    [
+      'grid-areas-calc',
+      {
+        'grid-template-areas': `
+        'output output output output'
+        'reset reset divide times'
+        'b7 b8 b9 minus'
+        'b4 b5 b6 plus'
+        'b1 b2 b3 eq'
+        'b0 b0 dot eq'`,
+      },
+    ],
   ],
 });

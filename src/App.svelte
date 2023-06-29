@@ -54,7 +54,15 @@
         />
       </CurrencyBox>
     </div>
-    <div class="min-inline-0 md:col-start-3 order-last">
+    <div class="items-center col-start-2 row-start-1 flex justify-center">
+      <ControlButton
+        on:click={invertCurrency}
+        icon="i-ion-swap-horizontal"
+        label="Switch"
+        class="text-2xl"
+      />
+    </div>
+    <div class="min-inline-0 md:col-start-3">
       <CurrencyBox
         label="Output Currency"
         id="to"
@@ -85,14 +93,6 @@
           />
         {/if}
       </CurrencyBox>
-    </div>
-    <div class="items-center col-start-2 row-start-1 flex justify-center">
-      <ControlButton
-        on:click={invertCurrency}
-        icon="i-ion-swap-horizontal"
-        label="Switch"
-        class="text-2xl"
-      />
     </div>
   </form>
   <ModalDialog

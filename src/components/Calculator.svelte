@@ -73,7 +73,7 @@
   }
 </script>
 
-<div class="c-calculator min-block-0 min-inline-0">
+<div class="grid grid-calc min-block-0 min-inline-0">
   <div class="grid-area-[output] flex items-center">
     <output
       class="text-3xl m-block-2 p-inline-2 text-end border-ie border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
@@ -108,19 +108,3 @@
   </CalcButton>
   <CalcButton area="eq" on:click={eq} theme="invert">=</CalcButton>
 </div>
-
-<style>
-  .c-calculator {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(calc(25% - 1px), 4rem));
-    grid-template-rows: repeat(6, minmax(calc((100% - 6px) / 6), 4rem));
-    grid-template-areas:
-      'output output output output'
-      'reset reset divide times'
-      'b7 b8 b9 minus'
-      'b4 b5 b6 plus'
-      'b1 b2 b3 eq'
-      'b0 b0 dot eq';
-    gap: 1px;
-  }
-</style>
