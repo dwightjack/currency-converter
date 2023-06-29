@@ -5,6 +5,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
 
+/* eslint-env node */
+
 const htmlPlugin = () => {
   return {
     name: 'html-transform',
@@ -21,6 +23,8 @@ const htmlPlugin = () => {
   };
 };
 
+console.log(!!process.env.IS_TEST);
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -28,6 +32,7 @@ export default defineConfig({
     Unocss(),
     VitePWA({
       registerType: 'autoUpdate',
+      disable: !!process.env.IS_TEST,
       manifest: {
         name: 'CurrConv',
         short_name: 'CurrConv',

@@ -3,3 +3,6 @@
 .DS_Store
 .env
 dist
+/test-results/
+/playwright-report/
+/playwright/.cache/

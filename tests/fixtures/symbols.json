@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "symbols": {
+    "CAD": { "description": "Canadian Dollar", "code": "CAD" },
+    "EUR": { "description": "Euro", "code": "EUR" },
+    "JPY": { "description": "Japanese Yen", "code": "JPY" },
+    "USD": { "description": "United States Dollar", "code": "USD" },
+    "XAU": { "description": "Gold Ounce", "code": "XAU" }
+  }
+}
