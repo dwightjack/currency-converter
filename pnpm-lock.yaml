@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@unocss/reset':
-    specifier: 0.53.4
-    version: 0.53.4
+    specifier: 0.53.5
+    version: 0.53.5
   idb-keyval:
     specifier: 6.2.1
     version: 6.2.1
@@ -29,11 +29,11 @@ devDependencies:
     specifier: 5.61.0
     version: 5.61.0(eslint@8.44.0)(typescript@5.1.6)
   '@unocss/core':
-    specifier: 0.53.4
-    version: 0.53.4
+    specifier: 0.53.5
+    version: 0.53.5
   '@unocss/extractor-svelte':
-    specifier: 0.53.4
-    version: 0.53.4
+    specifier: 0.53.5
+    version: 0.53.5
   '@unocss/preset-wind':
     specifier: ^0.53.4
     version: 0.53.4
@@ -1991,14 +1991,18 @@ packages:
     resolution: {integrity: sha512-JvmpuFOiJ8NkGzRmh0dCUmNdYjr8MmMtCX+czCmSnX2kvKyQjJIw3RIu84/DQbd/M/yxZmPjle8DrcZ1Ql86rQ==}
     dev: true
 
+  /@unocss/core@0.53.5:
+    resolution: {integrity: sha512-jBvk4FeUAALAomGfMFFmrXLy01/5DjugdnWgawFAQpSToFTxbMHS7x+pXKu/18cq+YLS8uyl9S0Ywy1jNbfS3Q==}
+    dev: true
+
   /@unocss/extractor-arbitrary-variants@0.53.4:
     resolution: {integrity: sha512-ydkfObZALqRqe/M68hBsIfT6KsUFm3nBD/4xUf4hvOiIySwptzUWYliVSoPHqhEq8L122oAEG1i5Yg8kQUUJZQ==}
     dependencies:
       '@unocss/core': 0.53.4
     dev: true
 
-  /@unocss/extractor-svelte@0.53.4:
-    resolution: {integrity: sha512-ssueqPxHiT9iGNqsAzKruK8mz5dYoj//mBuMFPNGfhSpYQpCpjOlyS9n8BEeyoNMtFqLsf3vVm0t79l40Jir6A==}
+  /@unocss/extractor-svelte@0.53.5:
+    resolution: {integrity: sha512-hgb7+2JC6M88IkvftyPnWWLtW7vaqXEHtnK98MaI1F308rH7XCv9slH+piv25APN8lhP3ix+Q76b3NUNrc7zXw==}
     dev: true
 
   /@unocss/inspector@0.53.4:
@@ -2082,6 +2086,11 @@ packages:
 
   /@unocss/reset@0.53.4:
     resolution: {integrity: sha512-NMqntd9CE9EpdtI2ELGCZg9Z2ySMdo/ljepP8QwfRmWbYaXUf3T/GJsOTqewbhNgJUGYinbs1OtiN0yG5xZjJQ==}
+    dev: true
+
+  /@unocss/reset@0.53.5:
+    resolution: {integrity: sha512-tH8K4jw76mbWA67UUHKV6zxiwOsiG+byrHoG3lz8hr+cm6OgEJ3WjNNp7dZINmr7S7ylWO6igbxGQpsAuIQZCw==}
+    dev: false
 
   /@unocss/scope@0.53.4:
     resolution: {integrity: sha512-vomyjd6i27V5G2awPoo9FoUit6qYyDyO0kroLzYPPNgq5M5jQFrZuQYc24dQ+JeJAQ3hlCGl8VM2v3Aj0PyUFg==}
