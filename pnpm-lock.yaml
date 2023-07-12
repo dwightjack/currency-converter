@@ -50,8 +50,8 @@ devDependencies:
     specifier: 2.32.2
     version: 2.32.2(eslint@8.44.0)(svelte@4.0.5)
   lefthook:
-    specifier: 1.4.4
-    version: 1.4.4
+    specifier: 1.4.5
+    version: 1.4.5
   postcss-html:
     specifier: 1.5.0
     version: 1.5.0
@@ -66,13 +66,13 @@ devDependencies:
     version: 4.0.5
   svelte-preprocess:
     specifier: 5.0.4
-    version: 5.0.4(@babel/core@7.22.5)(postcss@8.4.24)(svelte@4.0.5)(typescript@5.1.6)
+    version: 5.0.4(@babel/core@7.22.5)(postcss@8.4.25)(svelte@4.0.5)(typescript@5.1.6)
   typescript:
     specifier: 5.1.6
     version: 5.1.6
   unocss:
     specifier: ^0.53.4
-    version: 0.53.4(postcss@8.4.24)(rollup@2.79.1)(vite@4.4.3)
+    version: 0.53.4(postcss@8.4.25)(rollup@2.79.1)(vite@4.4.3)
   vite:
     specifier: 4.4.3
     version: 4.4.3
@@ -2012,7 +2012,7 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss@0.53.4(postcss@8.4.24):
+  /@unocss/postcss@0.53.4(postcss@8.4.25):
     resolution: {integrity: sha512-G7ZWqUszJiXrQVOzLBzOFZwGIVGwH695lE75NufQi8tXQF9QphGKT0t7AX1NRxA3IZpZW2Twxa/tZYRh2PJQAg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2023,7 +2023,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      postcss: 8.4.24
+      postcss: 8.4.25
     dev: true
 
   /@unocss/preset-attributify@0.53.4:
@@ -3481,83 +3481,83 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /lefthook-darwin-arm64@1.4.4:
-    resolution: {integrity: sha512-bVLyKmtp/vqHzBXMgVPDnM8nZHc+3i4BIZh0EYjHCO3pIFN3GOhhZ33umuzxVIQpU7kmXZOo/t9F6S/ddntzGQ==}
+  /lefthook-darwin-arm64@1.4.5:
+    resolution: {integrity: sha512-RS2+vdbSA1W7oXurZOYWToA4u7XCmjU/qi9yk2BV7lLFALpxI/KSaP5NAURyT9r/o+24dIxw3BWGybcFnwIHbA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-darwin-x64@1.4.4:
-    resolution: {integrity: sha512-IF0rOxWOs0ES08iwOi10T0P5TiayikRcoRre4WcLlMRMN5A11nh07eg9PyztrLVrl65AjE1aGHiVH5xe39hc2Q==}
+  /lefthook-darwin-x64@1.4.5:
+    resolution: {integrity: sha512-wKXkdADnBVp+9+tI8/5vZ6Hb7zboiR5P3T0eFhQnn+uy/VUhKZlFqQRh0ox34efFCxt+pdZ9xrbWhsJCa6HDFA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-freebsd-arm64@1.4.4:
-    resolution: {integrity: sha512-QjrARNkh8Q4G19OCmyst/e2BfbTNPfDNlmnWZqtw6LXPfcOi1n5roTdmnzZowMchnf+KkGzwU3rdwzbfHfQAdQ==}
+  /lefthook-freebsd-arm64@1.4.5:
+    resolution: {integrity: sha512-EjVXFbbvLYOjD/NCtYYl7lA2ChJl13X0EWcGyk/ZBBKoPgoDV/Lgd9SnLM6Ibp+6WBGR3EpK94iECXp4NC9ZSA==}
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-freebsd-x64@1.4.4:
-    resolution: {integrity: sha512-aZ6usgtK+xB6n9LsGomAT4vI30E91BxIkioEwrKOFVE/tHTCCgajaGeSxS2f+xaeTh2Yy5OYcwp17m34yp+YdA==}
+  /lefthook-freebsd-x64@1.4.5:
+    resolution: {integrity: sha512-BZPn4hFzZnzf9Binkj2x9HTZoV94XkE+UNxG+EXCUq970pfrv/kr8r9/mbLIn2RaNTQbiwnQyaz4gSS1PzCbKQ==}
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-arm64@1.4.4:
-    resolution: {integrity: sha512-A32/MpzNOu5e6pQn+v5C5Nc5NOMm2HkTHjv3LAAG1C0+Y23JC82LRQCBUi99DoUI0vwhHk3DHCm9ANvRQT5CYA==}
+  /lefthook-linux-arm64@1.4.5:
+    resolution: {integrity: sha512-Cw4yBBg2NpftGmoK+QgLbm005vemvQlEa5eZ3rf9d5IgaxkvS//WwxMVEDEINsganxqJZXFbEsGtPo2PcH1TLQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-x64@1.4.4:
-    resolution: {integrity: sha512-97CwcHY0wmCkN9yKTzEx5NxbEXr5bnhHEgpJbL67R2dL75oV3AZhRdB/NsjrewreJjGbQl2YhmxUFMbGI/Qysw==}
+  /lefthook-linux-x64@1.4.5:
+    resolution: {integrity: sha512-Fg9myVQVe0dqzQqqLCakPUrQ1F2vZeuFMGQJv4VsPKD27dWdWG5vV/8BR/RN78npzMnkhAb7dI9qmoEDHVJedQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-arm64@1.4.4:
-    resolution: {integrity: sha512-LGEfpe+Q3VeOIkE6S+8GyM1EARi0mbeIZpKsoCfl2t6Teh10hNSWqkpHaLphP52HnXOizFnNQjjY2pmiYatf8w==}
+  /lefthook-windows-arm64@1.4.5:
+    resolution: {integrity: sha512-UFvN1eaUPIFRPcTCvIyJq32CIO6b/zrfLyqUzHoWFY0ESXAmKt8GyLhPUWOmlsxeSC8A+B7eNkGFin/ufq8mHQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-x64@1.4.4:
-    resolution: {integrity: sha512-9BAHo97ES9+NULpdWcvgICczGY7wA/N2BoyQoZfHsF/0Ib6hLbvn4tv3+NdtJILlrnAvwgIrKCxOtcc3urS5DQ==}
+  /lefthook-windows-x64@1.4.5:
+    resolution: {integrity: sha512-wWSojuvTHlpXBnBovjQs0A5TGzTb6QAA1TuxhyLPDCUUXlV/fbCkkBUUxzvFffNrca+u1l2PitD+cr2b2pKrxQ==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook@1.4.4:
-    resolution: {integrity: sha512-g5bDSeyeLCuV//vGpZQsRNWuLAzJRrDbtWEvvUAZQcN+Mf1hWPXAPZvI5hdOj/ONC5OiqQbrWg1mPqP1i+IKYQ==}
+  /lefthook@1.4.5:
+    resolution: {integrity: sha512-KOT0DSvBNthCXj5WBK4SHExOnwOjprXwVvKRfi4H6np8a2vErYZOvPuYpVgM4RYVdCOTtq++z+NGVXZ3NZ42fw==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      lefthook-darwin-arm64: 1.4.4
-      lefthook-darwin-x64: 1.4.4
-      lefthook-freebsd-arm64: 1.4.4
-      lefthook-freebsd-x64: 1.4.4
-      lefthook-linux-arm64: 1.4.4
-      lefthook-linux-x64: 1.4.4
-      lefthook-windows-arm64: 1.4.4
-      lefthook-windows-x64: 1.4.4
+      lefthook-darwin-arm64: 1.4.5
+      lefthook-darwin-x64: 1.4.5
+      lefthook-freebsd-arm64: 1.4.5
+      lefthook-freebsd-x64: 1.4.5
+      lefthook-linux-arm64: 1.4.5
+      lefthook-linux-x64: 1.4.5
+      lefthook-windows-arm64: 1.4.5
+      lefthook-windows-x64: 1.4.5
     dev: true
 
   /leven@3.1.0:
@@ -4378,7 +4378,7 @@ packages:
       svelte: 4.0.5
     dev: true
 
-  /svelte-preprocess@5.0.4(@babel/core@7.22.5)(postcss@8.4.24)(svelte@4.0.5)(typescript@5.1.6):
+  /svelte-preprocess@5.0.4(@babel/core@7.22.5)(postcss@8.4.25)(svelte@4.0.5)(typescript@5.1.6):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -4420,7 +4420,7 @@ packages:
       '@types/pug': 2.0.6
       detect-indent: 6.1.0
       magic-string: 0.27.0
-      postcss: 8.4.24
+      postcss: 8.4.25
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.0.5
@@ -4600,7 +4600,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.53.4(postcss@8.4.24)(rollup@2.79.1)(vite@4.4.3):
+  /unocss@0.53.4(postcss@8.4.25)(rollup@2.79.1)(vite@4.4.3):
     resolution: {integrity: sha512-UUEi+oh1rngHHP0DVESRS+ScoKMRF8q6GIQrElHb67gqG7GDEGpy3oocIA/6+1t71I4FFvnnxLMGIo9qAD0TEw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4613,7 +4613,7 @@ packages:
       '@unocss/cli': 0.53.4(rollup@2.79.1)
       '@unocss/core': 0.53.4
       '@unocss/extractor-arbitrary-variants': 0.53.4
-      '@unocss/postcss': 0.53.4(postcss@8.4.24)
+      '@unocss/postcss': 0.53.4(postcss@8.4.25)
       '@unocss/preset-attributify': 0.53.4
       '@unocss/preset-icons': 0.53.4
       '@unocss/preset-mini': 0.53.4
