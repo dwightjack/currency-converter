@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@unocss/reset':
-    specifier: 0.53.5
-    version: 0.53.5
+    specifier: 0.53.6
+    version: 0.53.6
   idb-keyval:
     specifier: 6.2.1
     version: 6.2.1
@@ -29,11 +29,11 @@ devDependencies:
     specifier: 5.62.0
     version: 5.62.0(eslint@8.45.0)(typescript@5.1.6)
   '@unocss/core':
-    specifier: 0.53.5
-    version: 0.53.5
+    specifier: 0.53.6
+    version: 0.53.6
   '@unocss/extractor-svelte':
-    specifier: 0.53.5
-    version: 0.53.5
+    specifier: 0.53.6
+    version: 0.53.6
   '@unocss/preset-wind':
     specifier: ^0.53.4
     version: 0.53.4
@@ -1991,8 +1991,8 @@ packages:
     resolution: {integrity: sha512-JvmpuFOiJ8NkGzRmh0dCUmNdYjr8MmMtCX+czCmSnX2kvKyQjJIw3RIu84/DQbd/M/yxZmPjle8DrcZ1Ql86rQ==}
     dev: true
 
-  /@unocss/core@0.53.5:
-    resolution: {integrity: sha512-jBvk4FeUAALAomGfMFFmrXLy01/5DjugdnWgawFAQpSToFTxbMHS7x+pXKu/18cq+YLS8uyl9S0Ywy1jNbfS3Q==}
+  /@unocss/core@0.53.6:
+    resolution: {integrity: sha512-wuaLjWCzKUisHUxo4pjIdzcimdSmVa2hMHA3V7wVFBiSFX96/s7l0bvhHGFF/gMjbOnvJ+y+lBl3VKqcj9kwbA==}
     dev: true
 
   /@unocss/extractor-arbitrary-variants@0.53.4:
@@ -2001,8 +2001,8 @@ packages:
       '@unocss/core': 0.53.4
     dev: true
 
-  /@unocss/extractor-svelte@0.53.5:
-    resolution: {integrity: sha512-hgb7+2JC6M88IkvftyPnWWLtW7vaqXEHtnK98MaI1F308rH7XCv9slH+piv25APN8lhP3ix+Q76b3NUNrc7zXw==}
+  /@unocss/extractor-svelte@0.53.6:
+    resolution: {integrity: sha512-2/sUALLcaq9u/R2gDGNADW12QPv5juYZgIvEqBYTqact7SM/rPguEILCiFOKc+jqLIdQ182BNx+A+mH8ScFsJw==}
     dev: true
 
   /@unocss/inspector@0.53.4:
@@ -2088,8 +2088,8 @@ packages:
     resolution: {integrity: sha512-NMqntd9CE9EpdtI2ELGCZg9Z2ySMdo/ljepP8QwfRmWbYaXUf3T/GJsOTqewbhNgJUGYinbs1OtiN0yG5xZjJQ==}
     dev: true
 
-  /@unocss/reset@0.53.5:
-    resolution: {integrity: sha512-tH8K4jw76mbWA67UUHKV6zxiwOsiG+byrHoG3lz8hr+cm6OgEJ3WjNNp7dZINmr7S7ylWO6igbxGQpsAuIQZCw==}
+  /@unocss/reset@0.53.6:
+    resolution: {integrity: sha512-WtZU0Q5Y9CHzitYPJ+ZGPUssVuDnRakmHETQ2EuBJgWZhgsmTECrpb78+tnJdFVowuYYQyV0CP6a07uwkFNm6g==}
     dev: false
 
   /@unocss/scope@0.53.4:
