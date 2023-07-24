@@ -8,7 +8,7 @@
     "lint": "eslint --ext .js,.ts,.svelte ."
   },
   "type": "module",
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@8.6.10",
   "engines": {
     "node": "^18.16.1",
     "pnpm": "^8.0.0"
