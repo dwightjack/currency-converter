@@ -22,7 +22,7 @@
     "@unocss/extractor-svelte": "0.53.6",
     "@unocss/preset-wind": "^0.53.4",
     "eslint": "8.45.0",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "8.9.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-svelte": "2.32.4",
     "lefthook": "1.4.7",
