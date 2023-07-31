@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@unocss/reset':
-    specifier: 0.54.0
-    version: 0.54.0
+    specifier: 0.54.1
+    version: 0.54.1
   idb-keyval:
     specifier: 6.2.1
     version: 6.2.1
@@ -21,7 +21,7 @@ devDependencies:
     version: 1.1.11
   '@sveltejs/vite-plugin-svelte':
     specifier: 2.4.3
-    version: 2.4.3(svelte@4.1.1)(vite@4.4.7)
+    version: 2.4.3(svelte@4.1.2)(vite@4.4.7)
   '@typescript-eslint/eslint-plugin':
     specifier: 5.62.0
     version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.46.0)(typescript@5.1.6)
@@ -29,11 +29,11 @@ devDependencies:
     specifier: 5.62.0
     version: 5.62.0(eslint@8.46.0)(typescript@5.1.6)
   '@unocss/core':
-    specifier: 0.54.0
-    version: 0.54.0
+    specifier: 0.54.1
+    version: 0.54.1
   '@unocss/extractor-svelte':
-    specifier: 0.54.0
-    version: 0.54.0
+    specifier: 0.54.1
+    version: 0.54.1
   '@unocss/preset-wind':
     specifier: ^0.54.0
     version: 0.54.0
@@ -48,10 +48,10 @@ devDependencies:
     version: 4.2.1(eslint-config-prettier@8.9.0)(eslint@8.46.0)(prettier@2.8.8)
   eslint-plugin-svelte:
     specifier: 2.32.4
-    version: 2.32.4(eslint@8.46.0)(svelte@4.1.1)
+    version: 2.32.4(eslint@8.46.0)(svelte@4.1.2)
   lefthook:
-    specifier: 1.4.7
-    version: 1.4.7
+    specifier: 1.4.8
+    version: 1.4.8
   postcss-html:
     specifier: 1.5.0
     version: 1.5.0
@@ -60,13 +60,13 @@ devDependencies:
     version: 2.8.8
   prettier-plugin-svelte:
     specifier: 2.10.1
-    version: 2.10.1(prettier@2.8.8)(svelte@4.1.1)
+    version: 2.10.1(prettier@2.8.8)(svelte@4.1.2)
   svelte:
-    specifier: 4.1.1
-    version: 4.1.1
+    specifier: 4.1.2
+    version: 4.1.2
   svelte-preprocess:
     specifier: 5.0.4
-    version: 5.0.4(@babel/core@7.22.5)(postcss@8.4.26)(svelte@4.1.1)(typescript@5.1.6)
+    version: 5.0.4(@babel/core@7.22.5)(postcss@8.4.26)(svelte@4.1.2)(typescript@5.1.6)
   typescript:
     specifier: 5.1.6
     version: 5.1.6
@@ -1751,7 +1751,7 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.3)(svelte@4.1.1)(vite@4.4.7):
+  /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.3)(svelte@4.1.2)(vite@4.4.7):
     resolution: {integrity: sha512-Khdl5jmmPN6SUsVuqSXatKpQTMIifoQPDanaxC84m9JxIibWvSABJyHpyys0Z+1yYrxY5TTEQm+6elh0XCMaOA==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -1759,28 +1759,28 @@ packages:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.4.3(svelte@4.1.1)(vite@4.4.7)
+      '@sveltejs/vite-plugin-svelte': 2.4.3(svelte@4.1.2)(vite@4.4.7)
       debug: 4.3.4
-      svelte: 4.1.1
+      svelte: 4.1.2
       vite: 4.4.7
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte@2.4.3(svelte@4.1.1)(vite@4.4.7):
+  /@sveltejs/vite-plugin-svelte@2.4.3(svelte@4.1.2)(vite@4.4.7):
     resolution: {integrity: sha512-NY2h+B54KHZO3kDURTdARqthn6D4YSIebtfW75NvZ/fwyk4G+AJw3V/i0OBjyN4406Ht9yZcnNWMuRUFnDNNiA==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.3(@sveltejs/vite-plugin-svelte@2.4.3)(svelte@4.1.1)(vite@4.4.7)
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.3(@sveltejs/vite-plugin-svelte@2.4.3)(svelte@4.1.2)(vite@4.4.7)
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.1
-      svelte: 4.1.1
-      svelte-hmr: 0.15.2(svelte@4.1.1)
+      svelte: 4.1.2
+      svelte-hmr: 0.15.2(svelte@4.1.2)
       vite: 4.4.7
       vitefu: 0.2.4(vite@4.4.7)
     transitivePeerDependencies:
@@ -1996,14 +1996,18 @@ packages:
     resolution: {integrity: sha512-iHfJJ8U+pVhMrbVpzMb0GImZUJu3Xmp165Q5Qr44hGOEzcMdvdBxbMSSl2VBKjRsEuNudNVhh7XJAyUcKxnSWg==}
     dev: true
 
+  /@unocss/core@0.54.1:
+    resolution: {integrity: sha512-lbwvGD91liMNEZs3jwXxLrIHIn/J4dkJpeKdosRdm1xObqrkg0+Zx1fVn6X+GOX74yvjQlzbu/ODZEXFQC3mGw==}
+    dev: true
+
   /@unocss/extractor-arbitrary-variants@0.54.0:
     resolution: {integrity: sha512-luJTF3TnXFbMZ2Gau56p0uRsR+yIUbvHbT6ag6mvv0TvUsnhEFsMUdkXVJ1arp0duIl/dg0r1drL/Ax75RszNw==}
     dependencies:
       '@unocss/core': 0.54.0
     dev: true
 
-  /@unocss/extractor-svelte@0.54.0:
-    resolution: {integrity: sha512-VwBEP32U8GwWTaaUwi2Y3tta5CTYeqXYJe01R06Xnnm05x6PSEGNemq5a9oU13PIg6srCKsz5EHsUExMkv0kiw==}
+  /@unocss/extractor-svelte@0.54.1:
+    resolution: {integrity: sha512-Pas01efBfZIW2ZCeWuQ4fAG2XQL/bls7urJZiQOyEI/mc4jZUWYwkH8BrEF0M4wDw/3tPsP1aLkmCiA35z28bA==}
     dev: true
 
   /@unocss/inspector@0.54.0:
@@ -2087,6 +2091,11 @@ packages:
 
   /@unocss/reset@0.54.0:
     resolution: {integrity: sha512-zxvr96hVsmvJtxCLatLSCc67RBEgqvVDhEtkIFxIz5oCJzxvipJTGdKxM4F6Akyzx1A+q7zM8dimqvmC6D5Idw==}
+    dev: true
+
+  /@unocss/reset@0.54.1:
+    resolution: {integrity: sha512-qZcmybayQTX4QP7ya7jteN9IySU/ViK8HcCpixHA1ttUrsQeSURgdy01E74p+TsWDH0SY7vYmOy+HbYfQNycqQ==}
+    dev: false
 
   /@unocss/scope@0.54.0:
     resolution: {integrity: sha512-47M3y3sl512BWZL5/aLrGPglQIRUjQrIW+WVVh3uzwIGVnDNHlxIhcHQUXXJuf8SLduXoIvcZQTfJt+jSXeuhA==}
@@ -2719,7 +2728,7 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-svelte@2.32.4(eslint@8.46.0)(svelte@4.1.1):
+  /eslint-plugin-svelte@2.32.4(eslint@8.46.0)(svelte@4.1.2):
     resolution: {integrity: sha512-VJ12i2Iogug1jvhwxSlognnfGj76P5gks/V4pUD4SCSVQOp14u47MNP0zAG8AQR3LT0Fi1iUvIFnY4l9z5Rwbg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2740,8 +2749,8 @@ packages:
       postcss-safe-parser: 6.0.0(postcss@8.4.26)
       postcss-selector-parser: 6.0.13
       semver: 7.5.3
-      svelte: 4.1.1
-      svelte-eslint-parser: 0.32.2(svelte@4.1.1)
+      svelte: 4.1.2
+      svelte-eslint-parser: 0.32.2(svelte@4.1.2)
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3508,83 +3517,83 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /lefthook-darwin-arm64@1.4.7:
-    resolution: {integrity: sha512-26zPoDw9gUXCroqf8OIb3qHjIq7XWrRQKdwFz2RgCfOphY22XNEucq0W+5on5s4LeqI9GieKeYQ+R0UBTjQ5LA==}
+  /lefthook-darwin-arm64@1.4.8:
+    resolution: {integrity: sha512-wUaasRq7P1BNAlGwu/vONVHrwlrTwQGEhyn0leciEcnQCUN8aTeEC4hkxHmxisgQVQTdidYkCSWcsaEFn84xzw==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-darwin-x64@1.4.7:
-    resolution: {integrity: sha512-LSPiHTGEYqcABYuKqK+5+4SW6tmDXRUhSmZqcd7VSFsGa/9HU7imzqcbreiVPEO7ahKUDFYOB0riPV4g/Qys7w==}
+  /lefthook-darwin-x64@1.4.8:
+    resolution: {integrity: sha512-uUkQeU08szL4IpKVQSlhzNObZ79YkwmZ3fZDmF+jjP69LMESEVY7Y+cuQI0RG4YOTXHGBqZs3MPUZ7ZygBrhcQ==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-freebsd-arm64@1.4.7:
-    resolution: {integrity: sha512-b7LJdWwnrkh3uuWKqNfrlvau8/9N78IoxPz1z/xo468WcwroCYORRGpM+lKvgmKjrVFOJZQ6lFIYvVe8212wZg==}
+  /lefthook-freebsd-arm64@1.4.8:
+    resolution: {integrity: sha512-X4rWxsmxfyMRgfIOqAnk2zrMzlJV0fANEDYNuUYBVbgH8IYAy1cyVQlolgeC8NhFW8VaJ3AztbWpnR1M8zEByA==}
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-freebsd-x64@1.4.7:
-    resolution: {integrity: sha512-+sOYtxlyB9iwVHZLyoD0P7qg/8Guqjk5wmslXQrM89ilEQmDL+gnPRaqfEZrByjNEi/ltPTZ0YlOXeK/qxM0mg==}
+  /lefthook-freebsd-x64@1.4.8:
+    resolution: {integrity: sha512-ijenlZtEZpbnLFWTZdsIDmVdLzkaTkeEQVjjHEXdo2GBjLmdLYk8hRQiY/7oUxFe/JO1RLuhfIlPkKLtYz1iTQ==}
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-arm64@1.4.7:
-    resolution: {integrity: sha512-Gli+cAqnBX0bCwv0mON8PM7SY/aIaM4H+nbqad5HlDHZ3ovoQBPxCmEvMxug7/Ssa3v3zdZ1cR2FkRrgzA1w+w==}
+  /lefthook-linux-arm64@1.4.8:
+    resolution: {integrity: sha512-lOsJymblZ8nIpgm2lLfWx33tXtkdamK0lZThbSK4uwZQWFzSjr9qx21qZlJZ/mG8jZ5EY5Twhjqrt131CUXtMw==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-linux-x64@1.4.7:
-    resolution: {integrity: sha512-XVN686RdGB8UB/zguDeY+Nx6ikN1I9g3QBGBOGPE3aj9waB86+FotPhat/c9wfb9T0gkhKnxMiQ9kO8nvDuQxw==}
+  /lefthook-linux-x64@1.4.8:
+    resolution: {integrity: sha512-tF/iQFZu9iR++C3UXvpeTQS50CtTdZWmeMJ49uAovu9qe3qpPdKoguorZSFDC2+OGYbd7wbulldpWhvgxarniA==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-arm64@1.4.7:
-    resolution: {integrity: sha512-CxZwmsIV9h1N2NPZ08a2V9jXzvaDMPwmyByDJZNOkWW1Z3Dx/Q76VK4X7aS3HhyLpudzwYEYScWhQ+SIOmx6IA==}
+  /lefthook-windows-arm64@1.4.8:
+    resolution: {integrity: sha512-ykqX5rm5UI6244cF6anf92p+JXNvuA/Ah3bpQKYSA5JoMG2vJmPZ9nIThq5ky/F90jXySBxcdZRdrridtagAbw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook-windows-x64@1.4.7:
-    resolution: {integrity: sha512-Hu/GoPrJviM9gbys11ZJEIgTXyQ4btifUn6WBFW4M7NpA8rxx1bbLfXdDlcl6W28BGDb1aFIXVdnJIupK01hUw==}
+  /lefthook-windows-x64@1.4.8:
+    resolution: {integrity: sha512-wv8in0vku5eDpjNtri4s02kXbowEa6t/h8pHHUnCedmJJ2ImwwqGQJ1kwDVQL0U3bgdNWCfC2mUxVmtXoLQkBg==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /lefthook@1.4.7:
-    resolution: {integrity: sha512-0fCJ1ekbGG+Pi+xK9bnBF4B5eXHf/FRSiuLRP0ofYYs8LO7p1f7qbYQTCj3qjGBs6mvv/wq4UIR8e+Gi+L06TA==}
+  /lefthook@1.4.8:
+    resolution: {integrity: sha512-SALO6nIy0aizM3FJdy4cNdUy9qKJyGZo6f8gZdzhBuKLMrwnm9YeMdJmQKeEPZA9E2mDSqdHGJjvMlKrm+04Pg==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      lefthook-darwin-arm64: 1.4.7
-      lefthook-darwin-x64: 1.4.7
-      lefthook-freebsd-arm64: 1.4.7
-      lefthook-freebsd-x64: 1.4.7
-      lefthook-linux-arm64: 1.4.7
-      lefthook-linux-x64: 1.4.7
-      lefthook-windows-arm64: 1.4.7
-      lefthook-windows-x64: 1.4.7
+      lefthook-darwin-arm64: 1.4.8
+      lefthook-darwin-x64: 1.4.8
+      lefthook-freebsd-arm64: 1.4.8
+      lefthook-freebsd-x64: 1.4.8
+      lefthook-linux-arm64: 1.4.8
+      lefthook-linux-x64: 1.4.8
+      lefthook-windows-arm64: 1.4.8
+      lefthook-windows-x64: 1.4.8
     dev: true
 
   /leven@3.1.0:
@@ -3658,13 +3667,6 @@ packages:
 
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
-  /magic-string@0.30.0:
-    resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -3989,14 +3991,14 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-svelte@2.10.1(prettier@2.8.8)(svelte@4.1.1):
+  /prettier-plugin-svelte@2.10.1(prettier@2.8.8)(svelte@4.1.2):
     resolution: {integrity: sha512-Wlq7Z5v2ueCubWo0TZzKc9XHcm7TDxqcuzRuGd0gcENfzfT4JZ9yDlCbEgxWgiPmLHkBjfOtpAWkcT28MCDpUQ==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0
     dependencies:
       prettier: 2.8.8
-      svelte: 4.1.1
+      svelte: 4.1.2
     dev: true
 
   /prettier@2.8.8:
@@ -4371,7 +4373,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-eslint-parser@0.32.2(svelte@4.1.1):
+  /svelte-eslint-parser@0.32.2(svelte@4.1.2):
     resolution: {integrity: sha512-Ok9D3A4b23iLQsONrjqtXtYDu5ZZ/826Blaw2LeFZVTg1pwofKDG4mz3/GYTax8fQ0plRGHI6j+d9VQYy5Lo/A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -4385,19 +4387,19 @@ packages:
       espree: 9.6.0
       postcss: 8.4.26
       postcss-scss: 4.0.6(postcss@8.4.26)
-      svelte: 4.1.1
+      svelte: 4.1.2
     dev: true
 
-  /svelte-hmr@0.15.2(svelte@4.1.1):
+  /svelte-hmr@0.15.2(svelte@4.1.2):
     resolution: {integrity: sha512-q/bAruCvFLwvNbeE1x3n37TYFb3mTBJ6TrCq6p2CoFbSTNhDE9oAtEfpy+wmc9So8AG0Tja+X0/mJzX9tSfvIg==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0-next.0
     dependencies:
-      svelte: 4.1.1
+      svelte: 4.1.2
     dev: true
 
-  /svelte-preprocess@5.0.4(@babel/core@7.22.5)(postcss@8.4.26)(svelte@4.1.1)(typescript@5.1.6):
+  /svelte-preprocess@5.0.4(@babel/core@7.22.5)(postcss@8.4.26)(svelte@4.1.2)(typescript@5.1.6):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -4442,12 +4444,12 @@ packages:
       postcss: 8.4.26
       sorcery: 0.11.0
       strip-indent: 3.0.0
-      svelte: 4.1.1
+      svelte: 4.1.2
       typescript: 5.1.6
     dev: true
 
-  /svelte@4.1.1:
-    resolution: {integrity: sha512-Enick5fPFISLoVy0MFK45cG+YlQt6upw8skEK9zzTpJnH1DqEv8xOZwizCGSo3Q6HZ7KrZTM0J18poF7aQg5zw==}
+  /svelte@4.1.2:
+    resolution: {integrity: sha512-/evA8U6CgOHe5ZD1C1W3va9iJG7mWflcCdghBORJaAhD2JzrVERJty/2gl0pIPrJYBGZwZycH6onYf+64XXF9g==}
     engines: {node: '>=16'}
     dependencies:
       '@ampproject/remapping': 2.2.1
@@ -4461,7 +4463,7 @@ packages:
       estree-walker: 3.0.3
       is-reference: 3.0.1
       locate-character: 3.0.0
-      magic-string: 0.30.0
+      magic-string: 0.30.1
       periscopic: 3.1.0
     dev: true
 
