@@ -23,8 +23,6 @@ const htmlPlugin = () => {
   };
 };
 
-console.log(!!process.env.IS_TEST);
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [

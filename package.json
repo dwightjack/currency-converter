@@ -2,7 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8888",
     "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.svelte .",
