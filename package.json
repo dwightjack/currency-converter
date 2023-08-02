@@ -2,10 +2,11 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8888",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint --ext .js,.ts,.svelte ."
+    "lint": "eslint --ext .js,.ts,.svelte .",
+    "test": "playwright test"
   },
   "type": "module",
   "packageManager": "pnpm@8.6.11",
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@iconify-json/ion": "^1.1.11",
+    "@playwright/test": "^1.35.1",
     "@sveltejs/vite-plugin-svelte": "2.4.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
