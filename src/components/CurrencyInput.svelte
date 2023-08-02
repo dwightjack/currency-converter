@@ -9,12 +9,12 @@
     currency,
   });
 
-  function formatNumber(num: any) {
+  function formatNumber(num: unknown) {
     if (Number.isNaN(Number(num))) {
       return num;
     }
     return formatter
-      .formatToParts(num)
+      .formatToParts(Number(num))
       .reduce(
         (str, { type, value }) => str + (type !== 'currency' ? value : ''),
         '',
