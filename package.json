@@ -27,7 +27,7 @@
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-svelte": "2.32.4",
-    "lefthook": "1.4.8",
+    "lefthook": "1.4.9",
     "postcss-html": "1.5.0",
     "prettier": "3.0.1",
     "prettier-plugin-svelte": "3.0.3",
