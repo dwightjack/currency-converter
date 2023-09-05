@@ -41,7 +41,7 @@
   "dependencies": {
     "@unocss/reset": "0.55.7",
     "idb-keyval": "6.2.1",
-    "ky": "0.33.3"
+    "ky": "1.0.1"
   },
   "prettier": {
     "trailingComma": "all",
