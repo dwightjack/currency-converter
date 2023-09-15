@@ -17,7 +17,7 @@
   "devDependencies": {
     "@iconify-json/ion": "^1.1.11",
     "@playwright/test": "^1.36.2",
-    "@sveltejs/vite-plugin-svelte": "2.4.5",
+    "@sveltejs/vite-plugin-svelte": "2.4.6",
     "@typescript-eslint/eslint-plugin": "6.7.0",
     "@typescript-eslint/parser": "6.7.0",
     "@unocss/core": "0.55.7",
