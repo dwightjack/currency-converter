@@ -30,7 +30,7 @@ export default defineConfig({
     Unocss(),
     VitePWA({
       registerType: 'autoUpdate',
-      disable: !!process.env.IS_TEST,
+      disable: !!process.env.VITE_IS_TEST,
       manifest: {
         name: 'CurrConv',
         short_name: 'CurrConv',

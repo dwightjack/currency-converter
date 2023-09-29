@@ -28,7 +28,7 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install chromium --with-deps
       - name: Build
-        run: IS_TEST=true pnpm run build
+        run: VITE_IS_TEST=true pnpm run build
       - name: Run Playwright tests
         run: pnpm test -- --reporter=html
       - uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3

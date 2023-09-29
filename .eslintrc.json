@@ -10,7 +10,11 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "parserOptions": {
-    "project": ["tsconfig.json", "tests/tsconfig.json"],
+    "project": [
+      "tsconfig.json",
+      "tests/tsconfig.json",
+      "netlify/functions/tsconfig.json"
+    ],
     "extraFileExtensions": [".svelte"],
     "ecmaVersion": 2020,
     "sourceType": "module"
@@ -29,6 +33,12 @@
     {
       "files": ["*.js"],
       "parser": "espree"
+    },
+    {
+      "files": ["netlify/functions/**/*.ts"],
+      "env": {
+        "node": true
+      }
     }
   ],
   "rules": {

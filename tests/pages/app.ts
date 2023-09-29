@@ -1,5 +1,5 @@
 import { type Locator, type Page } from '@playwright/test';
-import rates from '../fixtures/latest.json' assert { type: 'json' };
+import rates from '../fixtures/rates.json' assert { type: 'json' };
 import symbols from '../fixtures/symbols.json' assert { type: 'json' };
 
 export class AppPage {
@@ -28,10 +28,10 @@ export class AppPage {
   }
 
   async setup() {
-    await this.page.route(/api\.exchangerate\.host\/symbols/, async (route) => {
+    await this.page.route('/.netlify/functions/symbols', async (route) => {
       await route.fulfill({ json: symbols });
     });
-    await this.page.route(/api\.exchangerate\.host\/latest/, async (route) => {
+    await this.page.route('/.netlify/functions/rates**', async (route) => {
       const base = new URL(route.request().url()).searchParams.get('base');
       await route.fulfill({
         json: {

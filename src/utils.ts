@@ -1,23 +1,36 @@
-import ky from 'ky';
-import type { CurrencySymbol, Rates } from './types';
-export async function fetchRates(base: string): Promise<Rates> {
-  const { rates, success } = await ky
-    .get(`https://api.exchangerate.host/latest?base=${base}`)
-    .json<{ rates: Rates; success: boolean }>();
+import { ofetch } from 'ofetch';
+import type { Rates, FetchRatesResponse, FetchSymbolsResponse } from './types';
 
-  if (!success) {
-    throw new Error('Unable to retrieve rates.');
+const apiFetch = ofetch.create({
+  parseResponse: JSON.parse,
+  baseURL: '/.netlify/functions',
+  async onResponseError({ request, response }) {
+    // Log error
+    console.log(
+      '[fetch response error]',
+      request,
+      response.status,
+      response.body,
+    );
+  },
+});
+
+export async function fetchRates(base: string): Promise<Rates> {
+  const response = await apiFetch<FetchRatesResponse>(`/rates`, {
+    query: { base },
+  });
+
+  if (response.success == false) {
+    throw new Error(`Unable to retrieve rates: ${response.message}`);
   }
-  return rates;
+  return response.rates;
 }
 
 export async function fetchSymbols() {
-  const { symbols, success } = await ky
-    .get('https://api.exchangerate.host/symbols')
-    .json<{ success: boolean; symbols: Record<string, CurrencySymbol> }>();
+  const response = await apiFetch<FetchSymbolsResponse>('/symbols');
 
-  if (!success) {
-    throw new Error('Unable to retrieve currencies.');
+  if (response.success === false) {
+    throw new Error(`Unable to retrieve currencies. ${response.message}`);
   }
-  return Object.values(symbols);
+  return response.symbols;
 }

@@ -47,7 +47,7 @@ export default defineConfig({
         reuseExistingServer: false,
       }
     : {
-        command: 'IS_TEST=true pnpm dev',
+        command: 'VITE_IS_TEST=true pnpm dev:vite',
         url: 'http://localhost:8888',
         reuseExistingServer: true,
       },
