@@ -31,7 +31,7 @@ export async function fetchCurrency(
   currencyCode: string,
 ): Promise<Partial<Currency>> {
   const data = await getKey<Currency>(currencyCode);
-  // if it exists and it has been fetch earlier than one day ago
+  // if it exists and it has been fetch earlier than 7 day ago
   if (data && Date.now() <= data.lastUpdate + STORAGE_DAYS) {
     return data;
   }
@@ -52,30 +52,25 @@ export async function fetchCurrency(
 
 export async function fetchCurrencyList() {
   const data = await getKey<{ symbols: CurrencySymbol[] }>('symbols');
-  // if it exists and it has been fetch earlier than one day ago
+  // if it exists and it has been fetch earlier than 7 day ago
   if (data && Date.now() <= data.lastUpdate + STORAGE_DAYS) {
     return data;
   }
 
   try {
-    const rawSymbols = await fetchSymbols();
-    if (!Array.isArray(rawSymbols)) {
-      alert(
-        `Unable to retrieve exchange rates currencies. Empty API response.`,
-      );
-      return { symbols: [] };
-    }
-    const symbols = rawSymbols.sort((a, b) => {
-      const nameA = a.description.toUpperCase();
-      const nameB = b.description.toUpperCase();
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    });
+    const symbols =
+      (await fetchSymbols()) ||
+      [].sort((a, b) => {
+        const nameA = a.description.toUpperCase();
+        const nameB = b.description.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
 
     // store the data in the db
     return await setKey('symbols', { symbols });

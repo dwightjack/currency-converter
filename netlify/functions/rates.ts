@@ -14,12 +14,18 @@ const handler: Handler = async ({ queryStringParameters }) => {
         success: false,
         message: `API error: ${response['error-type']}`,
       }),
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
     };
   }
 
   return {
     statusCode: 200,
     body: JSON.stringify({ success: true, rates: response.conversion_rates }),
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+    },
   };
 };
 
