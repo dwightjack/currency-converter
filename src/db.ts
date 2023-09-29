@@ -5,6 +5,7 @@ import type { Currency, CurrencySymbol } from './types';
 const store = createStore('currencyConv', 'currencies');
 
 const ONE_DAY = 1000 * 60 * 60 * 24;
+const STORAGE_DAYS = ONE_DAY * 7;
 
 export async function getKey<T>(
   currencyCode: string,
@@ -18,6 +19,9 @@ export async function getKey<T>(
 }
 
 export async function setKey<T>(currencyCode: string, data: T) {
+  if (import.meta.env.VITE_IS_TEST) {
+    return data;
+  }
   await set(currencyCode, { ...data, lastUpdate: Date.now() }, store);
 
   return data;
@@ -28,7 +32,7 @@ export async function fetchCurrency(
 ): Promise<Partial<Currency>> {
   const data = await getKey<Currency>(currencyCode);
   // if it exists and it has been fetch earlier than one day ago
-  if (data && Date.now() <= data.lastUpdate + ONE_DAY) {
+  if (data && Date.now() <= data.lastUpdate + STORAGE_DAYS) {
     return data;
   }
 
@@ -39,7 +43,9 @@ export async function fetchCurrency(
     return await setKey<Currency>(currencyCode, { code: currencyCode, rates });
   } catch (e) {
     console.warn(e);
-    alert(`unable to retrieve exchange rates for ${currencyCode}`);
+    alert(
+      `Unable to retrieve exchange rates for ${currencyCode}. ${e.message}`,
+    );
     return {};
   }
 }
@@ -47,12 +53,19 @@ export async function fetchCurrency(
 export async function fetchCurrencyList() {
   const data = await getKey<{ symbols: CurrencySymbol[] }>('symbols');
   // if it exists and it has been fetch earlier than one day ago
-  if (data && Date.now() <= data.lastUpdate + ONE_DAY) {
+  if (data && Date.now() <= data.lastUpdate + STORAGE_DAYS) {
     return data;
   }
 
   try {
-    const symbols = (await fetchSymbols()).sort((a, b) => {
+    const rawSymbols = await fetchSymbols();
+    if (!Array.isArray(rawSymbols)) {
+      alert(
+        `Unable to retrieve exchange rates currencies. Empty API response.`,
+      );
+      return { symbols: [] };
+    }
+    const symbols = rawSymbols.sort((a, b) => {
       const nameA = a.description.toUpperCase();
       const nameB = b.description.toUpperCase();
       if (nameA < nameB) {
@@ -68,7 +81,7 @@ export async function fetchCurrencyList() {
     return await setKey('symbols', { symbols });
   } catch (e) {
     console.warn(e);
-    alert(`unable to retrieve exchange rates currencies`);
+    alert(`Unable to retrieve exchange rates currencies. ${e.message}`);
     return { symbols: [] };
   }
 }

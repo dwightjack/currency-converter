@@ -1,23 +1,23 @@
-import ky from 'ky';
-import type { CurrencySymbol, Rates } from './types';
+import { ofetch } from 'ofetch';
+import type { Rates, FetchRatesResponse, FetchSymbolsResponse } from './types';
 export async function fetchRates(base: string): Promise<Rates> {
-  const { rates, success } = await ky
-    .get(`https://api.exchangerate.host/latest?base=${base}`)
-    .json<{ rates: Rates; success: boolean }>();
+  const response = await ofetch<FetchRatesResponse>(
+    `/.netlify/functions/rates?base=${base}`,
+  );
 
-  if (!success) {
-    throw new Error('Unable to retrieve rates.');
+  if (response.success == false) {
+    throw new Error(`Unable to retrieve rates: ${response.message}`);
   }
-  return rates;
+  return response.rates;
 }
 
 export async function fetchSymbols() {
-  const { symbols, success } = await ky
-    .get('https://api.exchangerate.host/symbols')
-    .json<{ success: boolean; symbols: Record<string, CurrencySymbol> }>();
+  const response = await ofetch<FetchSymbolsResponse>(
+    '/.netlify/functions/symbols',
+  );
 
-  if (!success) {
-    throw new Error('Unable to retrieve currencies.');
+  if (response.success === false) {
+    throw new Error(`Unable to retrieve currencies. ${response.message}`);
   }
-  return Object.values(symbols);
+  return response.symbols;
 }
