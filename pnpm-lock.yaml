@@ -27,7 +27,7 @@ devDependencies:
     version: 1.36.2
   '@sveltejs/vite-plugin-svelte':
     specifier: 2.4.6
-    version: 2.4.6(svelte@4.2.1)(vite@4.4.10)
+    version: 2.4.6(svelte@4.2.1)(vite@4.4.11)
   '@typescript-eslint/eslint-plugin':
     specifier: 6.7.4
     version: 6.7.4(@typescript-eslint/parser@6.7.4)(eslint@8.50.0)(typescript@5.2.2)
@@ -81,13 +81,13 @@ devDependencies:
     version: 5.2.2
   unocss:
     specifier: ^0.56.0
-    version: 0.56.0(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.10)
+    version: 0.56.0(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.11)
   vite:
-    specifier: 4.4.10
-    version: 4.4.10(@types/node@20.4.5)
+    specifier: 4.4.11
+    version: 4.4.11(@types/node@20.4.5)
   vite-plugin-pwa:
     specifier: 0.16.5
-    version: 0.16.5(vite@4.4.10)(workbox-build@7.0.0)(workbox-window@7.0.0)
+    version: 0.16.5(vite@4.4.11)(workbox-build@7.0.0)(workbox-window@7.0.0)
 
 packages:
 
@@ -3352,7 +3352,7 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@4.2.1)(vite@4.4.10):
+  /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@4.2.1)(vite@4.4.11):
     resolution: {integrity: sha512-zjiuZ3yydBtwpF3bj0kQNV0YXe+iKE545QGZVTaylW3eAzFr+pJ/cwK8lZEaRp4JtaJXhD5DyWAV4AxLh6DgaQ==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -3360,30 +3360,30 @@ packages:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.4.6(svelte@4.2.1)(vite@4.4.10)
+      '@sveltejs/vite-plugin-svelte': 2.4.6(svelte@4.2.1)(vite@4.4.11)
       debug: 4.3.4(supports-color@9.4.0)
       svelte: 4.2.1
-      vite: 4.4.10(@types/node@20.4.5)
+      vite: 4.4.11(@types/node@20.4.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte@2.4.6(svelte@4.2.1)(vite@4.4.10):
+  /@sveltejs/vite-plugin-svelte@2.4.6(svelte@4.2.1)(vite@4.4.11):
     resolution: {integrity: sha512-zO79p0+DZnXPnF0ltIigWDx/ux7Ni+HRaFOw720Qeivc1azFUrJxTl0OryXVibYNx1hCboGia1NRV3x8RNv4cA==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@4.2.1)(vite@4.4.10)
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@4.2.1)(vite@4.4.11)
       debug: 4.3.4(supports-color@9.4.0)
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.3
       svelte: 4.2.1
       svelte-hmr: 0.15.3(svelte@4.2.1)
-      vite: 4.4.10(@types/node@20.4.5)
-      vitefu: 0.2.4(vite@4.4.10)
+      vite: 4.4.11(@types/node@20.4.5)
+      vitefu: 0.2.4(vite@4.4.11)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3670,7 +3670,7 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@unocss/astro@0.56.0(rollup@2.79.1)(vite@4.4.10):
+  /@unocss/astro@0.56.0(rollup@2.79.1)(vite@4.4.11):
     resolution: {integrity: sha512-yBkpp2vc/dH6AiLAZrHC+trpR16VN4SiMVPgiy/UREj9BHJXVwFxFscjqXnuNP1vaxmVEfcvTkph9nJf/+JFjQ==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -3680,8 +3680,8 @@ packages:
     dependencies:
       '@unocss/core': 0.56.0
       '@unocss/reset': 0.56.0
-      '@unocss/vite': 0.56.0(rollup@2.79.1)(vite@4.4.10)
-      vite: 4.4.10(@types/node@20.4.5)
+      '@unocss/vite': 0.56.0(rollup@2.79.1)(vite@4.4.11)
+      vite: 4.4.11(@types/node@20.4.5)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -3868,7 +3868,7 @@ packages:
       '@unocss/core': 0.56.0
     dev: true
 
-  /@unocss/vite@0.56.0(rollup@2.79.1)(vite@4.4.10):
+  /@unocss/vite@0.56.0(rollup@2.79.1)(vite@4.4.11):
     resolution: {integrity: sha512-QFuX2jHYiNCdzffxVyBuECnkaaQzYkvf+P3VU/yNyUuH9DAzSIBVEpS04dRQQ7IdQiVduIpldL+IgUr/qW+IUA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -3883,7 +3883,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      vite: 4.4.10(@types/node@20.4.5)
+      vite: 4.4.11(@types/node@20.4.5)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -11412,7 +11412,7 @@ packages:
       normalize-path: 2.1.1
     dev: true
 
-  /unocss@0.56.0(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.10):
+  /unocss@0.56.0(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.11):
     resolution: {integrity: sha512-Ge0lMi1zYL2z/NCv0OMeYMUeLsjQGNeohSc/3qumEtGhBNiGrF6sVX80BnJ99fAFsn80nxJepWbCApUmZ/2tJA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -11424,7 +11424,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@unocss/astro': 0.56.0(rollup@2.79.1)(vite@4.4.10)
+      '@unocss/astro': 0.56.0(rollup@2.79.1)(vite@4.4.11)
       '@unocss/cli': 0.56.0(rollup@2.79.1)
       '@unocss/core': 0.56.0
       '@unocss/extractor-arbitrary-variants': 0.56.0
@@ -11443,8 +11443,8 @@ packages:
       '@unocss/transformer-compile-class': 0.56.0
       '@unocss/transformer-directives': 0.56.0
       '@unocss/transformer-variant-group': 0.56.0
-      '@unocss/vite': 0.56.0(rollup@2.79.1)(vite@4.4.10)
-      vite: 4.4.10(@types/node@20.4.5)
+      '@unocss/vite': 0.56.0(rollup@2.79.1)(vite@4.4.11)
+      vite: 4.4.11(@types/node@20.4.5)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11572,7 +11572,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-pwa@0.16.5(vite@4.4.10)(workbox-build@7.0.0)(workbox-window@7.0.0):
+  /vite-plugin-pwa@0.16.5(vite@4.4.11)(workbox-build@7.0.0)(workbox-window@7.0.0):
     resolution: {integrity: sha512-Ahol4dwhMP2UHPQXkllSlXbihOaDFnvBIDPmAxoSZ1EObBUJGP4CMRyCyAVkIHjd6/H+//vH0DM2ON+XxHr81g==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -11583,15 +11583,15 @@ packages:
       debug: 4.3.4(supports-color@9.4.0)
       fast-glob: 3.3.1
       pretty-bytes: 6.1.1
-      vite: 4.4.10(@types/node@20.4.5)
+      vite: 4.4.11(@types/node@20.4.5)
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.4.10(@types/node@20.4.5):
-    resolution: {integrity: sha512-TzIjiqx9BEXF8yzYdF2NTf1kFFbjMjUSV0LFZ3HyHoI3SGSPLnnFUKiIQtL3gl2AjHvMrprOvQ3amzaHgQlAxw==}
+  /vite@4.4.11(@types/node@20.4.5):
+    resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -11626,7 +11626,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitefu@0.2.4(vite@4.4.10):
+  /vitefu@0.2.4(vite@4.4.11):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -11634,7 +11634,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.10(@types/node@20.4.5)
+      vite: 4.4.11(@types/node@20.4.5)
     dev: true
 
   /wait-port@1.0.4:
