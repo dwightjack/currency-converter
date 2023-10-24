@@ -59,8 +59,8 @@ devDependencies:
     specifier: 1.5.2
     version: 1.5.2
   netlify-cli:
-    specifier: 16.9.1
-    version: 16.9.1(@types/node@20.4.5)
+    specifier: 16.9.2
+    version: 16.9.2(@types/node@20.4.5)
   postcss-html:
     specifier: 1.5.0
     version: 1.5.0
@@ -2467,6 +2467,39 @@ packages:
 
   /@netlify/edge-bundler@9.3.0(supports-color@9.4.0):
     resolution: {integrity: sha512-qKY4DKxBKn8TFbil5d7i71ztuOdRBfSXzYW9vN3t7WP0R4MKcgUg6nqo4a9llso/TNGlPv9tDrKq+w4jhpfGhA==}
+    engines: {node: ^14.16.0 || >=16.0.0}
+    dependencies:
+      '@import-maps/resolve': 1.0.1
+      '@vercel/nft': 0.24.3(supports-color@9.4.0)
+      ajv: 8.12.0
+      ajv-errors: 3.0.0(ajv@8.12.0)
+      better-ajv-errors: 1.2.0(ajv@8.12.0)
+      common-path-prefix: 3.0.0
+      env-paths: 3.0.0
+      esbuild: 0.19.4
+      execa: 6.1.0
+      find-up: 6.3.0
+      get-package-name: 2.2.0
+      get-port: 6.1.2
+      is-path-inside: 4.0.0
+      jsonc-parser: 3.2.0
+      node-fetch: 3.3.2
+      node-stream-zip: 1.15.0
+      p-retry: 5.1.2
+      p-wait-for: 4.1.0
+      path-key: 4.0.0
+      regexp-tree: 0.1.27
+      semver: 7.5.4
+      tmp-promise: 3.0.3
+      urlpattern-polyfill: 8.0.2
+      uuid: 9.0.0
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@netlify/edge-bundler@9.4.1:
+    resolution: {integrity: sha512-vcmKLIQL57NEcYBZtBptWWdK5JmWZc3r1ba+kEg939aXPEI5nT5D5qT5PyMiIQwWuFtR0t+DH3koOm8UOfsuwg==}
     engines: {node: ^14.16.0 || >=16.0.0}
     dependencies:
       '@import-maps/resolve': 1.0.1
@@ -9954,8 +9987,8 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /netlify-cli@16.9.1(@types/node@20.4.5):
-    resolution: {integrity: sha512-SZrPdHT6FRmpxN5vvy0ufyrN6PjpHAFqVDj9BifDaVywo0/4VJ/WdnZFF8gYtURp82omNu/RtToKBuCXPyg8vw==}
+  /netlify-cli@16.9.2(@types/node@20.4.5):
+    resolution: {integrity: sha512-3T51HRg3C2n+msze/2KuYpcrDrf6+7YsuH78o/OzjD/SMC4SFz8fUmA44Dk5N/uWQN2k5gFA8yi+KXl7J+W86g==}
     engines: {node: '>=16.16.0'}
     hasBin: true
     requiresBuild: true
@@ -9965,7 +9998,7 @@ packages:
       '@netlify/build': 29.23.4(@types/node@20.4.5)(debug@4.3.4)
       '@netlify/build-info': 7.10.1
       '@netlify/config': 20.9.0
-      '@netlify/edge-bundler': 9.3.0(supports-color@9.4.0)
+      '@netlify/edge-bundler': 9.4.1
       '@netlify/local-functions-proxy': 1.1.1
       '@netlify/sdk': 1.2.0(debug@4.3.4)
       '@netlify/serverless-functions-api': 1.10.0
