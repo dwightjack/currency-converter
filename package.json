@@ -10,7 +10,7 @@
     "test": "playwright test"
   },
   "type": "module",
-  "packageManager": "pnpm@8.10.3",
+  "packageManager": "pnpm@8.10.4",
   "engines": {
     "node": "^18.16.1",
     "pnpm": "^8.0.0"
@@ -20,8 +20,8 @@
     "@netlify/functions": "2.4.0",
     "@playwright/test": "^1.36.2",
     "@sveltejs/vite-plugin-svelte": "2.5.2",
-    "@typescript-eslint/eslint-plugin": "6.10.0",
-    "@typescript-eslint/parser": "6.10.0",
+    "@typescript-eslint/eslint-plugin": "6.11.0",
+    "@typescript-eslint/parser": "6.11.0",
     "@unocss/core": "0.57.3",
     "@unocss/extractor-svelte": "0.57.3",
     "@unocss/preset-wind": "^0.57.0",
