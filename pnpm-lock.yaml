@@ -27,7 +27,7 @@ devDependencies:
     version: 1.40.0
   '@sveltejs/vite-plugin-svelte':
     specifier: 3.0.1
-    version: 3.0.1(svelte@4.2.7)(vite@5.0.2)
+    version: 3.0.1(svelte@4.2.7)(vite@5.0.4)
   '@typescript-eslint/eslint-plugin':
     specifier: 6.13.1
     version: 6.13.1(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)(typescript@5.3.2)
@@ -59,8 +59,8 @@ devDependencies:
     specifier: 1.5.4
     version: 1.5.4
   netlify-cli:
-    specifier: 17.7.0
-    version: 17.7.0(@types/node@20.9.3)(idb-keyval@6.2.1)
+    specifier: 17.8.1
+    version: 17.8.1(@types/node@20.9.3)(idb-keyval@6.2.1)
   postcss-html:
     specifier: 1.5.0
     version: 1.5.0
@@ -81,13 +81,13 @@ devDependencies:
     version: 5.3.2
   unocss:
     specifier: ^0.57.6
-    version: 0.57.6(postcss@8.4.31)(rollup@2.79.1)(vite@5.0.2)
+    version: 0.57.6(postcss@8.4.31)(rollup@2.79.1)(vite@5.0.4)
   vite:
-    specifier: 5.0.2
-    version: 5.0.2(@types/node@20.9.3)
+    specifier: 5.0.4
+    version: 5.0.4(@types/node@20.9.3)
   vite-plugin-pwa:
     specifier: 0.17.2
-    version: 0.17.2(vite@5.0.2)(workbox-build@7.0.0)(workbox-window@7.0.0)
+    version: 0.17.2(vite@5.0.4)(workbox-build@7.0.0)(workbox-window@7.0.0)
 
 packages:
 
@@ -2094,8 +2094,8 @@ packages:
     resolution: {integrity: sha512-4wMPu9iN3/HL97QblBsBay3E1etIciR84izI3U+4iALY+JHCrI+a2jO0qbAZ/nxKoegypYEaiiqWXylm+/zfrw==}
     dev: true
 
-  /@netlify/blobs@6.3.0:
-    resolution: {integrity: sha512-EcgttqwH7kmK5B9RO8hRwAx/pkO9RwfFoRl+B38UNiFN6L4T46Q9Vhxnp3EzXQxn7Le1RpwFnXhd+UAhyZod+g==}
+  /@netlify/blobs@6.3.1:
+    resolution: {integrity: sha512-JjLz3WW7Wp6NVwQtDxPpWio4L3u9pnnDXnQ7Q16zgAFE9IA1rSjZVSsyOQrtkiBQIxaJ1Zr5eky8vrXJ5mdRWg==}
     engines: {node: ^14.16.0 || >=16.0.0}
     dev: true
 
@@ -2115,22 +2115,28 @@ packages:
       yargs: 17.7.2
     dev: true
 
-  /@netlify/build@29.27.0(@types/node@20.9.3)(debug@4.3.4):
-    resolution: {integrity: sha512-olo97YFbaprhTECbzMl/6MuAPmB835wmAz+uSkG22unkbG19kmUibjcxQhLzArrhJa5YIOei2Xnkh9qWnJZxTw==}
+  /@netlify/build@29.29.0(@types/node@20.9.3)(debug@4.3.4):
+    resolution: {integrity: sha512-xvDJY3lCGVDpGqKvB0vDYt9777p6xR+a3GmKxA2JoJHLn3yidXm+X76Ef73kngGVcwU7FumQNx8nb8vzd1kKYg==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
+    peerDependencies:
+      '@netlify/opentelemetry-sdk-setup': ^1.0.1
+    peerDependenciesMeta:
+      '@netlify/opentelemetry-sdk-setup':
+        optional: true
     dependencies:
       '@bugsnag/js': 7.20.2
       '@honeycombio/opentelemetry-node': 0.5.0(debug@4.3.4)(supports-color@9.4.0)
+      '@netlify/blobs': 6.3.1
       '@netlify/cache-utils': 5.1.5
       '@netlify/config': 20.10.0
       '@netlify/edge-bundler': 10.1.3(supports-color@9.4.0)
       '@netlify/framework-info': 9.8.10
-      '@netlify/functions-utils': 5.2.41(supports-color@9.4.0)
+      '@netlify/functions-utils': 5.2.42(supports-color@9.4.0)
       '@netlify/git-utils': 5.1.1
       '@netlify/plugins-list': 6.72.0
       '@netlify/run-utils': 5.1.1
-      '@netlify/zip-it-and-ship-it': 9.26.2(supports-color@9.4.0)
+      '@netlify/zip-it-and-ship-it': 9.26.4(supports-color@9.4.0)
       '@opentelemetry/api': 1.7.0
       '@opentelemetry/core': 1.18.1(@opentelemetry/api@1.7.0)
       '@sindresorhus/slugify': 2.2.1
@@ -2151,11 +2157,13 @@ packages:
       log-process-errors: 8.0.0
       map-obj: 5.0.2
       memoize-one: 6.0.0
+      node-fetch: 3.3.2
       os-name: 5.1.0
       p-event: 5.0.1
       p-every: 2.0.0
       p-filter: 3.0.0
       p-locate: 6.0.0
+      p-map: 6.0.0
       p-reduce: 3.0.0
       path-exists: 5.0.0
       path-type: 5.0.0
@@ -2279,11 +2287,11 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@netlify/functions-utils@5.2.41(supports-color@9.4.0):
-    resolution: {integrity: sha512-rvp11NquyVQ4d5rK6W6cP4M3iKyuOATqfEGlC7jLUZjMeNp4bQ5gPb5RaqqG5MHPY0KmdELMGGGgUxmCbh+Qxw==}
+  /@netlify/functions-utils@5.2.42(supports-color@9.4.0):
+    resolution: {integrity: sha512-ltZ5Vtop8IiJOgSnKApxZdXArOq4cLDs9WpZ3Xoa1lJDojjyPvAH6Vpp3DxFAdi9a8pzYK70vTb048SzMwffnA==}
     engines: {node: ^14.16.0 || >=16.0.0}
     dependencies:
-      '@netlify/zip-it-and-ship-it': 9.26.2(supports-color@9.4.0)
+      '@netlify/zip-it-and-ship-it': 9.26.4(supports-color@9.4.0)
       cpy: 9.0.1
       path-exists: 5.0.0
     transitivePeerDependencies:
@@ -2464,23 +2472,23 @@ packages:
       urlpattern-polyfill: 8.0.2
     dev: true
 
-  /@netlify/serverless-functions-api@1.12.0:
-    resolution: {integrity: sha512-LJt2gHzLQMgJLsLG9Chbu2Pxxi7Yzbj3Xcd9QlThvUlD7kf4nAr3lzzRJMZqo77rVNmfQX11W1uvGMSlduiKeA==}
+  /@netlify/serverless-functions-api@1.12.1:
+    resolution: {integrity: sha512-+G9cTltqfH54dF4dLqoEOV2P4qTIY8dM9blUVqg+NtVTXyuadzgpHqtffhVeyeLytVnTx1238kWJUe+sV3bnlg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@netlify/node-cookies': 0.1.0
       urlpattern-polyfill: 8.0.2
     dev: true
 
-  /@netlify/zip-it-and-ship-it@9.26.2(supports-color@9.4.0):
-    resolution: {integrity: sha512-tsQbSfgOTEfZmSnUbCJiHDVyYDRN1gQQEWjAmJ90YI60ZloT4j7B4HlBt0gshU9pPCiDxoHhQMCk5pHg7//CSw==}
+  /@netlify/zip-it-and-ship-it@9.26.4(supports-color@9.4.0):
+    resolution: {integrity: sha512-lGdmHz5ppP6VmVEuvuL5nKP7a3/dUGRLBotqs2x/lwp35/1lbR+CIbXV6y8IYc4yn1hDfDtp+Lcqe6Np2KcFtg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     dependencies:
       '@babel/parser': 7.23.4
       '@babel/types': 7.23.3
       '@netlify/binary-info': 1.0.0
-      '@netlify/serverless-functions-api': 1.12.0
+      '@netlify/serverless-functions-api': 1.12.1
       '@vercel/nft': 0.23.1(supports-color@9.4.0)
       archiver: 6.0.1
       common-path-prefix: 3.0.0
@@ -3627,7 +3635,7 @@ packages:
       string.prototype.matchall: 4.0.10
     dev: true
 
-  /@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.7)(vite@5.0.2):
+  /@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.7)(vite@5.0.4):
     resolution: {integrity: sha512-gjr9ZFg1BSlIpfZ4PRewigrvYmHWbDrq2uvvPB1AmTWKuM+dI1JXQSUu2pIrYLb/QncyiIGkFDFKTwJ0XqQZZg==}
     engines: {node: ^18.0.0 || >=20}
     peerDependencies:
@@ -3635,30 +3643,30 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.0.1(svelte@4.2.7)(vite@5.0.2)
+      '@sveltejs/vite-plugin-svelte': 3.0.1(svelte@4.2.7)(vite@5.0.4)
       debug: 4.3.4(supports-color@9.4.0)
       svelte: 4.2.7
-      vite: 5.0.2(@types/node@20.9.3)
+      vite: 5.0.4(@types/node@20.9.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte@3.0.1(svelte@4.2.7)(vite@5.0.2):
+  /@sveltejs/vite-plugin-svelte@3.0.1(svelte@4.2.7)(vite@5.0.4):
     resolution: {integrity: sha512-CGURX6Ps+TkOovK6xV+Y2rn8JKa8ZPUHPZ/NKgCxAmgBrXReavzFl8aOSCj3kQ1xqT7yGJj53hjcV/gqwDAaWA==}
     engines: {node: ^18.0.0 || >=20}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.7)(vite@5.0.2)
+      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.7)(vite@5.0.4)
       debug: 4.3.4(supports-color@9.4.0)
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.5
       svelte: 4.2.7
       svelte-hmr: 0.15.3(svelte@4.2.7)
-      vite: 5.0.2(@types/node@20.9.3)
-      vitefu: 0.2.5(vite@5.0.2)
+      vite: 5.0.4(@types/node@20.9.3)
+      vitefu: 0.2.5(vite@5.0.4)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3960,7 +3968,7 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@unocss/astro@0.57.6(rollup@2.79.1)(vite@5.0.2):
+  /@unocss/astro@0.57.6(rollup@2.79.1)(vite@5.0.4):
     resolution: {integrity: sha512-7NIGMg9ZHlWWeZoOFzruKQh6sz+wKtRN8ioiAOxIYVtULCoazfjhfzhiWcmyiHWVgrZ0TyUep/nz5cRumNBrQw==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
@@ -3970,8 +3978,8 @@ packages:
     dependencies:
       '@unocss/core': 0.57.6
       '@unocss/reset': 0.57.6
-      '@unocss/vite': 0.57.6(rollup@2.79.1)(vite@5.0.2)
-      vite: 5.0.2(@types/node@20.9.3)
+      '@unocss/vite': 0.57.6(rollup@2.79.1)(vite@5.0.4)
+      vite: 5.0.4(@types/node@20.9.3)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -4166,7 +4174,7 @@ packages:
       '@unocss/core': 0.57.6
     dev: true
 
-  /@unocss/vite@0.57.6(rollup@2.79.1)(vite@5.0.2):
+  /@unocss/vite@0.57.6(rollup@2.79.1)(vite@5.0.4):
     resolution: {integrity: sha512-sVVKhFCYDFCR+In8HXJ5ddnD+OnFw/3BcLoV3aRvIloojkDCG8rUywxS67TNu40LBZ8E+emFMcreDCFpwqphDA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
@@ -4181,7 +4189,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.2
       magic-string: 0.30.5
-      vite: 5.0.2(@types/node@20.9.3)
+      vite: 5.0.4(@types/node@20.9.3)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -7734,7 +7742,7 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  /ipx@2.0.1(@netlify/blobs@6.3.0)(idb-keyval@6.2.1):
+  /ipx@2.0.1(@netlify/blobs@6.3.1)(idb-keyval@6.2.1):
     resolution: {integrity: sha512-+EyZiVNosYr3hu3F5+5GripTBLjKmSPTvcy3YdT4zxlhqHQJ2gUopLGxpfv9Wd11YgeiPh53ysbtG+ZNIOVF4A==}
     hasBin: true
     dependencies:
@@ -7752,7 +7760,7 @@ packages:
       sharp: 0.32.6
       svgo: 3.0.4
       ufo: 1.3.2
-      unstorage: 1.10.1(@netlify/blobs@6.3.0)(idb-keyval@6.2.1)
+      unstorage: 1.10.1(@netlify/blobs@6.3.1)(idb-keyval@6.2.1)
       xss: 1.0.14
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -9110,21 +9118,21 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /netlify-cli@17.7.0(@types/node@20.9.3)(idb-keyval@6.2.1):
-    resolution: {integrity: sha512-BoACuuQuDMYxVwA8YfpTUGXOajUXpsWubdkHNcBlnaHQv2K0zU02wmLNOKqQdn+fjL+Q1dsFQXCeWiIxUDNexQ==}
+  /netlify-cli@17.8.1(@types/node@20.9.3)(idb-keyval@6.2.1):
+    resolution: {integrity: sha512-9uoSRb5iR1VxIyrsG6z7T2cnHxtGekPAcVB0eGw9SbmRZKe4UmWagzc7gJom8socHalhUdU72RLVXMU9wnYPSg==}
     engines: {node: '>=18.14.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@bugsnag/js': 7.20.2
       '@fastify/static': 6.10.2
-      '@netlify/blobs': 6.3.0
-      '@netlify/build': 29.27.0(@types/node@20.9.3)(debug@4.3.4)
+      '@netlify/blobs': 6.3.1
+      '@netlify/build': 29.29.0(@types/node@20.9.3)(debug@4.3.4)
       '@netlify/build-info': 7.11.1
       '@netlify/config': 20.10.0
       '@netlify/edge-bundler': 10.1.3(supports-color@9.4.0)
       '@netlify/local-functions-proxy': 1.1.1
-      '@netlify/zip-it-and-ship-it': 9.26.2(supports-color@9.4.0)
+      '@netlify/zip-it-and-ship-it': 9.26.4(supports-color@9.4.0)
       '@octokit/rest': 19.0.13
       ansi-escapes: 6.2.0
       ansi-styles: 6.2.1
@@ -9174,7 +9182,7 @@ packages:
       https-proxy-agent: 5.0.1(supports-color@9.4.0)
       inquirer: 6.5.2
       inquirer-autocomplete-prompt: 1.4.0(inquirer@6.5.2)
-      ipx: 2.0.1(@netlify/blobs@6.3.0)(idb-keyval@6.2.1)
+      ipx: 2.0.1(@netlify/blobs@6.3.1)(idb-keyval@6.2.1)
       is-docker: 3.0.0
       is-stream: 3.0.0
       is-wsl: 2.2.0
@@ -9235,6 +9243,7 @@ packages:
       - '@azure/keyvault-secrets'
       - '@azure/storage-blob'
       - '@capacitor/preferences'
+      - '@netlify/opentelemetry-sdk-setup'
       - '@planetscale/database'
       - '@swc/core'
       - '@swc/wasm'
@@ -9705,6 +9714,11 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       aggregate-error: 4.0.1
+    dev: true
+
+  /p-map@6.0.0:
+    resolution: {integrity: sha512-T8BatKGY+k5rU+Q/GTYgrEf2r4xRMevAN5mtXc2aPc4rS1j3s+vWTaO2Wag94neXuCAUAs8cxBL9EeB5EA6diw==}
+    engines: {node: '>=16'}
     dev: true
 
   /p-reduce@3.0.0:
@@ -12078,7 +12092,7 @@ packages:
       normalize-path: 2.1.1
     dev: true
 
-  /unocss@0.57.6(postcss@8.4.31)(rollup@2.79.1)(vite@5.0.2):
+  /unocss@0.57.6(postcss@8.4.31)(rollup@2.79.1)(vite@5.0.4):
     resolution: {integrity: sha512-z3a4Z8lGRVawr2A/1U0FuP1M9tuT6bs2RcIJ6kLBz5FC/XlLTGtUek6sadrKA0IMq7RWkgDRhdt8xQV0lh6TaA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -12090,7 +12104,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@unocss/astro': 0.57.6(rollup@2.79.1)(vite@5.0.2)
+      '@unocss/astro': 0.57.6(rollup@2.79.1)(vite@5.0.4)
       '@unocss/cli': 0.57.6(rollup@2.79.1)
       '@unocss/core': 0.57.6
       '@unocss/extractor-arbitrary-variants': 0.57.6
@@ -12109,8 +12123,8 @@ packages:
       '@unocss/transformer-compile-class': 0.57.6
       '@unocss/transformer-directives': 0.57.6
       '@unocss/transformer-variant-group': 0.57.6
-      '@unocss/vite': 0.57.6(rollup@2.79.1)(vite@5.0.2)
-      vite: 5.0.2(@types/node@20.9.3)
+      '@unocss/vite': 0.57.6(rollup@2.79.1)(vite@5.0.4)
+      vite: 5.0.4(@types/node@20.9.3)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -12130,7 +12144,7 @@ packages:
       isobject: 3.0.1
     dev: true
 
-  /unstorage@1.10.1(@netlify/blobs@6.3.0)(idb-keyval@6.2.1):
+  /unstorage@1.10.1(@netlify/blobs@6.3.1)(idb-keyval@6.2.1):
     resolution: {integrity: sha512-rWQvLRfZNBpF+x8D3/gda5nUCQL2PgXy2jNG4U7/Rc9BGEv9+CAJd0YyGCROUBKs9v49Hg8huw3aih5Bf5TAVw==}
     peerDependencies:
       '@azure/app-configuration': ^1.4.1
@@ -12171,7 +12185,7 @@ packages:
       idb-keyval:
         optional: true
     dependencies:
-      '@netlify/blobs': 6.3.0
+      '@netlify/blobs': 6.3.1
       anymatch: 3.1.3
       chokidar: 3.5.3
       destr: 2.0.2
@@ -12309,7 +12323,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-pwa@0.17.2(vite@5.0.2)(workbox-build@7.0.0)(workbox-window@7.0.0):
+  /vite-plugin-pwa@0.17.2(vite@5.0.4)(workbox-build@7.0.0)(workbox-window@7.0.0):
     resolution: {integrity: sha512-aVH9sxcTDumiWYiNcLrFqu+FdL79I2cT5EhlVe5V6nGcC64yQNGT1jamMytwi+OdfXl4VYic0LtoJ6JHMkM3ZQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -12320,15 +12334,15 @@ packages:
       debug: 4.3.4(supports-color@9.4.0)
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
-      vite: 5.0.2(@types/node@20.9.3)
+      vite: 5.0.4(@types/node@20.9.3)
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@5.0.2(@types/node@20.9.3):
-    resolution: {integrity: sha512-6CCq1CAJCNM1ya2ZZA7+jS2KgnhbzvxakmlIjN24cF/PXhRMzpM/z8QgsVJA/Dm5fWUWnVEsmtBoMhmerPxT0g==}
+  /vite@5.0.4(@types/node@20.9.3):
+    resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -12363,7 +12377,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitefu@0.2.5(vite@5.0.2):
+  /vitefu@0.2.5(vite@5.0.4):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
@@ -12371,7 +12385,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.0.2(@types/node@20.9.3)
+      vite: 5.0.4(@types/node@20.9.3)
     dev: true
 
   /wait-port@1.0.4:
