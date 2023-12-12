@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^1.1.12
     version: 1.1.12
   '@netlify/functions':
-    specifier: 2.4.0
-    version: 2.4.0
+    specifier: 2.4.1
+    version: 2.4.1
   '@playwright/test':
     specifier: ^1.40.0
     version: 1.40.0
@@ -74,8 +74,8 @@ devDependencies:
     specifier: 4.2.8
     version: 4.2.8
   svelte-preprocess:
-    specifier: 5.1.1
-    version: 5.1.1(@babel/core@7.23.5)(postcss@8.4.32)(svelte@4.2.8)(typescript@5.3.3)
+    specifier: 5.1.2
+    version: 5.1.2(@babel/core@7.23.5)(postcss@8.4.32)(svelte@4.2.8)(typescript@5.3.3)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -2283,11 +2283,11 @@ packages:
       - supports-color
     dev: true
 
-  /@netlify/functions@2.4.0:
-    resolution: {integrity: sha512-dIqhdj5u4Lu/8qbYwtYpn8NfvIyPHbSTV2lAP4ocL+iwC9As06AXT0wa/xOpO2vRWJa0IMxdZaqCPnkyHlHiyg==}
+  /@netlify/functions@2.4.1:
+    resolution: {integrity: sha512-sRFYBaz6dJP1MdUtk/5QNmshhg5UDmB+DUssmH6v9WUG85MrwyExEfGfJA5eClXATjXm0coTvO5nLAlyCpK7QQ==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      '@netlify/serverless-functions-api': 1.11.0
+      '@netlify/serverless-functions-api': 1.12.3
       is-promise: 4.0.0
     dev: true
 
@@ -2448,16 +2448,16 @@ packages:
       execa: 6.1.0
     dev: true
 
-  /@netlify/serverless-functions-api@1.11.0:
-    resolution: {integrity: sha512-3splAsr2CekL7VTwgo6yTvzD2+f269/s+TJafYazonqMNNo31yzvFxD5HpLtni4DNE1ppymVKZ4X/rLN3yl0vQ==}
+  /@netlify/serverless-functions-api@1.12.1:
+    resolution: {integrity: sha512-+G9cTltqfH54dF4dLqoEOV2P4qTIY8dM9blUVqg+NtVTXyuadzgpHqtffhVeyeLytVnTx1238kWJUe+sV3bnlg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@netlify/node-cookies': 0.1.0
       urlpattern-polyfill: 8.0.2
     dev: true
 
-  /@netlify/serverless-functions-api@1.12.1:
-    resolution: {integrity: sha512-+G9cTltqfH54dF4dLqoEOV2P4qTIY8dM9blUVqg+NtVTXyuadzgpHqtffhVeyeLytVnTx1238kWJUe+sV3bnlg==}
+  /@netlify/serverless-functions-api@1.12.3:
+    resolution: {integrity: sha512-g1AZ78pCvMnalZtbnViVLGfG5ufjKyKoi3plLSUtZqh0wVuMR7ZGegeZHhOoY4wRfkkETVvWfhgfcpLMbGM5Lg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@netlify/node-cookies': 0.1.0
@@ -11393,8 +11393,8 @@ packages:
       svelte: 4.2.8
     dev: true
 
-  /svelte-preprocess@5.1.1(@babel/core@7.23.5)(postcss@8.4.32)(svelte@4.2.8)(typescript@5.3.3):
-    resolution: {integrity: sha512-p/Dp4hmrBW5mrCCq29lEMFpIJT2FZsRlouxEc5qpbOmXRbaFs7clLs8oKPwD3xCFyZfv1bIhvOzpQkhMEVQdMw==}
+  /svelte-preprocess@5.1.2(@babel/core@7.23.5)(postcss@8.4.32)(svelte@4.2.8)(typescript@5.3.3):
+    resolution: {integrity: sha512-XF0aliMAcYnP4hLETvB6HRAMnaL09ASYT1Z2I1Gwu0nz6xbdg/dSgAEthtFZJA4AKrNhFDFdmUDO+H9d/6xg5g==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
     peerDependencies:
@@ -11402,7 +11402,7 @@ packages:
       coffeescript: ^2.5.1
       less: ^3.11.3 || ^4.0.0
       postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
+      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
       pug: ^3.0.0
       sass: ^1.26.8
       stylus: ^0.55.0
