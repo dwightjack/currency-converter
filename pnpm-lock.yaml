@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@unocss/reset':
-    specifier: 0.58.0
-    version: 0.58.0
+    specifier: 0.58.1
+    version: 0.58.1
   idb-keyval:
     specifier: 6.2.1
     version: 6.2.1
@@ -35,11 +35,11 @@ devDependencies:
     specifier: 6.16.0
     version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
   '@unocss/core':
-    specifier: 0.58.0
-    version: 0.58.0
+    specifier: 0.58.1
+    version: 0.58.1
   '@unocss/extractor-svelte':
-    specifier: 0.58.0
-    version: 0.58.0
+    specifier: 0.58.1
+    version: 0.58.1
   '@unocss/preset-wind':
     specifier: ^0.58.0
     version: 0.58.0
@@ -4000,14 +4000,18 @@ packages:
     resolution: {integrity: sha512-KhABQXGE2AgtO9vE28d+HnciuyGDcuygsnQdUwlzUuR4K05OSw2kRE9emRN4HaMycD+gA/zDbQrJxTXb6mQUiA==}
     dev: true
 
+  /@unocss/core@0.58.1:
+    resolution: {integrity: sha512-sr9V3hMn5DftVcA3JLTanbUZTW2OW1oez5y0pAmTGsq6LnjFgWz+VzIV4Wa4kCGcN59lGTuqq3Ni2bPzTmxAqQ==}
+    dev: true
+
   /@unocss/extractor-arbitrary-variants@0.58.0:
     resolution: {integrity: sha512-s9wK2UugJM0WK1HpgPz2kTbpeyQc46zais+nauN/ykVX6NMq8PtGzSWszzf+0aIbtWAQGiqAfiYNTpf09tJHfg==}
     dependencies:
       '@unocss/core': 0.58.0
     dev: true
 
-  /@unocss/extractor-svelte@0.58.0:
-    resolution: {integrity: sha512-2eyf73dakmwMpY0r0y8xA85eRvPzQIOiegbwwif8kC8yZcMQUB5e1Xmb9CcvQsN37PV/PmA+uD/tg9oXtU7LUg==}
+  /@unocss/extractor-svelte@0.58.1:
+    resolution: {integrity: sha512-DqESS0aYSXZwLnxClzNlmHdpIGQK1PTmiQXY9D+Bi1rmCkL4FB7a2hHCOr4S7mq7SGegsmurv/yAwng4w9Do+A==}
     dev: true
 
   /@unocss/inspector@0.58.0:
@@ -4097,12 +4101,17 @@ packages:
 
   /@unocss/reset@0.58.0:
     resolution: {integrity: sha512-UVZ5kz37JGbwAA06k/gjKYcekcTwi6oIhev1EpTtCvHLL6XYcYqcwb/u4Wjzprd3L3lxDGYXvGdjREGm2u7vbQ==}
+    dev: true
+
+  /@unocss/reset@0.58.1:
+    resolution: {integrity: sha512-WrvXIBtysI2CZHPwQfYzWoolAPq9WVrf9SBMwpnflGWLXqYF+f1Vz9VzuT97Nwhy9ULtSERquWjiWI2W44Dk3g==}
+    dev: false
 
   /@unocss/rule-utils@0.58.0:
     resolution: {integrity: sha512-LBJ9dJ/j5UIMzJF7pmIig55MtJAYtG+tn/zQRveZuPRVahzP+KqwlyB7u3uCUnQhdgo/MJODMcqyr0jl6+kTuA==}
     engines: {node: '>=14'}
     dependencies:
-      '@unocss/core': 0.58.0
+      '@unocss/core': 0.58.1
       magic-string: 0.30.5
     dev: true
 
