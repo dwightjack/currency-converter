@@ -22,8 +22,8 @@
     "@sveltejs/vite-plugin-svelte": "3.0.1",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
-    "@unocss/core": "0.58.1",
-    "@unocss/extractor-svelte": "0.58.1",
+    "@unocss/core": "0.58.2",
+    "@unocss/extractor-svelte": "0.58.2",
     "@unocss/preset-wind": "^0.58.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
@@ -42,7 +42,7 @@
     "vite-plugin-pwa": "0.17.4"
   },
   "dependencies": {
-    "@unocss/reset": "0.58.1",
+    "@unocss/reset": "0.58.2",
     "idb-keyval": "6.2.1",
     "ofetch": "1.3.3"
   },
