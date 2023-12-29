@@ -59,8 +59,8 @@ devDependencies:
     specifier: 1.5.5
     version: 1.5.5
   netlify-cli:
-    specifier: 17.10.1
-    version: 17.10.1(@types/node@20.9.3)(idb-keyval@6.2.1)
+    specifier: 17.10.2
+    version: 17.10.2(@types/node@20.9.3)(idb-keyval@6.2.1)
   postcss-html:
     specifier: 1.5.0
     version: 1.5.0
@@ -2448,14 +2448,6 @@ packages:
       execa: 6.1.0
     dev: true
 
-  /@netlify/serverless-functions-api@1.12.1:
-    resolution: {integrity: sha512-+G9cTltqfH54dF4dLqoEOV2P4qTIY8dM9blUVqg+NtVTXyuadzgpHqtffhVeyeLytVnTx1238kWJUe+sV3bnlg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    dependencies:
-      '@netlify/node-cookies': 0.1.0
-      urlpattern-polyfill: 8.0.2
-    dev: true
-
   /@netlify/serverless-functions-api@1.12.3:
     resolution: {integrity: sha512-g1AZ78pCvMnalZtbnViVLGfG5ufjKyKoi3plLSUtZqh0wVuMR7ZGegeZHhOoY4wRfkkETVvWfhgfcpLMbGM5Lg==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -2472,7 +2464,7 @@ packages:
       '@babel/parser': 7.23.5
       '@babel/types': 7.23.4
       '@netlify/binary-info': 1.0.0
-      '@netlify/serverless-functions-api': 1.12.1
+      '@netlify/serverless-functions-api': 1.12.3
       '@vercel/nft': 0.23.1(supports-color@9.4.0)
       archiver: 6.0.1
       common-path-prefix: 3.0.0
@@ -9082,8 +9074,8 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /netlify-cli@17.10.1(@types/node@20.9.3)(idb-keyval@6.2.1):
-    resolution: {integrity: sha512-y9UBZQ+Zx85MJVAjXnuWrVwdymBnXxKXzXMTObs2ONaTm/cqYPo9HB1vChQSUrEajB6H36zwNdWaNnoCRLs3SA==}
+  /netlify-cli@17.10.2(@types/node@20.9.3)(idb-keyval@6.2.1):
+    resolution: {integrity: sha512-pKXL+w5/vm4ld6IUotBEse3KvN4+WCComLP6a73OiOvy8uM6uxtDUiuL+uAhRaozohjjaU/Ym4q1TqwbqWF5rA==}
     engines: {node: '>=18.14.0'}
     hasBin: true
     requiresBuild: true
@@ -9160,7 +9152,6 @@ packages:
       lodash: 4.17.21
       log-symbols: 5.1.0
       log-update: 5.0.1
-      minimist: 1.2.8
       multiparty: 4.2.3
       netlify: 13.1.11
       netlify-headers-parser: 7.1.2
