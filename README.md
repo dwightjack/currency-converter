@@ -8,10 +8,16 @@ Install the dependencies...
 pnpm i
 ```
 
+Initialize netlify dev
+
+```bash
+pnpm netlify link
+```
+
 ...then start Vite:
 
 ```bash
-pnpm run dev
+pnpm dev
 ```
 
 Navigate to [localhost:5173](http://localhost:5173). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
@@ -21,5 +27,5 @@ Navigate to [localhost:5173](http://localhost:5173). You should see your app run
 To create an optimized version of the app:
 
 ```bash
-pnpm run build
+pnpm build
 ```

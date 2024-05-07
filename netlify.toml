@@ -1,11 +1,11 @@
 [[headers]]
-  for = "/manifest.webmanifest"
-  [headers.values]
-    Content-Type = "application/manifest+json"
+for = "/manifest.webmanifest"
+[headers.values]
+Content-Type = "application/manifest+json"
 [dev]
-  targetPort = 8888
-  command = "pnpm run dev:vite"
-  port = 5000
+targetPort = 8888
+command = "pnpm run dev:vite"
+port = 5173
 [build]
-  command = "pnpm run build"
-  publish = "dist"
+command = "pnpm run build"
+publish = "dist"
