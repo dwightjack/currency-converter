@@ -24,7 +24,7 @@ devDependencies:
     version: 2.6.3(@opentelemetry/api@1.8.0)
   '@playwright/test':
     specifier: ^1.40.0
-    version: 1.42.1
+    version: 1.44.0
   '@sveltejs/vite-plugin-svelte':
     specifier: 3.0.2
     version: 3.0.2(svelte@4.2.15)(vite@5.2.11)
@@ -60,7 +60,7 @@ devDependencies:
     version: 1.6.10
   netlify-cli:
     specifier: 17.21.2
-    version: 17.21.2(@types/node@20.12.8)(idb-keyval@6.2.1)
+    version: 17.21.2(@types/node@20.12.10)(idb-keyval@6.2.1)
   postcss-html:
     specifier: 1.6.0
     version: 1.6.0
@@ -84,7 +84,7 @@ devDependencies:
     version: 0.58.9(postcss@8.4.38)(rollup@2.79.1)(vite@5.2.11)
   vite:
     specifier: 5.2.11
-    version: 5.2.11(@types/node@20.12.8)
+    version: 5.2.11(@types/node@20.12.10)
   vite-plugin-pwa:
     specifier: 0.19.8
     version: 0.19.8(vite@5.2.11)(workbox-build@7.1.0)(workbox-window@7.1.0)
@@ -2506,7 +2506,7 @@ packages:
       yargs: 17.7.2
     dev: true
 
-  /@netlify/build@29.39.0(@opentelemetry/api@1.8.0)(@types/node@20.12.8):
+  /@netlify/build@29.39.0(@opentelemetry/api@1.8.0)(@types/node@20.12.10):
     resolution: {integrity: sha512-VbPHFGm3fojWakBr94e8qBb0SlxeRaAfZMWK4gqKFbXV0ANLTNWsyh4TFPDRHlfY79LFcUZ9WKc7/SpHa4FhGg==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
@@ -2571,7 +2571,7 @@ packages:
       strip-ansi: 7.1.0
       supports-color: 9.4.0
       terminal-link: 3.0.0
-      ts-node: 10.9.1(@types/node@20.12.8)(typescript@5.4.5)
+      ts-node: 10.9.1(@types/node@20.12.10)(typescript@5.4.5)
       typescript: 5.4.5
       uuid: 9.0.0
       yargs: 17.7.2
@@ -3372,12 +3372,12 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@playwright/test@1.42.1:
-    resolution: {integrity: sha512-Gq9rmS54mjBL/7/MvBaNOBwbfnh7beHvS6oS4srqXFcQHpQCV1+c8JXWE8VLPyRDhgS3H8x8A7hztqI9VnwrAQ==}
+  /@playwright/test@1.44.0:
+    resolution: {integrity: sha512-rNX5lbNidamSUorBhB4XZ9SQTjAqfe5M+p37Z8ic0jPFBMo5iCtQz1kRWkEMg+rYOKSlVycpQmpqjSFq7LXOfg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright: 1.42.1
+      playwright: 1.44.0
     dev: true
 
   /@pnpm/config.env-replace@1.1.0:
@@ -3644,7 +3644,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.15)(vite@5.2.11)
       debug: 4.3.4(supports-color@9.4.0)
       svelte: 4.2.15
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3663,7 +3663,7 @@ packages:
       magic-string: 0.30.5
       svelte: 4.2.15
       svelte-hmr: 0.15.3(svelte@4.2.15)
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
       vitefu: 0.2.5(vite@5.2.11)
     transitivePeerDependencies:
       - supports-color
@@ -3739,14 +3739,14 @@ packages:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
 
-  /@types/node@20.12.2:
-    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
+  /@types/node@20.12.10:
+    resolution: {integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
 
-  /@types/node@20.12.8:
-    resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==}
+  /@types/node@20.12.2:
+    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -3978,7 +3978,7 @@ packages:
       '@unocss/core': 0.58.9
       '@unocss/reset': 0.58.9
       '@unocss/vite': 0.58.9(rollup@2.79.1)(vite@5.2.11)
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -4179,7 +4179,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.9
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -9214,7 +9214,7 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /netlify-cli@17.21.2(@types/node@20.12.8)(idb-keyval@6.2.1):
+  /netlify-cli@17.21.2(@types/node@20.12.10)(idb-keyval@6.2.1):
     resolution: {integrity: sha512-St125NfR3N+PVbWa5736rlJszG9YhxznDhU3xhZvjRkGimr2CkKSs5mDhc2c7f7/aOlke5v/SedK0bszRbkgJw==}
     engines: {node: '>=18.14.0'}
     hasBin: true
@@ -9223,7 +9223,7 @@ packages:
       '@bugsnag/js': 7.20.2
       '@fastify/static': 6.10.2
       '@netlify/blobs': 7.3.0
-      '@netlify/build': 29.39.0(@opentelemetry/api@1.8.0)(@types/node@20.12.8)
+      '@netlify/build': 29.39.0(@opentelemetry/api@1.8.0)(@types/node@20.12.10)
       '@netlify/build-info': 7.13.2
       '@netlify/config': 20.12.1
       '@netlify/edge-bundler': 11.3.0(supports-color@9.4.0)
@@ -10057,18 +10057,18 @@ packages:
       pathe: 1.1.2
     dev: true
 
-  /playwright-core@1.42.1:
-    resolution: {integrity: sha512-mxz6zclokgrke9p1vtdy/COWBH+eOZgYUVVU34C73M+4j4HLlQJHtfcqiqqxpP0o8HhMkflvfbquLX5dg6wlfA==}
+  /playwright-core@1.44.0:
+    resolution: {integrity: sha512-ZTbkNpFfYcGWohvTTl+xewITm7EOuqIqex0c7dNZ+aXsbrLj0qI8XlGKfPpipjm0Wny/4Lt4CJsWJk1stVS5qQ==}
     engines: {node: '>=16'}
     hasBin: true
     dev: true
 
-  /playwright@1.42.1:
-    resolution: {integrity: sha512-PgwB03s2DZBcNRoW+1w9E+VkLBxweib6KTXM0M3tkiT4jVxKSi6PmVJ591J+0u10LUrgxB7dLRbiJqO5s2QPMg==}
+  /playwright@1.44.0:
+    resolution: {integrity: sha512-F9b3GUCLQ3Nffrfb6dunPOkE5Mh68tR7zN32L4jCk4FjQamgesGay7/dAAe1WaMEGV04DkdJfcJzjoCKygUaRQ==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright-core: 1.42.1
+      playwright-core: 1.44.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -11891,7 +11891,7 @@ packages:
       typescript: 5.4.5
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.12.8)(typescript@5.4.5):
+  /ts-node@10.9.1(@types/node@20.12.10)(typescript@5.4.5):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -11910,7 +11910,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.12.8
+      '@types/node': 20.12.10
       acorn: 8.11.3
       acorn-walk: 8.3.0
       arg: 4.1.3
@@ -12221,7 +12221,7 @@ packages:
       '@unocss/transformer-directives': 0.58.9
       '@unocss/transformer-variant-group': 0.58.9
       '@unocss/vite': 0.58.9(rollup@2.79.1)(vite@5.2.11)
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -12431,14 +12431,14 @@ packages:
       debug: 4.3.4(supports-color@9.4.0)
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
       workbox-build: 7.1.0
       workbox-window: 7.1.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@5.2.11(@types/node@20.12.8):
+  /vite@5.2.11(@types/node@20.12.10):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -12466,7 +12466,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.8
+      '@types/node': 20.12.10
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.13.0
@@ -12482,7 +12482,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.11(@types/node@20.12.8)
+      vite: 5.2.11(@types/node@20.12.10)
     dev: true
 
   /wait-port@1.0.4:
