@@ -11,8 +11,10 @@ function range(size, startAt = 0) {
   return Array.from(Array(size).keys()).map((i) => i + startAt);
 }
 
+const uno = presetUno();
+
 export default defineConfig({
-  presets: [presetUno(), presetIcons()],
+  presets: [uno, presetIcons()],
   transformers: [transformerVariantGroup()],
   extractors: [extractorSvelte],
   safelist: [
@@ -24,6 +26,9 @@ export default defineConfig({
     ),
   ],
   theme: {
+    fontFamily: {
+      sans: `"Inter Variable", ${uno.theme.fontFamily.sans}`,
+    },
     colors: {
       brand: colors.blue,
       surface: colors.white,
