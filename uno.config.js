@@ -44,13 +44,13 @@ export default defineConfig({
   rules: [
     [
       /^bg-image-\$([a-z][a-z-]*)$/,
-      ([_, varName]) => ({ 'background-image': `var(--${varName})` }),
+      ([, varName]) => ({ 'background-image': `var(--${varName})` }),
     ],
     [
       /^grid-area-\$([a-z][a-z-]*)$/,
-      ([_, varName]) => ({ 'grid-area': `var(--${varName})` }),
+      ([, varName]) => ({ 'grid-area': `var(--${varName})` }),
     ],
-    [/^grid-area-\[([^\]]+)\]$/, ([_, area]) => ({ 'grid-area': area })],
+    [/^grid-area-\[([^\]]+)\]$/, ([, area]) => ({ 'grid-area': area })],
     [
       'grid-cols-calc',
       { 'grid-template-columns': 'repeat(4, minmax(calc(25% - 1px), 4rem))' },

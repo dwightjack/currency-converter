@@ -11,6 +11,7 @@
       return;
     }
     if (visible === true) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       !dialogElement.open && dialogElement.showModal();
       return;
     }
@@ -18,6 +19,7 @@
   }
 
   function close() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     dialogElement && dialogElement.close();
   }
 

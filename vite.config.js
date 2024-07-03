@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
 
-/* eslint-env node */
+/* global process */
 
 const htmlPlugin = () => {
   return {
