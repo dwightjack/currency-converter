@@ -30,13 +30,17 @@ export const currencyList = derived(
   ['JPY', 'EUR'],
 );
 
+export const inputAmountNumber = derived(inputAmount, ($inputAmount) => {
+  if (typeof $inputAmount === 'string' && !/^[0-9.]*$/.test($inputAmount)) {
+    return NaN;
+  }
+  return Number($inputAmount) || 0;
+});
+
 export const convertedAmountRaw = derived(
-  [inputAmount, exchangeRate, currency],
-  ([$inputAmount, $exchangeRate]) => {
-    if (typeof $inputAmount === 'string' && !/^[0-9.]*$/.test($inputAmount)) {
-      return NaN;
-    }
-    return (Number($inputAmount) || 0) * $exchangeRate;
+  [inputAmountNumber, exchangeRate, currency],
+  ([$inputAmountNumber, $exchangeRate]) => {
+    return $inputAmountNumber * $exchangeRate;
   },
   0,
 );

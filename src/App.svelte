@@ -12,6 +12,7 @@
     convertedAmountRaw,
     currencyFullList,
     setCurrency,
+    inputAmountNumber,
   } from './stores/currency';
   import { calculatorOpen, toggleCalculator } from './stores/ui';
   import CurrencyInput from './components/CurrencyInput.svelte';
@@ -95,11 +96,9 @@
       </CurrencyBox>
     </div>
   </form>
-  <ModalDialog
-    name="Calculator"
-    visible={$calculatorOpen}
-    on:close={() => toggleCalculator(false)}
-  >
-    <Calculator onSubmit={submitCalcValue} />
-  </ModalDialog>
+  {#if $calculatorOpen}
+    <ModalDialog name="Calculator" on:close={() => toggleCalculator(false)}>
+      <Calculator initial={$inputAmountNumber} onSubmit={submitCalcValue} />
+    </ModalDialog>
+  {/if}
 </main>
