@@ -1,6 +1,7 @@
 <script lang="ts">
   export let area = '';
   export let theme: 'light' | 'invert' | 'neutral' = 'light';
+  export let pressed = false;
 
   const themes: Record<typeof theme, string> = {
     light:
@@ -16,6 +17,7 @@
   on:click
   type="button"
   style={`--btn-area: ${area}`}
-  class={`${themes[theme]} grid-area-$btn-area ring-brand-200 @dark:(ring-brand-dark-700 active:bg-brand-dark-600) outline-brand focus-visible:(isolate) outline-offset-2 flex items-center justify-center ring-1 text-2xl`}
+  aria-pressed={pressed}
+  class={`${themes[theme]} grid-area-$btn-area aria-pressed:(shadow shadow-brand-600 shadow-inset) ring-brand-200 @dark:(ring-brand-dark-700 active:bg-brand-dark-600) outline-brand focus-visible:(isolate) outline-offset-2 flex items-center justify-center ring-1 text-2xl`}
   ><slot /></button
 >

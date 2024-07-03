@@ -1,83 +1,100 @@
 <script lang="ts">
+  import { onMount, tick } from 'svelte';
   import CalcButton from './CalcButton.svelte';
   import ControlButton from './ControlButton.svelte';
 
-  type Action = (src: number, num: number) => number;
+  const OPS_REGEXP = /[*+-/]$/;
+  const HAS_DECIMAL_REGEXP = /\d+\.\d*$/;
 
   export let onSubmit = (_n: number) => undefined;
 
-  let input = '0';
-  let initial: number = null;
-  let lastKeyType = '';
-  let action: Action = null;
+  export let initial: number | null = null;
+  let root: HTMLElement | undefined;
 
-  $: formattedInput = new Intl.NumberFormat().format(Number(input));
+  let result: number = Number.isNaN(initial) ? 0 : initial;
+  let input = String(result);
 
-  const operations: Record<'divide' | 'times' | 'minus' | 'plus', Action> = {
-    divide: (src, num) => (num === 0 ? src : src / num),
-    times: (src, num) => src * num,
-    minus: (src, num) => src - num,
-    plus: (src, num) => src + num,
-  };
+  // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
+  $: output = (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0').replace(
+    /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+    ',',
+  );
 
-  function onInput(v: unknown) {
-    if (lastKeyType !== '') {
-      input = '';
-      lastKeyType = '';
+  $: pressed = OPS_REGEXP.test(input) ? input.at(-1) : null;
+  function onInput(v: string | number) {
+    if (v === '.' && HAS_DECIMAL_REGEXP.test(input)) {
+      return;
     }
-    if (v === '.' && input.includes('.')) {
+    if (typeof v === 'string' && OPS_REGEXP.test(v)) {
+      if (OPS_REGEXP.test(input)) {
+        return;
+      }
+      input = calc(input) + v;
       return;
     }
     input = (input + String(v)).replace(/^0*(?=\d)/, '');
   }
 
-  function reset() {
-    input = '0';
-    initial = null;
-    lastKeyType = '';
-    action = null;
-  }
-
-  function update() {
-    if (initial === null || !action) {
-      initial = parseFloat(input);
-      return;
+  function calc(value: string | number) {
+    const result = Number.parseFloat(Function(`return ${value}`)());
+    if (Number.isFinite(result)) {
+      return String(result);
     }
-    initial = action(initial, parseFloat(input));
-    input = String(initial);
+    return 'Error!';
   }
 
   function eq() {
-    if (lastKeyType) {
-      return;
-    }
-    lastKeyType = 'eq';
-    update();
-    action = null;
+    input = calc(input);
+  }
+
+  function reset() {
+    input = '0';
   }
 
   function submit() {
     onSubmit(parseFloat(input));
   }
 
-  const opHandlers = {} as Record<keyof typeof operations, () => void>;
-  for (const [key, fn] of Object.entries(operations)) {
-    opHandlers[key] = () => {
-      if (lastKeyType === 'operator') {
-        return;
-      }
-      lastKeyType = 'operator';
-      update();
-      action = fn;
-    };
+  const keyboardMap = {
+    Backspace: () => (input = input.slice(0, -1)),
+    Delete: reset,
+    Return: eq,
+    Enter: eq,
+  };
+
+  function handleKeyUp(event: KeyboardEvent) {
+    const { key } = event;
+    if (key === 'Escape') {
+      return;
+    }
+    event.preventDefault();
+    if (/^[0-9.+-/*]$/.test(key)) {
+      onInput(key);
+      return;
+    }
+    if (keyboardMap[key]) {
+      keyboardMap[key]();
+    }
   }
+
+  onMount(async () => {
+    await tick();
+    root?.focus();
+  });
 </script>
 
-<div class="grid grid-calc min-block-0 min-inline-0">
+<svelte:window on:keyup={handleKeyUp} />
+<div
+  class="grid grid-calc min-block-0 min-inline-0 outline-none"
+  role="group"
+  aria-label="Calculator"
+  tabindex="-1"
+  bind:this={root}
+>
   <div class="grid-area-[output] flex items-center">
     <output
       class="text-3xl m-block-2 p-inline-2 text-end border-ie border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
-      aria-label="Result">{formattedInput}</output
+      aria-label="Result">{output}</output
     >
     <ControlButton
       class="text-2xl p-block-2 p-inline-2 ms-1"
@@ -94,16 +111,36 @@
     </CalcButton>
   {/each}
   <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
-  <CalcButton theme="neutral" area="divide" on:click={opHandlers.divide}>
+  <CalcButton
+    theme="neutral"
+    pressed={pressed === '/'}
+    area="divide"
+    on:click={() => onInput('/')}
+  >
     &divide;
   </CalcButton>
-  <CalcButton theme="neutral" area="times" on:click={opHandlers.times}>
+  <CalcButton
+    theme="neutral"
+    pressed={pressed === '*'}
+    area="times"
+    on:click={() => onInput('*')}
+  >
     &times;
   </CalcButton>
-  <CalcButton theme="neutral" area="minus" on:click={opHandlers.minus}>
+  <CalcButton
+    theme="neutral"
+    pressed={pressed === '-'}
+    area="minus"
+    on:click={() => onInput('-')}
+  >
     -
   </CalcButton>
-  <CalcButton theme="neutral" area="plus" on:click={opHandlers.plus}>
+  <CalcButton
+    theme="neutral"
+    pressed={pressed === '+'}
+    area="plus"
+    on:click={() => onInput('+')}
+  >
     +
   </CalcButton>
   <CalcButton area="eq" on:click={eq} theme="invert">=</CalcButton>
