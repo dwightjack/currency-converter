@@ -35,7 +35,7 @@
     "prettier": "3.3.2",
     "prettier-plugin-svelte": "3.2.5",
     "svelte": "4.2.18",
-    "svelte-preprocess": "5.1.4",
+    "svelte-preprocess": "6.0.1",
     "typescript": "5.5.3",
     "typescript-eslint": "8.0.0-alpha.38",
     "unocss": "^0.61.0",

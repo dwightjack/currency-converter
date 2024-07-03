@@ -5,6 +5,7 @@
     "module": "esnext",
     "isolatedModules": true,
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
     /**
      * To have warnings / errors of the Svelte compiler at the
      * correct position, enable source maps by default.
