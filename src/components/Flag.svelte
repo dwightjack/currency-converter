@@ -14,6 +14,8 @@
 
   $: {
     flagStatus = 'loading';
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     currency &&
       fetchFlag(currency.toLowerCase()).then((result) => (flagStatus = result));
   }

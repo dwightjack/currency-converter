@@ -24,7 +24,7 @@
 >
   <legend class="sr-only">{label}</legend>
   <div
-    class="bg-brand-100 p-block-2 p-inline-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-brand-200 border-be-2 bg-left bg-no-repeat @dark:(border-brand-dark-700 bg-brand-dark-900)"
+    class="bg-brand-100 p-block-2 p-inline-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-brand-200 border-be-2 @dark:(border-brand-dark-700 bg-brand-dark-900)"
   >
     <label for={id + '-select'} class="col-start-1 sr-only">Currency</label>
     <Flag currency={current} class="row-start-1 col-start-1" />

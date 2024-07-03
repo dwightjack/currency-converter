@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { onMount, afterUpdate } from 'svelte';
+  import { onMount } from 'svelte';
   import ControlButton from './ControlButton.svelte';
-  export let visible = false;
   export let name: string;
 
   let dialogElement: HTMLDialogElement | undefined;
@@ -10,26 +9,21 @@
     if (!dialogElement) {
       return;
     }
-    if (visible === true) {
-      !dialogElement.open && dialogElement.showModal();
-      return;
-    }
-    dialogElement.close();
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    !dialogElement.open && dialogElement.showModal();
   }
 
   function close() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     dialogElement && dialogElement.close();
   }
 
   onMount(toggleDialog);
-  afterUpdate(toggleDialog);
 </script>
 
 <dialog
   aria-label={name}
-  class={`${
-    visible ? 'flex flex-col' : ''
-  } max-inline-100vw max-block-100vh border-2 border-brand-200 overflow-hidden p-inline-0 p-block-0 shadow-md md:rounded @dark:(bg-surface-dark shadow-md border-brand-dark-700 text-typo-dark)`}
+  class="flex flex-col max-inline-100vw max-block-100vh border-2 border-brand-200 overflow-hidden p-inline-0 p-block-0 shadow-md md:rounded @dark:(bg-surface-dark shadow-md border-brand-dark-700 text-typo-dark)"
   on:close
   bind:this={dialogElement}
 >
