@@ -3,6 +3,6 @@
   export let alignX = `stretch`;
 </script>
 
-<div class={`flex flex-col items-${alignX} justify-start gap-y-${space}`}>
+<div class="flex flex-col items-{alignX} justify-start gap-y-{space}">
   <slot />
 </div>

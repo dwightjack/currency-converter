@@ -12,7 +12,9 @@
 </script>
 
 <button
-  class={`${themes[theme]} inline-flex items-center p-inline-1 p-block-1 rounded-md border-none ${$$props.class}`}
+  class="{themes[
+    theme
+  ]} inline-flex items-center p-inline-1 p-block-1 rounded-md border-none {$$props.class}"
   type="button"
   on:click
 >
