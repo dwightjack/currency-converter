@@ -29,6 +29,7 @@
     }
     if (typeof v === 'string' && OPS_REGEXP.test(v)) {
       if (OPS_REGEXP.test(input)) {
+        input = input.replace(OPS_REGEXP, (op) => (op === v ? '' : v));
         return;
       }
       input = calc(input) + v;
@@ -87,7 +88,7 @@
 
 <svelte:window on:keyup={handleKeyUp} />
 <div
-  class="grid grid-calc min-block-0 min-inline-0 outline-none"
+  class="grid grid-calc min-block-0 min-inline-0 outline-none select-none"
   role="group"
   aria-label="Calculator"
   tabindex="-1"
