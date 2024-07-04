@@ -15,10 +15,12 @@
   let input = String(result);
 
   // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
-  $: output = (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0').replace(
-    /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
-    ',',
-  );
+  // match and extract trailing digits (positive and negative)
+  // add thousands separator
+  // keep max 3 decimal numbers
+  $: output = (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0')
+    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+    .replace(/(\.\d{3})\d*$/, '$1');
 
   $: pressed = OPS_REGEXP.test(input) ? input.at(-1) : null;
   function onInput(v: string | number) {

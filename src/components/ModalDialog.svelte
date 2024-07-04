@@ -14,8 +14,7 @@
   }
 
   function close() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    dialogElement && dialogElement.close();
+    dialogElement?.close();
   }
 
   onMount(toggleDialog);
