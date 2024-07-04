@@ -25,6 +25,19 @@ export default defineConfig({
       (v) => `items-${v}`,
     ),
   ],
+  variants: [
+    {
+      match: (matcher) => {
+        if (!matcher.startsWith('hover:')) return matcher;
+        return {
+          matcher: matcher.slice(6),
+          parent: '@media (hover) and (pointer: fine)',
+          selector: (s) => `${s}:hover:not(:active)`,
+        };
+      },
+      order: -1,
+    },
+  ],
   theme: {
     fontFamily: {
       sans: `"Inter Variable", ${uno.theme.fontFamily.sans}`,

@@ -32,7 +32,7 @@
       name={id + '-select'}
       on:change={onChange}
       id={id + '-select'}
-      class="truncate appearance-none p-inline-8 col-span-full row-start-1 inline-full text-brand-900 font-bold bg-transparent outline-brand border-0 @dark:(text-brand-dark-200)"
+      class="truncate appearance-none cursor-pointer p-inline-8 col-span-full row-start-1 inline-full text-brand-900 font-bold bg-transparent outline-brand border-0 @dark:(text-brand-dark-200)"
     >
       {#each currencies as { code, description }}
         <option selected={current === code || undefined} value={code}>
