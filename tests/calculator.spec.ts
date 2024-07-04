@@ -32,6 +32,7 @@ test.describe('calculator', () => {
       ['-', '8'],
       ['÷', '5'],
       ['×', '20'],
+      ['AC', '2'],
     ].forEach(([operation, expected]) => {
       test(`basic ${operation} operation`, async ({ page }) => {
         const calcPage = new Calculator(page);
