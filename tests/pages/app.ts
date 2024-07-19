@@ -45,6 +45,14 @@ export class AppPage {
 
   async setInputAmount(amount: number) {
     await this.inputField.clear();
-    await this.inputField.type(amount.toString());
+    await this.inputField.fill(amount.toString());
+  }
+
+  async openCalculator() {
+    await this.page.getByRole('button', { name: 'Calculate' }).click();
+  }
+
+  async getCalculator() {
+    return this.page.getByRole('dialog', { name: 'Calculator' });
   }
 }

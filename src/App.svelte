@@ -49,19 +49,17 @@
         <CurrencyInput bind:value={$inputAmount} currency={$currency.input} />
         <ControlButton
           on:click={() => toggleCalculator(true)}
-          icon="i-ion-calculator-outline"
           label="Calculate"
           class="text-2xl self-center"
-        />
+        >
+          <span class="i-ion-calculator-outline"></span>
+        </ControlButton>
       </CurrencyBox>
     </div>
     <div class="items-center col-start-2 row-start-1 flex justify-center">
-      <ControlButton
-        on:click={invertCurrency}
-        icon="i-ion-swap-horizontal"
-        label="Switch"
-        class="text-2xl"
-      />
+      <ControlButton on:click={invertCurrency} label="Switch" class="text-2xl">
+        <span class="i-ion-swap-horizontal"></span>
+      </ControlButton>
     </div>
     <div class="min-inline-0 md:col-start-3">
       <CurrencyBox
@@ -88,10 +86,11 @@
         {#if isSecureContext}
           <ControlButton
             on:click={copyToClipboard}
-            icon="i-ion-md-copy"
             label="Copy to Clipboard"
             class="text-2xl"
-          />
+          >
+            <span class="i-ion-md-copy"></span>
+          </ControlButton>
         {/if}
       </CurrencyBox>
     </div>

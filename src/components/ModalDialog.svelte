@@ -14,8 +14,7 @@
   }
 
   function close() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    dialogElement && dialogElement.close();
+    dialogElement?.close();
   }
 
   onMount(toggleDialog);
@@ -28,12 +27,9 @@
   bind:this={dialogElement}
 >
   <header class="text-right p-block-1 p-inline-1">
-    <ControlButton
-      label="Close"
-      icon="i-ion-close"
-      on:click={close}
-      class="text-2xl col-start-3"
-    />
+    <ControlButton label="Close" on:click={close} class="text-2xl col-start-3">
+      <span class="i-ion-close"></span>
+    </ControlButton>
   </header>
   <div class="pbs-1 p-inline-3 p-be-3 flex flex-grow min-block-0">
     <slot />
