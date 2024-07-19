@@ -25,6 +25,13 @@ test.describe('initial view', () => {
       appPage.outputSelector.getByRole('option', { selected: true }),
     ).toHaveText('Euro');
   });
+
+  test('input gets formatted (en locale)', async ({ page }) => {
+    const appPage = new AppPage(page);
+
+    await appPage.setInputAmount(1000.5);
+    await expect(appPage.inputField).toHaveValue('1,000.5');
+  });
 });
 
 test.describe('action: convert currency', () => {
