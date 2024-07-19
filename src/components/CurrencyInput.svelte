@@ -1,36 +1,32 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
   export let value: string | number = 0;
-  export let currency: string;
 
-  let selected = false;
+  const dispatch = createEventDispatcher();
 
-  $: formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency,
+  const formatter = new Intl.NumberFormat('en', {
+    maximumFractionDigits: 3,
+    roundingMode: 'trunc',
   });
-
-  function formatNumber(num: unknown) {
-    if (Number.isNaN(Number(num))) {
-      return num;
-    }
-    return formatter
-      .formatToParts(Number(num))
-      .reduce(
-        (str, { type, value }) => str + (type !== 'currency' ? value : ''),
-        '',
-      );
-  }
-
-  $: formattedValue = formatNumber(value);
 
   function onInputFocus(e: Event) {
     const select = (e.target as HTMLInputElement).select;
     if (!(typeof select === 'function')) {
       return;
     }
-    selected = true;
     select.call(e.target);
   }
+
+  const onInput = (e: Event) => {
+    dispatch('input', (e.target as HTMLInputElement).value.replaceAll(',', ''));
+  };
+
+  $: formattedValue = value
+    ? formatter.format(
+        typeof value === 'number' ? value : Number.parseFloat(value),
+      )
+    : '';
 </script>
 
 <div
@@ -41,17 +37,9 @@
     inputmode="numeric"
     id="from-amount"
     name="from-amount"
-    pattern="\d+"
-    class="border-0 bg-transparent text-transparent selection:(text-transparent) focus:outline-none row-span-full col-span-full"
-    bind:value
+    class="border-0 bg-transparent focus:outline-none row-span-full col-span-full"
+    value={formattedValue}
     on:focus={onInputFocus}
-    on:input={() => (selected = false)}
+    on:input={onInput}
   />
-  <span
-    aria-hidden="true"
-    class="row-span-full col-span-full pointer-events-none"
-    ><span class={selected ? 'bg-brand-100 @dark:bg-brand-700' : ''}
-      >{formattedValue}</span
-    ></span
-  >
 </div>
