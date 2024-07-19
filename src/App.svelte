@@ -46,7 +46,10 @@
         current={$currency.input}
         currencies={$currencyFullList}
       >
-        <CurrencyInput bind:value={$inputAmount} currency={$currency.input} />
+        <CurrencyInput
+          value={$inputAmount}
+          on:input={({ detail }) => ($inputAmount = detail)}
+        />
         <ControlButton
           on:click={() => toggleCalculator(true)}
           label="Calculate"
