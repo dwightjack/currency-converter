@@ -1,9 +1,5 @@
-import {
-  defineConfig,
-  transformerVariantGroup,
-  presetUno,
-  presetIcons,
-} from 'unocss';
+import { defineConfig, transformerVariantGroup, presetUno } from 'unocss';
+import { presetIcons } from '@unocss/preset-icons';
 import extractorSvelte from '@unocss/extractor-svelte';
 import { colors } from '@unocss/preset-mini';
 
@@ -14,7 +10,14 @@ function range(size, startAt = 0) {
 const uno = presetUno();
 
 export default defineConfig({
-  presets: [uno, presetIcons()],
+  presets: [
+    uno,
+    presetIcons({
+      extraProperties: {
+        display: 'inline-block',
+      },
+    }),
+  ],
   transformers: [transformerVariantGroup()],
   extractors: [extractorSvelte],
   safelist: [

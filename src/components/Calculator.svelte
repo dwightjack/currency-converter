@@ -102,10 +102,11 @@
     <ControlButton
       class="text-2xl p-block-2 p-inline-2 ms-1"
       theme="green"
-      icon="i-ion-checkmark"
       on:click={submit}
       label="Submit"
-    />
+    >
+      <span class="i-ion-checkmark"></span>
+    </ControlButton>
   </div>
   <CalcButton theme="neutral" area="reset" on:click={reset}>AC</CalcButton>
   {#each Array(10) as _, i}

@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Icon from './Icon.svelte';
-  export let icon: `i-ion-${string}`;
   export let label = '';
   export let theme: 'blue' | 'green' = 'blue';
 
@@ -18,6 +16,6 @@
   type="button"
   on:click
 >
-  <Icon name={icon} />
+  <slot></slot>
   <span class="sr-only">{label}</span>
 </button>

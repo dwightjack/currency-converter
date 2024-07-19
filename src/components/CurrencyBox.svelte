@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { getCurrencySymbol } from '../stores/currency';
-  import Icon from './Icon.svelte';
   import Flag from './Flag.svelte';
   import type { CurrencySymbol } from 'src/types';
 
@@ -40,9 +39,8 @@
         </option>
       {/each}
     </select>
-    <Icon
-      name="i-ion-chevron-down"
-      class="row-start-1 col-start-3 pointer-events-none"
+    <span
+      class="i-ion-chevron-down row-start-1 col-start-3 pointer-events-none"
     />
   </div>
 
