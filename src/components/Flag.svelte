@@ -4,12 +4,12 @@
   let flagStatus: 'loading' | 'success' | 'error' = 'loading';
 
   async function fetchFlag(currency: string): Promise<typeof flagStatus> {
-    try {
-      const res = await fetch(`/flags/${currency}.png`, { method: 'HEAD' });
-      return res.ok ? 'success' : 'error';
-    } catch {
-      return 'error';
-    }
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve('success');
+      img.onerror = () => resolve('error');
+      img.src = `/flags/${currency}.png`;
+    });
   }
 
   $: {
@@ -20,13 +20,15 @@
       fetchFlag(currency.toLowerCase()).then((result) => (flagStatus = result));
   }
 
-  $: currencyFlag = currency
-    ? `--flag: url('/flags/${currency.toLowerCase()}.png')`
-    : null;
+  $: currencyFlag =
+    currency && flagStatus === 'success'
+      ? `--flag: url('/flags/${currency.toLowerCase()}.png')`
+      : null;
 </script>
 
-{#if flagStatus === 'success'}
-  <span
-    class="aspect-ratio-[48/32] bg-image-$flag bg-contain bg-no-repeat bg-center inline-block inline-6 pointer-events-none {$$props.class}"
-    style={currencyFlag}
-  />{/if}
+<span
+  class="{flagStatus === 'success'
+    ? 'bg-image-$flag'
+    : 'border'} border-dashed border-gray-400 bg-contain bg-no-repeat bg-center radius-md rounded-sm aspect-ratio-[48/32] inline-block inline-6 pointer-events-none {$$props.class}"
+  style={currencyFlag}
+/>
