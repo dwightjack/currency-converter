@@ -6,12 +6,12 @@
   const OPS_REGEXP = /[*+-/]$/;
   const HAS_DECIMAL_REGEXP = /\d+\.\d*$/;
 
-  export let onSubmit = (_n: number) => undefined;
+  export let onSubmit = (_n: number): void => undefined;
 
   export let initial: number | null = null;
   let root: HTMLElement | undefined;
 
-  let result: number = Number.isNaN(initial) ? 0 : initial;
+  let result: number = initial === null || Number.isNaN(initial) ? 0 : initial;
   let input = String(result);
 
   // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
@@ -75,8 +75,8 @@
       onInput(key);
       return;
     }
-    if (keyboardMap[key]) {
-      keyboardMap[key]();
+    if (Object.hasOwn(keyboardMap, key)) {
+      keyboardMap[key as keyof typeof keyboardMap]();
     }
   }
 

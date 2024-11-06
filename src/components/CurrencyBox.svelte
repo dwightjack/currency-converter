@@ -39,9 +39,8 @@
         </option>
       {/each}
     </select>
-    <span
-      class="i-ion-chevron-down row-start-1 col-start-3 pointer-events-none"
-    />
+    <span class="i-ion-chevron-down row-start-1 col-start-3 pointer-events-none"
+    ></span>
   </div>
 
   <div class="flex gap-x-2 items-center p-inline-2 p-block-2">

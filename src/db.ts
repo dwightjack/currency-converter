@@ -44,7 +44,7 @@ export async function fetchCurrency(
   } catch (e) {
     console.warn(e);
     alert(
-      `Unable to retrieve exchange rates for ${currencyCode}. ${e.message}`,
+      `Unable to retrieve exchange rates for ${currencyCode}. ${(e as Error).message}`,
     );
     return {};
   }
@@ -58,25 +58,25 @@ export async function fetchCurrencyList() {
   }
 
   try {
-    const symbols =
-      (await fetchSymbols()) ||
-      [].sort((a, b) => {
-        const nameA = a.description.toUpperCase();
-        const nameB = b.description.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-        return 0;
-      });
+    const symbols = (await fetchSymbols()).sort((a, b) => {
+      const nameA = a.description.toUpperCase();
+      const nameB = b.description.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
 
     // store the data in the db
     return await setKey('symbols', { symbols });
   } catch (e) {
     console.warn(e);
-    alert(`Unable to retrieve exchange rates currencies. ${e.message}`);
+    alert(
+      `Unable to retrieve exchange rates currencies. ${(e as Error).message}`,
+    );
     return { symbols: [] };
   }
 }

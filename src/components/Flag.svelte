@@ -31,4 +31,4 @@
     ? 'bg-image-$flag'
     : 'border'} border-dashed border-gray-400 bg-contain bg-no-repeat bg-center radius-md rounded-sm aspect-ratio-[48/32] inline-block inline-6 pointer-events-none {$$props.class}"
   style={currencyFlag}
-/>
+></span>

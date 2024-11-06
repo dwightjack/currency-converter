@@ -84,5 +84,5 @@ export function getCurrencySymbol(currency: string) {
     currency,
   })
     .formatToParts(0)
-    .find(({ type }) => type === 'currency').value;
+    .find(({ type }) => type === 'currency')!.value;
 }
