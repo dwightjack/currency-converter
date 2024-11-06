@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
+  interface Props {
+    value: string | number;
+    oninput: (value: string) => void;
+  }
 
-  export let value: string | number = 0;
-
-  const dispatch = createEventDispatcher();
+  const { value = 0, oninput }: Props = $props();
 
   const formatter = new Intl.NumberFormat('en', {
     maximumFractionDigits: 3,
@@ -19,14 +20,16 @@
   }
 
   const onInput = (e: Event) => {
-    dispatch('input', (e.target as HTMLInputElement).value.replaceAll(',', ''));
+    oninput?.((e.target as HTMLInputElement).value.replaceAll(',', ''));
   };
 
-  $: formattedValue = value
-    ? formatter.format(
-        typeof value === 'number' ? value : Number.parseFloat(value),
-      )
-    : '';
+  const formattedValue = $derived(
+    value
+      ? formatter.format(
+          typeof value === 'number' ? value : Number.parseFloat(value),
+        )
+      : '',
+  );
 </script>
 
 <div
@@ -39,7 +42,7 @@
     name="from-amount"
     class="border-0 bg-transparent focus:outline-none row-span-full col-span-full"
     value={formattedValue}
-    on:focus={onInputFocus}
-    on:input={onInput}
+    onfocus={onInputFocus}
+    oninput={onInput}
   />
 </div>

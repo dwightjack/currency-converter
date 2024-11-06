@@ -1,6 +1,19 @@
 <script lang="ts">
-  export let label = '';
-  export let theme: 'blue' | 'green' = 'blue';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+
+  interface Props
+    extends Pick<HTMLButtonAttributes, 'onclick' | 'children' | 'class'> {
+    label?: string;
+    theme?: 'blue' | 'green';
+  }
+
+  const {
+    label = '',
+    theme = 'blue',
+    children,
+    onclick,
+    class: className = '',
+  }: Props = $props();
 
   const themes: Record<typeof theme, string> = {
     blue: 'text-brand-900 hover:bg-brand-100 active:bg-brand-200 outline-brand @dark:(text-brand-dark-200 hover:bg-brand-dark-700 active:bg-brand-dark-900)',
@@ -12,10 +25,10 @@
 <button
   class="{themes[
     theme
-  ]} inline-flex items-center p-inline-1 p-block-1 rounded-md border-none {$$props.class}"
+  ]} inline-flex items-center p-inline-1 p-block-1 rounded-md border-none {className}"
   type="button"
-  on:click
+  {onclick}
 >
-  <slot></slot>
+  {@render children?.()}
   <span class="sr-only">{label}</span>
 </button>
