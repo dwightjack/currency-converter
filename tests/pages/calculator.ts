@@ -2,8 +2,8 @@ import type { Locator } from '@playwright/test';
 import { AppPage } from './app';
 
 export class Calculator extends AppPage {
-  calculator: Locator;
-  result: Locator;
+  calculator!: Locator;
+  result!: Locator;
 
   async openCalculator() {
     await this.page.getByRole('button', { name: 'Calculate' }).click();

@@ -1,7 +1,19 @@
 <script lang="ts">
-  export let area = '';
-  export let theme: 'light' | 'invert' | 'neutral' = 'light';
-  export let pressed = false;
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+
+  interface Props extends Pick<HTMLButtonAttributes, 'onclick' | 'children'> {
+    area?: string;
+    theme?: 'light' | 'invert' | 'neutral';
+    pressed?: boolean;
+  }
+
+  const {
+    children,
+    area = '',
+    theme = 'light',
+    pressed = false,
+    onclick,
+  }: Props = $props();
 
   const themes: Record<typeof theme, string> = {
     light:
@@ -14,12 +26,12 @@
 </script>
 
 <button
-  on:click
+  {onclick}
   type="button"
   style={`--btn-area: ${area}`}
   aria-pressed={pressed}
   class="{themes[
     theme
   ]} grid-area-$btn-area aria-pressed:(border-2 border-brand-900/70) ring-brand-200 @dark:(ring-brand-dark-700 aria-pressed:border-brand-dark-500) outline-brand focus-visible:(isolate) outline-offset-2 flex items-center justify-center ring-1 text-2xl"
-  ><slot /></button
+  >{@render children?.()}</button
 >

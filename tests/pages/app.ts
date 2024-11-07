@@ -32,7 +32,9 @@ export class AppPage {
       await route.fulfill({ json: symbols });
     });
     await this.page.route('/.netlify/functions/rates**', async (route) => {
-      const base = new URL(route.request().url()).searchParams.get('base');
+      const base = new URL(route.request().url()).searchParams.get(
+        'base',
+      ) as keyof typeof rates;
       await route.fulfill({
         json: {
           base,

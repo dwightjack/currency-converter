@@ -1,20 +1,31 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
-  import { getCurrencySymbol } from '../stores/currency';
+  import type { Snippet } from 'svelte';
+  import store from '../stores/currency.svelte';
   import Flag from './Flag.svelte';
   import type { CurrencySymbol } from 'src/types';
 
-  export let label = '';
-  export let id = '';
-  export let current = '';
-  export let currencies: CurrencySymbol[] = [];
+  interface Props {
+    label?: string;
+    id?: string;
+    current?: string;
+    currencies: CurrencySymbol[];
+    children?: Snippet<[]>;
+    oncurrencychange?: (currency: string) => void;
+  }
 
-  $: inputSymbol = current && getCurrencySymbol(current);
+  const {
+    label = '',
+    id = '',
+    current = '',
+    currencies = [],
+    oncurrencychange,
+    children,
+  }: Props = $props();
 
-  const dispatch = createEventDispatcher();
+  const inputSymbol = $derived(current && store.getCurrencySymbol(current));
 
   function onChange(e: Event) {
-    dispatch('currencyChange', (e.target as HTMLSelectElement).value);
+    oncurrencychange?.((e.target as HTMLSelectElement).value);
   }
 </script>
 
@@ -29,7 +40,7 @@
     <Flag currency={current} class="row-start-1 col-start-1" />
     <select
       name={id + '-select'}
-      on:change={onChange}
+      onchange={onChange}
       id={id + '-select'}
       class="truncate appearance-none cursor-pointer p-inline-8 col-span-full row-start-1 inline-full text-brand-900 font-bold bg-transparent outline-brand border-0 @dark:(text-brand-dark-200)"
     >
@@ -39,9 +50,8 @@
         </option>
       {/each}
     </select>
-    <span
-      class="i-ion-chevron-down row-start-1 col-start-3 pointer-events-none"
-    />
+    <span class="i-ion-chevron-down row-start-1 col-start-3 pointer-events-none"
+    ></span>
   </div>
 
   <div class="flex gap-x-2 items-center p-inline-2 p-block-2">
@@ -49,6 +59,6 @@
       <span class="sr-only">Amount</span>
       {inputSymbol}
     </label>
-    <slot />
+    {@render children?.()}
   </div>
 </fieldset>

@@ -1,18 +1,13 @@
 {
+  "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "verbatimModuleSyntax": true,
     /**
      * To have warnings / errors of the Svelte compiler at the
      * correct position, enable source maps by default.
      */
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     /**
@@ -23,6 +18,7 @@
      */
     "allowJs": true,
     "checkJs": true,
+    "moduleDetection": "force",
     "types": ["vite-plugin-pwa/client"]
   },
   /**

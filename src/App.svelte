@@ -4,28 +4,19 @@
   import ModalDialog from './components/ModalDialog.svelte';
   import Calculator from './components/Calculator.svelte';
 
-  import {
-    currency,
-    invertCurrency,
-    inputAmount,
-    convertedAmount,
-    convertedAmountRaw,
-    currencyFullList,
-    setCurrency,
-    inputAmountNumber,
-  } from './stores/currency';
-  import { calculatorOpen, toggleCalculator } from './stores/ui';
+  import currencyStore from './stores/currency.svelte';
+  import uiStore from './stores/ui.svelte';
   import CurrencyInput from './components/CurrencyInput.svelte';
 
   function submitCalcValue(input: number) {
-    inputAmount.set(input);
-    toggleCalculator(false);
+    currencyStore.inputAmount = input;
+    uiStore.toggleCalculator(false);
   }
 
   function copyToClipboard() {
-    if (!Number.isNaN($convertedAmountRaw)) {
+    if (!Number.isNaN(currencyStore.convertedAmountRaw)) {
       navigator.clipboard.writeText(
-        Number($convertedAmount.replaceAll(',', '')).toString(),
+        Number(currencyStore.convertedAmount.replaceAll(',', '')).toString(),
       );
     }
   }
@@ -42,16 +33,17 @@
       <CurrencyBox
         label="Source Currency"
         id="from"
-        on:currencyChange={({ detail }) => setCurrency('input', detail)}
-        current={$currency.input}
-        currencies={$currencyFullList}
+        oncurrencychange={(currency) =>
+          currencyStore.setCurrency('input', currency)}
+        current={currencyStore.currency.input}
+        currencies={currencyStore.currencyFullList}
       >
         <CurrencyInput
-          value={$inputAmount}
-          on:input={({ detail }) => ($inputAmount = detail)}
+          value={currencyStore.inputAmount}
+          oninput={(value) => (currencyStore.inputAmount = value)}
         />
         <ControlButton
-          on:click={() => toggleCalculator(true)}
+          onclick={() => uiStore.toggleCalculator(true)}
           label="Calculate"
           class="text-2xl self-center"
         >
@@ -60,7 +52,11 @@
       </CurrencyBox>
     </div>
     <div class="items-center col-start-2 row-start-1 flex justify-center">
-      <ControlButton on:click={invertCurrency} label="Switch" class="text-2xl">
+      <ControlButton
+        onclick={() => currencyStore.invertCurrency()}
+        label="Switch"
+        class="text-2xl"
+      >
         <span class="i-ion-swap-horizontal"></span>
       </ControlButton>
     </div>
@@ -68,9 +64,10 @@
       <CurrencyBox
         label="Output Currency"
         id="to"
-        current={$currency.output}
-        on:currencyChange={({ detail }) => setCurrency('output', detail)}
-        currencies={$currencyFullList}
+        current={currencyStore.currency.output}
+        oncurrencychange={(currency) =>
+          currencyStore.setCurrency('output', currency)}
+        currencies={currencyStore.currencyFullList}
       >
         <output
           name="to-amount"
@@ -78,17 +75,17 @@
           for="from-select to-select from-amount"
           class="pie-1 p-block-1 inline-full truncate"
         >
-          {#await $convertedAmount}
+          {#if currencyStore.loading}
             ...converting
-          {:then number}
-            {Number.isNaN(number) ? 'Error' : number}
-          {:catch error}
-            conversion error! ({error})
-          {/await}
+          {:else if currencyStore.convertedAmount === ''}
+            conversion error!
+          {:else}
+            {currencyStore.convertedAmount}
+          {/if}
         </output>
         {#if isSecureContext}
           <ControlButton
-            on:click={copyToClipboard}
+            onclick={copyToClipboard}
             label="Copy to Clipboard"
             class="text-2xl"
           >
@@ -98,9 +95,15 @@
       </CurrencyBox>
     </div>
   </form>
-  {#if $calculatorOpen}
-    <ModalDialog name="Calculator" on:close={() => toggleCalculator(false)}>
-      <Calculator initial={$inputAmountNumber} onSubmit={submitCalcValue} />
+  {#if uiStore.calculatorOpen}
+    <ModalDialog
+      name="Calculator"
+      onclose={() => uiStore.toggleCalculator(false)}
+    >
+      <Calculator
+        initial={currencyStore.inputAmountNumber}
+        onsubmit={submitCalcValue}
+      />
     </ModalDialog>
   {/if}
 </main>

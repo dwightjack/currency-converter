@@ -1,8 +1,14 @@
 <script lang="ts">
-  export let space = 0;
-  export let alignY = `start`;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    space?: number;
+    alignY?: 'center' | 'stretch' | 'baseline' | 'start' | 'end';
+    children?: Snippet<[]>;
+  }
+  const { space = 0, alignY = 'start', children }: Props = $props();
 </script>
 
 <div class="flex flex-wrap items-{alignY} gap-{space}">
-  <slot />
+  {@render children?.()}
 </div>

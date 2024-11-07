@@ -6,23 +6,33 @@
   const OPS_REGEXP = /[*+-/]$/;
   const HAS_DECIMAL_REGEXP = /\d+\.\d*$/;
 
-  export let onSubmit = (_n: number) => undefined;
+  interface Props {
+    onsubmit?: (_n: number) => void;
+    initial?: number;
+  }
 
-  export let initial: number | null = null;
+  const { onsubmit, initial }: Props = $props();
+
   let root: HTMLElement | undefined;
 
-  let result: number = Number.isNaN(initial) ? 0 : initial;
-  let input = String(result);
+  let input = $state('');
+
+  $effect(() => {
+    input = String(!initial || Number.isNaN(initial) ? 0 : initial);
+  });
 
   // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
   // match and extract trailing digits (positive and negative)
   // add thousands separator
   // keep max 3 decimal numbers
-  $: output = (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0')
-    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
-    .replace(/(\.\d{3})\d*$/, '$1');
+  const output = $derived(
+    (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0')
+      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+      .replace(/(\.\d{3})\d*$/, '$1'),
+  );
 
-  $: pressed = OPS_REGEXP.test(input) ? input.at(-1) : null;
+  const pressed = $derived(OPS_REGEXP.test(input) ? input.at(-1) : null);
+
   function onInput(v: string | number) {
     if (v === '.' && HAS_DECIMAL_REGEXP.test(input)) {
       return;
@@ -55,7 +65,7 @@
   }
 
   function submit() {
-    onSubmit(parseFloat(input));
+    onsubmit?.(parseFloat(input));
   }
 
   const keyboardMap = {
@@ -75,8 +85,8 @@
       onInput(key);
       return;
     }
-    if (keyboardMap[key]) {
-      keyboardMap[key]();
+    if (Object.hasOwn(keyboardMap, key)) {
+      keyboardMap[key as keyof typeof keyboardMap]();
     }
   }
 
@@ -86,7 +96,7 @@
   });
 </script>
 
-<svelte:window on:keyup={handleKeyUp} />
+<svelte:window onkeyup={handleKeyUp} />
 <div
   class="grid grid-calc min-block-0 min-inline-0 outline-none select-none"
   role="group"
@@ -102,24 +112,24 @@
     <ControlButton
       class="text-2xl p-block-2 p-inline-2 ms-1"
       theme="green"
-      on:click={submit}
+      onclick={submit}
       label="Submit"
     >
       <span class="i-ion-checkmark"></span>
     </ControlButton>
   </div>
-  <CalcButton theme="neutral" area="reset" on:click={reset}>AC</CalcButton>
+  <CalcButton theme="neutral" area="reset" onclick={reset}>AC</CalcButton>
   {#each Array(10) as _, i}
-    <CalcButton on:click={() => onInput(9 - i)} area={'b' + (9 - i)}>
+    <CalcButton onclick={() => onInput(9 - i)} area={'b' + (9 - i)}>
       {9 - i}
     </CalcButton>
   {/each}
-  <CalcButton area="dot" on:click={() => onInput('.')}>.</CalcButton>
+  <CalcButton area="dot" onclick={() => onInput('.')}>.</CalcButton>
   <CalcButton
     theme="neutral"
     pressed={pressed === '/'}
     area="divide"
-    on:click={() => onInput('/')}
+    onclick={() => onInput('/')}
   >
     &divide;
   </CalcButton>
@@ -127,7 +137,7 @@
     theme="neutral"
     pressed={pressed === '*'}
     area="times"
-    on:click={() => onInput('*')}
+    onclick={() => onInput('*')}
   >
     &times;
   </CalcButton>
@@ -135,7 +145,7 @@
     theme="neutral"
     pressed={pressed === '-'}
     area="minus"
-    on:click={() => onInput('-')}
+    onclick={() => onInput('-')}
   >
     -
   </CalcButton>
@@ -143,9 +153,9 @@
     theme="neutral"
     pressed={pressed === '+'}
     area="plus"
-    on:click={() => onInput('+')}
+    onclick={() => onInput('+')}
   >
     +
   </CalcButton>
-  <CalcButton area="eq" on:click={eq} theme="invert">=</CalcButton>
+  <CalcButton area="eq" onclick={eq} theme="invert">=</CalcButton>
 </div>

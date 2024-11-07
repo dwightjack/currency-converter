@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import sveltePreprocess from 'svelte-preprocess';
 import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
@@ -49,8 +48,6 @@ export default defineConfig({
         ],
       },
     }),
-    svelte({
-      preprocess: [sveltePreprocess({ typescript: true })],
-    }),
+    svelte(),
   ],
 });
