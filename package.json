@@ -6,7 +6,7 @@
     "dev": "netlify dev",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint .",
+    "lint": "eslint . && pnpm check",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "test": "NODE_OPTIONS='--disable-warning=ExperimentalWarning' playwright test"
   },

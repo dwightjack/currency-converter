@@ -72,7 +72,10 @@ class CurrencyStore {
   }
 
   setCurrency(key: 'input' | 'output', value: string) {
-    this.currency[key] = value;
+    this.currency = {
+      ...$state.snapshot(this.currency),
+      [key]: value,
+    };
   }
 
   getCurrencySymbol(currency: string) {
