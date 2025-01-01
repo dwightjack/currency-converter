@@ -19,7 +19,7 @@
   "devDependencies": {
     "@eslint/js": "^9.6.0",
     "@iconify-json/ion": "^1.1.12",
-    "@netlify/functions": "2.8.2",
+    "@netlify/functions": "3.0.0",
     "@playwright/test": "^1.45.1",
     "@sveltejs/vite-plugin-svelte": "4.0.4",
     "@tsconfig/svelte": "^5.0.4",
