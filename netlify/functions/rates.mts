@@ -4,7 +4,7 @@ import { ofetch } from 'ofetch';
 const handler: Handler = async ({ queryStringParameters }) => {
   const API_KEY = process.env.API_KEY;
   const response = await ofetch(
-    `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${queryStringParameters.base}`,
+    `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${queryStringParameters!.base}`,
   );
 
   if (response.result === 'error') {

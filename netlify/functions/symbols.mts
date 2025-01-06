@@ -39,7 +39,7 @@ const handler: Handler = async () => {
       statusCode: 500,
       body: JSON.stringify({
         success: false,
-        message: `API error: ${e.message}`,
+        message: `API error: ${(e as Error).message}`,
       }),
       headers: {
         'Content-Type': 'application/json; charset=utf-8',

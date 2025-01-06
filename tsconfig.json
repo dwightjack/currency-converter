@@ -19,7 +19,7 @@
     "allowJs": true,
     "checkJs": true,
     "moduleDetection": "force",
-    "types": ["vite-plugin-pwa/client"]
+    "types": ["vite-plugin-pwa/client", "node"]
   },
   /**
    * Use global.d.ts instead of compilerOptions.types
