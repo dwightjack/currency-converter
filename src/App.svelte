@@ -4,9 +4,12 @@
   import ModalDialog from './components/ModalDialog.svelte';
   import Calculator from './components/Calculator.svelte';
 
-  import currencyStore from './stores/currency.svelte';
-  import uiStore from './stores/ui.svelte';
+  import { setCurrencyStore } from './stores/currency.svelte';
+  import { setUiStore } from './stores/ui.svelte';
   import CurrencyInput from './components/CurrencyInput.svelte';
+
+  const currencyStore = setCurrencyStore();
+  const uiStore = setUiStore();
 
   function submitCalcValue(input: number) {
     currencyStore.inputAmount = input;

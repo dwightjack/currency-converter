@@ -1,3 +1,5 @@
+import { getContext, setContext } from 'svelte';
+
 class UiStore {
   calculatorOpen = $state(false);
 
@@ -7,4 +9,12 @@ class UiStore {
   }
 }
 
-export default new UiStore();
+const storeKey = Symbol('uiStore');
+
+export function setUiStore() {
+  return setContext(storeKey, new UiStore());
+}
+
+export function getUiStore(): UiStore {
+  return getContext(storeKey);
+}
