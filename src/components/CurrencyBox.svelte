@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import store from '../stores/currency.svelte';
+  import { getCurrencyStore } from '../stores/currency.svelte';
   import Flag from './Flag.svelte';
   import type { CurrencySymbol } from 'src/types';
 
@@ -12,6 +12,8 @@
     children?: Snippet<[]>;
     oncurrencychange?: (currency: string) => void;
   }
+
+  const store = getCurrencyStore();
 
   const {
     label = '',

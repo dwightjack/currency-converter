@@ -1,3 +1,4 @@
+import { getContext, setContext } from 'svelte';
 import { fetchCurrency, fetchCurrencyList } from '../db';
 import type { CurrencySymbol } from 'src/types';
 
@@ -88,4 +89,12 @@ class CurrencyStore {
   }
 }
 
-export default new CurrencyStore();
+const storeKey = Symbol('currencyStore');
+
+export function setCurrencyStore() {
+  return setContext(storeKey, new CurrencyStore());
+}
+
+export function getCurrencyStore(): CurrencyStore {
+  return getContext(storeKey);
+}
