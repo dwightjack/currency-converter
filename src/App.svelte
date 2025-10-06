@@ -3,6 +3,7 @@
   import ControlButton from './components/ControlButton.svelte';
   import ModalDialog from './components/ModalDialog.svelte';
   import Calculator from './components/Calculator.svelte';
+  import CurrencySelect from './components/CurrencySelect.svelte';
 
   import { setCurrencyStore } from './stores/currency.svelte';
   import { setUiStore } from './stores/ui.svelte';
@@ -29,19 +30,25 @@
   class="container p-block-4 p-inline-4 m-inline-auto lg:(max-inline-3xl pbs-10)"
 >
   <form
-    class="flex flex-col gap-4 sm:(grid grid-cols-[1fr_auto_1fr])"
+    class="gap-4 max-sm:(flex flex-col justify-center) items-center sm:(grid grid-cols-[1fr_auto_1fr])"
     on:submit|preventDefault={() => undefined}
   >
-    <div class="min-inline-0">
-      <CurrencyBox
-        label="Source Currency"
-        id="from"
-        oncurrencychange={(currency) =>
-          currencyStore.setCurrency('input', currency)}
-        current={currencyStore.currency.input}
-        currencies={currencyStore.currencyFullList}
-      >
+    <CurrencyBox label="Input" current={currencyStore.currency.input}>
+      {#snippet select(current)}
+        <CurrencySelect
+          label="Input Currency"
+          id="from-select"
+          {current}
+          onchange={(currency) => currencyStore.setCurrency('input', currency)}
+        />
+      {/snippet}
+      {#snippet amount(symbol)}
+        <label for="from-amount">
+          <span class="sr-only">Amount</span>
+          {symbol}
+        </label>
         <CurrencyInput
+          id="from-amount"
           value={currencyStore.inputAmount}
           oninput={(value) => (currencyStore.inputAmount = value)}
         />
@@ -52,26 +59,29 @@
         >
           <span class="i-ion-calculator-outline"></span>
         </ControlButton>
-      </CurrencyBox>
-    </div>
-    <div class="items-center col-start-2 row-start-1 flex justify-center">
-      <ControlButton
-        onclick={() => currencyStore.invertCurrency()}
-        label="Switch"
-        class="text-2xl"
-      >
-        <span class="i-ion-swap-horizontal"></span>
-      </ControlButton>
-    </div>
-    <div class="min-inline-0 md:col-start-3">
-      <CurrencyBox
-        label="Output Currency"
-        id="to"
-        current={currencyStore.currency.output}
-        oncurrencychange={(currency) =>
-          currencyStore.setCurrency('output', currency)}
-        currencies={currencyStore.currencyFullList}
-      >
+      {/snippet}
+    </CurrencyBox>
+    <ControlButton
+      onclick={() => currencyStore.invertCurrency()}
+      label="Switch currencies"
+      class="text-2xl"
+    >
+      <span class="i-ion-swap-horizontal"></span>
+    </ControlButton>
+    <CurrencyBox label="Output" current={currencyStore.currency.output}>
+      {#snippet select(current)}
+        <CurrencySelect
+          label="Output Currency"
+          id="to-select"
+          {current}
+          onchange={(currency) => currencyStore.setCurrency('output', currency)}
+        />
+      {/snippet}
+      {#snippet amount(symbol)}
+        <label for="to-amount">
+          <span class="sr-only">Converted amount</span>
+          {symbol}
+        </label>
         <output
           name="to-amount"
           id="to-amount"
@@ -89,14 +99,14 @@
         {#if isSecureContext}
           <ControlButton
             onclick={copyToClipboard}
-            label="Copy to Clipboard"
+            label="Copy converted amount to clipboard"
             class="text-2xl"
           >
             <span class="i-ion-md-copy"></span>
           </ControlButton>
         {/if}
-      </CurrencyBox>
-    </div>
+      {/snippet}
+    </CurrencyBox>
   </form>
   {#if uiStore.calculatorOpen}
     <ModalDialog

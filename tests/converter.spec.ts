@@ -72,7 +72,9 @@ test.describe('interactions', () => {
 
     await appPage.setInputAmount(inputAmount);
 
-    await page.getByRole('button', { name: 'Copy to Clipboard' }).click();
+    await page
+      .getByRole('button', { name: 'Copy converted amount to clipboard' })
+      .click();
 
     const clipboardText1 = await page.evaluate(
       'navigator.clipboard.readText()',

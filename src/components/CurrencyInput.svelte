@@ -1,10 +1,11 @@
 <script lang="ts">
   interface Props {
     value: string | number;
+    id: string;
     oninput: (value: string) => void;
   }
 
-  const { value = 0, oninput }: Props = $props();
+  const { value = 0, oninput, id }: Props = $props();
 
   const formatter = new Intl.NumberFormat('en', {
     maximumFractionDigits: 3,
@@ -38,9 +39,9 @@
   <input
     type="text"
     inputmode="numeric"
-    id="from-amount"
-    name="from-amount"
-    class="border-0 bg-transparent focus:outline-none row-span-full col-span-full"
+    {id}
+    name={id}
+    class="border-0 min-inline-0 bg-transparent focus:outline-none row-span-full col-span-full"
     value={formattedValue}
     onfocus={onInputFocus}
     oninput={onInput}

@@ -14,16 +14,16 @@ export class AppPage {
   constructor(page: Page) {
     this.page = page;
 
-    this.inputPanel = page.getByRole('group', { name: 'Source Currency' });
+    this.inputPanel = page.getByRole('group', { name: 'Input' });
     this.inputField = this.inputPanel.getByLabel('Amount');
-    this.inputSelector = this.inputPanel.getByRole('combobox', {
-      name: 'Currency',
+    this.inputSelector = page.getByRole('combobox', {
+      name: 'Input Currency',
     });
 
-    this.outPutPanel = page.getByRole('group', { name: 'Output Currency' });
-    this.outPutField = this.outPutPanel.getByLabel('Amount');
-    this.outputSelector = this.outPutPanel.getByRole('combobox', {
-      name: 'Currency',
+    this.outPutPanel = page.getByRole('group', { name: 'Output' });
+    this.outPutField = this.outPutPanel.getByLabel('Converted Amount');
+    this.outputSelector = page.getByRole('combobox', {
+      name: 'Output Currency',
     });
   }
 
