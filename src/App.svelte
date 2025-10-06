@@ -30,7 +30,7 @@
   class="container p-block-4 p-inline-4 m-inline-auto lg:(max-inline-3xl pbs-10)"
 >
   <form
-    class="flex flex-col gap-4 items-center max-sm:justify-center sm:flex-row"
+    class="gap-4 max-sm:(flex flex-col justify-center) items-center sm:(grid grid-cols-[1fr_auto_1fr])"
     on:submit|preventDefault={() => undefined}
   >
     <CurrencyBox label="Input" current={currencyStore.currency.input}>
