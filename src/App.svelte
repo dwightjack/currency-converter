@@ -33,10 +33,10 @@
     class="flex flex-col gap-4 items-center max-sm:justify-center sm:flex-row"
     on:submit|preventDefault={() => undefined}
   >
-    <CurrencyBox label="Source Currency" current={currencyStore.currency.input}>
+    <CurrencyBox label="Input" current={currencyStore.currency.input}>
       {#snippet select(current)}
         <CurrencySelect
-          label="Currency"
+          label="Input Currency"
           id="from-select"
           {current}
           onchange={(currency) => currencyStore.setCurrency('input', currency)}
@@ -68,13 +68,10 @@
     >
       <span class="i-ion-swap-horizontal"></span>
     </ControlButton>
-    <CurrencyBox
-      label="Output Currency"
-      current={currencyStore.currency.output}
-    >
+    <CurrencyBox label="Output" current={currencyStore.currency.output}>
       {#snippet select(current)}
         <CurrencySelect
-          label="Currency"
+          label="Output Currency"
           id="to-select"
           {current}
           onchange={(currency) => currencyStore.setCurrency('output', currency)}
