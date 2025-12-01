@@ -2,11 +2,18 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "[js]": {
-    "editor.formatOnSave": false
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[ts]": {
-    "editor.formatOnSave": false
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[svelte]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "eslint.validate": ["javascript", "svelte", "typescript"],
   "css.validate": false,
