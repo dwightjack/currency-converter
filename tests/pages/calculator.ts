@@ -1,11 +1,15 @@
-import type { Locator } from '@playwright/test';
-import { AppPage } from './app';
+import type { Locator, Page } from '@playwright/test';
 
-export class Calculator extends AppPage {
+export class Calculator {
   calculator!: Locator;
   result!: Locator;
+  page: Page;
 
-  async openCalculator() {
+  constructor(page: Page) {
+    this.page = page;
+  }
+
+  async open() {
     await this.page.getByRole('button', { name: 'Calculate' }).click();
     this.calculator = this.page.getByRole('dialog', { name: 'Calculator' });
     this.result = this.calculator.getByLabel('Result');

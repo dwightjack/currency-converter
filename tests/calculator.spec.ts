@@ -1,28 +1,23 @@
-import { test, expect } from '@playwright/test';
-import { Calculator } from './pages/calculator';
-
-test.beforeEach(async ({ page }) => {
-  const calcPage = new Calculator(page);
-  await calcPage.setup();
-  await page.goto('/');
-});
+import { expect } from '@playwright/test';
+import { test } from './fixtures';
 
 test.describe('calculator', () => {
-  test('picks-up the input value (formatted)', async ({ page }) => {
-    const calcPage = new Calculator(page);
-    await calcPage.setInputAmount(1000);
-    await calcPage.openCalculator();
+  test('picks-up the input value (formatted)', async ({
+    calculator,
+    appPage,
+  }) => {
+    await appPage.setInputAmount(1000);
+    await calculator.open();
 
-    await expect(calcPage.result).toHaveText('1,000');
+    await expect(calculator.result).toHaveText('1,000');
   });
 
   test.describe('supports value input by keyboard', () => {
-    test('number input', async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test('number input', async ({ calculator, page }) => {
+      await calculator.open();
 
       await page.keyboard.type('10');
-      await expect(calcPage.result).toHaveText('10');
+      await expect(calculator.result).toHaveText('10');
     });
 
     [
@@ -31,125 +26,120 @@ test.describe('calculator', () => {
       ['/', '5'],
       ['*', '20'],
     ].forEach(([operation, expected]) => {
-      test(`basic ${operation} operation`, async ({ page }) => {
-        const calcPage = new Calculator(page);
-        await calcPage.openCalculator();
+      test(`basic ${operation} operation`, async ({ calculator, page }) => {
+        await calculator.open();
 
         await page.keyboard.type('10');
         await page.keyboard.type(operation);
         await page.keyboard.type('2');
         await page.keyboard.press('Enter');
-        await expect(calcPage.result).toHaveText(expected);
+        await expect(calculator.result).toHaveText(expected);
       });
     });
 
-    test(`clear input`, async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test(`clear input`, async ({ calculator, page }) => {
+      await calculator.open();
 
       await page.keyboard.type('10');
-      await expect(calcPage.result).toHaveText('10');
+      await expect(calculator.result).toHaveText('10');
       await page.keyboard.press('Delete');
-      await expect(calcPage.result).toHaveText('0');
+      await expect(calculator.result).toHaveText('0');
     });
 
-    test(`remove last digit`, async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test(`remove last digit`, async ({ calculator, page }) => {
+      await calculator.open();
 
       await page.keyboard.type('10');
       await page.keyboard.press('Backspace');
-      await expect(calcPage.result).toHaveText('1');
+      await expect(calculator.result).toHaveText('1');
     });
 
-    test('complex operation input', async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test('complex operation input', async ({ calculator, page }) => {
+      await calculator.open();
 
       await page.keyboard.type('10+');
-      await expect(calcPage.result).toHaveText('10');
+      await expect(calculator.result).toHaveText('10');
 
       await page.keyboard.type('5');
-      await expect(calcPage.result).toHaveText('5');
+      await expect(calculator.result).toHaveText('5');
 
       await page.keyboard.press('Enter');
 
-      await expect(calcPage.result).toHaveText('15');
+      await expect(calculator.result).toHaveText('15');
 
       await page.keyboard.type('*2+');
 
-      await expect(calcPage.result).toHaveText('30');
+      await expect(calculator.result).toHaveText('30');
 
       await page.keyboard.type('5');
       await page.keyboard.press('Enter');
 
-      await expect(calcPage.result).toHaveText('35');
+      await expect(calculator.result).toHaveText('35');
     });
 
-    test('operator button gets pressed state', async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test('operator button gets pressed state', async ({ calculator, page }) => {
+      await calculator.open();
 
       await page.keyboard.type('1+');
 
-      await expect(calcPage.getButton('+')).toHaveAttribute(
+      await expect(calculator.getButton('+')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
     });
 
     test('operator button can be cleared by re-clicking on it', async ({
+      calculator,
       page,
     }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+      await calculator.open();
 
       await page.keyboard.type('1+');
 
-      await expect(calcPage.getButton('+')).toHaveAttribute(
+      await expect(calculator.getButton('+')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
 
       await page.keyboard.type('+');
 
-      await expect(calcPage.getButton('+')).not.toHaveAttribute(
+      await expect(calculator.getButton('+')).not.toHaveAttribute(
         'aria-pressed',
         'true',
       );
     });
 
     test(`operator button can be cleared by pressing Backspace`, async ({
+      calculator,
       page,
     }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+      await calculator.open();
 
       await page.keyboard.type('1+');
 
-      await expect(calcPage.getButton('+')).toHaveAttribute(
+      await expect(calculator.getButton('+')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
 
       await page.keyboard.press('Backspace');
 
-      await expect(calcPage.getButton('+')).not.toHaveAttribute(
+      await expect(calculator.getButton('+')).not.toHaveAttribute(
         'aria-pressed',
         'true',
       );
     });
 
     test('operator button can be changed by pressing another operator', async ({
+      calculator,
       page,
     }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+      await calculator.open();
 
       await page.keyboard.type('10+');
       await page.keyboard.type('/');
 
-      await expect(calcPage.getButton('÷')).toHaveAttribute(
+      await expect(calculator.getButton('÷')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
@@ -157,19 +147,18 @@ test.describe('calculator', () => {
       await page.keyboard.type('2');
       await page.keyboard.press('Enter');
 
-      await expect(calcPage.result).toHaveText('5');
+      await expect(calculator.result).toHaveText('5');
     });
   });
 
   test.describe('supports value input by UI', () => {
-    test('number input', async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test('number input', async ({ calculator }) => {
+      await calculator.open();
 
-      await calcPage.getButton('1').click();
-      await calcPage.getButton('0').click();
+      await calculator.getButton('1').click();
+      await calculator.getButton('0').click();
 
-      await expect(calcPage.result).toHaveText('10');
+      await expect(calculator.result).toHaveText('10');
     });
 
     [
@@ -179,102 +168,97 @@ test.describe('calculator', () => {
       ['×', '20'],
       ['AC', '2'],
     ].forEach(([operation, expected]) => {
-      test(`basic ${operation} operation`, async ({ page }) => {
-        const calcPage = new Calculator(page);
-        await calcPage.openCalculator();
+      test(`basic ${operation} operation`, async ({ calculator }) => {
+        await calculator.open();
 
-        await calcPage.getButton('1').click();
-        await calcPage.getButton('0').click();
-        await calcPage.getButton(operation).click();
-        await calcPage.getButton('2').click();
-        await calcPage.getButton('=').click();
-        await expect(calcPage.result).toHaveText(expected);
+        await calculator.getButton('1').click();
+        await calculator.getButton('0').click();
+        await calculator.getButton(operation).click();
+        await calculator.getButton('2').click();
+        await calculator.getButton('=').click();
+        await expect(calculator.result).toHaveText(expected);
       });
     });
-    test('complex operation input', async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test('complex operation input', async ({ calculator }) => {
+      await calculator.open();
 
-      await calcPage.getButton('1').click();
-      await calcPage.getButton('0').click();
-      await calcPage.getButton('+').click();
+      await calculator.getButton('1').click();
+      await calculator.getButton('0').click();
+      await calculator.getButton('+').click();
 
-      await expect(calcPage.result).toHaveText('10');
+      await expect(calculator.result).toHaveText('10');
 
-      await calcPage.getButton('5').click();
-      await expect(calcPage.result).toHaveText('5');
+      await calculator.getButton('5').click();
+      await expect(calculator.result).toHaveText('5');
 
-      await calcPage.getButton('=').click();
+      await calculator.getButton('=').click();
 
-      await expect(calcPage.result).toHaveText('15');
+      await expect(calculator.result).toHaveText('15');
 
-      await calcPage.getButton('×').click();
-      await calcPage.getButton('2').click();
-      await calcPage.getButton('+').click();
+      await calculator.getButton('×').click();
+      await calculator.getButton('2').click();
+      await calculator.getButton('+').click();
 
-      await expect(calcPage.result).toHaveText('30');
+      await expect(calculator.result).toHaveText('30');
 
-      await calcPage.getButton('5').click();
-      await calcPage.getButton('=').click();
+      await calculator.getButton('5').click();
+      await calculator.getButton('=').click();
 
-      await expect(calcPage.result).toHaveText('35');
+      await expect(calculator.result).toHaveText('35');
     });
 
-    test('operator button gets pressed state', async ({ page }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+    test('operator button gets pressed state', async ({ calculator }) => {
+      await calculator.open();
 
-      await calcPage.getButton('1').click();
-      await calcPage.getButton('+').click();
+      await calculator.getButton('1').click();
+      await calculator.getButton('+').click();
 
-      await expect(calcPage.getButton('+')).toHaveAttribute(
+      await expect(calculator.getButton('+')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
     });
 
     test('operator button can be cleared by re-clicking on it', async ({
-      page,
+      calculator,
     }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+      await calculator.open();
 
-      await calcPage.getButton('1').click();
-      await calcPage.getButton('+').click();
+      await calculator.getButton('1').click();
+      await calculator.getButton('+').click();
 
-      await expect(calcPage.getButton('+')).toHaveAttribute(
+      await expect(calculator.getButton('+')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
 
-      await calcPage.getButton('+').click();
+      await calculator.getButton('+').click();
 
-      await expect(calcPage.getButton('+')).not.toHaveAttribute(
+      await expect(calculator.getButton('+')).not.toHaveAttribute(
         'aria-pressed',
         'true',
       );
     });
 
     test('operator button can be changed by pressing another operator', async ({
-      page,
+      calculator,
     }) => {
-      const calcPage = new Calculator(page);
-      await calcPage.openCalculator();
+      await calculator.open();
 
-      await calcPage.getButton('1').click();
-      await calcPage.getButton('0').click();
-      await calcPage.getButton('+').click();
-      await calcPage.getButton('÷').click();
+      await calculator.getButton('1').click();
+      await calculator.getButton('0').click();
+      await calculator.getButton('+').click();
+      await calculator.getButton('÷').click();
 
-      await expect(calcPage.getButton('÷')).toHaveAttribute(
+      await expect(calculator.getButton('÷')).toHaveAttribute(
         'aria-pressed',
         'true',
       );
 
-      await calcPage.getButton('2').click();
-      await calcPage.getButton('=').click();
+      await calculator.getButton('2').click();
+      await calculator.getButton('=').click();
 
-      await expect(calcPage.result).toHaveText('5');
+      await expect(calculator.result).toHaveText('5');
     });
   });
 });

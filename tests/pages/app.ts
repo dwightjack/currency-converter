@@ -1,6 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
-import rates from '../fixtures/rates.json' assert { type: 'json' };
-import symbols from '../fixtures/symbols.json' assert { type: 'json' };
+import type { Locator, Page } from '@playwright/test';
 
 export class AppPage {
   readonly page: Page;
@@ -27,31 +25,9 @@ export class AppPage {
     });
   }
 
-  async setup() {
-    await this.page.route('/.netlify/functions/symbols', async (route) => {
-      await route.fulfill({ json: symbols });
-    });
-    await this.page.route('/.netlify/functions/rates**', async (route) => {
-      const base = new URL(route.request().url()).searchParams.get(
-        'base',
-      ) as keyof typeof rates;
-      await route.fulfill({
-        json: {
-          base,
-          success: true,
-          rates: rates[base],
-        },
-      });
-    });
-  }
-
   async setInputAmount(amount: number) {
     await this.inputField.clear();
     await this.inputField.fill(amount.toString());
-  }
-
-  async openCalculator() {
-    await this.page.getByRole('button', { name: 'Calculate' }).click();
   }
 
   async getCalculator() {
