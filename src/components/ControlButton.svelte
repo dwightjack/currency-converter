@@ -1,8 +1,10 @@
 <script lang="ts">
   import type { HTMLButtonAttributes } from 'svelte/elements';
 
-  interface Props
-    extends Pick<HTMLButtonAttributes, 'onclick' | 'children' | 'class'> {
+  interface Props extends Pick<
+    HTMLButtonAttributes,
+    'onclick' | 'children' | 'class'
+  > {
     label?: string;
     theme?: 'blue' | 'green';
   }
