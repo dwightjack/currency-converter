@@ -1,38 +1,22 @@
 <script lang="ts">
+  import { FLAG_LIST } from '../constants';
+
   interface Props {
     currency: string;
     class?: string;
   }
   const { currency, class: className = '' }: Props = $props();
 
-  let flagStatus = $state<'loading' | 'success' | 'error'>('loading');
-
-  async function fetchFlag(currency: string): Promise<typeof flagStatus> {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve('success');
-      img.onerror = () => resolve('error');
-      img.src = `/flags/${currency}.png`;
-    });
-  }
-
-  $effect(() => {
-    if (currency) {
-      flagStatus = 'loading';
-      fetchFlag(currency.toLowerCase()).then((result) => (flagStatus = result));
-    }
-  });
-
   const currencyFlag = $derived(
-    currency && flagStatus === 'success'
-      ? `--flag: url('/flags/${currency.toLowerCase()}.png')`
+    currency && FLAG_LIST.includes(currency.toLowerCase())
+      ? `--offset: ${(FLAG_LIST.indexOf(currency.toLowerCase()) * 100) / (FLAG_LIST.length - 1)}%`
       : null,
   );
 </script>
 
 <span
-  class="{flagStatus === 'success'
-    ? 'bg-image-$flag'
-    : 'border'} border-dashed border-gray-400 bg-contain bg-no-repeat bg-center radius-md rounded-sm aspect-ratio-[48/32] inline-block inline-6 pointer-events-none {className}"
+  class="{currencyFlag
+    ? 'bg-[url(/flags.png)] bg-[position:0_$offset]'
+    : 'border'} border-dashed border-gray-400 bg-[size:100%_auto] bg-no-repeat radius-md rounded-sm aspect-ratio-[48/32] inline-block inline-6 pointer-events-none {className}"
   style={currencyFlag}
 ></span>
