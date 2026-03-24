@@ -54,7 +54,7 @@ export default defineConfig({
       return {
         // slice `picker:` prefix and passed to the next variants and rules
         matcher: matcher.slice(7),
-        selector: (s) => `${s}::picker(select)`,
+        selector: (s) => `:is(${s}::picker(select))`,
       };
     },
   ],
@@ -114,7 +114,7 @@ export default defineConfig({
       [
         { appearance: 'base-select' },
         {
-          [symbols.selector]: (selector) => `${selector}::picker(select)`,
+          [symbols.selector]: (selector) => `:is(${selector}::picker(select))`,
           appearance: 'base-select',
         },
       ],
