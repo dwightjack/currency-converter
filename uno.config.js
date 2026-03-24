@@ -1,4 +1,4 @@
-import { defineConfig, transformerVariantGroup, presetUno } from 'unocss';
+import { defineConfig, transformerVariantGroup, presetWind4 } from 'unocss';
 import { presetIcons } from '@unocss/preset-icons';
 import extractorSvelte from '@unocss/extractor-svelte';
 import { colors } from '@unocss/preset-mini';
@@ -7,11 +7,15 @@ function range(size, startAt = 0) {
   return Array.from(Array(size).keys()).map((i) => i + startAt);
 }
 
-const uno = presetUno();
+const preset = presetWind4({
+  preflights: {
+    reset: true,
+  },
+});
 
 export default defineConfig({
   presets: [
-    uno,
+    preset,
     presetIcons({
       extraProperties: {
         display: 'inline-block',
@@ -42,25 +46,23 @@ export default defineConfig({
     },
   ],
   theme: {
-    fontFamily: {
-      sans: `"Inter Variable", ${uno.theme.fontFamily.sans}`,
+    font: {
+      sans: `"Inter Variable", ${preset.theme.font.sans}`,
     },
     colors: {
       brand: colors.blue,
+      'brand-dark': colors.sky,
       surface: colors.white,
-      typo: colors.gray,
+      'surface-dark': colors.gray,
       success: colors.green,
-      brandDark: colors.sky,
-      surfaceDark: colors.gray[800],
-      typoDark: colors.gray[200],
     },
   },
   shortcuts: {
     'grid-calc': 'gap-[1px] grid-cols-calc grid-rows-calc grid-areas-calc',
     'outline-brand':
-      'outline-none focus-visible:outline-brand-600 @dark:focus-visible:outline-brand-dark-400',
+      'focus-visible:(outline-brand-600 outline-2) @dark:focus-visible:outline-brand-dark-400',
     'outline-brand-within':
-      'outline-none focus-within:outline-brand-600 @dark:focus-within:outline-brand-dark-400',
+      'focus-within:(outline-brand-600 outline-2) @dark:focus-within:outline-brand-dark-400',
   },
   rules: [
     [

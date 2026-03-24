@@ -98,7 +98,7 @@
 
 <svelte:window onkeyup={handleKeyUp} />
 <div
-  class="grid grid-calc min-block-0 min-inline-0 outline-none select-none"
+  class="grid grid-calc min-block-0 min-inline-0 outline-hidden select-none"
   role="group"
   aria-label="Calculator"
   tabindex="-1"

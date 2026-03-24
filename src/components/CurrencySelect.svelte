@@ -25,23 +25,45 @@
   }
 </script>
 
-<div
-  class="bg-brand-100 p-block-2 p-inline-2 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center border-brand-200 border-be-2 @dark:(border-brand-dark-700 bg-brand-dark-900)"
->
-  <label for={id} class="col-start-1 sr-only">{label}</label>
-  <Flag currency={current} class="row-start-1 col-start-1" />
+<div class="@container/select">
+  <label for={id} class="sr-only">{label}</label>
+  <!-- <Flag currency={current} class="row-start-1 col-start-1" /> -->
   <select
     name={id}
     {onchange}
     {id}
-    class="truncate appearance-none cursor-pointer p-inline-8 col-span-full row-start-1 inline-full text-brand-900 font-bold bg-transparent outline-brand border-0 @dark:(text-brand-dark-200)"
+    class="bg-brand-100 rounded rounded-be-0 border-brand-200 border-be-2 @dark:(border-brand-dark-700 bg-brand-dark-900) inline-full p-2 appearance-none cursor-pointer text-brand-900 font-bold outline-brand border-0 @dark:(text-brand-dark-200)"
   >
+    <button class="flex inline-full items-center gap-x-2">
+      <selectedcontent class="contents"></selectedcontent>
+      <span
+        aria-hidden="true"
+        class="ms-auto i-ion-chevron-down row-start-2 pointer-events-none"
+      ></span>
+    </button>
     {#each currencyStore.currencyFullList as { code, description }}
       <option selected={current === code || undefined} value={code}>
-        {description}
+        <Flag currency={code} />
+        <span class="truncate">{description}</span>
       </option>
     {/each}
   </select>
-  <span class="i-ion-chevron-down row-start-1 col-start-3 pointer-events-none"
-  ></span>
 </div>
+
+<style>
+  div {
+    container-type: inline-size;
+  }
+  select,
+  select::picker(select) {
+    appearance: base-select;
+  }
+
+  select::picker(select) {
+    inline-size: 100cqi;
+  }
+
+  select::picker-icon {
+    display: none;
+  }
+</style>

@@ -41,7 +41,7 @@
     inputmode="numeric"
     {id}
     name={id}
-    class="border-0 min-inline-0 bg-transparent focus:outline-none row-span-full col-span-full"
+    class="border-0 min-inline-0 bg-transparent focus:outline-hidden row-span-full col-span-full"
     value={formattedValue}
     onfocus={onInputFocus}
     oninput={onInput}

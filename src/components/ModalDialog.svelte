@@ -29,7 +29,7 @@
 
 <dialog
   aria-label={name}
-  class="flex flex-col max-inline-100vw max-block-100vh border-2 border-brand-200 overflow-hidden p-inline-0 p-block-0 shadow-md md:rounded @dark:(bg-surface-dark shadow-md border-brand-dark-700 text-typo-dark)"
+  class="flex flex-col m-auto max-inline-100vw max-block-100vh border-2 border-brand-200 overflow-hidden p-inline-0 p-block-0 shadow-md md:rounded @dark:(bg-surface-dark-800 shadow-md border-brand-dark-700 text-gray-200)"
   {onclose}
   bind:this={dialogElement}
 >
