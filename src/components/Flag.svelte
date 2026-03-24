@@ -17,6 +17,6 @@
 <span
   class="{currencyFlag
     ? 'bg-[url(/flags.png)] bg-[position:0_$offset]'
-    : 'border'} border-dashed border-gray-400 bg-[size:100%_auto] bg-no-repeat radius-md rounded-sm aspect-ratio-[48/32] inline-block inline-6 pointer-events-none {className}"
+    : 'border border-dashed border-gray-400'} grow-0 shrink-0 bg-[size:100%_auto] bg-no-repeat rounded-xs aspect-ratio-[48/32] inline-block inline-6 {className}"
   style={currencyFlag}
 ></span>

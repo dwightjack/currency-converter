@@ -1,4 +1,9 @@
-import { defineConfig, transformerVariantGroup, presetWind4 } from 'unocss';
+import {
+  defineConfig,
+  transformerVariantGroup,
+  presetWind4,
+  symbols,
+} from 'unocss';
 import { presetIcons } from '@unocss/preset-icons';
 import extractorSvelte from '@unocss/extractor-svelte';
 import { colors } from '@unocss/preset-mini';
@@ -43,6 +48,14 @@ export default defineConfig({
         };
       },
       order: -1,
+    },
+    (matcher) => {
+      if (!matcher.startsWith('picker:')) return matcher;
+      return {
+        // slice `picker:` prefix and passed to the next variants and rules
+        matcher: matcher.slice(7),
+        selector: (s) => `${s}::picker(select)`,
+      };
     },
   ],
   theme: {
@@ -95,6 +108,16 @@ export default defineConfig({
         'b1 b2 b3 eq'
         'b0 b0 dot eq'`,
       },
+    ],
+    [
+      'appearance-base-select',
+      [
+        { appearance: 'base-select' },
+        {
+          [symbols.selector]: (selector) => `${selector}::picker(select)`,
+          appearance: 'base-select',
+        },
+      ],
     ],
   ],
 });
