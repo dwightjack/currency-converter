@@ -98,19 +98,19 @@
 
 <svelte:window onkeyup={handleKeyUp} />
 <div
-  class="grid grid-calc min-block-0 min-inline-0 outline-hidden select-none"
+  class="outline-hidden grid-calc grid min-block-0 min-inline-0 select-none"
   role="group"
   aria-label="Calculator"
   tabindex="-1"
   bind:this={root}
 >
-  <div class="grid-area-[output] flex items-center">
+  <div class="flex items-center grid-area-[output]">
     <output
       class="text-3xl m-block-2 p-inline-2 text-end border-ie border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
       aria-label="Result">{output}</output
     >
     <ControlButton
-      class="text-2xl p-block-2 p-inline-2 ms-1"
+      class="text-2xl ms-1 p-block-2 p-inline-2"
       theme="green"
       onclick={submit}
       label="Submit"

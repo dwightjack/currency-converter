@@ -27,10 +27,10 @@
 </script>
 
 <main
-  class="container p-block-4 p-inline-4 m-inline-auto lg:(max-inline-3xl pbs-10)"
+  class="m-inline-auto p-block-4 p-inline-4 container lg:(pbs-10 max-inline-3xl)"
 >
   <form
-    class="gap-4 max-sm:(flex flex-col justify-center) items-center sm:(grid grid-cols-[1fr_auto_1fr])"
+    class="gap-4 items-center max-sm:(flex flex-col justify-center) sm:(grid grid-cols-[1fr_auto_1fr])"
     on:submit|preventDefault={() => undefined}
   >
     <CurrencyBox label="Input" current={currencyStore.currency.input}>
@@ -86,7 +86,7 @@
           name="to-amount"
           id="to-amount"
           for="from-select to-select from-amount"
-          class="pie-1 p-block-1 inline-full truncate"
+          class="p-block-1 pie-1 inline-full truncate"
         >
           {#if currencyStore.loading}
             ...converting

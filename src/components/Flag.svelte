@@ -15,8 +15,12 @@
 </script>
 
 <span
-  class="{currencyFlag
-    ? 'bg-[url(/flags.png)] bg-[position:0_$offset]'
-    : 'border border-dashed border-gray-400'} grow-0 shrink-0 bg-[size:100%_auto] bg-no-repeat rounded-xs aspect-ratio-[48/32] inline-block inline-6 {className}"
+  class={[
+    currencyFlag
+      ? 'bg-[position:0_$offset] bg-[url(/flags.png)]'
+      : 'border border-gray-400 border-dashed',
+    'rounded-xs bg-[size:100%_auto] shrink-0 grow-0 inline-6 aspect-ratio-[48/32] inline-block bg-no-repeat',
+    className,
+  ]}
   style={currencyFlag}
 ></span>

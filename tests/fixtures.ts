@@ -7,6 +7,7 @@ import symbols from './fixtures/symbols.json' assert { type: 'json' };
 export interface Fixtures {
   appPage: AppPage;
   calculator: Calculator;
+  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
   forEachTest: void;
 }
 

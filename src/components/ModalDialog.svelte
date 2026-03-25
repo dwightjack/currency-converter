@@ -29,16 +29,16 @@
 
 <dialog
   aria-label={name}
-  class="flex flex-col m-auto max-inline-100vw max-block-100vh border-2 border-brand-200 overflow-hidden p-inline-0 p-block-0 shadow-md md:rounded @dark:(bg-surface-dark-800 shadow-md border-brand-dark-700 text-gray-200)"
+  class="m-auto p-block-0 p-inline-0 border-2 border-brand-200 flex flex-col max-block-100vh max-inline-100vw shadow-md overflow-hidden @dark:(text-gray-200 border-brand-dark-700 bg-surface-dark-800 shadow-md) md:rounded"
   {onclose}
   bind:this={dialogElement}
 >
-  <header class="text-right p-block-1 p-inline-1">
+  <header class="p-block-1 p-inline-1 text-right">
     <ControlButton label="Close" onclick={close} class="text-2xl col-start-3">
       <span class="i-ion-close"></span>
     </ControlButton>
   </header>
-  <div class="pbs-1 p-inline-3 p-be-3 flex flex-grow min-block-0">
+  <div class="p-inline-3 p-be-3 pbs-1 flex flex-grow min-block-0">
     {@render children?.()}
   </div>
 </dialog>

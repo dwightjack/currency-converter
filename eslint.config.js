@@ -1,15 +1,20 @@
+// @ts-check
 import js from '@eslint/js';
 import svelte from 'eslint-plugin-svelte';
+import { defineConfig } from 'eslint/config';
 import ts from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
 import prettier from 'eslint-plugin-prettier/recommended';
 import svelteParser from 'svelte-eslint-parser';
+import unocss from '@unocss/eslint-config/flat';
 import globals from 'globals';
 
-export default ts.config(
+export default defineConfig(
   js.configs.recommended,
-  ...ts.configs.recommended,
-  ...svelte.configs['flat/prettier'],
+  ts.configs.strict,
+  ts.configs.stylistic,
+  unocss,
+  svelte.configs['flat/prettier'],
   prettier,
   {
     files: ['**/*.svelte'],

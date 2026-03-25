@@ -8,10 +8,6 @@ import { presetIcons } from '@unocss/preset-icons';
 import extractorSvelte from '@unocss/extractor-svelte';
 import { colors } from '@unocss/preset-mini';
 
-function range(size, startAt = 0) {
-  return Array.from(Array(size).keys()).map((i) => i + startAt);
-}
-
 const preset = presetWind4({
   preflights: {
     reset: true,
@@ -29,14 +25,6 @@ export default defineConfig({
   ],
   transformers: [transformerVariantGroup()],
   extractors: [extractorSvelte],
-  safelist: [
-    ...range(20).map((i) => `gap-${i}`),
-    ...range(20).map((i) => `gap-x-${i}`),
-    ...range(20).map((i) => `gap-y-${i}`),
-    ...['center', 'stretch', 'baseline', 'start', 'end'].map(
-      (v) => `items-${v}`,
-    ),
-  ],
   variants: [
     {
       match: (matcher) => {
@@ -54,7 +42,8 @@ export default defineConfig({
       return {
         // slice `picker:` prefix and passed to the next variants and rules
         matcher: matcher.slice(7),
-        selector: (s) => `:is(${s}::picker(select))`,
+        parent: '@supports selector(select::picker(select))',
+        selector: (s) => `${s}::picker(select)`,
       };
     },
   ],
@@ -112,9 +101,13 @@ export default defineConfig({
     [
       'appearance-base-select',
       [
-        { appearance: 'base-select' },
         {
-          [symbols.selector]: (selector) => `:is(${selector}::picker(select))`,
+          [symbols.parent]: '@supports (appearance: base-select)',
+          appearance: 'base-select',
+        },
+        {
+          [symbols.parent]: '@supports (appearance: base-select)',
+          [symbols.selector]: (selector) => `${selector}::picker(select)`,
           appearance: 'base-select',
         },
       ],

@@ -34,14 +34,14 @@
 </script>
 
 <div
-  class="grid inline-full p-inline-2 p-block-1 rounded-md border border-brand-200 overflow-hidden outline-brand-within @dark:border-brand-dark-700"
+  class="p-block-1 p-inline-2 outline-brand-within border border-brand-200 rounded-md grid inline-full overflow-hidden @dark:border-brand-dark-700"
 >
   <input
     type="text"
     inputmode="numeric"
     {id}
     name={id}
-    class="border-0 min-inline-0 bg-transparent focus:outline-hidden row-span-full col-span-full"
+    class="border-0 bg-transparent col-span-full row-span-full min-inline-0 focus:outline-hidden"
     value={formattedValue}
     onfocus={onInputFocus}
     oninput={onInput}

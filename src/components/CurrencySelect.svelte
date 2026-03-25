@@ -32,21 +32,21 @@
     name={id}
     {onchange}
     {id}
-    class="bg-brand-100 rounded-sm rounded-be-0 appearance-base-select border-brand-200 border-be-2 picker:(inline-[calc(100cqi+4px)] text-brand-900 b-bs-0 -m-is-[2px] border-2 bg-brand-50 border-brand-200) @dark:(border-brand-dark-700 bg-brand-dark-900) inline-full p-2 appearance-none cursor-pointer text-brand-900 font-bold outline-brand border-0 @dark:(text-brand-dark-200) [&::picker-icon]:(ms-auto grow-0 shrink-0 i-ion-chevron-down self-center)"
+    class="[&::picker-icon]:i-ion-chevron-down text-brand-900 font-bold p-2 outline-brand border-0 border-be-2 border-brand-200 rounded-sm rounded-be-0 bg-brand-100 inline-full cursor-pointer appearance-base-select @dark:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-900) picker:(text-brand-900 border-2 b-bs-0 border-brand-200 bg-brand-50 inline-[calc(100cqi+4px)] -m-is-[2px]) [&::picker-icon]:(ms-auto shrink-0 grow-0 self-center)"
   >
     <button class="flex min-inline-0">
-      <selectedcontent class="flex inline-full items-center gap-x-2"
+      <selectedcontent class="flex gap-x-2 inline-full items-center"
       ></selectedcontent>
     </button>
     {#each currencyStore.currencyFullList as { code, description }}
       <option
         selected={current === code || undefined}
         value={code}
-        class="p-2 first-of-type:mbs-3 last:mbe-3 font-normal overflow-visible [&::checkmark]:(ms-auto order-1 grow-0 text-sm i-ion-checkmark-round line-height-inherit self-start translate-y-[calc(0.5lh-50%)]) checked:bg-brand-100"
+        class="[&::checkmark]:i-ion-checkmark-round font-normal p-2 overflow-visible [&::checkmark]:(text-sm line-height-inherit ms-auto grow-0 translate-y-[calc(0.5lh-50%)] self-start order-1) first-of-type:mbs-3 last:mbe-3 checked:bg-brand-100"
       >
         <Flag
           currency={code}
-          class="self-start translate-y-[calc(0.5lh-50%)] "
+          class="translate-y-[calc(0.5lh-50%)] self-start"
         />
         <span class="whitespace-normal [selectedcontent>&]:truncate"
           >{description}</span

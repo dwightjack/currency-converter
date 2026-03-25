@@ -32,6 +32,6 @@
   aria-pressed={pressed}
   class="{themes[
     theme
-  ]} grid-area-$btn-area aria-pressed:(border-2 border-brand-900/70) ring-brand-200 @dark:(ring-brand-dark-700 aria-pressed:border-brand-dark-500) outline-brand focus-visible:(isolate) outline-offset-2 flex items-center justify-center ring-1 text-2xl"
+  ]} text-2xl outline-brand outline-offset-2 flex ring-1 ring-brand-200 items-center justify-center grid-area-$btn-area aria-pressed:(border-2 border-brand-900/70) @dark:(ring-brand-dark-700 aria-pressed:border-brand-dark-500) focus-visible:(isolate)"
   >{@render children?.()}</button
 >
