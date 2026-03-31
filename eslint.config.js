@@ -6,14 +6,12 @@ import ts from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
 import prettier from 'eslint-plugin-prettier/recommended';
 import svelteParser from 'svelte-eslint-parser';
-import unocss from '@unocss/eslint-config/flat';
 import globals from 'globals';
 
 export default defineConfig(
   js.configs.recommended,
   ts.configs.strict,
   ts.configs.stylistic,
-  unocss,
   svelte.configs['flat/prettier'],
   prettier,
   {
