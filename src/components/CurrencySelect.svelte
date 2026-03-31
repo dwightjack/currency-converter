@@ -32,7 +32,7 @@
     name={id}
     {onchange}
     {id}
-    class="[&::picker-icon]:i-ion-chevron-down text-brand-900 font-bold p-2 outline-brand border-0 border-be-2 border-brand-200 rounded-sm rounded-be-0 bg-brand-100 inline-full cursor-pointer appearance-base-select @dark:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-900) picker:(text-brand-900 border-2 b-bs-0 border-brand-200 bg-brand-50 inline-[calc(100cqi+4px)] -m-is-[2px]) [&::picker-icon]:(ms-auto shrink-0 grow-0 self-center)"
+    class="text-brand-900 font-bold p-2 outline-brand border-0 border-be-2 border-brand-200 rounded-sm rounded-be-0 bg-brand-100 inline-full cursor-pointer appearance-base-select @dark:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-900) picker:(text-brand-900 border-brand-200 bg-brand-50) max-sm:(picker:(block-[80vh] backdrop:bg-gray-900/30 [position-anchor:none] m-auto border-8 inset-8)) sm:(picker:(border-2 b-bs-0 -m-is-[2px] inline-100cqi box-content max-block-[min(100%,500px)])) [&::picker-icon]:(self-center ms-auto shrink-0 grow-0 i-ion-chevron-down)"
   >
     <button class="flex min-inline-0">
       <selectedcontent class="flex gap-x-2 inline-full items-center"
