@@ -25,16 +25,18 @@
   }
 </script>
 
-<div class="@container/select">
+<div
+  class="@container/select flex border-be-2 bg-brand-100 border-brand-200 @dark:(bg-brand-dark-900 border-brand-dark-700) items-center"
+>
   <label for={id} class="sr-only">{label}</label>
-  <!-- <Flag currency={current} class="row-start-1 col-start-1" /> -->
+  <Flag currency={current} class="supports-custom-select:hidden m-is-2" />
   <select
     name={id}
     {onchange}
     {id}
-    class="text-brand-900 font-bold p-2 outline-brand border-0 border-be-2 border-brand-200 rounded-sm rounded-be-0 bg-brand-100 inline-full cursor-pointer appearance-base-select @dark:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-900) picker:(text-brand-900 border-brand-200 bg-brand-50) @dark:(picker:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-950)) max-sm:(picker:(block-[80vh] [position-anchor:none] m-auto border-8 inset-8 [box-shadow:0_0_0_100vmax_var(--un-shadow-color)] shadow-gray-900/30)) sm:(picker:(border-2 b-bs-0 -m-is-[2px] inline-100cqi box-content max-block-[min(100%,500px)])) [&::picker-icon]:(self-center ms-auto shrink-0 grow-0 i-ion-chevron-down)"
+    class="text-brand-900 font-bold min-inline-0 p-2 grow-1 outline-brand border-0 rounded-sm rounded-be-0 cursor-pointer appearance-none appearance-base-select @dark:text-brand-dark-200 picker:(text-brand-900 border-brand-200 bg-brand-50) @dark:(picker:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-950)) max-sm:(picker:(block-[80vh] [position-anchor:none] m-auto border-8 inset-8 [box-shadow:0_0_0_100vmax_var(--un-shadow-color)] shadow-gray-900/30)) sm:(picker:(border-2 b-bs-0 -m-is-[2px] inline-100cqi box-content max-block-[min(100%,500px)])) picker-icon:(self-center ms-auto shrink-0 grow-0 i-ion-chevron-down) truncate"
   >
-    <button class="flex min-inline-0">
+    <button class="hidden supports-custom-select:flex min-inline-0">
       <selectedcontent class="flex gap-x-2 inline-full items-center"
       ></selectedcontent>
     </button>
@@ -54,4 +56,7 @@
       </option>
     {/each}
   </select>
+  <span
+    class="shrink-0 grow-0 size-5 i-ion-chevron-down m-ie-2 supports-custom-select:hidden"
+  ></span>
 </div>

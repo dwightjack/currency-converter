@@ -42,8 +42,24 @@ export default defineConfig({
       return {
         // slice `picker:` prefix and passed to the next variants and rules
         matcher: matcher.slice(7),
-        parent: '@supports selector(select::picker(select))',
-        selector: (s) => `${s}::picker(select)`,
+        handle: (input, next) =>
+          next({
+            ...input,
+            pseudo: `${input.pseudo}::picker(select)`,
+            noMerge: true,
+          }),
+      };
+    },
+    (matcher) => {
+      if (!matcher.startsWith('picker-icon:')) return matcher;
+      return {
+        matcher: matcher.slice(12),
+        handle: (input, next) =>
+          next({
+            ...input,
+            pseudo: `${input.pseudo}::picker-icon`,
+            noMerge: true,
+          }),
       };
     },
   ],
@@ -57,6 +73,10 @@ export default defineConfig({
       surface: colors.white,
       'surface-dark': colors.gray,
       success: colors.green,
+    },
+    supports: {
+      'custom-select':
+        '(appearance: base-select) and selector(select::picker(select))',
     },
   },
   shortcuts: {
@@ -111,6 +131,7 @@ export default defineConfig({
           appearance: 'base-select',
         },
       ],
+      { noMerge: true },
     ],
   ],
 });
