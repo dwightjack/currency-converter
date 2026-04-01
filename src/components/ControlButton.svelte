@@ -25,9 +25,11 @@
 </script>
 
 <button
-  class="{themes[
-    theme
-  ]} inline-flex items-center p-inline-1 p-block-1 rounded-md border-none {className}"
+  class={[
+    themes[theme],
+    'p-block-1 p-inline-1 rounded-md border-none inline-flex items-center',
+    className,
+  ]}
   type="button"
   {onclick}
 >

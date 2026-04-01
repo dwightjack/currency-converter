@@ -1,17 +1,22 @@
-import { defineConfig, transformerVariantGroup, presetUno } from 'unocss';
+import {
+  defineConfig,
+  transformerVariantGroup,
+  presetWind4,
+  symbols,
+} from 'unocss';
 import { presetIcons } from '@unocss/preset-icons';
 import extractorSvelte from '@unocss/extractor-svelte';
 import { colors } from '@unocss/preset-mini';
 
-function range(size, startAt = 0) {
-  return Array.from(Array(size).keys()).map((i) => i + startAt);
-}
-
-const uno = presetUno();
+const preset = presetWind4({
+  preflights: {
+    reset: true,
+  },
+});
 
 export default defineConfig({
   presets: [
-    uno,
+    preset,
     presetIcons({
       extraProperties: {
         display: 'inline-block',
@@ -20,14 +25,6 @@ export default defineConfig({
   ],
   transformers: [transformerVariantGroup()],
   extractors: [extractorSvelte],
-  safelist: [
-    ...range(20).map((i) => `gap-${i}`),
-    ...range(20).map((i) => `gap-x-${i}`),
-    ...range(20).map((i) => `gap-y-${i}`),
-    ...['center', 'stretch', 'baseline', 'start', 'end'].map(
-      (v) => `items-${v}`,
-    ),
-  ],
   variants: [
     {
       match: (matcher) => {
@@ -40,27 +37,54 @@ export default defineConfig({
       },
       order: -1,
     },
+    (matcher) => {
+      if (!matcher.startsWith('picker:')) return matcher;
+      return {
+        // slice `picker:` prefix and passed to the next variants and rules
+        matcher: matcher.slice(7),
+        handle: (input, next) =>
+          next({
+            ...input,
+            pseudo: `${input.pseudo}::picker(select)`,
+            noMerge: true,
+          }),
+      };
+    },
+    (matcher) => {
+      if (!matcher.startsWith('picker-icon:')) return matcher;
+      return {
+        matcher: matcher.slice(12),
+        handle: (input, next) =>
+          next({
+            ...input,
+            pseudo: `${input.pseudo}::picker-icon`,
+            noMerge: true,
+          }),
+      };
+    },
   ],
   theme: {
-    fontFamily: {
-      sans: `"Inter Variable", ${uno.theme.fontFamily.sans}`,
+    font: {
+      sans: `"Inter Variable", ${preset.theme.font.sans}`,
     },
     colors: {
       brand: colors.blue,
+      'brand-dark': colors.sky,
       surface: colors.white,
-      typo: colors.gray,
+      'surface-dark': colors.gray,
       success: colors.green,
-      brandDark: colors.sky,
-      surfaceDark: colors.gray[800],
-      typoDark: colors.gray[200],
+    },
+    supports: {
+      'custom-select':
+        '(appearance: base-select) and selector(select::picker(select))',
     },
   },
   shortcuts: {
     'grid-calc': 'gap-[1px] grid-cols-calc grid-rows-calc grid-areas-calc',
     'outline-brand':
-      'outline-none focus-visible:outline-brand-600 @dark:focus-visible:outline-brand-dark-400',
+      'focus-visible:(outline-brand-600 outline-2) @dark:focus-visible:outline-brand-dark-400',
     'outline-brand-within':
-      'outline-none focus-within:outline-brand-600 @dark:focus-within:outline-brand-dark-400',
+      'focus-within:(outline-brand-600 outline-2) @dark:focus-within:outline-brand-dark-400',
   },
   rules: [
     [
@@ -93,6 +117,21 @@ export default defineConfig({
         'b1 b2 b3 eq'
         'b0 b0 dot eq'`,
       },
+    ],
+    [
+      'appearance-base-select',
+      [
+        {
+          [symbols.parent]: '@supports (appearance: base-select)',
+          appearance: 'base-select',
+        },
+        {
+          [symbols.parent]: '@supports (appearance: base-select)',
+          [symbols.selector]: (selector) => `${selector}::picker(select)`,
+          appearance: 'base-select',
+        },
+      ],
+      { noMerge: true },
     ],
   ],
 });

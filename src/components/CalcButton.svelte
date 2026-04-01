@@ -17,7 +17,7 @@
 
   const themes: Record<typeof theme, string> = {
     light:
-      'bg-surface text-brand-900 hover:bg-brand-100/40 active:bg-brand-200 @dark:(bg-surface-dark text-brand-dark-200 hover:bg-brand-dark-900 active:bg-brand-dark-900/50)',
+      'bg-surface text-brand-900 hover:bg-brand-100/40 active:bg-brand-200 @dark:(bg-surface-dark-800 text-brand-dark-200 hover:bg-brand-dark-900 active:bg-brand-dark-900/50)',
     invert:
       'bg-brand-800 text-surface hover:bg-brand-700 active:bg-brand-900 @dark:(text-brand-dark-200 bg-brand-dark-700 active:bg-brand-dark-800 hover:bg-brand-dark-600)',
     neutral:
@@ -32,6 +32,6 @@
   aria-pressed={pressed}
   class="{themes[
     theme
-  ]} grid-area-$btn-area aria-pressed:(border-2 border-brand-900/70) ring-brand-200 @dark:(ring-brand-dark-700 aria-pressed:border-brand-dark-500) outline-brand focus-visible:(isolate) outline-offset-2 flex items-center justify-center ring-1 text-2xl"
+  ]} text-2xl outline-brand outline-offset-2 flex ring-1 ring-brand-200 items-center justify-center grid-area-$btn-area aria-pressed:(border-2 border-brand-900/70) @dark:(ring-brand-dark-700 aria-pressed:border-brand-dark-500) focus-visible:(isolate)"
   >{@render children?.()}</button
 >

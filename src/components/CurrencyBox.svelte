@@ -17,12 +17,12 @@
 </script>
 
 <fieldset
-  class="p-block-0 inline-full p-inline-0 border-2 border-brand-200 text-xl rounded-md min-inline-0 @dark:(border-brand-dark-700)"
+  class="text-xl p-block-0 p-inline-0 border-2 border-brand-200 rounded-md inline-full min-inline-0 @dark:(border-brand-dark-700)"
 >
   <legend class="sr-only">{label}</legend>
   {@render select(current)}
 
-  <div class="flex gap-x-2 items-center p-inline-2 p-block-2">
+  <div class="p-block-2 p-inline-2 flex gap-x-2 items-center">
     {@render amount(inputSymbol)}
   </div>
 </fieldset>

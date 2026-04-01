@@ -80,12 +80,14 @@ class CurrencyStore {
   }
 
   getCurrencySymbol(currency: string) {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency,
-    })
-      .formatToParts(0)
-      .find(({ type }) => type === 'currency')!.value;
+    return (
+      new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency,
+      })
+        .formatToParts(0)
+        .find(({ type }) => type === 'currency')?.value ?? ''
+    );
   }
 }
 

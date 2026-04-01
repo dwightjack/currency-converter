@@ -10,7 +10,11 @@ export interface CurrencySymbol {
   description: string;
 }
 
-export type ErrorResponse = { success: false; message: string };
+export interface ErrorResponse {
+  success: false;
+  message: string;
+}
+
 export type FetchRatesResponse =
   | { rates: Rates; success: true }
   | ErrorResponse;
