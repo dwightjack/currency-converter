@@ -32,7 +32,7 @@
     name={id}
     {onchange}
     {id}
-    class="text-brand-900 font-bold p-2 outline-brand border-0 border-be-2 border-brand-200 rounded-sm rounded-be-0 bg-brand-100 inline-full cursor-pointer appearance-base-select @dark:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-900) picker:(text-brand-900 border-brand-200 bg-brand-50) max-sm:(picker:(block-[80vh] [position-anchor:none] m-auto border-8 inset-8 [box-shadow:0_0_0_100vmax_var(--un-shadow-color)] shadow-gray-900/30)) sm:(picker:(border-2 b-bs-0 -m-is-[2px] inline-100cqi box-content max-block-[min(100%,500px)])) [&::picker-icon]:(self-center ms-auto shrink-0 grow-0 i-ion-chevron-down)"
+    class="text-brand-900 font-bold p-2 outline-brand border-0 border-be-2 border-brand-200 rounded-sm rounded-be-0 bg-brand-100 inline-full cursor-pointer appearance-base-select @dark:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-900) picker:(text-brand-900 border-brand-200 bg-brand-50) @dark:(picker:(text-brand-dark-200 border-brand-dark-700 bg-brand-dark-950)) max-sm:(picker:(block-[80vh] [position-anchor:none] m-auto border-8 inset-8 [box-shadow:0_0_0_100vmax_var(--un-shadow-color)] shadow-gray-900/30)) sm:(picker:(border-2 b-bs-0 -m-is-[2px] inline-100cqi box-content max-block-[min(100%,500px)])) [&::picker-icon]:(self-center ms-auto shrink-0 grow-0 i-ion-chevron-down)"
   >
     <button class="flex min-inline-0">
       <selectedcontent class="flex gap-x-2 inline-full items-center"
@@ -42,7 +42,7 @@
       <option
         selected={current === code || undefined}
         value={code}
-        class="[&::checkmark]:i-ion-checkmark-round font-normal p-2 overflow-visible [&::checkmark]:(text-sm line-height-inherit ms-auto grow-0 translate-y-[calc(0.5lh-50%)] self-start order-1) first-of-type:mbs-3 last:mbe-3 checked:bg-brand-100"
+        class="[&::checkmark]:i-ion-checkmark-round font-normal p-2 overflow-visible [&::checkmark]:(text-sm line-height-inherit ms-auto grow-0 translate-y-[calc(0.5lh-50%)] self-start order-1) first-of-type:mbs-3 last:mbe-3 checked:bg-brand-100 outline-brand @dark:checked:bg-brand-dark-900"
       >
         <Flag
           currency={code}
