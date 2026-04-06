@@ -3,7 +3,7 @@ import type { Rates, FetchRatesResponse, FetchSymbolsResponse } from './types';
 
 const apiFetch = ofetch.create({
   parseResponse: JSON.parse,
-  baseURL: '/.netlify/functions',
+  baseURL: '/api',
   async onResponseError({ request, response }) {
     // Log error
     console.log(
