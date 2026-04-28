@@ -6,20 +6,23 @@
     'onclick' | 'children' | 'class'
   > {
     label?: string;
-    theme?: 'blue' | 'green';
+    theme?: 'primary' | 'success';
+    size?: 'normal' | 'large';
   }
 
   const {
     label = '',
-    theme = 'blue',
+    theme = 'primary',
+    size = 'normal',
     children,
     onclick,
     class: className = '',
   }: Props = $props();
 
   const themes: Record<typeof theme, string> = {
-    blue: 'text-brand-900 hover:bg-brand-100 active:bg-brand-200 outline-brand @dark:(text-brand-dark-200 hover:bg-brand-dark-700 active:bg-brand-dark-900)',
-    green:
+    primary:
+      'text-brand-500 hover:bg-surface-900/10 active:bg-surface-900/10 outline-brand @dark:(text-brand-200 hover:bg-surface-700  active:bg-surface-700)',
+    success:
       'text-success-700 hover:bg-success-100 active:bg-success-200 focus-visible:outline-success-500 @dark:(text-success hover:bg-success-700/70 active:bg-success-900)',
   };
 </script>
@@ -27,7 +30,11 @@
 <button
   class={[
     themes[theme],
-    'p-block-1 p-inline-1 rounded-md border-none inline-flex items-center',
+    'cursor-pointer rounded-md inline-flex items-center',
+    {
+      'p-1 text-2xl': size === 'normal',
+      'p-2 text-3xl': size === 'large',
+    },
     className,
   ]}
   type="button"

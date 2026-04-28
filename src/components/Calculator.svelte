@@ -106,12 +106,12 @@
 >
   <div class="flex items-center grid-area-[output]">
     <output
-      class="text-3xl m-block-2 p-inline-2 text-end border-ie border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
-      aria-label="Result">{output}</output
+      class="text-3xl m-block-2 p-inline-2 text-start border-is border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
+      dir="rtl"><span dir="ltr">{output}</span></output
     >
     <ControlButton
       class="text-2xl ms-1 p-block-2 p-inline-2"
-      theme="green"
+      theme="success"
       onclick={submit}
       label="Submit"
     >

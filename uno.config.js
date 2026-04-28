@@ -68,10 +68,8 @@ export default defineConfig({
       sans: `"Inter Variable", ${preset.theme.font.sans}`,
     },
     colors: {
-      brand: colors.blue,
-      'brand-dark': colors.sky,
-      surface: colors.white,
-      'surface-dark': colors.gray,
+      brand: colors.gray,
+      surface: colors.slate,
       success: colors.green,
     },
     supports: {
@@ -82,9 +80,9 @@ export default defineConfig({
   shortcuts: {
     'grid-calc': 'gap-[1px] grid-cols-calc grid-rows-calc grid-areas-calc',
     'outline-brand':
-      'focus-visible:(outline-brand-600 outline-2) @dark:focus-visible:outline-brand-dark-400',
+      'focus-visible:(outline-brand-600 outline-2) @dark:focus-visible:outline-sky-300',
     'outline-brand-within':
-      'focus-within:(outline-brand-600 outline-2) @dark:focus-within:outline-brand-dark-400',
+      'focus-within:(outline-brand-600 outline-2) @dark:focus-within:outline-sky-300',
   },
   rules: [
     [

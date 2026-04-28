@@ -17,7 +17,6 @@
     <meta name="apple-mobile-web-app-title" content="CurrConv" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="preload" href="/flags.png" as="image" type="image/png" />
     <meta name="msapplication-TileColor" content="{{lightTheme}}" />
     <meta
       name="theme-color"
@@ -32,5 +31,7 @@
     <meta name="color-scheme" content="dark light" />
   </head>
 
-  <body class="font-sans @dark:(bg-surface-dark-800 text-gray-200)"></body>
+  <body
+    class="font-sans bg-gradient-to-tr from-sky-200 to-sky-50 bg-no-repeat bg-contain text-brand-800 min-block-[100vh] flex items-center @dark:(from-sky-900 to-sky-800 text-brand-100)"
+  ></body>
 </html>
