@@ -3,7 +3,7 @@
   import CalcButton from './CalcButton.svelte';
   import ControlButton from './ControlButton.svelte';
 
-  const OPS_REGEXP = /[*+-/]$/;
+  const OPS_REGEXP = /[×+\-÷]/;
   const HAS_DECIMAL_REGEXP = /\d+\.\d*$/;
 
   interface Props {
@@ -21,35 +21,37 @@
     input = String(!initial || Number.isNaN(initial) ? 0 : initial);
   });
 
-  // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
-  // match and extract trailing digits (positive and negative)
-  // add thousands separator
-  // keep max 3 decimal numbers
-  const output = $derived(
-    (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0')
-      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
-      .replace(/(\.\d{3})\d*$/, '$1'),
-  );
-
-  const pressed = $derived(OPS_REGEXP.test(input) ? input.at(-1) : null);
+  // // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
+  // // match and extract trailing digits (positive and negative)
+  // // add thousands separator
+  // // keep max 3 decimal numbers
+  // const output = $derived(
+  //   (input.match(/((^-|)[0-9.]+)[.\D]?$/)?.[1] ?? '0')
+  //     .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+  //     .replace(/(\.\d{3})\d*$/, '$1'),
+  // );
 
   function onInput(v: string | number) {
-    if (v === '.' && HAS_DECIMAL_REGEXP.test(input)) {
+    const last = input.split(OPS_REGEXP).pop() ?? '';
+
+    console.log({ v, input, last });
+
+    if (!last) {
+      input = input + String(v);
       return;
     }
-    if (typeof v === 'string' && OPS_REGEXP.test(v)) {
-      if (OPS_REGEXP.test(input)) {
-        input = input.replace(OPS_REGEXP, (op) => (op === v ? '' : v));
-        return;
-      }
-      input = calc(input) + v;
+
+    const lastIndex = input.lastIndexOf(last);
+    if (v === '.' && HAS_DECIMAL_REGEXP.test(last)) {
       return;
     }
-    input = (input + String(v)).replace(/^0*(?=\d)/, '');
+    input =
+      input.slice(0, lastIndex) + (last + String(v)).replace(/^0*(?=\d)/, '');
   }
 
   function calc(value: string | number) {
-    const result = Number.parseFloat(Function(`return ${value}`)());
+    const formatted = `${value}`.replaceAll('×', '*').replaceAll('÷', '/');
+    const result = Number.parseFloat(Function(`return ${formatted}`)());
     if (Number.isFinite(result)) {
       return String(result);
     }
@@ -107,7 +109,7 @@
   <div class="flex items-center grid-area-[output]">
     <output
       class="text-3xl m-block-2 p-inline-2 text-start border-is border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
-      dir="rtl"><span dir="ltr">{output}</span></output
+      dir="rtl"><span dir="ltr">{input}</span></output
     >
     <ControlButton
       class="text-2xl ms-1 p-block-2 p-inline-2"
@@ -125,36 +127,16 @@
     </CalcButton>
   {/each}
   <CalcButton area="dot" onclick={() => onInput('.')}>.</CalcButton>
-  <CalcButton
-    theme="neutral"
-    pressed={pressed === '/'}
-    area="divide"
-    onclick={() => onInput('/')}
-  >
+  <CalcButton theme="neutral" area="divide" onclick={() => onInput('÷')}>
     &divide;
   </CalcButton>
-  <CalcButton
-    theme="neutral"
-    pressed={pressed === '*'}
-    area="times"
-    onclick={() => onInput('*')}
-  >
+  <CalcButton theme="neutral" area="times" onclick={() => onInput('×')}>
     &times;
   </CalcButton>
-  <CalcButton
-    theme="neutral"
-    pressed={pressed === '-'}
-    area="minus"
-    onclick={() => onInput('-')}
-  >
+  <CalcButton theme="neutral" area="minus" onclick={() => onInput('-')}>
     -
   </CalcButton>
-  <CalcButton
-    theme="neutral"
-    pressed={pressed === '+'}
-    area="plus"
-    onclick={() => onInput('+')}
-  >
+  <CalcButton theme="neutral" area="plus" onclick={() => onInput('+')}>
     +
   </CalcButton>
   <CalcButton area="eq" onclick={eq} theme="invert">=</CalcButton>
