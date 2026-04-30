@@ -47,7 +47,6 @@
     }
 
     const cleanedValue = sanitizeValue(value);
-    console.log(formatter.format(Number.parseFloat(cleanedValue)));
     return formatter.format(Number.parseFloat(cleanedValue));
   });
 </script>

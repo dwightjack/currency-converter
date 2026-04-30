@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { colors } from '@unocss/preset-mini';
 
 const CURRENCY_CODES = [
   'AED',
@@ -171,20 +171,21 @@ const CURRENCY_CODES = [
   'ZWL',
 ];
 
-const SHORT_CURRENCY_CODES = CURRENCY_CODES.reduce((ret, code) => {
-  ret[code.slice(0, 2)] = code;
-  return ret;
-}, {});
-
 const countriesFile = fileURLToPath(
   import.meta.resolve('flag-icons/country.json'),
 );
 
 const generatedFile = fileURLToPath(import.meta.resolve('../public/flags.svg'));
 
-const flags = JSON.parse(await readFile(countriesFile, 'utf-8'))
-  .map((c) => fileURLToPath(import.meta.resolve(`flag-icons/${c.flag_4x3}`)))
-  .sort();
+/**
+ * @type {Map<string, string>}
+ */
+const flags = new Map();
+for (const { flag_4x3, code } of JSON.parse(
+  await readFile(countriesFile, 'utf-8'),
+)) {
+  flags.set(code, fileURLToPath(import.meta.resolve(`flag-icons/${flag_4x3}`)));
+}
 
 /**
  * Extract viewBox + inner content from an SVG file
@@ -203,18 +204,33 @@ function parseSvg(content) {
  */
 const symbols = [];
 
-for (const flag of flags) {
-  const countryCode = basename(flag, '.svg').toUpperCase();
-  if (!Object.hasOwn(SHORT_CURRENCY_CODES, countryCode)) {
+for (const currencyCode of CURRENCY_CODES) {
+  const countryCode = currencyCode.slice(0, 2).toLowerCase();
+
+  if (!flags.has(countryCode)) {
+    symbols.push(`<g id="code-${currencyCode.toLowerCase()}" viewBox="0 0 640 480" class="flag code">
+      <rect width="100%" height="100%"/>
+      <text x="50%" y="50%"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="260"
+            fill="${colors.slate[400]}"
+            text-anchor="middle"
+            dominant-baseline="middle">
+        ${currencyCode}
+      </text>
+    </g>`);
     continue;
   }
+  const flag = flags.get(countryCode);
   const flagSVG = await readFile(flag, 'utf-8');
   const { viewBox, body } = parseSvg(flagSVG);
-  const currencyCode = SHORT_CURRENCY_CODES[countryCode].toLowerCase();
-  symbols.push(`
-  <g id="code-${currencyCode}" ${viewBox ? `viewBox="${viewBox}"` : ''} class="flag">
+  symbols.push(
+    currencyCode,
+    `
+  <g id="code-${currencyCode.toLowerCase()}" ${viewBox ? `viewBox="${viewBox}"` : ''} class="flag">
     ${body}
-  </g>`);
+  </g>`,
+  );
 }
 
 const sprite = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-ad" viewBox="0 0 640 480">
@@ -222,9 +238,11 @@ const sprite = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.
 		<style>
 		.flag { display: none }
 		.flag:target { display: inline }
+    .flag.code rect { fill: ${colors.slate[200]}; }
+    @media (prefers-color-scheme: dark) { .flag.code rect { fill: ${colors.slate[600]}; } }
 		</style>
 	</defs>  
-${symbols.join('\n')}
+  ${symbols.join('\n')}
 </svg>`;
 
 await writeFile(generatedFile, sprite);

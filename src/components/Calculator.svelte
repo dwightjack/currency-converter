@@ -33,24 +33,28 @@
 
   function onInput(v: string | number) {
     const last = input.split(OPS_REGEXP).pop() ?? '';
-
-    console.log({ v, input, last });
+    const next = String(v);
 
     if (!last) {
-      input = input + String(v);
+      if (OPS_REGEXP.test(next) || next === '.') {
+        return;
+      }
+      input += next;
       return;
     }
 
     const lastIndex = input.lastIndexOf(last);
-    if (v === '.' && HAS_DECIMAL_REGEXP.test(last)) {
+    if (next === '.' && HAS_DECIMAL_REGEXP.test(last)) {
       return;
     }
-    input =
-      input.slice(0, lastIndex) + (last + String(v)).replace(/^0*(?=\d)/, '');
+    input = input.slice(0, lastIndex) + (last + next).replace(/^0*(?=\d)/, '');
   }
 
   function calc(value: string | number) {
-    const formatted = `${value}`.replaceAll('×', '*').replaceAll('÷', '/');
+    const formatted = `${value}`
+      .replaceAll('×', '*')
+      .replaceAll('÷', '/')
+      .replace(/\D$/, '');
     const result = Number.parseFloat(Function(`return ${formatted}`)());
     if (Number.isFinite(result)) {
       return String(result);
@@ -79,12 +83,23 @@
 
   function handleKeyUp(event: KeyboardEvent) {
     const { key } = event;
+
     if (key === 'Escape') {
       return;
     }
+
     event.preventDefault();
-    if (/^[0-9.+-/*]$/.test(key)) {
+
+    if (/^[0-9.+-]$/.test(key)) {
       onInput(key);
+      return;
+    }
+    if (key === '*') {
+      onInput('×');
+      return;
+    }
+    if (key === '/') {
+      onInput('÷');
       return;
     }
     if (Object.hasOwn(keyboardMap, key)) {
@@ -108,7 +123,7 @@
 >
   <div class="flex items-center grid-area-[output]">
     <output
-      class="text-3xl m-block-2 p-inline-2 text-start border-is border-brand-200 flex-grow overflow-auto @dark:border-brand-dark-700"
+      class="text-3xl m-block-2 text-nowrap p-inline-2 text-start border-is border-brand-200 flex-grow overflow-x-auto overflow-y-clip @dark:border-brand-dark-700"
       dir="rtl"><span dir="ltr">{input}</span></output
     >
     <ControlButton
@@ -139,5 +154,5 @@
   <CalcButton theme="neutral" area="plus" onclick={() => onInput('+')}>
     +
   </CalcButton>
-  <CalcButton area="eq" onclick={eq} theme="invert">=</CalcButton>
+  <CalcButton area="eq" onclick={eq} theme="accent">=</CalcButton>
 </div>

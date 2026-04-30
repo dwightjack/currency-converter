@@ -6,7 +6,7 @@ const apiFetch = ofetch.create({
   baseURL: '/api',
   async onResponseError({ request, response }) {
     // Log error
-    console.log(
+    console.error(
       '[fetch response error]',
       request,
       response.status,
