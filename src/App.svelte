@@ -27,7 +27,7 @@
 </script>
 
 <main
-  class="m-inline-auto min-inline-0 p-block-4 p-inline-4 container max-inline-lg lg:max-inline-4xl box-content"
+  class="m-inline-auto min-inline-0 p-bs-[10dvb] p-be-4 p-inline-4 container max-inline-lg lg:(max-inline-4xl p-bs-4) box-content"
 >
   <form
     class=" gap-8 flex flex-col justify-center items-stretch lg:(grid grid-cols-[1fr_auto_1fr] gap-4 items-center)"
