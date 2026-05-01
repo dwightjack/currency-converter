@@ -1,8 +1,8 @@
 import { test as base } from '@playwright/test';
 import { AppPage } from './pages/app';
 import { Calculator } from './pages/calculator';
-import rates from './fixtures/rates.json' assert { type: 'json' };
-import symbols from './fixtures/symbols.json' assert { type: 'json' };
+import rates from './fixtures/rates.json' with { type: 'json' };
+import symbols from './fixtures/symbols.json' with { type: 'json' };
 
 export interface Fixtures {
   appPage: AppPage;
