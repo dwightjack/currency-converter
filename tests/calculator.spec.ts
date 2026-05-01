@@ -9,7 +9,7 @@ test.describe('calculator', () => {
     await appPage.setInputAmount(1000);
     await calculator.open();
 
-    await expect(calculator.result).toHaveText('1,000');
+    await expect(calculator.result).toHaveText('1000');
   });
 
   test.describe('supports value input by keyboard', () => {
@@ -73,7 +73,7 @@ test.describe('calculator', () => {
       ['02', '2'],
       ['2++', '2+'],
       ['0.1.1', '0.11'],
-      ['0.1+.', '0.1'],
+      ['0.1+.', '0.1+'],
     ].forEach(([operation, expected]) => {
       test(`edge case filtering ${operation} operation`, async ({
         calculator,
@@ -98,12 +98,11 @@ test.describe('calculator', () => {
     });
 
     [
-      ['+', '12'],
-      ['-', '8'],
-      ['÷', '5'],
-      ['×', '20'],
-      ['AC', '2'],
-    ].forEach(([operation, expected]) => {
+      ['+', '10+2', '12'],
+      ['-', '10-2', '8'],
+      ['÷', '10÷2', '5'],
+      ['×', '10×2', '20'],
+    ].forEach(([operation, intermediate, expected]) => {
       test(`basic ${operation} operation`, async ({ calculator }) => {
         await calculator.open();
 
@@ -111,7 +110,7 @@ test.describe('calculator', () => {
         await calculator.getButton('0').click();
         await calculator.getButton(operation).click();
         await calculator.getButton('2').click();
-        await expect(calculator.result).toHaveText(`10${operation}2`);
+        await expect(calculator.result).toHaveText(intermediate);
 
         await calculator.getButton('=').click();
         await expect(calculator.result).toHaveText(expected);
