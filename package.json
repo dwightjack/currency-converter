@@ -31,6 +31,7 @@
     "eslint-config-prettier": "9.1.2",
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-svelte": "2.46.1",
+    "flag-icons": "7.5.0",
     "globals": "^15.8.0",
     "lefthook": "1.13.6",
     "netlify-cli": "17.38.1",

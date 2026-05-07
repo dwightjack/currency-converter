@@ -1,4 +1,4 @@
-import type { Locator, Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 
 export class Calculator {
   calculator!: Locator;
@@ -12,7 +12,7 @@ export class Calculator {
   async open() {
     await this.page.getByRole('button', { name: 'Calculate' }).click();
     this.calculator = this.page.getByRole('dialog', { name: 'Calculator' });
-    this.result = this.calculator.getByLabel('Result');
+    this.result = this.calculator.getByRole('status');
   }
 
   getButton(name: string) {

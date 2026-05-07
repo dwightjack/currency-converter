@@ -27,35 +27,35 @@
 </script>
 
 <main
-  class="m-inline-auto p-block-4 p-inline-4 container lg:(pbs-10 max-inline-3xl)"
+  class="m-inline-auto min-inline-0 p-bs-[10dvb] p-be-4 p-inline-4 container max-inline-lg lg:(max-inline-4xl p-bs-4) box-content"
 >
   <form
-    class="gap-4 items-center max-sm:(flex flex-col justify-center) sm:(grid grid-cols-[1fr_auto_1fr])"
+    class=" gap-8 flex flex-col justify-center items-stretch lg:(grid grid-cols-[1fr_auto_1fr] gap-4 items-center)"
     on:submit|preventDefault={() => undefined}
   >
     <CurrencyBox label="Input" current={currencyStore.currency.input}>
-      {#snippet select(current)}
+      {#snippet select(current, symbol)}
         <CurrencySelect
           label="Input Currency"
           id="from-select"
           {current}
+          {symbol}
           onchange={(currency) => currencyStore.setCurrency('input', currency)}
         />
       {/snippet}
-      {#snippet amount(symbol)}
-        <label for="from-amount">
-          <span class="sr-only">Amount</span>
-          {symbol}
-        </label>
+      {#snippet field(symbol)}
+        <label for="from-amount" class="sr-only">Amount {symbol}</label>
         <CurrencyInput
           id="from-amount"
           value={currencyStore.inputAmount}
           oninput={(value) => (currencyStore.inputAmount = value)}
         />
+      {/snippet}
+      {#snippet command()}
         <ControlButton
           onclick={() => uiStore.toggleCalculator(true)}
           label="Calculate"
-          class="text-2xl self-center"
+          class="self-center"
         >
           <span class="i-ion-calculator-outline"></span>
         </ControlButton>
@@ -64,43 +64,43 @@
     <ControlButton
       onclick={() => currencyStore.invertCurrency()}
       label="Switch currencies"
-      class="text-2xl"
+      size="large"
+      class="self-center"
     >
       <span class="i-ion-swap-horizontal"></span>
     </ControlButton>
     <CurrencyBox label="Output" current={currencyStore.currency.output}>
-      {#snippet select(current)}
+      {#snippet select(current, symbol)}
         <CurrencySelect
           label="Output Currency"
           id="to-select"
           {current}
+          {symbol}
           onchange={(currency) => currencyStore.setCurrency('output', currency)}
         />
       {/snippet}
-      {#snippet amount(symbol)}
-        <label for="to-amount">
-          <span class="sr-only">Converted amount</span>
-          {symbol}
-        </label>
+      {#snippet field(symbol)}
+        <label for="to-amount" class="sr-only">Converted amount {symbol}</label>
         <output
           name="to-amount"
           id="to-amount"
           for="from-select to-select from-amount"
-          class="p-block-1 pie-1 inline-full truncate"
+          class="p-block-1 pie-1 truncate grow-1 leading-normal content-center min-inline-0"
         >
           {#if currencyStore.loading}
-            ...converting
+            converting...
           {:else if currencyStore.convertedAmount === ''}
             conversion error!
           {:else}
             {currencyStore.convertedAmount}
           {/if}
         </output>
+      {/snippet}
+      {#snippet command()}
         {#if isSecureContext}
           <ControlButton
             onclick={copyToClipboard}
             label="Copy converted amount to clipboard"
-            class="text-2xl"
           >
             <span class="i-ion-md-copy"></span>
           </ControlButton>

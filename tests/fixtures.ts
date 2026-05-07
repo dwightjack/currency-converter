@@ -1,8 +1,8 @@
 import { test as base } from '@playwright/test';
 import { AppPage } from './pages/app';
 import { Calculator } from './pages/calculator';
-import rates from './fixtures/rates.json' assert { type: 'json' };
-import symbols from './fixtures/symbols.json' assert { type: 'json' };
+import rates from './fixtures/rates.json' with { type: 'json' };
+import symbols from './fixtures/symbols.json' with { type: 'json' };
 
 export interface Fixtures {
   appPage: AppPage;
@@ -14,10 +14,10 @@ export interface Fixtures {
 export const test = base.extend<Fixtures>({
   forEachTest: [
     async ({ page }, use) => {
-      await page.route('/.netlify/functions/symbols', async (route) => {
+      await page.route('/api/symbols', async (route) => {
         await route.fulfill({ json: symbols });
       });
-      await page.route('/.netlify/functions/rates**', async (route) => {
+      await page.route('/api/rates**', async (route) => {
         const base = new URL(route.request().url()).searchParams.get(
           'base',
         ) as keyof typeof rates;

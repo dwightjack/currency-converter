@@ -42,7 +42,6 @@ export default defineConfig(
     ignores: [
       'public/**',
       '!public/index.html',
-      'scripts',
       'dist',
       '.netlify',
       'test-results',
