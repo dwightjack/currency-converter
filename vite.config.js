@@ -33,18 +33,16 @@ export default defineConfig({
       manifest: {
         name: 'CurrConv',
         short_name: 'CurrConv',
-        theme_color: '#dbeafe',
+        theme_color: '#b8e6fe',
         icons: [
+          { src: '/icon-192.png', type: 'image/png', sizes: '192x192' },
           {
-            src: '/android-chrome-192x192.png',
-            sizes: '192x192',
+            src: '/icon-mask.png',
             type: 'image/png',
-          },
-          {
-            src: '/android-chrome-512x512.png',
             sizes: '512x512',
-            type: 'image/png',
+            purpose: 'maskable',
           },
+          { src: '/icon-512.png', type: 'image/png', sizes: '512x512' },
         ],
       },
       workbox: {
