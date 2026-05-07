@@ -11,8 +11,8 @@ const htmlPlugin = () => {
     name: 'html-transform',
     transformIndexHtml(html) {
       const replacements = {
-        lightTheme: colors.sky[200],
-        darkTheme: colors.cyan[950],
+        lightTheme: colors.sky[50],
+        darkTheme: colors.cyan[900],
       };
       return html.replaceAll(
         /\{\{([^}]+?)\}\}/g,
