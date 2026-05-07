@@ -4,16 +4,12 @@ import { test } from './fixtures';
 test.describe('initial view', () => {
   test('input currency is JPY', async ({ appPage }) => {
     await expect(appPage.inputSelector).toHaveValue('JPY');
-    await expect(
-      appPage.inputSelector.getByRole('option', { selected: true }),
-    ).toHaveText('Japanese Yen');
+    await expect(appPage.inputSelector.locator('button')).toHaveText(/¥/);
   });
 
   test('output currency is EUR', async ({ appPage }) => {
     await expect(appPage.outputSelector).toHaveValue('EUR');
-    await expect(
-      appPage.outputSelector.getByRole('option', { selected: true }),
-    ).toHaveText('Euro');
+    await expect(appPage.outputSelector.locator('button')).toHaveText(/€/);
   });
 
   test('input gets formatted (en locale)', async ({ appPage }) => {

@@ -14,10 +14,10 @@ export interface Fixtures {
 export const test = base.extend<Fixtures>({
   forEachTest: [
     async ({ page }, use) => {
-      await page.route('/.netlify/functions/symbols', async (route) => {
+      await page.route('/api/symbols', async (route) => {
         await route.fulfill({ json: symbols });
       });
-      await page.route('/.netlify/functions/rates**', async (route) => {
+      await page.route('/api/rates**', async (route) => {
         const base = new URL(route.request().url()).searchParams.get(
           'base',
         ) as keyof typeof rates;

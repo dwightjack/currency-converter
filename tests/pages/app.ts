@@ -13,13 +13,13 @@ export class AppPage {
     this.page = page;
 
     this.inputPanel = page.getByRole('group', { name: 'Input' });
-    this.inputField = this.inputPanel.getByLabel('Amount');
+    this.inputField = this.inputPanel.getByLabel(/Amount/);
     this.inputSelector = page.getByRole('combobox', {
       name: 'Input Currency',
     });
 
     this.outPutPanel = page.getByRole('group', { name: 'Output' });
-    this.outPutField = this.outPutPanel.getByLabel('Converted Amount');
+    this.outPutField = this.outPutPanel.getByRole('status');
     this.outputSelector = page.getByRole('combobox', {
       name: 'Output Currency',
     });
