@@ -33,7 +33,8 @@ export default defineConfig({
       manifest: {
         name: 'CurrConv',
         short_name: 'CurrConv',
-        theme_color: '#b8e6fe',
+        theme_color: '#122c4d',
+        background_color: '#122c4d',
         icons: [
           { src: '/icon-192.png', type: 'image/png', sizes: '192x192' },
           {
