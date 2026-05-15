@@ -33,7 +33,7 @@
     "eslint-plugin-svelte": "2.46.1",
     "flag-icons": "7.5.0",
     "globals": "^15.8.0",
-    "lefthook": "1.13.6",
+    "lefthook": "2.1.6",
     "netlify-cli": "17.38.1",
     "postcss-html": "1.8.1",
     "prettier": "3.8.1",
