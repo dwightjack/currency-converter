@@ -3,29 +3,63 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
+import { readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
 
 /* global process */
 
-const htmlPlugin = () => {
+const darkManifestPlugin = (darkColor) => {
+  let outDir;
   return {
-    name: 'html-transform',
-    transformIndexHtml(html) {
-      const replacements = {
-        lightTheme: colors.sky[50],
-        darkTheme: colors.cyan[900],
-      };
-      return html.replaceAll(
-        /\{\{([^}]+?)\}\}/g,
-        (_, match) => replacements[match],
-      );
+    name: 'dark-manifest',
+    enforce: 'post',
+    apply: 'build',
+    configResolved(config) {
+      outDir = config.build.outDir;
+    },
+    async closeBundle() {
+      const src = join(outDir, 'manifest.webmanifest');
+      const dest = join(outDir, 'manifest-dark.webmanifest');
+      const manifest = JSON.parse(await readFile(src, 'utf-8'));
+      manifest.theme_color = darkColor;
+      manifest.background_color = darkColor;
+      await writeFile(dest, JSON.stringify(manifest));
+    },
+    transformIndexHtml() {
+      return [
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'manifest',
+            href: '/manifest-dark.webmanifest',
+            media: '(prefers-color-scheme: dark)',
+          },
+          injectTo: 'head',
+        },
+      ];
     },
   };
 };
 
+// const htmlPlugin = () => {
+//   return {
+//     name: 'html-transform',
+//     transformIndexHtml(html) {
+//       const replacements = {
+//         darkTheme: colors.cyan[900],
+//       };
+//       return html.replaceAll(
+//         /\{\{([^}]+?)\}\}/g,
+//         (_, match) => replacements[match],
+//       );
+//     },
+//   };
+// };
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    htmlPlugin(),
+    // htmlPlugin(),
     Unocss(),
     VitePWA({
       registerType: 'autoUpdate',
@@ -33,8 +67,8 @@ export default defineConfig({
       manifest: {
         name: 'CurrConv',
         short_name: 'CurrConv',
-        theme_color: '#122c4d',
-        background_color: '#122c4d',
+        theme_color: colors.sky[50],
+        background_color: '#ff0000',
         icons: [
           { src: '/icon-192.png', type: 'image/png', sizes: '192x192' },
           {
@@ -80,5 +114,6 @@ export default defineConfig({
       },
     }),
     svelte(),
+    darkManifestPlugin(colors.cyan[900]),
   ],
 });
