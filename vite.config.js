@@ -3,7 +3,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile, access } from 'fs/promises';
 import { join } from 'path';
 
 /* global process */
@@ -20,6 +20,13 @@ const darkManifestPlugin = (darkColor) => {
     async closeBundle() {
       const src = join(outDir, 'manifest.webmanifest');
       const dest = join(outDir, 'manifest-dark.webmanifest');
+      try {
+        await access(src);
+      } catch {
+        // eslint-disable-next-line no-undef
+        console.warn(`${src} does not exist`);
+        return;
+      }
       const manifest = JSON.parse(await readFile(src, 'utf-8'));
       manifest.theme_color = darkColor;
       manifest.background_color = darkColor;
