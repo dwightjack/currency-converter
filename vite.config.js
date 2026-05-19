@@ -10,12 +10,14 @@ import { resolve } from 'path';
 
 const darkManifestPlugin = (darkColor) => {
   let absOutDir;
+  let logger;
   return {
     name: 'dark-manifest',
     enforce: 'post',
     apply: 'build',
     configResolved(config) {
       absOutDir = resolve(config.root, config.build.outDir);
+      logger = config.logger;
     },
     async closeBundle() {
       const src = resolve(absOutDir, 'manifest.webmanifest');
@@ -23,12 +25,14 @@ const darkManifestPlugin = (darkColor) => {
       try {
         await access(src);
       } catch {
+        logger.warn('[dark-manifest] manifest.webmanifest not found, skipping');
         return;
       }
       const manifest = JSON.parse(await readFile(src, 'utf-8'));
       manifest.theme_color = darkColor;
       manifest.background_color = darkColor;
       await writeFile(dest, JSON.stringify(manifest));
+      logger.info(`[dark-manifest] wrote ${dest}`);
     },
     transformIndexHtml() {
       return [
