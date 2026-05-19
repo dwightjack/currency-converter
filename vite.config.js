@@ -4,27 +4,25 @@ import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
 import { readFile, writeFile, access } from 'fs/promises';
-import { join } from 'path';
+import { resolve } from 'path';
 
 /* global process */
 
 const darkManifestPlugin = (darkColor) => {
-  let outDir;
+  let absOutDir;
   return {
     name: 'dark-manifest',
     enforce: 'post',
     apply: 'build',
     configResolved(config) {
-      outDir = config.build.outDir;
+      absOutDir = resolve(config.root, config.build.outDir);
     },
     async closeBundle() {
-      const src = join(outDir, 'manifest.webmanifest');
-      const dest = join(outDir, 'manifest-dark.webmanifest');
+      const src = resolve(absOutDir, 'manifest.webmanifest');
+      const dest = resolve(absOutDir, 'manifest-dark.webmanifest');
       try {
         await access(src);
       } catch {
-        // eslint-disable-next-line no-undef
-        console.warn(`${src} does not exist`);
         return;
       }
       const manifest = JSON.parse(await readFile(src, 'utf-8'));
