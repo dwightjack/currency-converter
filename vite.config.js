@@ -1,3 +1,5 @@
+/* global process */
+
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -5,8 +7,6 @@ import Unocss from 'unocss/vite';
 import { colors } from '@unocss/preset-mini';
 import { readFile, writeFile, access } from 'fs/promises';
 import { resolve } from 'path';
-
-/* global process */
 
 const darkManifestPlugin = (darkColor) => {
   let absOutDir;
@@ -50,25 +50,8 @@ const darkManifestPlugin = (darkColor) => {
   };
 };
 
-// const htmlPlugin = () => {
-//   return {
-//     name: 'html-transform',
-//     transformIndexHtml(html) {
-//       const replacements = {
-//         darkTheme: colors.cyan[900],
-//       };
-//       return html.replaceAll(
-//         /\{\{([^}]+?)\}\}/g,
-//         (_, match) => replacements[match],
-//       );
-//     },
-//   };
-// };
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    // htmlPlugin(),
     Unocss(),
     VitePWA({
       registerType: 'autoUpdate',
