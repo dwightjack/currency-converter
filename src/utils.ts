@@ -16,9 +16,7 @@ const apiFetch = ofetch.create({
 });
 
 export async function fetchRates(base: string): Promise<Rates> {
-  const response = await apiFetch<FetchRatesResponse>(`/rates`, {
-    query: { base },
-  });
+  const response = await apiFetch<FetchRatesResponse>(`/rates/${base}`);
 
   if (response.success == false) {
     throw new Error(`Unable to retrieve rates: ${response.message}`);
