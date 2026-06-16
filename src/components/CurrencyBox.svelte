@@ -19,7 +19,7 @@
 
 <fieldset
   class="
-    text-xl p-block-5 p-ie-5 p-is-16 min-inline-0 rounded-2xl border-3 border-brand-500 bg-surface-100 bg-[image:var(--flag)] bg-contain bg-no-repeat min-inline-0 @dark:(border-brand-900 bg-surface-500)"
+    text-xl p-block-5 p-ie-5 p-is-12 sm:p-is-16 min-inline-0 rounded-2xl border-3 border-brand-500 bg-surface-100 bg-[image:var(--flag)] bg-contain bg-no-repeat min-inline-0 @dark:(border-brand-900 bg-surface-500)"
   style:--flag={`url(/flags.svg#code-${current.toLowerCase()})`}
 >
   <legend class="sr-only">{label}</legend>
