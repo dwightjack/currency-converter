@@ -1,6 +1,8 @@
 pre-commit:
-  parallel: true
-  commands:
-    linter:
+  jobs:
+    - name: linter
       glob: "*.{mjs,cjs,js,ts,svelte}"
       run: pnpm exec eslint {staged_files}
+    - name: formatter
+      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true

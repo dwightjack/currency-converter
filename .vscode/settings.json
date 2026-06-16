@@ -2,26 +2,14 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[svelte]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
   "eslint.validate": ["javascript", "svelte", "typescript"],
   "css.validate": false,
-  "[css]": {
-    "editor.formatOnSave": false
-  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "oxc.enable.oxlint": false,
   "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

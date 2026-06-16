@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import Flag from './Flag.svelte';
   import { setCurrencyStore } from '../stores/currency.svelte';
 
@@ -9,7 +8,6 @@
     label?: string;
     id?: string;
     current?: string;
-    children?: Snippet<[]>;
     symbol?: string;
     onchange?: (currency: string) => void;
   }
@@ -44,7 +42,7 @@
       <span class="row-1 col-2">{symbol}</span>
       <selectedcontent class="row-1 col-2"></selectedcontent>
     </button>
-    {#each currencyStore.currencyFullList as { code, description }}
+    {#each currencyStore.currencyFullList as { code, description } (code)}
       <option
         selected={current === code || undefined}
         value={code}

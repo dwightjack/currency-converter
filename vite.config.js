@@ -1,16 +1,24 @@
 /* global process */
-
+// @ts-check
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { VitePWA } from 'vite-plugin-pwa';
 import Unocss from 'unocss/vite';
-import { colors } from '@unocss/preset-mini';
+import { theme } from 'unocss/preset-wind4';
 import { readFile, writeFile, access } from 'fs/promises';
 import { resolve } from 'path';
 
+/**
+ * @param {string} darkColor
+ * @returns {import('vite').Plugin}
+ */
 const darkManifestPlugin = (darkColor) => {
+  /** @type {string} */
   let absOutDir;
+
+  /** @type {import('vite').ResolvedConfig['logger']} */
   let logger;
+
   return {
     name: 'dark-manifest',
     enforce: 'post',
@@ -59,7 +67,7 @@ export default defineConfig({
       manifest: {
         name: 'CurrConv',
         short_name: 'CurrConv',
-        theme_color: colors.sky[50],
+        theme_color: theme.colors.sky[50],
         background_color: '#ff0000',
         icons: [
           { src: '/icon-192.png', type: 'image/png', sizes: '192x192' },
@@ -106,6 +114,6 @@ export default defineConfig({
       },
     }),
     svelte(),
-    darkManifestPlugin(colors.cyan[900]),
+    darkManifestPlugin(theme.colors.cyan[900]),
   ],
 });

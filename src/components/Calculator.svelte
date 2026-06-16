@@ -15,11 +15,9 @@
 
   let root: HTMLElement | undefined;
 
-  let input = $state('');
+  let input = $derived(String(!initial || Number.isNaN(initial) ? 0 : initial));
 
-  $effect(() => {
-    input = String(!initial || Number.isNaN(initial) ? 0 : initial);
-  });
+
 
   // // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
   // // match and extract trailing digits (positive and negative)
@@ -136,9 +134,10 @@
     </ControlButton>
   </div>
   <CalcButton theme="neutral" area="reset" onclick={reset}>AC</CalcButton>
-  {#each Array(10) as _, i}
-    <CalcButton onclick={() => onInput(9 - i)} area={'b' + (9 - i)}>
-      {9 - i}
+  {#each Array(10) as _, i (i)}
+    {@const num = 9 - i}
+    <CalcButton onclick={() => onInput(num)} area={'b' + (num)}>
+      {num}
     </CalcButton>
   {/each}
   <CalcButton area="dot" onclick={() => onInput('.')}>.</CalcButton>

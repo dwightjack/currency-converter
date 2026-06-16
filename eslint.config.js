@@ -3,24 +3,24 @@ import js from '@eslint/js';
 import svelte from 'eslint-plugin-svelte';
 import { defineConfig } from 'eslint/config';
 import ts from 'typescript-eslint';
-import tsParser from '@typescript-eslint/parser';
-import prettier from 'eslint-plugin-prettier/recommended';
-import svelteParser from 'svelte-eslint-parser';
 import globals from 'globals';
 
 export default defineConfig(
   js.configs.recommended,
   ts.configs.strict,
-  ts.configs.stylistic,
-  svelte.configs['flat/prettier'],
-  prettier,
+  svelte.configs.recommended,
   {
-    files: ['**/*.svelte'],
     languageOptions: {
-      parser: svelteParser,
-      globals: { ...globals.node, ...globals.browser },
+      globals: globals.browser,
+    },
+  },
+  {
+    files: ['**/*.svelte', '**/*.svelte.ts'],
+    languageOptions: {
       parserOptions: {
-        parser: tsParser,
+        projectService: true,
+        extraFileExtensions: ['.svelte'],
+        parser: ts.parser,
       },
     },
     rules: {
