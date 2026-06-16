@@ -12,8 +12,8 @@ importers:
         specifier: ^5.0.18
         version: 5.2.8
       '@unocss/reset':
-        specifier: 66.6.7
-        version: 66.6.7
+        specifier: 66.7.0
+        version: 66.7.0
       idb-keyval:
         specifier: 6.2.2
         version: 6.2.2
@@ -43,11 +43,11 @@ importers:
         specifier: ^24.13.1
         version: 24.13.1
       '@unocss/core':
-        specifier: 66.6.7
-        version: 66.6.7
+        specifier: 66.7.0
+        version: 66.7.0
       '@unocss/extractor-svelte':
-        specifier: 66.6.7
-        version: 66.6.7
+        specifier: 66.7.0
+        version: 66.7.0
       '@unocss/preset-icons':
         specifier: ^66.6.7
         version: 66.7.0
@@ -2540,17 +2540,14 @@ packages:
   '@unocss/config@66.7.0':
     resolution: {integrity: sha512-C6waL+xzqAPzz5n47qnrs4GbyAtlusNYYmcV6DKYh1MgUP4EFhMnEMyuR2mw3M3tsBpyGuehLdRK5+ECF5yLkA==}
 
-  '@unocss/core@66.6.7':
-    resolution: {integrity: sha512-Q8456iWFtdwrUNYKVOQY8ygRggjZOVtLc6Jc8KIkxig7OiNlUWOgXJTfCh4I8g6jBYzC5eHaHFDLgJOmOrxBsg==}
-
   '@unocss/core@66.7.0':
     resolution: {integrity: sha512-j6MFMx5C3iIwW4T4hVbh+30fKWgSGkmS3bCcdjlfqM88lRT+dHFBN9nkfNOBJT6e6IHN9415nexuzcQvTjJXxw==}
 
   '@unocss/extractor-arbitrary-variants@66.7.0':
     resolution: {integrity: sha512-iHMlXmb8aGtYgPQ8o3D4rMz9DKOqSp8g/LWvEoiM7arSjJF9jMpcpYlqZXzkg1mSQX23TRW76Qxj1gyI4lRd9w==}
 
-  '@unocss/extractor-svelte@66.6.7':
-    resolution: {integrity: sha512-15LXpDw+5eTvBe/clt75dk2oY37goX5drzizFr2FcyNisYBEC9HIsCPcuBwb6s+zwAQbVq96awoZPsB7ybzfBg==}
+  '@unocss/extractor-svelte@66.7.0':
+    resolution: {integrity: sha512-5T0FQdM2lNv6Q2BTynbsHX9dZ2gRkdnwmc43h+sDobdEOo9oBUiOzVsmez1AAyMvh/UPZF9Bz/UM4qKBuWZr2Q==}
 
   '@unocss/inspector@66.7.0':
     resolution: {integrity: sha512-W1MOO2d/1ZHwFR8+mrUUW6KW3MgJ6FdrSWfWeQ1+fgb0TVj8CweNzeSh46sTEXEcpvlui5mnGYFxanpLMoyOtA==}
@@ -2585,8 +2582,8 @@ packages:
   '@unocss/preset-wind@66.7.0':
     resolution: {integrity: sha512-K2cCgQawl4GzFyI9almN4jZ33OJNI6U7WxZ9s7D5bivZYfHPaStLTPffNxWlmawwUZF0qpH0S+S7H745ZzgajQ==}
 
-  '@unocss/reset@66.6.7':
-    resolution: {integrity: sha512-+OjpLDEaPmhTQ3Gj7EaKApNM92TM9f9gLgHNa79+66wIll9IfhKfEmJXnF9y1SE725n4PmPIQgC9k313HztMLA==}
+  '@unocss/reset@66.7.0':
+    resolution: {integrity: sha512-auMYYTWXrE1n7lPoT1TFyGhmrBlgMdn9GgvypBSxtdi9Jg6Rz4qdNngEbJeSnqnjfRawx247TJJdNKiigSZ29g==}
 
   '@unocss/rule-utils@66.7.0':
     resolution: {integrity: sha512-DMJIiey/m+xr0hpSbxFhSbKlC3e7QsuwdAEdgMmIM7pEcu/AEMl7oH198QYX9880P2X0hy5iFE6UCWx9CwGAXQ==}
@@ -9942,15 +9939,13 @@ snapshots:
       consola: 3.4.2
       unconfig: 7.5.0
 
-  '@unocss/core@66.6.7': {}
-
   '@unocss/core@66.7.0': {}
 
   '@unocss/extractor-arbitrary-variants@66.7.0':
     dependencies:
       '@unocss/core': 66.7.0
 
-  '@unocss/extractor-svelte@66.6.7': {}
+  '@unocss/extractor-svelte@66.7.0': {}
 
   '@unocss/inspector@66.7.0':
     dependencies:
@@ -10012,7 +10007,7 @@ snapshots:
       '@unocss/core': 66.7.0
       '@unocss/preset-wind3': 66.7.0
 
-  '@unocss/reset@66.6.7': {}
+  '@unocss/reset@66.7.0': {}
 
   '@unocss/rule-utils@66.7.0':
     dependencies:
