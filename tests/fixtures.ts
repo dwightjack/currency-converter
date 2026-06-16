@@ -17,10 +17,10 @@ export const test = base.extend<Fixtures>({
       await page.route('/api/symbols', async (route) => {
         await route.fulfill({ json: symbols });
       });
-      await page.route('/api/rates**', async (route) => {
-        const base = new URL(route.request().url()).searchParams.get(
-          'base',
-        ) as keyof typeof rates;
+      await page.route('/api/rates/**', async (route) => {
+        const base = new URL(route.request().url()).pathname
+          .split('/')
+          .at(-1) as keyof typeof rates;
         await route.fulfill({
           json: {
             base,

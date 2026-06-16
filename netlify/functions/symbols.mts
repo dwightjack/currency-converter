@@ -1,23 +1,22 @@
-import type { Handler } from '@netlify/functions';
+import type { Config } from '@netlify/functions';
 import { ofetch } from 'ofetch';
 
-const handler: Handler = async () => {
+export default async function () {
   const API_KEY = process.env.API_KEY;
   try {
     const response = await ofetch(
       `https://v6.exchangerate-api.com/v6/${API_KEY}/codes`,
     );
     if (response.result === 'error') {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({
+      return Response.json(
+        {
           success: false,
           message: `API error: ${response['error-type']}`,
-        }),
-        headers: {
-          'Content-Type': 'application/json; charset=utf-8',
         },
-      };
+        {
+          status: 500,
+        },
+      );
     }
 
     const symbols = (response.supported_codes as [string, string][]).map(
@@ -27,25 +26,23 @@ const handler: Handler = async () => {
       }),
     );
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ success: true, symbols }),
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-    };
+    return Response.json({
+      success: true,
+      symbols,
+    });
   } catch (e) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
+    return Response.json(
+      {
         success: false,
         message: `API error: ${(e as Error).message}`,
-      }),
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
       },
-    };
+      {
+        status: 500,
+      },
+    );
   }
-};
+}
 
-export { handler };
+export const config: Config = {
+  path: '/api/symbols',
+};

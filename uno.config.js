@@ -1,3 +1,4 @@
+// @ts-check
 import {
   defineConfig,
   transformerVariantGroup,
@@ -6,7 +7,7 @@ import {
 } from 'unocss';
 import { presetIcons } from '@unocss/preset-icons';
 import extractorSvelte from '@unocss/extractor-svelte';
-import { colors } from '@unocss/preset-mini';
+import { theme } from 'unocss/preset-wind4';
 
 const preset = presetWind4({
   preflights: {
@@ -65,12 +66,12 @@ export default defineConfig({
   ],
   theme: {
     font: {
-      sans: `"Inter Variable", ${preset.theme.font.sans}`,
+      sans: `"Inter Variable", ${theme.font.sans}`,
     },
     colors: {
-      brand: colors.gray,
-      surface: colors.slate,
-      success: colors.green,
+      brand: theme.colors.gray,
+      surface: theme.colors.slate,
+      success: theme.colors.green,
     },
     supports: {
       'custom-select':
