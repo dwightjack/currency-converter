@@ -71,7 +71,7 @@ importers:
         version: 1.13.6
       netlify-cli:
         specifier: 17.38.1
-        version: 17.38.1(@types/node@22.19.20)(idb-keyval@6.2.2)(picomatch@4.0.4)(rollup@4.61.1)
+        version: 17.38.1(@types/node@22.19.20)(idb-keyval@6.2.2)(picomatch@4.0.4)(rollup@4.61.1)(supports-color@9.4.0)
       oxfmt:
         specifier: ^0.54.0
         version: 0.54.0(svelte@5.55.7(@typescript-eslint/types@8.61.0))
@@ -99,6 +99,9 @@ importers:
       vite-plugin-pwa:
         specifier: 1.3.0
         version: 1.3.0(vite@8.0.5(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@types/node@22.19.20)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)
+      workbox-window:
+        specifier: ^7.4.1
+        version: 7.4.1
 
 packages:
 
@@ -12082,7 +12085,7 @@ snapshots:
     dependencies:
       from2: 2.3.0
 
-  follow-redirects@1.16.0(debug@4.3.7):
+  follow-redirects@1.16.0(debug@4.3.7(supports-color@9.4.0)):
     optionalDependencies:
       debug: 4.3.7(supports-color@9.4.0)
 
@@ -12434,20 +12437,20 @@ snapshots:
       statuses: 2.0.1
       toidentifier: 1.0.1
 
-  http-proxy-middleware@2.0.7(debug@4.3.7):
+  http-proxy-middleware@2.0.7(debug@4.3.7(supports-color@9.4.0)):
     dependencies:
       '@types/http-proxy': 1.17.17
-      http-proxy: 1.18.1(debug@4.3.7)
+      http-proxy: 1.18.1(debug@4.3.7(supports-color@9.4.0))
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.8
     transitivePeerDependencies:
       - debug
 
-  http-proxy@1.18.1(debug@4.3.7):
+  http-proxy@1.18.1(debug@4.3.7(supports-color@9.4.0)):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.16.0(debug@4.3.7)
+      follow-redirects: 1.16.0(debug@4.3.7(supports-color@9.4.0))
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -12466,7 +12469,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.5:
+  https-proxy-agent@7.0.5(supports-color@9.4.0):
     dependencies:
       agent-base: 7.1.4
       debug: 4.3.7(supports-color@9.4.0)
@@ -13377,7 +13380,7 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@17.38.1(@types/node@22.19.20)(idb-keyval@6.2.2)(picomatch@4.0.4)(rollup@4.61.1):
+  netlify-cli@17.38.1(@types/node@22.19.20)(idb-keyval@6.2.2)(picomatch@4.0.4)(rollup@4.61.1)(supports-color@9.4.0):
     dependencies:
       '@bugsnag/js': 7.25.0
       '@fastify/static': 7.0.4
@@ -13435,9 +13438,9 @@ snapshots:
       gitconfiglocal: 2.1.0
       hasbin: 1.2.3
       hasha: 5.2.2
-      http-proxy: 1.18.1(debug@4.3.7)
-      http-proxy-middleware: 2.0.7(debug@4.3.7)
-      https-proxy-agent: 7.0.5
+      http-proxy: 1.18.1(debug@4.3.7(supports-color@9.4.0))
+      http-proxy-middleware: 2.0.7(debug@4.3.7(supports-color@9.4.0))
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       inquirer: 6.5.2
       inquirer-autocomplete-prompt: 1.4.0(inquirer@6.5.2)
       ipx: 2.1.0(@netlify/blobs@8.1.0)(idb-keyval@6.2.2)
@@ -13477,7 +13480,7 @@ snapshots:
       semver: 7.6.3
       source-map-support: 0.5.21
       strip-ansi-control-characters: 2.0.0
-      tabtab: 3.0.2
+      tabtab: 3.0.2(supports-color@9.4.0)
       tempy: 3.1.0
       terminal-link: 3.0.0
       through2-filter: 4.0.0
@@ -13488,7 +13491,7 @@ snapshots:
       unixify: 1.0.0
       update-notifier: 7.3.1
       uuid: 9.0.1
-      wait-port: 1.1.0
+      wait-port: 1.1.0(supports-color@9.4.0)
       write-file-atomic: 5.0.1
       ws: 8.18.0
       zod: 3.23.8
@@ -14931,7 +14934,7 @@ snapshots:
       picocolors: 1.1.1
       sax: 1.6.0
 
-  tabtab@3.0.2:
+  tabtab@3.0.2(supports-color@9.4.0):
     dependencies:
       debug: 4.3.7(supports-color@9.4.0)
       es6-promisify: 6.1.1
@@ -15441,7 +15444,7 @@ snapshots:
     optionalDependencies:
       vite: 8.0.5(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@types/node@22.19.20)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
 
-  wait-port@1.1.0:
+  wait-port@1.1.0(supports-color@9.4.0):
     dependencies:
       chalk: 4.1.2
       commander: 9.5.0
