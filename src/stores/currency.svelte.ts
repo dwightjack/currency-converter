@@ -1,6 +1,6 @@
 import { getContext, setContext } from 'svelte';
 import { fetchCurrency, fetchCurrencyList } from '../db';
-import type { CurrencySymbol } from 'src/types';
+import type { CurrencySymbol } from '../types';
 
 class CurrencyStore {
   inputAmount = $state<number | string>(0);
