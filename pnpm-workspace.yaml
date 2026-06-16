@@ -12,7 +12,7 @@ strictDepBuilds: true
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 10080 # 7 days
 minimumReleaseAgeExclude:
-  # Renovate security update: vite@8.0.5
-  - vite@8.0.5
+  # Renovate security update: vite@8.0.5 || 8.0.16
+  - vite@8.0.5 || 8.0.16
   # Renovate security update: svelte@5.55.7
   - svelte@5.55.7
