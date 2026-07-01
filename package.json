@@ -25,8 +25,8 @@
     "@sveltejs/vite-plugin-svelte": "7.1.2",
     "@tsconfig/svelte": "^5.0.4",
     "@types/node": "^24.13.1",
-    "@unocss/core": "66.7.0",
-    "@unocss/extractor-svelte": "66.7.0",
+    "@unocss/core": "66.7.2",
+    "@unocss/extractor-svelte": "66.7.2",
     "@unocss/preset-icons": "^66.6.7",
     "@unocss/preset-wind": "^66.6.7",
     "eslint": "10.4.1",
@@ -37,10 +37,10 @@
     "netlify-cli": "26.1.0",
     "oxfmt": "^0.54.0",
     "postcss-html": "1.8.1",
-    "svelte": "5.56.3",
+    "svelte": "5.56.4",
     "svelte-check": "^4.0.5",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.61.0",
+    "typescript-eslint": "8.61.1",
     "unocss": "^66.6.7",
     "vite": "8.0.16",
     "vite-plugin-pwa": "1.3.0",
@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.18",
-    "@unocss/reset": "66.7.0",
+    "@unocss/reset": "66.7.2",
     "idb-keyval": "6.2.5",
     "ofetch": "1.5.1"
   }
