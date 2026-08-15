@@ -36,7 +36,7 @@
     "lefthook": "2.1.9",
     "netlify-cli": "26.1.0",
     "oxfmt": "^0.54.0",
-    "postcss-html": "1.8.1",
+    "postcss-html": "2.0.0",
     "svelte": "5.56.3",
     "svelte-check": "^4.0.5",
     "typescript": "6.0.3",
