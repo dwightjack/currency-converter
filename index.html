@@ -7,12 +7,18 @@
     <title>CurrConv</title>
     <meta name="description" content="A simple currency converter" />
 
-    <script type="module" src="/src/main.ts"></script>
-
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="color-scheme" content="dark light" />
+    <script>
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document
+          .querySelector('link[rel=manifest]')
+          ?.setAttribute('href', 'manifest-dark.webmanifest');
+      }
+    </script>
+    <script type="module" src="/src/main.ts"></script>
   </head>
 
   <body

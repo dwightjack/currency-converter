@@ -42,19 +42,6 @@ const darkManifestPlugin = (darkColor) => {
       await writeFile(dest, JSON.stringify(manifest));
       logger.info(`[dark-manifest] wrote ${dest}`);
     },
-    transformIndexHtml() {
-      return [
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'manifest',
-            href: '/manifest-dark.webmanifest',
-            media: '(prefers-color-scheme: dark)',
-          },
-          injectTo: 'head',
-        },
-      ];
-    },
   };
 };
 
@@ -65,7 +52,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       disable: !!process.env.VITE_IS_TEST,
       manifest: {
-        name: 'CurrConv',
+        name: 'Currency Converter',
         short_name: 'CurrConv',
         theme_color: theme.colors.sky[50],
         background_color: '#ff0000',
