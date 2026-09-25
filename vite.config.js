@@ -9,10 +9,10 @@ import { readFile, writeFile, access } from 'fs/promises';
 import { resolve } from 'path';
 
 /**
- * @param {string} darkColor
  * @returns {import('vite').Plugin}
  */
-const darkManifestPlugin = (darkColor) => {
+const darkManifestPlugin = () => {
+  const darkColor = theme.colors.cyan[900];
   /** @type {string} */
   let absOutDir;
 
@@ -117,6 +117,6 @@ export default defineConfig({
       },
     }),
     svelte(),
-    darkManifestPlugin(theme.colors.cyan[900]),
+    darkManifestPlugin(),
   ],
 });
