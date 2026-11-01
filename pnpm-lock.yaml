@@ -35,13 +35,13 @@ importers:
         version: 1.60.0
       '@sveltejs/vite-plugin-svelte':
         specifier: 7.1.2
-        version: 7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
+        version: 7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
       '@tsconfig/svelte':
         specifier: ^5.0.4
         version: 5.0.8
       '@types/node':
-        specifier: ^24.13.1
-        version: 24.13.1
+        specifier: ^26.0.0
+        version: 26.6.5
       '@unocss/core':
         specifier: 66.7.0
         version: 66.7.0
@@ -59,7 +59,7 @@ importers:
         version: 10.4.1(jiti@2.7.0)(supports-color@10.2.2)
       eslint-plugin-svelte:
         specifier: 3.19.0
-        version: 3.19.0(eslint@10.4.1(jiti@2.7.0)(supports-color@10.2.2))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(ts-node@10.9.2(@types/node@24.13.1)(typescript@6.0.3))
+        version: 3.19.0(eslint@10.4.1(jiti@2.7.0)(supports-color@10.2.2))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(ts-node@10.9.2(@types/node@26.6.5)(typescript@6.0.3))
       flag-icons:
         specifier: 7.5.0
         version: 7.5.0
@@ -71,7 +71,7 @@ importers:
         version: 2.1.9
       netlify-cli:
         specifier: 26.1.0
-        version: 26.1.0(@types/node@24.13.1)(idb-keyval@6.2.5)(picomatch@4.0.4)(rollup@4.61.1)(supports-color@10.2.2)
+        version: 26.1.0(@types/node@26.6.5)(idb-keyval@6.2.5)(picomatch@4.0.4)(rollup@4.61.1)(supports-color@10.2.2)
       oxfmt:
         specifier: ^0.54.0
         version: 0.54.0(svelte@5.56.3(@typescript-eslint/types@8.61.0))
@@ -92,13 +92,13 @@ importers:
         version: 8.61.0(eslint@10.4.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       unocss:
         specifier: ^66.6.7
-        version: 66.7.0(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
+        version: 66.7.0(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
       vite:
         specifier: 8.0.16
-        version: 8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+        version: 8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
       vite-plugin-pwa:
         specifier: 1.3.0
-        version: 1.3.0(supports-color@10.2.2)(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)
+        version: 1.3.0(supports-color@10.2.2)(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)
       workbox-window:
         specifier: ^7.4.1
         version: 7.4.1
@@ -1481,12 +1481,14 @@ packages:
   '@opentelemetry/sdk-trace-base@2.7.1':
     resolution: {integrity: sha512-NAYIlsF8MPUsKqJMiDQJTMPOmlbawC1Iz/omMLygZ1C9am8fTKYjTaI+OZM+WTY3t3Glo0wnOg/6/pac6RGPPw==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.3.0 <1.10.0'
 
   '@opentelemetry/sdk-trace-node@2.7.1':
     resolution: {integrity: sha512-pCpQxU68lV+I9s9svqMyVu5iHdDDUnqUpSxqwyCU8A9ejEsSnMPCbearwsUO4yk08ZJzAIUCFuReMdVQvHrdvg==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.0.0 <1.10.0'
 
@@ -2232,6 +2234,9 @@ packages:
 
   '@types/node@24.13.1':
     resolution: {integrity: sha512-RSpUJGmvsJ1ZeBehQZFhIdpsz+bIpES0nIQXko4Ybq+N+kX6XvOq3Jo+iJ82FWLdblFq85AsMikd3m35jgezYg==}
+
+  '@types/node@26.6.5':
+    resolution: {integrity: sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2987,6 +2992,7 @@ packages:
   cron-parser@4.9.0:
     resolution: {integrity: sha512-p0SaNjrHOnQeR8/VnfGbmg9te2kfyYSQ7Sc/j/6DtPL3JQvKxmjO9TSjNFpujqV3vEYYBvNNvXSxzyksBWAx1Q==}
     engines: {node: '>=12.0.0'}
+    deprecated: v4 is no longer maintained, upgrade to v5
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -6013,6 +6019,9 @@ packages:
   undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
+
   unicode-canonical-property-names-ecmascript@2.0.1:
     resolution: {integrity: sha512-dA8WbNeb2a6oQzAQ55YlT5vQAWGV9WXOsi3SskE3bcCdM0P4SDd+24zS/OCacdRq5BkdsRj9q3Pg6YyQoxIGqg==}
     engines: {node: '>=4'}
@@ -7532,12 +7541,12 @@ snapshots:
 
   '@import-maps/resolve@2.0.0': {}
 
-  '@inquirer/external-editor@1.0.3(@types/node@24.13.1)':
+  '@inquirer/external-editor@1.0.3(@types/node@26.6.5)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.2
     optionalDependencies:
-      '@types/node': 24.13.1
+      '@types/node': 26.6.5
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -7638,7 +7647,7 @@ snapshots:
       yaml: 2.9.0
       yargs: 17.7.2
 
-  '@netlify/build@35.14.0(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(picomatch@4.0.4)(rollup@4.61.1)':
+  '@netlify/build@35.14.0(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(picomatch@4.0.4)(rollup@4.61.1)':
     dependencies:
       '@bugsnag/js': 8.9.0
       '@netlify/blobs': 10.7.9(supports-color@10.2.2)
@@ -7687,7 +7696,7 @@ snapshots:
       string-width: 7.2.0
       supports-color: 10.2.2
       terminal-link: 4.0.0
-      ts-node: 10.9.2(@types/node@24.13.1)(typescript@5.9.3)
+      ts-node: 10.9.2(@types/node@26.6.5)(typescript@5.9.3)
       typescript: 5.9.3
       yaml: 2.9.0
       yargs: 17.7.2
@@ -8628,14 +8637,14 @@ snapshots:
 
   '@sveltejs/load-config@0.1.1': {}
 
-  '@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))':
+  '@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.2
       svelte: 5.56.3(@typescript-eslint/types@8.61.0)
-      vite: 8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
+      vite: 8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
 
   '@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1':
     dependencies:
@@ -8672,6 +8681,10 @@ snapshots:
   '@types/node@24.13.1':
     dependencies:
       undici-types: 7.18.2
+
+  '@types/node@26.6.5':
+    dependencies:
+      undici-types: 8.9.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -8927,7 +8940,7 @@ snapshots:
     dependencies:
       '@unocss/core': 66.7.0
 
-  '@unocss/vite@66.7.0(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))':
+  '@unocss/vite@66.7.0(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))':
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@unocss/config': 66.7.0
@@ -8938,7 +8951,7 @@ snapshots:
       pathe: 2.0.3
       tinyglobby: 0.2.17
       unplugin-utils: 0.3.1
-      vite: 8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
 
   '@vercel/nft@0.29.4(rollup@4.61.1)(supports-color@10.2.2)':
     dependencies:
@@ -9960,7 +9973,7 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-plugin-svelte@3.19.0(eslint@10.4.1(jiti@2.7.0)(supports-color@10.2.2))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(ts-node@10.9.2(@types/node@24.13.1)(typescript@6.0.3)):
+  eslint-plugin-svelte@3.19.0(eslint@10.4.1(jiti@2.7.0)(supports-color@10.2.2))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(ts-node@10.9.2(@types/node@26.6.5)(typescript@6.0.3)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.4.1(jiti@2.7.0)(supports-color@10.2.2))
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -9969,7 +9982,7 @@ snapshots:
       globals: 16.5.0
       known-css-properties: 0.37.0
       postcss: 8.5.15
-      postcss-load-config: 3.1.4(postcss@8.5.15)(ts-node@10.9.2(@types/node@24.13.1)(typescript@6.0.3))
+      postcss-load-config: 3.1.4(postcss@8.5.15)(ts-node@10.9.2(@types/node@26.6.5)(typescript@6.0.3))
       postcss-safe-parser: 7.0.1(postcss@8.5.15)
       semver: 7.8.3
       svelte-eslint-parser: 1.8.0(svelte@5.56.3(@typescript-eslint/types@8.61.0))
@@ -10653,18 +10666,18 @@ snapshots:
 
   ini@4.1.1: {}
 
-  inquirer-autocomplete-prompt@1.4.0(inquirer@8.2.7(@types/node@24.13.1)):
+  inquirer-autocomplete-prompt@1.4.0(inquirer@8.2.7(@types/node@26.6.5)):
     dependencies:
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       figures: 3.2.0
-      inquirer: 8.2.7(@types/node@24.13.1)
+      inquirer: 8.2.7(@types/node@26.6.5)
       run-async: 2.4.1
       rxjs: 6.6.7
 
-  inquirer@8.2.7(@types/node@24.13.1):
+  inquirer@8.2.7(@types/node@26.6.5):
     dependencies:
-      '@inquirer/external-editor': 1.0.3(@types/node@24.13.1)
+      '@inquirer/external-editor': 1.0.3(@types/node@26.6.5)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
@@ -11378,13 +11391,13 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  netlify-cli@26.1.0(@types/node@24.13.1)(idb-keyval@6.2.5)(picomatch@4.0.4)(rollup@4.61.1)(supports-color@10.2.2):
+  netlify-cli@26.1.0(@types/node@26.6.5)(idb-keyval@6.2.5)(picomatch@4.0.4)(rollup@4.61.1)(supports-color@10.2.2):
     dependencies:
       '@fastify/static': 9.1.3
       '@netlify/ai': 0.4.1
       '@netlify/api': 14.0.19
       '@netlify/blobs': 10.7.9(supports-color@10.2.2)
-      '@netlify/build': 35.14.0(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(picomatch@4.0.4)(rollup@4.61.1)
+      '@netlify/build': 35.14.0(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(picomatch@4.0.4)(rollup@4.61.1)
       '@netlify/build-info': 10.5.1
       '@netlify/config': 24.6.0
       '@netlify/dev': 4.18.7(idb-keyval@6.2.5)(rollup@4.61.1)(supports-color@10.2.2)
@@ -11435,8 +11448,8 @@ snapshots:
       http-proxy: 1.18.1(debug@4.4.3(supports-color@10.2.2))
       http-proxy-middleware: 3.0.6(supports-color@10.2.2)
       https-proxy-agent: 8.0.0(supports-color@10.2.2)
-      inquirer: 8.2.7(@types/node@24.13.1)
-      inquirer-autocomplete-prompt: 1.4.0(inquirer@8.2.7(@types/node@24.13.1))
+      inquirer: 8.2.7(@types/node@26.6.5)
+      inquirer-autocomplete-prompt: 1.4.0(inquirer@8.2.7(@types/node@26.6.5))
       is-docker: 4.0.0
       is-stream: 4.0.1
       is-wsl: 3.1.1
@@ -11954,13 +11967,13 @@ snapshots:
       postcss: 8.5.15
       postcss-safe-parser: 6.0.0(postcss@8.5.15)
 
-  postcss-load-config@3.1.4(postcss@8.5.15)(ts-node@10.9.2(@types/node@24.13.1)(typescript@6.0.3)):
+  postcss-load-config@3.1.4(postcss@8.5.15)(ts-node@10.9.2(@types/node@26.6.5)(typescript@6.0.3)):
     dependencies:
       lilconfig: 2.1.0
       yaml: 1.10.3
     optionalDependencies:
       postcss: 8.5.15
-      ts-node: 10.9.2(@types/node@24.13.1)(typescript@6.0.3)
+      ts-node: 10.9.2(@types/node@26.6.5)(typescript@6.0.3)
 
   postcss-safe-parser@6.0.0(postcss@8.5.15):
     dependencies:
@@ -12898,14 +12911,14 @@ snapshots:
     dependencies:
       typescript: 6.0.3
 
-  ts-node@10.9.2(@types/node@24.13.1)(typescript@5.9.3):
+  ts-node@10.9.2(@types/node@26.6.5)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.12
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.13.1
+      '@types/node': 26.6.5
       acorn: 8.16.0
       acorn-walk: 8.3.5
       arg: 4.1.3
@@ -12916,14 +12929,14 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@10.9.2(@types/node@24.13.1)(typescript@6.0.3):
+  ts-node@10.9.2(@types/node@26.6.5)(typescript@6.0.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.12
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.13.1
+      '@types/node': 26.6.5
       acorn: 8.16.0
       acorn-walk: 8.3.5
       arg: 4.1.3
@@ -13041,6 +13054,8 @@ snapshots:
 
   undici-types@7.18.2: {}
 
+  undici-types@8.9.0: {}
+
   unicode-canonical-property-names-ecmascript@2.0.1: {}
 
   unicode-match-property-ecmascript@2.0.0:
@@ -13076,7 +13091,7 @@ snapshots:
     dependencies:
       normalize-path: 2.1.1
 
-  unocss@66.7.0(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)):
+  unocss@66.7.0(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)):
     dependencies:
       '@unocss/cli': 66.7.0
       '@unocss/core': 66.7.0
@@ -13094,7 +13109,7 @@ snapshots:
       '@unocss/transformer-compile-class': 66.7.0
       '@unocss/transformer-directives': 66.7.0
       '@unocss/transformer-variant-group': 66.7.0
-      '@unocss/vite': 66.7.0(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
+      '@unocss/vite': 66.7.0(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - vite
 
@@ -13178,18 +13193,18 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-plugin-pwa@1.3.0(supports-color@10.2.2)(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1):
+  vite-plugin-pwa@1.3.0(supports-color@10.2.2)(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1):
     dependencies:
       debug: 4.4.3(supports-color@10.2.2)
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.17
-      vite: 8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
       workbox-build: 7.4.1
       workbox-window: 7.4.1
     transitivePeerDependencies:
       - supports-color
 
-  vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0):
+  vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -13197,16 +13212,16 @@ snapshots:
       rolldown: 1.0.3
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 24.13.1
+      '@types/node': 26.6.5
       esbuild: 0.28.0
       fsevents: 2.3.3
       jiti: 2.7.0
       terser: 5.48.0
       yaml: 2.9.0
 
-  vitefu@1.1.3(vite@8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)):
+  vitefu@1.1.3(vite@8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 8.0.16(@types/node@24.13.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@26.6.5)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
 
   wcwidth@1.0.1:
     dependencies:
